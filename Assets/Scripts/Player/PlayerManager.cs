@@ -11,20 +11,23 @@ public class PlayerManager : MonoBehaviour
     void Start()
     {
         playerInputManager = GetComponent<PlayerInputManager>();
+        playerInputManager.onPlayerJoined += AddPlayer;
         DontDestroyOnLoad(gameObject);
     }
 
-    void OnEnable()
-    {
-        playerInputManager.onPlayerJoined += AddPlayer;
-    }
+    // void OnEnable()
+    // {
+    //     if (!playerInputManager)
+    //     playerInputManager = GetComponent<PlayerInputManager>();
+    // }
 
-    void OnDisable()
-    {
-        playerInputManager.onPlayerJoined -= AddPlayer;
-    }
+    // void OnDisable()
+    // {
+    //     playerInputManager.onPlayerJoined -= AddPlayer;
+    // }
 
     void AddPlayer(PlayerInput playerInput){
+        print("hi");
         players.Add(playerInput.GetComponent<PlayerShell>());
     }
 }

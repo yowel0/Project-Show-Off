@@ -513,7 +513,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 621567455fd1c4ceb811cc8a00b6a1a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_NotificationBehavior: 0
+  m_NotificationBehavior: 3
   m_MaxPlayerCount: -1
   m_AllowJoining: 1
   m_JoinBehavior: 0
@@ -573,6 +573,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d58b5ab7ad253a41af69e25c99c0c99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  players: []
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
