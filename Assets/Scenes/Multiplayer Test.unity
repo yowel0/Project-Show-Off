@@ -493,6 +493,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2052607369}
   - component: {fileID: 2052607368}
+  - component: {fileID: 2052607370}
   m_Layer: 0
   m_Name: Player Manager
   m_TagString: Untagged
@@ -534,7 +535,7 @@ MonoBehaviour:
       m_SingletonActionBindings: []
       m_Flags: 0
     m_Reference: {fileID: 0}
-  m_PlayerPrefab: {fileID: 4837901062998720841, guid: 437f70b400c35a64d8763c01bef3d355,
+  m_PlayerPrefab: {fileID: 2378921503911237429, guid: 463daaaa197f3b84da89da92648a1796,
     type: 3}
   m_SplitScreen: 0
   m_MaintainAspectRatioInSplitScreen: 0
@@ -554,12 +555,24 @@ Transform:
   m_GameObject: {fileID: 2052607367}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.5527777, y: -0.13783932, z: -3.221871}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2052607370
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2052607367}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d58b5ab7ad253a41af69e25c99c0c99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

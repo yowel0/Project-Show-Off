@@ -1,8 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public class PlayerShell : MonoBehaviour
+public class VectorInput
 {
     // Start is called before the first frame update
     void Start()
