@@ -13,6 +13,11 @@ public class PlayerManager : MonoBehaviour
         playerInputManager = GetComponent<PlayerInputManager>();
         playerInputManager.onPlayerJoined += AddPlayer;
         DontDestroyOnLoad(gameObject);
+        //add all already active players (for debug)
+        PlayerInput[] activePlayers = FindObjectsOfType<PlayerInput>();
+        foreach (PlayerInput playerInput in activePlayers){
+            AddPlayer(playerInput);
+        }
     }
 
     // void OnEnable()
@@ -28,6 +33,7 @@ public class PlayerManager : MonoBehaviour
 
     void AddPlayer(PlayerInput playerInput){
         print("hi");
+        DontDestroyOnLoad(playerInput.gameObject);
         players.Add(playerInput.GetComponent<PlayerShell>());
     }
 }

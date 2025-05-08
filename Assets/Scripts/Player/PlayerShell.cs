@@ -26,7 +26,9 @@ public class PlayerShell : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        playerInput = GetComponent<PlayerInput>();
+        if (playerInput == null)
+            playerInput = GetComponent<PlayerInput>();
+        SwitchControlScheme(controlScheme);
     }
 
     // Update is called once per frame
@@ -37,6 +39,9 @@ public class PlayerShell : MonoBehaviour
 
     public void SwitchControlScheme(ControlScheme newControlScheme){
         controlScheme = newControlScheme;
+        if (playerInput == null){
+            playerInput = GetComponent<PlayerInput>();
+        }
         switch (controlScheme){
             case ControlScheme.Menu:
                 playerInput.SwitchCurrentActionMap("Menu");

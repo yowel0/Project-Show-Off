@@ -11,8 +11,8 @@ public class InteractionScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        // CHANGE TO GetComponentInParent ONCE PLAYER HIERARCHY IS GOOD
-        playerInput = GetComponent<PlayerInput>();
+        // CHANGE TO GetComponentInParent ONCE PLAYER HIERARCHY IS GOOD my goat
+        playerInput = GetComponentInParent<PlayerInput>();
     }
 
     // Update is called once per frame
