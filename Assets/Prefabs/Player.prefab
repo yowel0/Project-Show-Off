@@ -77,7 +77,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce26b21a2f0c595488184b05facc689c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PlayerAvatar: {fileID: 8023365455395243295, guid: 17c2c12a739a6b5499ac0ce949b611b1,
+    type: 3}
+  controlScheme: 0
   userName: 
+  skin: {fileID: 0}
 --- !u!1001 &7868011283265877422
 PrefabInstance:
   m_ObjectHideFlags: 0

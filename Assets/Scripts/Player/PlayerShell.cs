@@ -1,21 +1,32 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.LowLevel;
+
+public enum ControlScheme{
+    Menu,
+    Movement
+};
 
 public class PlayerShell : MonoBehaviour
 {
-    public enum ControlScheme{
-        Menu,
-        Movement
-    };
+    [Header("Player Children")]
+    public GameObject PlayerAvatar;
+
+    [Header("Input")]
     public ControlScheme controlScheme = ControlScheme.Menu;
-    public string userName = "a";
+    private PlayerInput playerInput;
+
+    [Header("User Info")]
+    public string userName;
+    public GameObject skin;
+
     // Start is called before the first frame update
     void Start()
     {
-        GetComponent<PlayerInput>().SwitchCurrentActionMap("Menu");
-        print(GetComponent<PlayerInput>().currentActionMap);
+        playerInput = GetComponent<PlayerInput>();
     }
 
     // Update is called once per frame
@@ -24,13 +35,27 @@ public class PlayerShell : MonoBehaviour
         
     }
 
-    public void SwitchControlScheme(ControlScheme _controlScheme){
-        controlScheme = _controlScheme;
+    public void SwitchControlScheme(ControlScheme newControlScheme){
+        controlScheme = newControlScheme;
         switch (controlScheme){
             case ControlScheme.Menu:
+                playerInput.SwitchCurrentActionMap("Menu");
                 break;
             case ControlScheme.Movement:
+                playerInput.SwitchCurrentActionMap("Movement");
                 break;
         };
+    }
+
+    public void SpawnAvatar(Vector3 position){
+        DestroyChildren();
+        GameObject _PlayerAvatar = Instantiate(PlayerAvatar, position, quaternion.identity, transform);
+        Instantiate(skin, _PlayerAvatar.transform);
+    }
+    
+    void DestroyChildren(){
+        for (int i = transform.childCount - 1; i >= 0; i--){
+            Destroy(transform.GetChild(i).gameObject);
+        }
     }
 }

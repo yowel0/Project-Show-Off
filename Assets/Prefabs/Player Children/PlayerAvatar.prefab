@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &7807463424126666015
+--- !u!1 &8023365455395243295
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,22 +8,22 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 3995130179942745980}
-  - component: {fileID: 7449653493278153135}
+  - component: {fileID: 4354272133948173056}
+  - component: {fileID: 4461980862917400811}
   m_Layer: 0
-  m_Name: CharacterSelection
+  m_Name: PlayerAvatar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &3995130179942745980
+--- !u!4 &4354272133948173056
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7807463424126666015}
+  m_GameObject: {fileID: 8023365455395243295}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
@@ -32,21 +32,26 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7449653493278153135
-MonoBehaviour:
+--- !u!136 &4461980862917400811
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7807463424126666015}
+  m_GameObject: {fileID: 8023365455395243295}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0431f48da4a6a4a4eac8a512dfbd16e7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  editingComponent: 0
-  characters:
-  - {fileID: 4564176890004425907, guid: d5c1b37574d5ea247be5b63197743368, type: 3}
-  - {fileID: 3693891127875631555, guid: 1d07014988f447849b2ebfc6488cf68a, type: 3}
-  - {fileID: 581653206421340858, guid: 66ccc3dcaeb94ca4e902ef52715c114f, type: 3}
-  selectedCharacter: 0
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Height: 1
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.5, z: 0}

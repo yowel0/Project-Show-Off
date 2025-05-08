@@ -19,12 +19,15 @@ public class CharacterSelection : MonoBehaviour
 
     public List<GameObject> characters;
     public int selectedCharacter = 0;
+    private GameObject activeCharacter;
 
     // Start is called before the first frame update
     void Start()
     {
         playerInput = GetComponentInParent<PlayerInput>();
         playerShell = GetComponentInParent<PlayerShell>();
+        playerShell.SwitchControlScheme(ControlScheme.Menu);
+        ShowSkin(selectedCharacter);
     }
 
     // Update is called once per frame
@@ -37,6 +40,9 @@ public class CharacterSelection : MonoBehaviour
                 break;
             case component.Skin:
                 EditSkin();
+                break;
+            case component.Ready:
+                ReadyUpdate();
                 break;
         }
     }
@@ -73,13 +79,13 @@ public class CharacterSelection : MonoBehaviour
         }
         //playerShell.userName += lastChar;
 
-        if (playerInput.actions["Jump"].triggered){
+        if (playerInput.actions["Accept"].triggered){
             AddLastChar();
         }
         if (playerInput.actions["Cancel"].triggered){
             RemoveLastChar();
         }
-        if (playerInput.actions["Interact"].triggered){
+        if (playerInput.actions["Confirm"].triggered){
             editingComponent = component.Skin;
         }
     }
@@ -99,11 +105,21 @@ public class CharacterSelection : MonoBehaviour
         }
         ShowSkin(selectedCharacter);
 
-        if (playerInput.actions["Interact"].triggered){
+        if (playerInput.actions["Confirm"].triggered){
+            playerShell.skin = characters[selectedCharacter];
             editingComponent = component.Ready;
         }
         if (playerInput.actions["Cancel"].triggered){
             editingComponent = component.Name;
+        }
+    }
+
+    void ReadyUpdate(){
+        if (playerInput.actions["Cancel"].triggered){
+            editingComponent = component.Skin;
+        }
+        if (playerInput.actions["Confirm"].triggered){
+            playerShell.SpawnAvatar(Vector3.zero);
         }
     }
 
@@ -125,10 +141,12 @@ public class CharacterSelection : MonoBehaviour
     void ShowSkin(int index){
         for (int i = 0; i < characters.Count; i++){
             if (i == index){
-                characters[i].SetActive(true);
+                //characters[i].SetActive(true);
+                Destroy(activeCharacter);
+                activeCharacter = Instantiate(characters[i],transform);
             }
             else{
-                characters[i].SetActive(false);
+                //characters[i].SetActive(false);
             }
         }
     }
