@@ -36,4 +36,19 @@ public class PlayerManager : MonoBehaviour
         DontDestroyOnLoad(playerInput.gameObject);
         players.Add(playerInput.GetComponent<PlayerShell>());
     }
+
+    public void SpawnPlayers(Vector3 pos1, Vector3 pos2){
+        for (int i = 0; i < players.Count; i++){
+                PlayerShell player = players[i];
+                
+                switch (i){
+                    case 0:
+                        player.SpawnAvatar(pos1);
+                        break;
+                    case 1:
+                        player.SpawnAvatar(pos2);
+                        break;
+                }
+            }
+    } 
 }

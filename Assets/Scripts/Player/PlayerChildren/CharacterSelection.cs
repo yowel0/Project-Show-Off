@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class CharacterSelection : MonoBehaviour
 {
@@ -118,9 +119,14 @@ public class CharacterSelection : MonoBehaviour
         if (playerInput.actions["Cancel"].triggered){
             editingComponent = component.Skin;
         }
+        //spawn after you're ready
         // if (playerInput.actions["Confirm"].triggered){
         //     playerShell.SpawnAvatar(Vector3.zero);
         // }
+        //change scene after you're ready
+        if (playerInput.actions["Confirm"].triggered){
+            SceneManager.LoadScene("MuPl Test scene 2");
+        }
     }
 
     void ReplaceLastChar(char _char){
