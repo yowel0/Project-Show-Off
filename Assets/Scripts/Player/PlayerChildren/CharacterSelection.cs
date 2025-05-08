@@ -118,9 +118,9 @@ public class CharacterSelection : MonoBehaviour
         if (playerInput.actions["Cancel"].triggered){
             editingComponent = component.Skin;
         }
-        if (playerInput.actions["Confirm"].triggered){
-            playerShell.SpawnAvatar(Vector3.zero);
-        }
+        // if (playerInput.actions["Confirm"].triggered){
+        //     playerShell.SpawnAvatar(Vector3.zero);
+        // }
     }
 
     void ReplaceLastChar(char _char){
