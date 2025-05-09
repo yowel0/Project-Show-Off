@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
@@ -22,6 +23,12 @@ public class CharacterSelection : MonoBehaviour
     public int selectedCharacter = 0;
     private GameObject activeCharacter;
 
+    [Header("UI")]
+    [SerializeField]
+    private TextMeshProUGUI nameText;
+    [SerializeField]
+    private TextMeshProUGUI stateText;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -38,6 +45,7 @@ public class CharacterSelection : MonoBehaviour
         switch (editingComponent){
             case component.Name:
                 EditName();
+                UpdateNameUI();
                 break;
             case component.Skin:
                 EditSkin();
@@ -46,8 +54,10 @@ public class CharacterSelection : MonoBehaviour
                 ReadyUpdate();
                 break;
         }
+        UpdateStateUI();
     }
 
+    //State Updates
     void EditName(){
         char lastChar = 'a';
         if (playerShell.userName.Length > 0){
@@ -126,6 +136,24 @@ public class CharacterSelection : MonoBehaviour
         //change scene after you're ready
         if (playerInput.actions["Confirm"].triggered){
             SceneManager.LoadScene("MuPl Test scene 2");
+        }
+    }
+    //UI
+    void UpdateNameUI(){
+        nameText.SetText(playerShell.userName);
+    }
+
+    void UpdateStateUI(){
+        switch(editingComponent){
+            case component.Name:
+                stateText.text = "Changing Name";
+                break;
+            case component.Skin:
+                stateText.text = "Selecting Skin";
+                break;
+            case component.Ready:
+                stateText.text = "Ready";
+                break;
         }
     }
 
