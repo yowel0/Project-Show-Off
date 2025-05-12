@@ -7,6 +7,7 @@ public class PlayerManager : MonoBehaviour
 {
     private PlayerInputManager playerInputManager;
     public List<PlayerShell> players = new List<PlayerShell>();
+    public List<Transform> playerPositions = new List<Transform>();
     // Start is called before the first frame update
     void Start()
     {
@@ -34,6 +35,24 @@ public class PlayerManager : MonoBehaviour
     void AddPlayer(PlayerInput playerInput){
         print("hi");
         DontDestroyOnLoad(playerInput.gameObject);
-        players.Add(playerInput.GetComponent<PlayerShell>());
+        PlayerShell player = playerInput.GetComponent<PlayerShell>();
+        players.Add(player);
+        if (playerPositions[players.Count - 1] != null)
+            player.transform.position = playerPositions[players.Count - 1].position;
     }
+
+    public void SpawnPlayers(Vector3 pos1, Vector3 pos2){
+        for (int i = 0; i < players.Count; i++){
+                PlayerShell player = players[i];
+                
+                switch (i){
+                    case 0:
+                        player.SpawnAvatar(pos1);
+                        break;
+                    case 1:
+                        player.SpawnAvatar(pos2);
+                        break;
+                }
+            }
+    } 
 }
