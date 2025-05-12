@@ -28,6 +28,8 @@ public class CharacterSelection : MonoBehaviour
     private TextMeshProUGUI nameText;
     [SerializeField]
     private TextMeshProUGUI stateText;
+    [SerializeField]
+    private GameObject[] StateUI;
 
     // Start is called before the first frame update
     void Start()
@@ -134,9 +136,9 @@ public class CharacterSelection : MonoBehaviour
         //     playerShell.SpawnAvatar(Vector3.zero);
         // }
         //change scene after you're ready
-        if (playerInput.actions["Confirm"].triggered){
-            SceneManager.LoadScene("MuPl Test scene 2");
-        }
+        // if (playerInput.actions["Confirm"].triggered){
+        //     SceneManager.LoadScene("MuPl Test scene 2");
+        // }
     }
     //UI
     void UpdateNameUI(){
@@ -147,12 +149,29 @@ public class CharacterSelection : MonoBehaviour
         switch(editingComponent){
             case component.Name:
                 stateText.text = "Changing Name";
+                for (int i = 0; i < StateUI.Count(); i++){
+                    if (i == 0){
+                        StateUI[i].SetActive(true);
+                    }
+                    else
+                        StateUI[i].SetActive(false);
+                }
                 break;
             case component.Skin:
                 stateText.text = "Selecting Skin";
+                for (int i = 0; i < StateUI.Count(); i++){
+                    if (i == 1){
+                        StateUI[i].SetActive(true);
+                    }
+                    else
+                        StateUI[i].SetActive(false);
+                }
                 break;
             case component.Ready:
                 stateText.text = "Ready";
+                for (int i = 0; i < StateUI.Count(); i++){
+                    StateUI[i].SetActive(false);
+                }
                 break;
         }
     }
