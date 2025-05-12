@@ -24,9 +24,9 @@ public class PlatformLogic : MonoBehaviour
     {
         if (!isPlaying)
         {
+            isPlaying = true;
             StartRound();
             round = 0;
-            isPlaying = true;
         }
     }
     public void StopGame()
