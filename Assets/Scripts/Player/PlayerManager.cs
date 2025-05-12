@@ -37,22 +37,7 @@ public class PlayerManager : MonoBehaviour
         DontDestroyOnLoad(playerInput.gameObject);
         PlayerShell player = playerInput.GetComponent<PlayerShell>();
         players.Add(player);
-        if (playerPositions[players.Count - 1] != null)
+        if (playerPositions.Count >= players.Count)
             player.transform.position = playerPositions[players.Count - 1].position;
     }
-
-    public void SpawnPlayers(Vector3 pos1, Vector3 pos2){
-        for (int i = 0; i < players.Count; i++){
-                PlayerShell player = players[i];
-                
-                switch (i){
-                    case 0:
-                        player.SpawnAvatar(pos1);
-                        break;
-                    case 1:
-                        player.SpawnAvatar(pos2);
-                        break;
-                }
-            }
-    } 
 }

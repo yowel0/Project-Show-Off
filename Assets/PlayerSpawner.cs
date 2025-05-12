@@ -10,7 +10,19 @@ public class PlayerSpawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
+
+    void SpawnAvatars(){
+        //after spawning Avatars, no more new players allowed
         PlayerManager playerManager = FindAnyObjectByType<PlayerManager>();
+        playerManager.GetComponent<PlayerInputManager>().joinBehavior = PlayerJoinBehavior.JoinPlayersManually;
         if (playerManager != null){
             for (int i = 0; i < playerManager.players.Count; i++){
                 PlayerShell player = playerManager.players[i];
@@ -26,11 +38,5 @@ public class PlayerSpawner : MonoBehaviour
         else{
             print("No player managaer found :(");
         }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }
