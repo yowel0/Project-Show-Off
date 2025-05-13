@@ -37,7 +37,7 @@ public class Food : MonoBehaviour
 
         if (percent > 1)
         {
-            Scores.Instance.AddScore(playerId, 1);
+            TrafficLight.Instance.AddScore(playerId, 1);
             Destroy(gameObject);
         }
 
