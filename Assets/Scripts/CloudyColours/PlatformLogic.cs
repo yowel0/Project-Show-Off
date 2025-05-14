@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class PlatformLogic : MonoBehaviour
 {
@@ -8,6 +9,8 @@ public class PlatformLogic : MonoBehaviour
     [SerializeField] CCRoundTime timeDecreaseRounds;
     [Tooltip("Scriptable object holding an array. Element = nr of falling platforms + 1, value = what round this applies to")]
     [SerializeField] CCPlatformFallCount fallCount;
+
+    public UnityEvent OnNewRound;
 
     public int round;
 
@@ -36,6 +39,7 @@ public class PlatformLogic : MonoBehaviour
     public void StartRound()
     {
         if (!isPlaying) return;
+        OnNewRound?.Invoke();
         StartCoroutine(BlinkPlatformFor(timeDecreaseRounds.GetTime(round)));
         round++;
     }
