@@ -28,8 +28,8 @@ public class PlatformLogic : MonoBehaviour
         if (!isPlaying)
         {
             isPlaying = true;
-            StartRound();
             round = 0;
+            StartRound();
         }
     }
     public void StopGame()

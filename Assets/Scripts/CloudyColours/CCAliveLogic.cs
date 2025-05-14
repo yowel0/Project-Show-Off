@@ -11,7 +11,7 @@ public class CCAliveLogic : MonoBehaviour
 
     private int nrAlive;
     //PlayerManager playerManager;
-    MinigameManager minigameManager;
+    //MinigameManager minigameManager;
 
 
     private void OnTriggerEnter(Collider other)
@@ -32,7 +32,7 @@ public class CCAliveLogic : MonoBehaviour
         }*/
         if (nrAlive <= 1)
         {
-            minigameManager.DoStop();
+            MinigameManager.Instance.DoStop();
             winText.gameObject.SetActive(true);
         }
     }
@@ -56,7 +56,8 @@ public class CCAliveLogic : MonoBehaviour
         {
             playerAlive[i] = true;
             // MOVE PLAYERS TO START!!
-            PlayerManager.Instance.players[i].GetComponentInChildren<Rigidbody>().MovePosition(new Vector3(0, .5f, -10+2*i));
+            //PlayerManager.Instance.players[i].GetComponentInChildren<Rigidbody>().MovePosition(new Vector3(0, .5f, -10+2*i));
+            PlayerManager.Instance.players[i].TeleportAvatar(new Vector3(0, 2, -10 + 2 * i));
         }
 
     }
@@ -68,7 +69,7 @@ public class CCAliveLogic : MonoBehaviour
         if (Instance == null) Instance = this;
         else Destroy(this);
 
-        minigameManager = FindObjectOfType<MinigameManager>();
+        //minigameManager = FindObjectOfType<MinigameManager>();
     }
 
     private void OnDestroy()
