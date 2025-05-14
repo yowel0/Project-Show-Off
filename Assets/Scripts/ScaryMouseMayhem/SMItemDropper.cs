@@ -12,6 +12,9 @@ public class SMItemDropper : MonoBehaviour
     [Tooltip("Time it takes to move to the next destination")]
     [SerializeField] float moveTime;
 
+    [Tooltip("[0..1] X = time passed, [0..1] Y = how much above times will be multiplied with")]
+    [SerializeField] AnimationCurve intensityCurve;
+
     [Tooltip("Minimum distance a new position will have")]
     [SerializeField] float minDistanceToLast;
 
@@ -28,6 +31,7 @@ public class SMItemDropper : MonoBehaviour
     Vector3 lastLocation;
     Vector3 newLocation;
     float timer;
+    float intensity;
 
     enum State
     {
@@ -68,30 +72,17 @@ public class SMItemDropper : MonoBehaviour
 
     private void FixedUpdate()
     {
+        intensity = intensityCurve.Evaluate(MinigameManager.Instance.GetTimePercent());
         switch (currentState)
         {
             case State.moving: Movement(); break;
 
-            case State.preparing: 
-                if (timer >= prepareTime)
-                {
-                    DropItem();
-                    currentState = State.cooldown;
-                    timer -= prepareTime;
-                }
-                break;
+            case State.preparing: CheckPrepare(); break;
 
-            case State.cooldown:
-                if (timer >= cooldownTime)
-                {
-                    newLocation = GetNextPosition();
-                    currentState = State.moving;
-                    timer -= cooldownTime;
-                }
-                break;
+            case State.cooldown: CheckCooldown(); break;
 
             case State.pregame:
-                transform.position = Vector3.Lerp(lastLocation, newLocation, timer/3f);
+                transform.position = Vector3.Lerp(lastLocation, newLocation, timer/2f);
                 break;
 
             default:
@@ -103,15 +94,40 @@ public class SMItemDropper : MonoBehaviour
         timer += Time.fixedDeltaTime;
     }
 
+    private void CheckPrepare()
+    {
+        if (CheckTime(prepareTime))
+        {
+            DropItem();
+            currentState = State.cooldown;
+            timer -= prepareTime * intensity;
+        }
+    }
+
+    private void CheckCooldown()
+    {
+        if (CheckTime(cooldownTime))
+        {
+            newLocation = GetNextPosition();
+            currentState = State.moving;
+            timer -= cooldownTime * intensity;
+        }
+    }
+
+    bool CheckTime(float pTime)
+    {
+        return timer >= pTime * intensity;
+    }
+
     void Movement()
     {
-        float percent = timer / moveTime;
+        float percent = timer / (moveTime * intensity);
         transform.position = Vector3.Lerp(lastLocation, newLocation, percent);
 
         if (percent > 1)
         {
             currentState = State.preparing;
-            timer -= moveTime;
+            timer -= moveTime * intensity;
         }
     }
 

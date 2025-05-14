@@ -6,6 +6,7 @@ using UnityEngine.Events;
 
 public class MinigameManager : MonoBehaviour
 {
+    public static MinigameManager Instance;
     public float totalTime;
     public float timer;
     public bool isTimerActive;
@@ -77,6 +78,24 @@ public class MinigameManager : MonoBehaviour
     public void DoStop()
     {
         OnStop?.Invoke();
+    }
+
+
+    public float GetTimePercent()
+    {
+        // Starts at 0, ends at 1
+        return (totalTime - timer) / totalTime;
+    }
+
+
+    private void Start()
+    {
+        if (Instance == null) Instance = this;
+        else Destroy(gameObject);
+    }
+    private void OnDestroy()
+    {
+        if (Instance == this) Destroy(gameObject);
     }
 
 }
