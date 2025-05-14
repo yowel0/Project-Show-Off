@@ -10,7 +10,7 @@ public class CCAliveLogic : MonoBehaviour
     TextMeshProUGUI winText;
 
     private int nrAlive;
-    PlayerManager playerManager;
+    //PlayerManager playerManager;
     MinigameManager minigameManager;
 
 
@@ -18,14 +18,18 @@ public class CCAliveLogic : MonoBehaviour
     {
         PlayerShell ps = other.GetComponentInParent<PlayerShell>();
 
-        for (int i = 0; i < playerManager.players.Count; i++)
+        int playerID = PlayerManager.Instance.GetPlayerID(ps);
+        playerAlive[playerID] = false;
+        nrAlive--;
+
+        /*for (int i = 0; i < PlayerManager.Instance.GetPlayerCount(); i++)
         {
             if (playerManager.players[i] == ps)
             {
                 playerAlive[i] = false;
                 nrAlive--;
             }
-        }
+        }*/
         if (nrAlive <= 1)
         {
             minigameManager.DoStop();
@@ -47,12 +51,12 @@ public class CCAliveLogic : MonoBehaviour
     public void NewGame()
     {
         winText.gameObject.SetActive(false);
-        nrAlive = playerManager.players.Count;
+        nrAlive = PlayerManager.Instance.GetPlayerCount();
         for (int i = 0; i < nrAlive; i++)
         {
             playerAlive[i] = true;
             // MOVE PLAYERS TO START!!
-            playerManager.players[i].GetComponentInChildren<Rigidbody>().MovePosition(new Vector3(0, .5f, -10+2*i));
+            PlayerManager.Instance.players[i].GetComponentInChildren<Rigidbody>().MovePosition(new Vector3(0, .5f, -10+2*i));
         }
 
     }
@@ -64,7 +68,6 @@ public class CCAliveLogic : MonoBehaviour
         if (Instance == null) Instance = this;
         else Destroy(this);
 
-        playerManager = FindAnyObjectByType<PlayerManager>();
         minigameManager = FindObjectOfType<MinigameManager>();
     }
 

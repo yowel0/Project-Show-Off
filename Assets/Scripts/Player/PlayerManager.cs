@@ -5,12 +5,16 @@ using UnityEngine.InputSystem;
 
 public class PlayerManager : MonoBehaviour
 {
+    public static PlayerManager Instance;
     private PlayerInputManager playerInputManager;
     public List<PlayerShell> players = new List<PlayerShell>();
     public List<Transform> playerPositions = new List<Transform>();
     // Start is called before the first frame update
     void Start()
     {
+        if (Instance == null) Instance = this;
+        else Destroy(this);
+
         playerInputManager = GetComponent<PlayerInputManager>();
         playerInputManager.onPlayerJoined += AddPlayer;
         DontDestroyOnLoad(gameObject);
@@ -21,16 +25,19 @@ public class PlayerManager : MonoBehaviour
         }
     }
 
-    // void OnEnable()
-    // {
-    //     if (!playerInputManager)
-    //     playerInputManager = GetComponent<PlayerInputManager>();
-    // }
-
-    // void OnDisable()
-    // {
-    //     playerInputManager.onPlayerJoined -= AddPlayer;
-    // }
+    private void OnDestroy()
+    {
+        if (Instance == this) Instance = null;
+    }
+ 
+    public int GetPlayerCount()
+    {
+        return players.Count;
+    }
+    public int GetPlayerID(PlayerShell pPlayerShell)
+    {
+        return players.IndexOf(pPlayerShell);
+    }
 
     void AddPlayer(PlayerInput playerInput){
         print("hi");
