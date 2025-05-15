@@ -11,7 +11,8 @@ public class CharacterSelection : MonoBehaviour
 {
     public enum component{
         Name,
-        Skin,
+        Hat,
+        Avatar,
         Ready
     }
     public component editingComponent;
@@ -19,8 +20,11 @@ public class CharacterSelection : MonoBehaviour
     private PlayerShell playerShell;
     private VectorInput vectorInput = new VectorInput();
 
-    public List<GameObject> characters;
-    public int selectedCharacter = 0;
+    public List<GameObject> hats;
+    public int selectedHat = 0;
+    private GameObject activeHat;
+    public List<GameObject> avatars;
+    public int selectedAvatar = 0;
     private GameObject activeCharacter;
 
     [Header("UI")]
@@ -37,7 +41,8 @@ public class CharacterSelection : MonoBehaviour
         playerInput = GetComponentInParent<PlayerInput>();
         playerShell = GetComponentInParent<PlayerShell>();
         playerShell.SwitchControlScheme(ControlScheme.Menu);
-        ShowSkin(selectedCharacter);
+        ShowHat(selectedHat);
+        ShowAvatar(selectedAvatar);
     }
 
     // Update is called once per frame
@@ -49,8 +54,11 @@ public class CharacterSelection : MonoBehaviour
                 EditName();
                 UpdateNameUI();
                 break;
-            case component.Skin:
-                EditSkin();
+            case component.Hat:
+                EditHat();
+                break;
+            case component.Avatar:
+                EditAvatar();
                 break;
             case component.Ready:
                 ReadyUpdate();
@@ -99,27 +107,31 @@ public class CharacterSelection : MonoBehaviour
             RemoveLastChar();
         }
         if (playerInput.actions["Confirm"].triggered){
-            editingComponent = component.Skin;
+            editingComponent = component.Avatar;
         }
     }
 
-    void EditSkin(){
+    void EditHat(){
+
+    }
+
+    void EditAvatar(){
         if (vectorInput.east.pressed){
-            selectedCharacter++;
-            if (selectedCharacter >= characters.Count){
-                selectedCharacter = 0;
+            selectedAvatar++;
+            if (selectedAvatar >= avatars.Count){
+                selectedAvatar = 0;
             }
         }
         if (vectorInput.west.pressed){
-            selectedCharacter--;
-            if (selectedCharacter < 0){
-                selectedCharacter = characters.Count - 1;
+            selectedAvatar--;
+            if (selectedAvatar < 0){
+                selectedAvatar = avatars.Count - 1;
             }
         }
-        ShowSkin(selectedCharacter);
+        ShowAvatar(selectedAvatar);
 
         if (playerInput.actions["Confirm"].triggered){
-            playerShell.skin = characters[selectedCharacter];
+            playerShell.hat = avatars[selectedAvatar];
             editingComponent = component.Ready;
         }
         if (playerInput.actions["Cancel"].triggered){
@@ -129,7 +141,7 @@ public class CharacterSelection : MonoBehaviour
 
     void ReadyUpdate(){
         if (playerInput.actions["Cancel"].triggered){
-            editingComponent = component.Skin;
+            editingComponent = component.Avatar;
         }
         //spawn after you're ready
         // if (playerInput.actions["Confirm"].triggered){
@@ -157,8 +169,18 @@ public class CharacterSelection : MonoBehaviour
                         StateUI[i].SetActive(false);
                 }
                 break;
-            case component.Skin:
-                stateText.text = "Selecting Skin";
+            case component.Hat:
+                stateText.text = "Selecting Hat";
+                for (int i = 0; i < StateUI.Count(); i++){
+                    if (i == 1){
+                        StateUI[i].SetActive(true);
+                    }
+                    else
+                        StateUI[i].SetActive(false);
+                }
+                break;
+            case component.Avatar:
+                stateText.text = "Selecting Avatar";
                 for (int i = 0; i < StateUI.Count(); i++){
                     if (i == 1){
                         StateUI[i].SetActive(true);
@@ -191,15 +213,28 @@ public class CharacterSelection : MonoBehaviour
         playerShell.userName = playerShell.userName.Remove(playerShell.userName.Length - 1);
     }
     
-    void ShowSkin(int index){
-        for (int i = 0; i < characters.Count; i++){
+    void ShowAvatar(int index){
+        for (int i = 0; i < avatars.Count; i++){
             if (i == index){
-                //characters[i].SetActive(true);
+                //avatars[i].SetActive(true);
                 Destroy(activeCharacter);
-                activeCharacter = Instantiate(characters[i],transform);
+                activeCharacter = Instantiate(avatars[i],transform);
             }
             else{
-                //characters[i].SetActive(false);
+                //avatars[i].SetActive(false);
+            }
+        }
+    }
+
+    void ShowHat(int index){
+        for (int i = 0; i < hats.Count; i++){
+            if (i == index){
+                //avatars[i].SetActive(true);
+                Destroy(activeHat);
+                activeHat = Instantiate(hats[i],transform);
+            }
+            else{
+                //avatars[i].SetActive(false);
             }
         }
     }

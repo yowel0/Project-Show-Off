@@ -21,7 +21,7 @@ public class PlayerShell : MonoBehaviour
 
     [Header("User Info")]
     public string userName;
-    public GameObject skin;
+    public GameObject hat;
 
     // Start is called before the first frame update
     void Start()
@@ -55,7 +55,14 @@ public class PlayerShell : MonoBehaviour
     public void SpawnAvatar(Vector3 position){
         DestroyChildren();
         GameObject _PlayerAvatar = Instantiate(PlayerAvatar, position, quaternion.identity, transform);
-        Instantiate(skin, _PlayerAvatar.transform);
+        Instantiate(hat, _PlayerAvatar.transform);
+    }
+
+    public void TeleportAvatar(Vector3 position){
+        PlayerAvatarMovement playerAvatarMovement = GetComponentInChildren<PlayerAvatarMovement>();
+        if(playerAvatarMovement != null){
+            playerAvatarMovement.transform.position = position;
+        }
     }
     
     void DestroyChildren(){
