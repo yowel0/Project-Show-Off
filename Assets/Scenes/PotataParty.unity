@@ -154,6 +154,7 @@ MonoBehaviour:
   totalTime: 30
   timer: 0
   isTimerActive: 0
+  isTimeBased: 1
   OnSetup:
     m_PersistentCalls:
       m_Calls:

@@ -10,6 +10,8 @@ public class MinigameManager : MonoBehaviour
     public float totalTime;
     public float timer;
     public bool isTimerActive;
+    [Tooltip("Does the minigame end when the time is up? (false -> time is used for when max intensity is reached")]
+    public bool isTimeBased;
 
     public UnityEvent OnSetup;
     public UnityEvent OnStart;
@@ -26,7 +28,8 @@ public class MinigameManager : MonoBehaviour
             UpdateTimer();
             if (timer < 0)
             {
-                DoStop();
+                if (isTimeBased) DoStop();
+                timer = 0;
                 isTimerActive = false;
             }
         }
