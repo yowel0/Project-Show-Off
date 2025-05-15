@@ -416,7 +416,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 171744804}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -2638,7 +2638,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 52
+  field of view: 64
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -2665,7 +2665,7 @@ Transform:
   m_GameObject: {fileID: 1811008660}
   serializedVersion: 2
   m_LocalRotation: {x: 0.29162052, y: 0, z: 0, w: 0.95653415}
-  m_LocalPosition: {x: 0, y: 25.42, z: -16.88}
+  m_LocalPosition: {x: 0, y: 15.6, z: -11.22}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3048,32 +3048,32 @@ PrefabInstance:
     - target: {fileID: 9063811765594293021, guid: 86e5d448c295b52478eefd2c81f57e66,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 99.9076
+      value: 89.9485
       objectReference: {fileID: 0}
     - target: {fileID: 9063811765594293021, guid: 86e5d448c295b52478eefd2c81f57e66,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 99.9076
+      value: 89.9485
       objectReference: {fileID: 0}
     - target: {fileID: 9063811765594293021, guid: 86e5d448c295b52478eefd2c81f57e66,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 99.9076
+      value: 89.9485
       objectReference: {fileID: 0}
     - target: {fileID: 9063811765594293021, guid: 86e5d448c295b52478eefd2c81f57e66,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.04866667
+      value: -0.022
       objectReference: {fileID: 0}
     - target: {fileID: 9063811765594293021, guid: 86e5d448c295b52478eefd2c81f57e66,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.13
+      value: 0.037
       objectReference: {fileID: 0}
     - target: {fileID: 9063811765594293021, guid: 86e5d448c295b52478eefd2c81f57e66,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.16
+      value: -0.294
       objectReference: {fileID: 0}
     - target: {fileID: 9063811765594293021, guid: 86e5d448c295b52478eefd2c81f57e66,
         type: 3}
