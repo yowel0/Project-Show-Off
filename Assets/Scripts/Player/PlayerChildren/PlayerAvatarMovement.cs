@@ -11,6 +11,7 @@ public class PlayerAvatarMovement : MonoBehaviour
     private PlayerInput playerInput;
     private PlayerShell playerShell;
     private Rigidbody rb;
+    private bool grounded;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,9 +26,19 @@ public class PlayerAvatarMovement : MonoBehaviour
     {
         Vector2 moveInput = playerInput.actions["Move"].ReadValue<Vector2>();
         rb.AddForce(new Vector3(moveInput.x, 0, moveInput.y) * Time.deltaTime * moveSpeed);
-        if (playerInput.actions["Jump"].triggered){
-            rb.velocity = new Vector3 (rb.velocity.x, 0, rb.velocity.z);
+        if (Physics.Raycast(transform.position, -transform.up, out var hit, 0.4f))
+        {
+            grounded = true;
+        }
+        else
+        {
+            grounded = false;
+        }
+        if (playerInput.actions["Jump"].triggered && grounded)
+        {
+            rb.velocity = new Vector3(rb.velocity.x, 0, rb.velocity.z);
             rb.AddForce(Vector3.up * jumpForce);
         }
+        Debug.DrawRay(transform.position, -transform.up * 0.4f, Color.red,.1f);
     }
 }

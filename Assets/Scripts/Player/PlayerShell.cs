@@ -5,9 +5,11 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.LowLevel;
 
-public enum ControlScheme{
+public enum ControlScheme
+{
     Menu,
-    Movement
+    Movement,
+    NoMove
 };
 
 public class PlayerShell : MonoBehaviour
@@ -42,14 +44,19 @@ public class PlayerShell : MonoBehaviour
         if (playerInput == null){
             playerInput = GetComponent<PlayerInput>();
         }
-        switch (controlScheme){
+        switch (controlScheme)
+        {
             case ControlScheme.Menu:
                 playerInput.SwitchCurrentActionMap("Menu");
                 break;
             case ControlScheme.Movement:
                 playerInput.SwitchCurrentActionMap("Movement");
                 break;
-        };
+            case ControlScheme.NoMove:
+                playerInput.SwitchCurrentActionMap("NoMove");
+                break;
+        }
+        ;
     }
 
     public void SpawnAvatar(Vector3 position){

@@ -33,7 +33,14 @@ public class CharacterSelection : MonoBehaviour
     [SerializeField]
     private TextMeshProUGUI stateText;
     [SerializeField]
+    private TextMeshProUGUI controlText;
+    [SerializeField]
     private GameObject[] StateUI;
+
+    private const string kNamingHelpTextFormat = "Press {Accept} to Add a Letter\n Press {Cancel} to Remove a Letter\n Press {Confirm} to Confirm Your Name";
+    private const string kHatHelpTextFormat = "Press {Confirm} to Confirm Hat\n Press {Cancel} to Go Back";
+    private const string kAvatarHelpTextFormat = "Press {Confirm} to Ready Up\n Press {Cancel} to Go Back";
+    private const string kReadyHelpTextFormat = "Press {Cancel} to Unready";
 
     // Start is called before the first frame update
     void Start()
@@ -161,8 +168,11 @@ public class CharacterSelection : MonoBehaviour
         switch(editingComponent){
             case component.Name:
                 stateText.text = "Changing Name";
-                for (int i = 0; i < StateUI.Count(); i++){
-                    if (i == 0){
+                controlText.text = ReplaceControlText(kNamingHelpTextFormat);
+                for (int i = 0; i < StateUI.Count(); i++)
+                {
+                    if (i == 0)
+                    {
                         StateUI[i].SetActive(true);
                     }
                     else
@@ -171,8 +181,13 @@ public class CharacterSelection : MonoBehaviour
                 break;
             case component.Hat:
                 stateText.text = "Selecting Hat";
-                for (int i = 0; i < StateUI.Count(); i++){
-                    if (i == 1){
+                controlText.text = kHatHelpTextFormat
+                    .Replace("{Confirm}", playerInput.actions["Confirm"].GetBindingDisplayString())
+                    .Replace("{Cancel}", playerInput.actions["Cancel"].GetBindingDisplayString());
+                for (int i = 0; i < StateUI.Count(); i++)
+                {
+                    if (i == 1)
+                    {
                         StateUI[i].SetActive(true);
                     }
                     else
@@ -181,6 +196,9 @@ public class CharacterSelection : MonoBehaviour
                 break;
             case component.Avatar:
                 stateText.text = "Selecting Avatar";
+                controlText.text = kAvatarHelpTextFormat
+                    .Replace("{Confirm}", playerInput.actions["Confirm"].GetBindingDisplayString())
+                    .Replace("{Cancel}", playerInput.actions["Cancel"].GetBindingDisplayString());
                 for (int i = 0; i < StateUI.Count(); i++){
                     if (i == 1){
                         StateUI[i].SetActive(true);
@@ -191,11 +209,22 @@ public class CharacterSelection : MonoBehaviour
                 break;
             case component.Ready:
                 stateText.text = "Ready";
-                for (int i = 0; i < StateUI.Count(); i++){
+                controlText.text = kHatHelpTextFormat
+                    .Replace("{Cancel}", playerInput.actions["Cancel"].GetBindingDisplayString());
+                for (int i = 0; i < StateUI.Count(); i++)
+                {
                     StateUI[i].SetActive(false);
                 }
                 break;
         }
+    }
+
+    string ReplaceControlText(string _string)
+    {
+        return _string
+                    .Replace("{Accept}", playerInput.actions["Accept"].GetBindingDisplayString())
+                    .Replace("{Confirm}", playerInput.actions["Confirm"].GetBindingDisplayString())
+                    .Replace("{Cancel}", playerInput.actions["Cancel"].GetBindingDisplayString());
     }
 
     void ReplaceLastChar(char _char){
