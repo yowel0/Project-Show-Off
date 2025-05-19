@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.InputSystem;
 
 public class PlayerAvatarMovement : MonoBehaviour
@@ -17,8 +18,24 @@ public class PlayerAvatarMovement : MonoBehaviour
     {
         playerInput = GetComponentInParent<PlayerInput>();
         playerShell = GetComponentInParent<PlayerShell>();
-        playerShell.SwitchControlScheme(ControlScheme.Movement);
         rb = GetComponent<Rigidbody>();
+        int playerID = PlayerManager.Instance.GetPlayerID(GetComponentInParent<PlayerShell>());
+        Image image = GetComponentInChildren<Image>();
+        switch (playerID)
+        {
+            case 0:
+                image.color = Color.red;
+                break;
+            case 1:
+                image.color = Color.blue;
+                break;
+            case 2:
+                image.color = Color.green;
+                break;
+            case 3:
+                image.color = Color.yellow;
+                break;
+        }
     }
 
     // Update is called once per frame
@@ -26,7 +43,7 @@ public class PlayerAvatarMovement : MonoBehaviour
     {
         Vector2 moveInput = playerInput.actions["Move"].ReadValue<Vector2>();
         rb.AddForce(new Vector3(moveInput.x, 0, moveInput.y) * Time.deltaTime * moveSpeed);
-        if (Physics.Raycast(transform.position, -transform.up, out var hit, 0.4f))
+        if (Physics.Raycast(transform.position, -transform.up, out var hit, 0.4f) && !hit.collider.isTrigger)
         {
             grounded = true;
         }

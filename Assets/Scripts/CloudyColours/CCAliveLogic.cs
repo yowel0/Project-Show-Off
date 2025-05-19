@@ -6,8 +6,8 @@ using UnityEngine;
 public class CCAliveLogic : MonoBehaviour
 {
     public bool[] playerAlive;
-    [SerializeField]
-    TextMeshProUGUI winText;
+    //[SerializeField]
+    //TextMeshProUGUI winText;
 
     private int nrAlive;
     //PlayerManager playerManager;
@@ -32,8 +32,9 @@ public class CCAliveLogic : MonoBehaviour
         }*/
         if (nrAlive <= 1)
         {
+            NewRound();
             MinigameManager.Instance.DoStop();
-            winText.gameObject.SetActive(true);
+            //winText.gameObject.SetActive(true);
         }
     }
 
@@ -50,7 +51,7 @@ public class CCAliveLogic : MonoBehaviour
 
     public void NewGame()
     {
-        winText.gameObject.SetActive(false);
+        //winText.gameObject.SetActive(false);
         nrAlive = PlayerManager.Instance.GetPlayerCount();
         for (int i = 0; i < nrAlive; i++)
         {
@@ -67,7 +68,7 @@ public class CCAliveLogic : MonoBehaviour
     void Start()
     {
         if (Instance == null) Instance = this;
-        else Destroy(this);
+        else Destroy(gameObject);
 
         //minigameManager = FindObjectOfType<MinigameManager>();
     }
