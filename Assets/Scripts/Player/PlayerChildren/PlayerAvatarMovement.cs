@@ -26,7 +26,7 @@ public class PlayerAvatarMovement : MonoBehaviour
     {
         Vector2 moveInput = playerInput.actions["Move"].ReadValue<Vector2>();
         rb.AddForce(new Vector3(moveInput.x, 0, moveInput.y) * Time.deltaTime * moveSpeed);
-        if (Physics.Raycast(transform.position, -transform.up, out var hit, 0.4f))
+        if (Physics.Raycast(transform.position, -transform.up, out var hit, 0.4f) && !hit.collider.isTrigger)
         {
             grounded = true;
         }

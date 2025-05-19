@@ -62,12 +62,16 @@ public class PlayerShell : MonoBehaviour
 
     public void SpawnAvatar(Vector3 position){
         Rigidbody rb = GetComponentInChildren<Rigidbody>();
-        rb.velocity = Vector3.zero;
+        if (rb)
+            rb.velocity = Vector3.zero;
         if (GetComponentInChildren<CharacterSelection>() != null)
         {
             DestroyChildren();
 
             GameObject _PlayerAvatar = Instantiate(PlayerAvatar, position, quaternion.identity, transform);
+            Avatar avatar = _PlayerAvatar.GetComponentInChildren<Avatar>();
+            avatar.SetCharacter(characterPrefab);
+            avatar.SetHat(hatPrefab);
             //Instantiate(hat, _PlayerAvatar.transform);
         }
         else
