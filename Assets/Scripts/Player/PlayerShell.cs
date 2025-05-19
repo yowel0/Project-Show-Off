@@ -9,7 +9,9 @@ public enum ControlScheme
 {
     Menu,
     Movement,
-    NoMove
+    NoMove,
+    NoJump,
+    OnlyInteract
 };
 
 public class PlayerShell : MonoBehaviour
@@ -55,6 +57,12 @@ public class PlayerShell : MonoBehaviour
                 break;
             case ControlScheme.NoMove:
                 playerInput.SwitchCurrentActionMap("NoMove");
+                break;
+            case ControlScheme.NoJump:
+                playerInput.SwitchCurrentActionMap("NoJump");
+                break;
+            case ControlScheme.OnlyInteract:
+                playerInput.SwitchCurrentActionMap("OnlyInteract");
                 break;
         }
         ;
