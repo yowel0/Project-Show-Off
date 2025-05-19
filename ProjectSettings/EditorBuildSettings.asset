@@ -14,7 +14,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Multiplayer Test.unity
     guid: db0ac815289859847b3f2efc6d17ca8c
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/MuPl Test scene 2.unity
     guid: 76cb03eeb51aff14d80b24e8e90c4a9e
+  - enabled: 1
+    path: Assets/Scenes/CloudysColours.unity
+    guid: 5298d0c6660bf3e429dee9e1b679fcab
+  - enabled: 1
+    path: Assets/Scenes/ScaryMouseMayhem.unity
+    guid: 2a8d7eafbdce31f4cbda89de6cac7fdb
   m_configObjects: {}
