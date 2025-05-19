@@ -29,7 +29,7 @@ public class PlayerManager : MonoBehaviour
         foreach (PlayerInput playerInput in activePlayers){
             AddPlayer(playerInput);
         }
-        Debug.Log("this happens");
+
         SetControlScheme(ControlScheme);
     }
 
