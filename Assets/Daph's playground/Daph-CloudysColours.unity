@@ -3032,13 +3032,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1567036024}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.36974674, y: 0, z: 0, w: 0.9291326}
-  m_LocalPosition: {x: 0, y: 24.8, z: -33.4}
+  m_LocalRotation: {x: 0.39594626, y: 0, z: 0, w: 0.91827375}
+  m_LocalPosition: {x: 0, y: 36.36, z: -28.04}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 43.4, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 46.65, y: 0, z: 0}
 --- !u!114 &1567036028
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3484,6 +3484,89 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1738340322}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1750158390
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1592182860203871620, guid: af690559265b3fc42b54d0a7f389d7a0,
+        type: 3}
+      propertyPath: m_Name
+      value: cloudy final
+      objectReference: {fileID: 0}
+    - target: {fileID: 2113104448017045310, guid: af690559265b3fc42b54d0a7f389d7a0,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1662.7886
+      objectReference: {fileID: 0}
+    - target: {fileID: 2113104448017045310, guid: af690559265b3fc42b54d0a7f389d7a0,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1662.7886
+      objectReference: {fileID: 0}
+    - target: {fileID: 2113104448017045310, guid: af690559265b3fc42b54d0a7f389d7a0,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1662.7886
+      objectReference: {fileID: 0}
+    - target: {fileID: 2113104448017045310, guid: af690559265b3fc42b54d0a7f389d7a0,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 2113104448017045310, guid: af690559265b3fc42b54d0a7f389d7a0,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -21.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2113104448017045310, guid: af690559265b3fc42b54d0a7f389d7a0,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 35.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 2113104448017045310, guid: af690559265b3fc42b54d0a7f389d7a0,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2113104448017045310, guid: af690559265b3fc42b54d0a7f389d7a0,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2113104448017045310, guid: af690559265b3fc42b54d0a7f389d7a0,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2113104448017045310, guid: af690559265b3fc42b54d0a7f389d7a0,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2113104448017045310, guid: af690559265b3fc42b54d0a7f389d7a0,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2113104448017045310, guid: af690559265b3fc42b54d0a7f389d7a0,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 2113104448017045310, guid: af690559265b3fc42b54d0a7f389d7a0,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: af690559265b3fc42b54d0a7f389d7a0, type: 3}
 --- !u!1 &1760157437
 GameObject:
   m_ObjectHideFlags: 0
@@ -3704,6 +3787,7 @@ MonoBehaviour:
   totalTime: 150
   timer: 0
   isTimerActive: 0
+  isTimeBased: 0
   OnSetup:
     m_PersistentCalls:
       m_Calls:
@@ -4470,3 +4554,4 @@ SceneRoots:
   - {fileID: 1719109875}
   - {fileID: 1445203136}
   - {fileID: 204183384}
+  - {fileID: 1750158390}
