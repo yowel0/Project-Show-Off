@@ -8,8 +8,7 @@ public class MinigameManager : MonoBehaviour
 {
     public static MinigameManager Instance;
 
-    [Tooltip("Movement abilities for this minigame")]
-    public ControlScheme controlScheme = ControlScheme.Movement;
+    
 
     public float totalTime;
     public float timer;
@@ -101,12 +100,6 @@ public class MinigameManager : MonoBehaviour
     {
         if (Instance == null) Instance = this;
         else Destroy(gameObject);
-
-        if (PlayerManager.Instance == null)
-        {
-            PlayerManager.ControlScheme = controlScheme;
-        }
-        else PlayerManager.Instance.SetControlScheme(controlScheme);
 
         if (startImmediately)
         {

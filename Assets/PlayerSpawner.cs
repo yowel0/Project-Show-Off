@@ -5,6 +5,9 @@ using UnityEngine.InputSystem;
 
 public class PlayerSpawner : MonoBehaviour
 {
+    [Tooltip("Movement abilities for this scene")]
+    public ControlScheme controlScheme = ControlScheme.Movement;
+
     [SerializeField]
     Transform[] spawnPositions;
     // Start is called before the first frame update
@@ -27,6 +30,7 @@ public class PlayerSpawner : MonoBehaviour
         if (PlayerManager.Instance != null){
             for (int i = 0; i < PlayerManager.Instance.GetPlayerCount(); i++){
                 PlayerShell player = PlayerManager.Instance.players[i];
+                player.SwitchControlScheme(controlScheme);
                 if (spawnPositions[i] != null){
                     Vector3 spawnPosition = spawnPositions[i].position;
                     player.SpawnAvatar(spawnPosition);

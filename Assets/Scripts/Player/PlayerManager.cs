@@ -61,7 +61,8 @@ public class PlayerManager : MonoBehaviour
         ControlScheme = scheme;
         foreach (PlayerShell p in players)
         {
-            p.controlScheme = scheme;
+            //p.controlScheme = scheme;
+            p.SwitchControlScheme(scheme);
         }
     }
 }
