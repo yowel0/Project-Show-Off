@@ -23,7 +23,8 @@ public class PlayerShell : MonoBehaviour
 
     [Header("User Info")]
     public string userName;
-    public GameObject hat;
+    public GameObject hatPrefab;
+    public GameObject characterPrefab;
 
     // Start is called before the first frame update
     void Start()
