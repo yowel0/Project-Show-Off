@@ -43,7 +43,7 @@ public class Portal : MonoBehaviour
     private void CheckPopup()
     {
         // If majority of players is near
-        if (playersNear*2 > totalPlayers)
+        if (playersNear*2 > PlayerManager.Instance.GetPlayerCount())
         {
             gameInfoPopup.SetActive(true);
         }
