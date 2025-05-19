@@ -81,7 +81,7 @@ MonoBehaviour:
     type: 3}
   controlScheme: 0
   userName: 
-  skin: {fileID: 0}
+  hat: {fileID: 0}
 --- !u!1001 &7868011283265877422
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -176,7 +176,8 @@ PrefabInstance:
       value: CharacterSelection
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 7947611559939015405, guid: 9b527864687857846bea90d198e3bfaf, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9b527864687857846bea90d198e3bfaf, type: 3}
