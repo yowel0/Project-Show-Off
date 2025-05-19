@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.InputSystem;
 
 public class PlayerAvatarMovement : MonoBehaviour
@@ -18,6 +19,23 @@ public class PlayerAvatarMovement : MonoBehaviour
         playerInput = GetComponentInParent<PlayerInput>();
         playerShell = GetComponentInParent<PlayerShell>();
         rb = GetComponent<Rigidbody>();
+        int playerID = PlayerManager.Instance.GetPlayerID(GetComponentInParent<PlayerShell>());
+        Image image = GetComponentInChildren<Image>();
+        switch (playerID)
+        {
+            case 0:
+                image.color = Color.red;
+                break;
+            case 1:
+                image.color = Color.blue;
+                break;
+            case 2:
+                image.color = Color.green;
+                break;
+            case 3:
+                image.color = Color.yellow;
+                break;
+        }
     }
 
     // Update is called once per frame
