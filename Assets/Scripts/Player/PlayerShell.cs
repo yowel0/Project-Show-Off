@@ -61,6 +61,8 @@ public class PlayerShell : MonoBehaviour
     }
 
     public void SpawnAvatar(Vector3 position){
+        Rigidbody rb = GetComponentInChildren<Rigidbody>();
+        rb.velocity = Vector3.zero;
         if (GetComponentInChildren<CharacterSelection>() != null)
         {
             DestroyChildren();
