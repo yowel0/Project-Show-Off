@@ -17,7 +17,7 @@ public class PlayerAvatarMovement : MonoBehaviour
     {
         playerInput = GetComponentInParent<PlayerInput>();
         playerShell = GetComponentInParent<PlayerShell>();
-        playerShell.SwitchControlScheme(ControlScheme.Movement);
+       // playerShell.SwitchControlScheme(ControlScheme.Movement);
         rb = GetComponent<Rigidbody>();
     }
 

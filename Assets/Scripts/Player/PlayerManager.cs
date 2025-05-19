@@ -6,6 +6,8 @@ using UnityEngine.InputSystem;
 public class PlayerManager : MonoBehaviour
 {
     public static PlayerManager Instance;
+    public static ControlScheme ControlScheme;
+
     private PlayerInputManager playerInputManager;
     public List<PlayerShell> players = new List<PlayerShell>();
     public List<Transform> playerPositions = new List<Transform>();
@@ -13,7 +15,11 @@ public class PlayerManager : MonoBehaviour
     void Start()
     {
         if (Instance == null) Instance = this;
-        else Destroy(this);
+        else
+        {
+            Destroy(gameObject);
+            return;
+        }
 
         playerInputManager = GetComponent<PlayerInputManager>();
         playerInputManager.onPlayerJoined += AddPlayer;
@@ -23,6 +29,8 @@ public class PlayerManager : MonoBehaviour
         foreach (PlayerInput playerInput in activePlayers){
             AddPlayer(playerInput);
         }
+        Debug.Log("this happens");
+        SetControlScheme(ControlScheme);
     }
 
     private void OnDestroy()
@@ -46,5 +54,14 @@ public class PlayerManager : MonoBehaviour
         players.Add(player);
         if (playerPositions.Count >= players.Count)
             player.transform.position = playerPositions[players.Count - 1].position;
+    }
+
+    public void SetControlScheme(ControlScheme scheme)
+    {
+        ControlScheme = scheme;
+        foreach (PlayerShell p in players)
+        {
+            p.controlScheme = scheme;
+        }
     }
 }

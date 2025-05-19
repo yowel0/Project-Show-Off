@@ -21,11 +21,12 @@ public class PlayerSpawner : MonoBehaviour
 
     void SpawnAvatars(){
         //after spawning Avatars, no more new players allowed
-        PlayerManager playerManager = FindAnyObjectByType<PlayerManager>();
-        playerManager.GetComponent<PlayerInputManager>().joinBehavior = PlayerJoinBehavior.JoinPlayersManually;
-        if (playerManager != null){
-            for (int i = 0; i < playerManager.players.Count; i++){
-                PlayerShell player = playerManager.players[i];
+        //PlayerManager playerManager = FindAnyObjectByType<PlayerManager>();
+        //PlayerManager.Instance
+        //playerManager.GetComponent<PlayerInputManager>().joinBehavior = PlayerJoinBehavior.JoinPlayersManually;
+        if (PlayerManager.Instance != null){
+            for (int i = 0; i < PlayerManager.Instance.GetPlayerCount(); i++){
+                PlayerShell player = PlayerManager.Instance.players[i];
                 if (spawnPositions[i] != null){
                     Vector3 spawnPosition = spawnPositions[i].position;
                     player.SpawnAvatar(spawnPosition);

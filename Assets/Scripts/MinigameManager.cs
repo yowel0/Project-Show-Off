@@ -7,11 +7,17 @@ using UnityEngine.Events;
 public class MinigameManager : MonoBehaviour
 {
     public static MinigameManager Instance;
+
+    [Tooltip("Movement abilities for this minigame")]
+    public ControlScheme controlScheme = ControlScheme.Movement;
+
     public float totalTime;
     public float timer;
     public bool isTimerActive;
     [Tooltip("Does the minigame end when the time is up? (false -> time is used for when max intensity is reached")]
     public bool isTimeBased;
+    [Tooltip("Makes the minigame start immediately when loaded in")]
+    [SerializeField] bool startImmediately;
 
     public UnityEvent OnSetup;
     public UnityEvent OnStart;
@@ -95,6 +101,18 @@ public class MinigameManager : MonoBehaviour
     {
         if (Instance == null) Instance = this;
         else Destroy(gameObject);
+
+        if (PlayerManager.Instance == null)
+        {
+            PlayerManager.ControlScheme = controlScheme;
+        }
+        else PlayerManager.Instance.SetControlScheme(controlScheme);
+
+        if (startImmediately)
+        {
+            DoSetup();
+            StartInSeconds(3);
+        }
     }
     private void OnDestroy()
     {

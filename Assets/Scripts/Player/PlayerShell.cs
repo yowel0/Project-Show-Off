@@ -60,9 +60,17 @@ public class PlayerShell : MonoBehaviour
     }
 
     public void SpawnAvatar(Vector3 position){
-        DestroyChildren();
-        GameObject _PlayerAvatar = Instantiate(PlayerAvatar, position, quaternion.identity, transform);
-        Instantiate(hat, _PlayerAvatar.transform);
+        if (GetComponentInChildren<CharacterSelection>() != null)
+        {
+            DestroyChildren();
+
+            GameObject _PlayerAvatar = Instantiate(PlayerAvatar, position, quaternion.identity, transform);
+            //Instantiate(hat, _PlayerAvatar.transform);
+        }
+        else
+        {
+            TeleportAvatar(position);
+        }
     }
 
     public void TeleportAvatar(Vector3 position){
