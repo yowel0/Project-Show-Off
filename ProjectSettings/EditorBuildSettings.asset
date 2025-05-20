@@ -23,4 +23,22 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/ScaryMouseMayhem.unity
     guid: 2a8d7eafbdce31f4cbda89de6cac7fdb
+  - enabled: 1
+    path: Assets/Daph's playground/SceneTest/TestPotataParty.unity
+    guid: 461ee25a89d0a0b4ebf9a1f343319815
+  - enabled: 1
+    path: Assets/Daph's playground/SceneTest/TestMain Menu.unity
+    guid: 50a133f3d7e700c489d48d1f283d8efb
+  - enabled: 1
+    path: Assets/Daph's playground/SceneTest/TestHub.unity
+    guid: febd9e998b2acd24fb7469145782696d
+  - enabled: 1
+    path: Assets/Daph's playground/SceneTest/TestMultiplayer Test.unity
+    guid: 54ebd99a3fdb61c4a98f3f5142f11bf6
+  - enabled: 1
+    path: Assets/Daph's playground/SceneTest/TestCloudysColours.unity
+    guid: 5698b18d8cbcd3843a090be2b4e43433
+  - enabled: 1
+    path: Assets/Daph's playground/SceneTest/TestScaryMouseMayhem.unity
+    guid: 291154674f3455b44ae8246fe3c2fef4
   m_configObjects: {}
