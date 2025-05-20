@@ -6,12 +6,8 @@ using UnityEngine;
 public class CCAliveLogic : MonoBehaviour
 {
     public bool[] playerAlive;
-    //[SerializeField]
-    //TextMeshProUGUI winText;
 
     private int nrAlive;
-    //PlayerManager playerManager;
-    //MinigameManager minigameManager;
 
 
     private void OnTriggerEnter(Collider other)
@@ -22,19 +18,10 @@ public class CCAliveLogic : MonoBehaviour
         playerAlive[playerID] = false;
         nrAlive--;
 
-        /*for (int i = 0; i < PlayerManager.Instance.GetPlayerCount(); i++)
-        {
-            if (playerManager.players[i] == ps)
-            {
-                playerAlive[i] = false;
-                nrAlive--;
-            }
-        }*/
         if (nrAlive <= 1)
         {
             NewRound();
             MinigameManager.Instance.DoStop();
-            //winText.gameObject.SetActive(true);
         }
     }
 
@@ -44,7 +31,7 @@ public class CCAliveLogic : MonoBehaviour
         {
             if (playerAlive[i])
             {
-                Scores.Instance.AddScore(i+1, 1);
+                Scores.Instance.AddScore(i, 1);
             }
         }
     }
@@ -58,7 +45,7 @@ public class CCAliveLogic : MonoBehaviour
             playerAlive[i] = true;
             // MOVE PLAYERS TO START!!
             //PlayerManager.Instance.players[i].GetComponentInChildren<Rigidbody>().MovePosition(new Vector3(0, .5f, -10+2*i));
-            PlayerManager.Instance.players[i].TeleportAvatar(new Vector3(0, 2, -10 + 2 * i));
+            //PlayerManager.Instance.players[i].TeleportAvatar(new Vector3(0, 2, -10 + 2 * i));
         }
 
     }
@@ -69,8 +56,6 @@ public class CCAliveLogic : MonoBehaviour
     {
         if (Instance == null) Instance = this;
         else Destroy(gameObject);
-
-        //minigameManager = FindObjectOfType<MinigameManager>();
     }
 
     private void OnDestroy()
