@@ -259,7 +259,7 @@ Rigidbody:
   m_GameObject: {fileID: 8023365455395243295}
   serializedVersion: 4
   m_Mass: 1
-  m_Drag: 0
+  m_Drag: 2
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
@@ -289,8 +289,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f488edcedf5b4b40bddd412a4c0dadf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpForce: 300
-  moveSpeed: 1000
+  canHoldJump: 0
+  debugRayLength: 0.2
+  moveSpeed: 10000
+  injectedJumpVelocity: 11
+  shortJumpMult: 0.65
+  gravityMult: 2.2
+  maxSpeed: 7.1
 --- !u!114 &-5087776615821340549
 MonoBehaviour:
   m_ObjectHideFlags: 0
