@@ -32,7 +32,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Daph's playground/SceneTest/TestHub.unity
     guid: febd9e998b2acd24fb7469145782696d
-  - enabled: 1
+  - enabled: 0
     path: Assets/Daph's playground/SceneTest/TestMultiplayer Test.unity
     guid: 54ebd99a3fdb61c4a98f3f5142f11bf6
   - enabled: 1
@@ -41,4 +41,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Daph's playground/SceneTest/TestScaryMouseMayhem.unity
     guid: 291154674f3455b44ae8246fe3c2fef4
+  - enabled: 1
+    path: Assets/Scenes/BibiBuilding.unity
+    guid: caf6ac822ae99814188000d06695c2df
   m_configObjects: {}
