@@ -19,13 +19,13 @@ public class SMItemScoreLogic : MonoBehaviour
 
         int playerID = PlayerManager.Instance.GetPlayerID(ps);
 
-        if (itemID-1 == playerID)
+        if (itemID == playerID)
         {
-            Scores.Instance.AddScore(playerID+1, pointGain);
+            Scores.Instance.AddScore(playerID, pointGain);
         }
         else
         {
-            Scores.Instance.AddScore(playerID+1, -pointDeduction);
+            Scores.Instance.AddScore(playerID, -pointDeduction);
         }
         
         return true;

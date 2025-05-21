@@ -19,7 +19,10 @@ public class Portal : MonoBehaviour
 
     public void Interact()
     {
-        SceneManager.LoadScene(sceneName);
+        if (gameInfoPopup.activeSelf)
+        {
+            SceneManager.LoadScene(sceneName);
+        }
     }
 
     private void OnTriggerEnter(Collider other)

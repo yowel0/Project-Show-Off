@@ -258,7 +258,8 @@ public class CharacterSelection : MonoBehaviour
     }
 
     void RemoveLastChar(){
-        playerShell.userName = playerShell.userName.Remove(playerShell.userName.Length - 1);
+        if (playerShell.userName.Length > 0)
+            playerShell.userName = playerShell.userName.Remove(playerShell.userName.Length - 1);
     }
     
     void ShowCharacter(int index){
