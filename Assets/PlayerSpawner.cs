@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -31,11 +32,18 @@ public class PlayerSpawner : MonoBehaviour
             for (int i = 0; i < PlayerManager.Instance.GetPlayerCount(); i++){
                 PlayerShell player = PlayerManager.Instance.players[i];
                 player.SwitchControlScheme(controlScheme);
-                if (spawnPositions[i] != null){
+                if (spawnPositions.Length >= 4 && PlayerManager.Instance.GetPlayerCount() <= 2)
+                {
+                    Vector3 spawnPosition = spawnPositions[i+1].position;
+                    player.SpawnAvatar(spawnPosition);
+                }
+                else if (spawnPositions[i] != null)
+                {
                     Vector3 spawnPosition = spawnPositions[i].position;
                     player.SpawnAvatar(spawnPosition);
                 }
-                else{
+                else
+                {
                     player.SpawnAvatar(Vector3.zero);
                 }
             }

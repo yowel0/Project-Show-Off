@@ -58,4 +58,9 @@ public class PlayerAvatarMovement : MonoBehaviour
         }
         Debug.DrawRay(transform.position, -transform.up * 0.4f, Color.red,.1f);
     }
+
+    public bool IsGrounded()
+    {
+        return grounded;
+    }
 }

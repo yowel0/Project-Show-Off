@@ -30,10 +30,9 @@ public class Food : MonoBehaviour
     private void Update()
     {
         model.transform.Rotate(randomTorque, rotationIntensity);
-        //rb.AddTorque(randomTorque, ForceMode.VelocityChange);
+
         float percent = timer / throwTime;
         rb.MovePosition(Vector3.Lerp(startPos, endPos, percent));
-        //Vector3.Lerp(startPos, endPos, percent)
 
         if (percent > 1)
         {

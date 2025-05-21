@@ -44,4 +44,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Daph's playground/SceneTest/TestScaryMouseMayhem.unity
     guid: 291154674f3455b44ae8246fe3c2fef4
+  - enabled: 1
+    path: Assets/Scenes/BibiBuilding.unity
+    guid: caf6ac822ae99814188000d06695c2df
   m_configObjects: {}

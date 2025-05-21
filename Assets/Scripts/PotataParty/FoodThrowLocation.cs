@@ -27,8 +27,13 @@ public class FoodThrowLocation : MonoBehaviour
     {
         canThrow = false;
     }
-    private void Update()
+    
+    public void SetPlayer(int pPlayerNr)
     {
-        //Throw();
+        playerNr = pPlayerNr;
+    }
+    public void SetDestination(GameObject pFoodDestination)
+    {
+        foodDestination = pFoodDestination;
     }
 }
