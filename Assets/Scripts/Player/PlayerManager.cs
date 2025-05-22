@@ -48,7 +48,7 @@ public class PlayerManager : MonoBehaviour
     }
 
     void AddPlayer(PlayerInput playerInput){
-        print("hi");
+        print("Player joined");
         DontDestroyOnLoad(playerInput.gameObject);
         PlayerShell player = playerInput.GetComponent<PlayerShell>();
         players.Add(player);
@@ -61,7 +61,6 @@ public class PlayerManager : MonoBehaviour
         ControlScheme = scheme;
         foreach (PlayerShell p in players)
         {
-            //p.controlScheme = scheme;
             p.SwitchControlScheme(scheme);
         }
     }

@@ -4,12 +4,15 @@ using UnityEngine;
 
 public class Food : MonoBehaviour
 {
+    [Tooltip("Food model, change to array later")]
+    [SerializeField] GameObject model;
+
     [Tooltip("How fast the food is spinning")]
     [SerializeField] float rotationIntensity;
     [Tooltip("Time in seconds it takes food to travel")]
     [SerializeField] float throwTime;
 
-    public int playerId;
+    [SerializeField] int playerId;
 
     private float timer;
     private Rigidbody rb;
@@ -17,7 +20,6 @@ public class Food : MonoBehaviour
     private Vector3 endPos;
 
     Vector3 randomTorque;
-    public GameObject model;
     // Start is called before the first frame update
     void Start()
     {

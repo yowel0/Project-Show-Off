@@ -10,10 +10,11 @@ public class PlayerAvatarMovement : MonoBehaviour
     [Tooltip("Is the player able to hold the jump button to jump as soon as they hit the ground?")]
     [SerializeField] bool canHoldJump;
 
-    [Range(0f, 1f)]
+    [Range(0f, 1f)] 
+    [Tooltip("How far away from the ground can the player jump?")]
     [SerializeField] float debugRayLength;
 
-    public float moveSpeed = 10;
+    [SerializeField] float moveForce = 10;
 
     [Range(0f, 20f)]
     [Tooltip("Starting y velocity when jumping")]
@@ -28,19 +29,17 @@ public class PlayerAvatarMovement : MonoBehaviour
     [SerializeField] float gravityMult;
 
     [Range(0f, 100f)]
-    [Tooltip("How much g to add to the current gravity (0 = normal, -1 = no gravity, 1 = double gravity")]
+    [Tooltip("What is the horizontal speed limit for the player?")]
     [SerializeField] float maxSpeed;
 
     private float extraRaycastLength = 0.121f;
     private PlayerInput playerInput;
-    private PlayerShell playerShell;
     private Rigidbody rb;
     private bool grounded;
     // Start is called before the first frame update
     void Start()
     {
         playerInput = GetComponentInParent<PlayerInput>();
-        playerShell = GetComponentInParent<PlayerShell>();
         rb = GetComponent<Rigidbody>();
         int playerID = PlayerManager.Instance.GetPlayerID(GetComponentInParent<PlayerShell>());
         Image image = GetComponentInChildren<Image>();
@@ -66,7 +65,7 @@ public class PlayerAvatarMovement : MonoBehaviour
     void Update()
     {
         Vector2 moveInput = playerInput.actions["Move"].ReadValue<Vector2>();
-        rb.AddForce(new Vector3(moveInput.x, 0, moveInput.y) * Time.deltaTime * moveSpeed);
+        rb.AddForce(new Vector3(moveInput.x, 0, moveInput.y) * Time.deltaTime * moveForce);
 
         CheckGrounded();
 
