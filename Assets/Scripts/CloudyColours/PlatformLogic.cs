@@ -5,21 +5,34 @@ using UnityEngine.Events;
 
 public class PlatformLogic : MonoBehaviour
 {
+    [Header("Variable settings per round")]
+
     [Tooltip("Scriptable object holding an array. Element = round, value = time in seconds")]
     [SerializeField] CCRoundTime timeDecreaseRounds;
     [Tooltip("Scriptable object holding an array. Element = nr of falling platforms + 1, value = what round this applies to")]
     [SerializeField] CCPlatformFallCount fallCount;
 
-    public UnityEvent OnNewRound;
 
-    public int round;
+    [Header("Consistent settings per round")]
 
-    [SerializeField] SinglePlatform[] platforms;
     [Tooltip("How long a platform will disappear for")]
     [SerializeField] float platformDisappearTime;
     [Tooltip("Time between platform returning and next one blinking")]
     [SerializeField] float restTime;
+    [Tooltip("Number of times a blink switches state. \nEven = disappear after no blink (White -> Colour -> Gone) \nUneven = disappear after a blink (Colour -> White -> Gone")]
+    [Range(1, 20)] [SerializeField] int blinkStateChangeAmount;
+
+
+    [Header("Misc")]
+
+    [Tooltip("Triggers when a round has been completed")]
+    public UnityEvent OnNewRound;
+    [Tooltip("Reference to the falling platforms in the scene")]
+    [SerializeField] SinglePlatform[] platforms;
+    [Tooltip("The blink")]
     [SerializeField] GameObject WhiteSection;
+    [SerializeField] int round;
+
 
     bool isPlaying;
 
@@ -39,68 +52,81 @@ public class PlatformLogic : MonoBehaviour
     public void StartRound()
     {
         if (!isPlaying) return;
-        OnNewRound?.Invoke();
         StartCoroutine(BlinkPlatformFor(timeDecreaseRounds.GetTime(round)));
         round++;
     }
-    IEnumerator BlinkPlatformFor(float seconds)
+    IEnumerator BlinkPlatformFor(float pSeconds)
     {
+        // Determining values
         int count = fallCount.GetFallCount(round);
-
-        int[] selectedPlatforms = new int[count];
-        selectedPlatforms = GetRandomPlatforms(count);
-
-        GameObject[] blinkingPlatforms = new GameObject[count];
-
-        for (int i = 0; i < count; i++)
-        {
-            blinkingPlatforms[i] = Instantiate(WhiteSection, transform);
-            blinkingPlatforms[i].transform.Rotate(new Vector3(0, selectedPlatforms[i] * 60, 0));
-            blinkingPlatforms[i].transform.Translate(new Vector3(0, .1f, 0), Space.World);
-        }
-
+        int[] selectedPlatforms = GetRandomPlatforms(count);
+        GameObject[] blinkingPlatforms = CreateBlinkPlatforms(count, selectedPlatforms);
+        float blinkStateDuration = pSeconds / blinkStateChangeAmount;
 
         // Blinking
-        for (float i = seconds; i > 0.01; i -= seconds / 4f)
+        for (float i = pSeconds; i > 0.01; i -= blinkStateDuration)
         {
-            foreach (GameObject g in blinkingPlatforms) g.SetActive(true);
-            yield return new WaitForSeconds(seconds / 9);
-            foreach (GameObject g in blinkingPlatforms) g.SetActive(false);
-            yield return new WaitForSeconds(seconds / 9);
+            SwitchBlinkState(blinkingPlatforms);
+            yield return new WaitForSeconds(blinkStateDuration);
         }
-        foreach (GameObject g in blinkingPlatforms) g.SetActive(true);
-        yield return new WaitForSeconds(seconds / 9);
 
         // Platform gone
-        foreach (GameObject g in blinkingPlatforms) Destroy(g);
-        for (int i = 0; i < count;i++)
-        {
-            platforms[selectedPlatforms[i]].Disappear(platformDisappearTime);
-        }
+        MakePlatformsDisappear(selectedPlatforms, blinkingPlatforms);
 
         // Time until next platform starts blinking
         yield return new WaitForSeconds(platformDisappearTime + restTime);
+        OnNewRound?.Invoke();
         StartRound();
 
     }
 
 
+    private void MakePlatformsDisappear(int[] pSelectedPlatforms, GameObject[] pBlinkingPlatforms)
+    {
+        foreach (GameObject g in pBlinkingPlatforms) Destroy(g);
+        for (int i = 0; i < pSelectedPlatforms.Length; i++)
+        {
+            platforms[pSelectedPlatforms[i]].Disappear(platformDisappearTime);
+        }
+    }
 
-    private int[] GetRandomPlatforms(int count)
+    private void SwitchBlinkState(GameObject[] pBlinkPlatforms)
+    {
+        foreach (GameObject g in pBlinkPlatforms)
+        {
+            g.SetActive(!g.activeSelf);
+        }
+    }
+
+    private GameObject[] CreateBlinkPlatforms(int pCount, int[] pSelectedPlatforms)
+    {
+        GameObject[] blinkingPlatforms = new GameObject[pCount];
+
+        for (int i = 0; i < pCount; i++)
+        {
+            blinkingPlatforms[i] = Instantiate(WhiteSection, transform);
+            blinkingPlatforms[i].transform.Rotate(new Vector3(0, pSelectedPlatforms[i] * 60, 0));
+            blinkingPlatforms[i].transform.Translate(new Vector3(0, .1f, 0), Space.World);
+
+            blinkingPlatforms[i].SetActive(false);
+        }
+
+        return blinkingPlatforms;
+    }
+
+    private int[] GetRandomPlatforms(int pCount)
     {
         List<int> allPlatforms = new List<int>();
         for (int i = 0; i < platforms.Length; i++) allPlatforms.Add(i);
 
-        int[] selectedPlatforms = new int[count];
-        for (int i = 0; i < count; i++)
+        int[] selectedPlatforms = new int[pCount];
+        for (int i = 0; i < pCount; i++)
         {
             int selPlatform = Random.Range(0, allPlatforms.Count);
 
             selectedPlatforms[i] = allPlatforms[selPlatform];
             allPlatforms.RemoveAt(selPlatform);
-
         }
-
 
         return selectedPlatforms;
     }

@@ -23,24 +23,8 @@ public class BBPlatformsManager : MonoBehaviour
         for (int i = offset; i < pCount + offset; i++)
         {
             platforms[i].SetPlayer(i - offset);
-            //platforms[i].SetDestination(foodDestination);
         }
     }
 
-    /*
-    public void StartGame()
-    {
-        for (int i = 0; i < platforms.Length; i++)
-        {
-            //locations[i].EnableThrow();
-        }
-    }
 
-    public void StopGame()
-    {
-        for (int i = 0; i < platforms.Length; i++)
-        {
-            //locations[i].DisableThrow();
-        }
-    }*/
 }

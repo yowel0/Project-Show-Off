@@ -4,26 +4,20 @@ using UnityEngine;
 
 public class BBPlatform : MonoBehaviour
 {
-
+    [Header("Set by code")]
     [Tooltip("What player this platform belongs to (0 = player 1, 1 = player 2, etc.)")]
     [SerializeField] int playerNr;
 
     [SerializeField] PlayerAvatarMovement pam;
 
-    [SerializeField] bool playerIsAlive;
     [SerializeField] bool hasJumpedOverFire;
 
 
     private void DoAliveCheck()
     {
-        if (pam != null)
+        if (pam != null && pam.IsGrounded())
         {
-            if (pam.IsGrounded())
-            {
-                AliveManager.Instance.KillPlayer(playerNr);
-                // PLAYER DIES
-                playerIsAlive = false;
-            }
+            AliveManager.Instance.KillPlayer(playerNr);
         }
     }
 
@@ -34,22 +28,17 @@ public class BBPlatform : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         DoAliveCheck();
-        if (playerIsAlive)
-        {
-            // Enable point gain for jumping over fire
-            hasJumpedOverFire = true;
-        }
+        hasJumpedOverFire = true;
     }
 
     private void Update()
     {
-        if (playerIsAlive && hasJumpedOverFire && pam != null)
+        if (hasJumpedOverFire && pam != null)
         {
             if (pam.IsGrounded())
             {
                 // Give point, disable point gain for jumping over fire
                 AliveManager.Instance.GivePoint(playerNr);
-                //Scores.Instance.AddScore(playerNr, 1);
                 hasJumpedOverFire = false;
             }
         }
@@ -57,7 +46,6 @@ public class BBPlatform : MonoBehaviour
 
     public void SetPlayer(int pPlayerNr)
     {
-        playerIsAlive = true;
         playerNr = pPlayerNr;
         hasJumpedOverFire = false;
 

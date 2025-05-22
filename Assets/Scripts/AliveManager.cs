@@ -12,21 +12,21 @@ public class AliveManager : MonoBehaviour
     private int nrAlive;
 
 
-    public void KillPlayer(int pPlayer)
+    public void KillPlayer(int pPlayer, bool pCheckAlive = true)
     {
         if (playerAlive[pPlayer])
         {
             nrAlive--;
             playerAlive[pPlayer] = false;
-            CheckAlive();
+            if (pCheckAlive) CheckAlive();
         }
     }
-    public void KillPlayer(PlayerShell pPlayer)
+    public void KillPlayer(PlayerShell pPlayer, bool pCheckAlive = true)
     {
-        KillPlayer(PlayerManager.Instance.GetPlayerID(pPlayer));
+        KillPlayer(PlayerManager.Instance.GetPlayerID(pPlayer), pCheckAlive);
     }
 
-    private void CheckAlive()
+    public void CheckAlive()
     {
         if (noSurvivors)
         {
@@ -34,7 +34,11 @@ public class AliveManager : MonoBehaviour
         }
         else
         {
-            if (nrAlive <= 1) MinigameManager.Instance.DoStop();
+            if (nrAlive <= 1)
+            {
+                //GiveEveryonePoint(); // Making sure there's no tie
+                MinigameManager.Instance.DoStop();
+            }
         }
     }
 
@@ -43,6 +47,14 @@ public class AliveManager : MonoBehaviour
         if (playerAlive[pPlayer])
         {
             Scores.Instance.AddScore(pPlayer, 1);
+        }
+    }
+
+    public void GiveEveryonePoint()
+    {
+        for (int i = 0; i < playerAlive.Length; i++)
+        {
+            GivePoint(i);
         }
     }
 
