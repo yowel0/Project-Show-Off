@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class Portal : MonoBehaviour
 {
+    [SerializeField] SoundObject enterMinigameSFX;
+
     [Tooltip("Name of the scene for the minigame this portal leads to")]
     [SerializeField] string sceneName;
 
@@ -18,6 +20,7 @@ public class Portal : MonoBehaviour
     {
         if (gameInfoPopup.activeSelf)
         {
+            MusicManager.Instance.PlaySound(enterMinigameSFX);
             SceneManager.LoadScene(sceneName);
         }
     }
