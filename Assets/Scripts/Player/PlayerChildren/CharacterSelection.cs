@@ -6,16 +6,17 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class CharacterSelection : MonoBehaviour
 {
-    public enum component{
+    public enum Component{
         Name,
         Hat,
-        Character,
+        //Character,
         Ready
     }
-    public component editingComponent;
+    public Component editingComponent;
     private PlayerShell playerShell;
     private Avatar avatar;
     private PlayerInput playerInput;
@@ -25,7 +26,7 @@ public class CharacterSelection : MonoBehaviour
     public int selectedHat = 0;
     //private GameObject activeHat;
     public List<GameObject> characters;
-    public int selectedCharacter = 0;
+    //public int selectedCharacter = 0;
     //private GameObject activeCharacter;
 
     [Header("UI")]
@@ -38,9 +39,14 @@ public class CharacterSelection : MonoBehaviour
     [SerializeField]
     private GameObject[] StateUI;
 
+    [Header("Keyboard")]
+    [SerializeField]
+    private Button firstSelected;
+    private Button currentSelected;
+
     private const string kNamingHelpTextFormat = "Press {Accept} to Add a Letter\n Press {Cancel} to Remove a Letter\n Press {Confirm} to Confirm Your Name";
     private const string kHatHelpTextFormat = "Press {Confirm} to Confirm Hat\n Press {Cancel} to Go Back";
-    private const string kCharacterHelpTextFormat = "Press {Confirm} to Ready Up\n Press {Cancel} to Go Back";
+    //private const string kCharacterHelpTextFormat = "Press {Confirm} to Ready Up\n Press {Cancel} to Go Back";
     private const string kReadyHelpTextFormat = "Press {Cancel} to Unready";
 
     // Start is called before the first frame update
@@ -50,8 +56,26 @@ public class CharacterSelection : MonoBehaviour
         avatar = GetComponentInChildren<Avatar>();
         playerShell = GetComponentInParent<PlayerShell>();
         playerShell.SwitchControlScheme(ControlScheme.Menu);
-        ShowCharacter(selectedCharacter);
+        //selected character based on player ID
+        ShowCharacter(PlayerManager.Instance.GetPlayerID(playerShell));
         ShowHat(selectedHat);
+        SelectButton(firstSelected);
+    }
+
+    void SelectButton(Button button) {
+        //visually deselect
+        if (currentSelected)
+        {
+            ColorBlock _colorblock = currentSelected.colors;
+            _colorblock.normalColor = Color.white;
+            currentSelected.colors = _colorblock;
+        }
+        //visually select
+        ColorBlock colorblock = button.colors;
+        colorblock.normalColor = Color.green;
+        button.colors = colorblock;
+        //select
+        currentSelected = button;
     }
 
     // Update is called once per frame
@@ -59,17 +83,17 @@ public class CharacterSelection : MonoBehaviour
     {
         vectorInput.Update(playerInput.actions["Move"].ReadValue<Vector2>());
         switch (editingComponent){
-            case component.Name:
+            case Component.Name:
                 EditName();
                 UpdateNameUI();
                 break;
-            case component.Hat:
+            case Component.Hat:
                 EditHat();
                 break;
-            case component.Character:
-                EditCharacter();
-                break;
-            case component.Ready:
+            // case Component.Character:
+            //     EditCharacter();
+            //     break;
+            case Component.Ready:
                 ReadyUpdate();
                 break;
         }
@@ -77,7 +101,9 @@ public class CharacterSelection : MonoBehaviour
     }
 
     //State Updates
-    void EditName(){
+    void EditName()
+    {
+        /*
         char lastChar = 'a';
         if (playerShell.userName.Length > 0){
             lastChar = playerShell.userName[playerShell.userName.Length - 1];
@@ -110,13 +136,38 @@ public class CharacterSelection : MonoBehaviour
         //playerShell.userName += lastChar;
 
         if (playerInput.actions["Accept"].triggered){
-            AddLastChar();
+            AddNewChar();
         }
         if (playerInput.actions["Cancel"].triggered){
             RemoveLastChar();
         }
         if (playerInput.actions["Confirm"].triggered){
-            editingComponent = component.Hat;
+            SetEditingComponent(Component.Hat);
+        }
+        */
+        if (vectorInput.north.pressed)
+        {
+            if (currentSelected.navigation.selectOnUp)
+                SelectButton(currentSelected.navigation.selectOnUp as Button);
+        }
+        if (vectorInput.east.pressed)
+        {
+            if (currentSelected.navigation.selectOnRight)
+                SelectButton(currentSelected.navigation.selectOnRight as Button);
+        }
+        if (vectorInput.south.pressed)
+        {
+            if (currentSelected.navigation.selectOnDown)
+                SelectButton(currentSelected.navigation.selectOnDown as Button);
+        }
+        if (vectorInput.west.pressed)
+        {
+            if (currentSelected.navigation.selectOnLeft)
+                SelectButton(currentSelected.navigation.selectOnLeft as Button);
+        }
+        if (playerInput.actions["Accept"].triggered)
+        {
+            currentSelected.onClick.Invoke();
         }
     }
 
@@ -138,14 +189,14 @@ public class CharacterSelection : MonoBehaviour
 
         if (playerInput.actions["Confirm"].triggered){
             playerShell.hatPrefab = hats[selectedHat];
-            editingComponent = component.Character;
+            SetEditingComponent(Component.Ready);
         }
         if (playerInput.actions["Cancel"].triggered){
-            editingComponent = component.Name;
+            SetEditingComponent(Component.Name);
         }
     }
 
-    void EditCharacter(){
+    /*void EditCharacter(){
         if (vectorInput.east.pressed){
             selectedCharacter++;
             if (selectedCharacter >= characters.Count){
@@ -163,16 +214,16 @@ public class CharacterSelection : MonoBehaviour
 
         if (playerInput.actions["Confirm"].triggered){
             playerShell.characterPrefab = characters[selectedCharacter];
-            editingComponent = component.Ready;
+            SetEditingComponent(Component.Ready);
         }
         if (playerInput.actions["Cancel"].triggered){
-            editingComponent = component.Hat;
+            SetEditingComponent(Component.Hat);
         }
-    }
+    }*/
 
     void ReadyUpdate(){
         if (playerInput.actions["Cancel"].triggered){
-            editingComponent = component.Character;
+            SetEditingComponent(Component.Hat);
         }
         //spawn after you're ready
         // if (playerInput.actions["Confirm"].triggered){
@@ -190,7 +241,7 @@ public class CharacterSelection : MonoBehaviour
 
     void UpdateStateUI(){
         switch(editingComponent){
-            case component.Name:
+            case Component.Name:
                 stateText.text = "Changing Name";
                 controlText.text = ReplaceControlText(kNamingHelpTextFormat);
                 for (int i = 0; i < StateUI.Count(); i++)
@@ -203,7 +254,7 @@ public class CharacterSelection : MonoBehaviour
                         StateUI[i].SetActive(false);
                 }
                 break;
-            case component.Hat:
+            case Component.Hat:
                 stateText.text = "Selecting Hat";
                 controlText.text = ReplaceControlText(kHatHelpTextFormat);
                 for (int i = 0; i < StateUI.Count(); i++)
@@ -216,18 +267,18 @@ public class CharacterSelection : MonoBehaviour
                         StateUI[i].SetActive(false);
                 }
                 break;
-            case component.Character:
-                stateText.text = "Selecting Character";
-                controlText.text = ReplaceControlText(kCharacterHelpTextFormat);
-                for (int i = 0; i < StateUI.Count(); i++){
-                    if (i == 2){
-                        StateUI[i].SetActive(true);
-                    }
-                    else
-                        StateUI[i].SetActive(false);
-                }
-                break;
-            case component.Ready:
+            // case Component.Character:
+            //     stateText.text = "Selecting Character";
+            //     controlText.text = ReplaceControlText(kCharacterHelpTextFormat);
+            //     for (int i = 0; i < StateUI.Count(); i++){
+            //         if (i == 2){
+            //             StateUI[i].SetActive(true);
+            //         }
+            //         else
+            //             StateUI[i].SetActive(false);
+            //     }
+            //     break;
+            case Component.Ready:
                 stateText.text = "Ready";
                 controlText.text = ReplaceControlText(kHatHelpTextFormat);
                 for (int i = 0; i < StateUI.Count(); i++)
@@ -246,6 +297,32 @@ public class CharacterSelection : MonoBehaviour
                     .Replace("{Cancel}", playerInput.actions["Cancel"].GetBindingDisplayString());
     }
 
+    public void SetEditingComponent(string componentName)
+    {
+        componentName = componentName.ToLower();
+        switch (componentName)
+        {
+            case "name":
+                SetEditingComponent(Component.Name);
+                break;
+            case "hat":
+                SetEditingComponent(Component.Hat);
+                break;
+            // case "character":
+            //     SetEditingComponent(Component.Character);
+            //     break;
+            case "ready":
+                SetEditingComponent(Component.Ready);
+                break;
+            
+        }
+    }
+
+    void SetEditingComponent(Component component)
+    {
+        editingComponent = component;
+    }
+
     void ReplaceLastChar(char _char){
         if (playerShell.userName.Length > 0){
             RemoveLastChar();
@@ -253,11 +330,11 @@ public class CharacterSelection : MonoBehaviour
         playerShell.userName += _char;
     }
 
-    void AddLastChar(char _char = 'a'){
+    public void AddNewChar(string _char = "a"){
         playerShell.userName += _char;
     }
 
-    void RemoveLastChar(){
+    public void RemoveLastChar(){
         if (playerShell.userName.Length > 0)
             playerShell.userName = playerShell.userName.Remove(playerShell.userName.Length - 1);
     }

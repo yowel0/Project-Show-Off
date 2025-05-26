@@ -7,7 +7,7 @@ using TMPro;
 public class LeaderboardManager : MonoBehaviour
 {
     [SerializeField]
-    string fileName = "leaderboards";
+    static string fileName = "leaderboards";
     [SerializeField]
     TMP_InputField leaderboardInput;
     [SerializeField]
@@ -15,14 +15,14 @@ public class LeaderboardManager : MonoBehaviour
     [SerializeField]
     TMP_InputField scoreInput;
 
-    public List<Leaderboard> leaderboards = new List<Leaderboard>();
+    public static List<Leaderboard> leaderboards = new List<Leaderboard>();
     // Start is called before the first frame update
     void Start()
     {
         leaderboards = FileHandler.ReadFromJSON<Leaderboard>(fileName);
     }
 
-    public void Submit(string leaderboardName, string userName, int score)
+    public static void Submit(string leaderboardName, string userName, int score)
     {
         Leaderboard leaderboard = GetLeaderboard(leaderboardName);
         leaderboard.entries.Add(new LeaderboardEntry(userName, score));
@@ -50,7 +50,7 @@ public class LeaderboardManager : MonoBehaviour
         }
     }
 
-    public Leaderboard GetLeaderboard(string leaderboardName)
+    public static Leaderboard GetLeaderboard(string leaderboardName)
     {
         leaderboardName = leaderboardName.ToLower();
         foreach (var leaderboard in leaderboards)

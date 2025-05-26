@@ -19,7 +19,7 @@ public class CharacterSelectionManager : MonoBehaviour
     {
         int readyPlayers = 0;
         foreach(var player in playerManager.players){
-            if (player.GetComponentInChildren<CharacterSelection>().editingComponent == CharacterSelection.component.Ready){
+            if (player.GetComponentInChildren<CharacterSelection>().editingComponent == CharacterSelection.Component.Ready){
                 readyPlayers++;
             }
         }

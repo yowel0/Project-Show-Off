@@ -8,8 +8,6 @@ public class LeaderboardView : MonoBehaviour
     public string leaderboardName;
     public Transform entryContainer;
     [SerializeField]
-    LeaderboardManager leaderboardManager;
-    [SerializeField]
     EntryView entryViewPrefab;
     [SerializeField]
     int maxEntries = 9;
@@ -37,7 +35,7 @@ public class LeaderboardView : MonoBehaviour
             Destroy(entryContainer.GetChild(i).gameObject);
         }
         print("test");
-        Leaderboard leaderboard = leaderboardManager.GetLeaderboard(leaderboardName);
+        Leaderboard leaderboard = LeaderboardManager.GetLeaderboard(leaderboardName);
         for (int i = 0; i < maxEntries; i++)
         {
             print("test " + i + leaderboard.name);
