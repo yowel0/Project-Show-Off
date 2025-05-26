@@ -31,13 +31,11 @@ public class FallingItem : MonoBehaviour
 
         float percent = timer / fallTime;
         transform.position = Vector3.Lerp(startPos, floorPos, percent);
-        // rb.MovePosition(Vector3.Lerp(startPos, endPos, percent));
 
         if (percent > 1)
         {
             SMItemScoreLogic.Instance.ItemOnGround(playerID);
             Destroy(gameObject);
-            // SMItemScoreLogic.FellOnGround(playerID);
         }
 
         timer += Time.fixedDeltaTime;

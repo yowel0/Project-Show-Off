@@ -8,10 +8,8 @@ public class InteractionScript : MonoBehaviour
     private Interactable interactable;
     private PlayerInput playerInput;
 
-    // Start is called before the first frame update
     void Start()
     {
-        // CHANGE TO GetComponentInParent ONCE PLAYER HIERARCHY IS GOOD my goat
         playerInput = GetComponentInParent<PlayerInput>();
     }
 

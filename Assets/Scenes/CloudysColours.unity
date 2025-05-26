@@ -1614,6 +1614,52 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &756218431
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 756218433}
+  - component: {fileID: 756218432}
+  m_Layer: 0
+  m_Name: AliveManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &756218432
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 756218431}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61a389754a2dd9f4f9a3d4226699d2e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  noSurvivors: 0
+  playerAlive: 00000000
+--- !u!4 &756218433
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 756218431}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &759028634
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2689,7 +2735,7 @@ GameObject:
   - component: {fileID: 1445203133}
   - component: {fileID: 1445203132}
   m_Layer: 0
-  m_Name: AliveLogic
+  m_Name: DeathZone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2707,7 +2753,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db7cbd70f3faef34ea992a165a21b820, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerAlive: 00000000
 --- !u!65 &1445203133
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2788,7 +2833,7 @@ Transform:
   m_GameObject: {fileID: 1445203131}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -10, z: 0}
+  m_LocalPosition: {x: 0, y: -3.81, z: 0}
   m_LocalScale: {x: 100, y: 1, z: 100}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3142,12 +3187,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeDecreaseRounds: {fileID: 11400000, guid: ce38876dcb607714f84bb7fd695d565a, type: 2}
   fallCount: {fileID: 11400000, guid: 1aa641420ce9c034d87bd60e86a7a192, type: 2}
+  platformDisappearTime: 1
+  restTime: 1
+  blinkStateChangeAmount: 9
   OnNewRound:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1445203132}
-        m_TargetAssemblyTypeName: CCAliveLogic, Assembly-CSharp
-        m_MethodName: NewRound
+      - m_Target: {fileID: 756218432}
+        m_TargetAssemblyTypeName: AliveManager, Assembly-CSharp
+        m_MethodName: GiveEveryonePoint
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3157,7 +3205,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  round: 0
+      - m_Target: {fileID: 756218432}
+        m_TargetAssemblyTypeName: AliveManager, Assembly-CSharp
+        m_MethodName: CheckAlive
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   platforms:
   - {fileID: 6141687296093892945}
   - {fileID: 1591279658}
@@ -3165,10 +3224,9 @@ MonoBehaviour:
   - {fileID: 440119136}
   - {fileID: 952361766}
   - {fileID: 2081711263}
-  platformDisappearTime: 1
-  restTime: 1
   WhiteSection: {fileID: 8406391666765580334, guid: d19307290b8e58542b59f7acfbf51ce8,
     type: 3}
+  round: 0
 --- !u!4 &1719109875
 Transform:
   m_ObjectHideFlags: 0
@@ -3435,8 +3493,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1445203132}
-        m_TargetAssemblyTypeName: CCAliveLogic, Assembly-CSharp
+      - m_Target: {fileID: 756218432}
+        m_TargetAssemblyTypeName: AliveManager, Assembly-CSharp
         m_MethodName: NewGame
         m_Mode: 1
         m_Arguments:
@@ -4210,3 +4268,4 @@ SceneRoots:
   - {fileID: 1445203136}
   - {fileID: 553410859}
   - {fileID: 467131974}
+  - {fileID: 756218433}

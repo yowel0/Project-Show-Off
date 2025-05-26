@@ -131,22 +131,6 @@ public class SMItemDropper : MonoBehaviour
         }
     }
 
-    /*IEnumerator StartCycle()
-    {
-        Vector3 newPos = GetNextPosition();
-        
-        // Moving to place
-        yield return new WaitForSeconds(prepareTime);
-
-        DropItem();
-
-        yield return new WaitForSeconds(cooldownTime);
-
-        // Repeat
-
-    }*/
-
-
     void DropItem()
     {
         int itemID = GetRandomItem();

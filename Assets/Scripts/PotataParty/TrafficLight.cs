@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class TrafficLight : MonoBehaviour
 {
@@ -13,6 +14,11 @@ public class TrafficLight : MonoBehaviour
     [SerializeField] float greenTimeMin;
     [Tooltip("Maximum time Potata will keep their mouth open")]
     [SerializeField] float greenTimeMax;
+
+    [Header("Events for the animation")]
+    public UnityEvent OnRed;
+    public UnityEvent OnOrange;
+    public UnityEvent OnGreen;
 
     [Header("Debug traffic light indicators")]
     [SerializeField] GameObject redLight;
@@ -79,9 +85,15 @@ public class TrafficLight : MonoBehaviour
 
         switch (light)
         {
-            case 0: redLight.SetActive(true); break;
-            case 1: orangeLight.SetActive(true); break;
-            default: greenLight.SetActive(true); break;
+            case 0: redLight.SetActive(true);
+                OnRed?.Invoke();
+                break;
+            case 1: orangeLight.SetActive(true); 
+                OnOrange?.Invoke();
+                break;
+            default: greenLight.SetActive(true); 
+                OnGreen?.Invoke();
+                break;
         }
     }
 

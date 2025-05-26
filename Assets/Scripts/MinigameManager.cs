@@ -8,13 +8,12 @@ public class MinigameManager : MonoBehaviour
 {
     public static MinigameManager Instance;
 
-    
+    [SerializeField] float totalTime;
+    [SerializeField] float timer;
+    [SerializeField] bool isTimerActive;
 
-    public float totalTime;
-    public float timer;
-    public bool isTimerActive;
     [Tooltip("Does the minigame end when the time is up? (false -> time is used for when max intensity is reached")]
-    public bool isTimeBased;
+    [SerializeField] bool isTimeBased;
     [Tooltip("Makes the minigame start immediately when loaded in")]
     [SerializeField] bool startImmediately;
 
@@ -56,7 +55,6 @@ public class MinigameManager : MonoBehaviour
             yield return new WaitForSeconds(1);
         }
         countdownText.gameObject.SetActive(false);
-        //yield return new WaitForSeconds(pSeconds);
         DoStart();
     }
 

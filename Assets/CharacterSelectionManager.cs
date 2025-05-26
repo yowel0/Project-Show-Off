@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 public class CharacterSelectionManager : MonoBehaviour
 {
     private PlayerManager playerManager;
+    [SerializeField]
+    private string nextSceneName;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,7 +24,7 @@ public class CharacterSelectionManager : MonoBehaviour
             }
         }
         if (readyPlayers == playerManager.players.Count && readyPlayers > 0){
-            SceneManager.LoadScene("SampleScene");
+            SceneManager.LoadScene(nextSceneName);
         }
     }
 }

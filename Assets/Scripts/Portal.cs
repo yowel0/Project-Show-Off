@@ -11,10 +11,7 @@ public class Portal : MonoBehaviour
     [Tooltip("This is the popup that shows where the portal leads to")]
     [SerializeField] GameObject gameInfoPopup;
 
-    // REPLACE THIS WITH PLAYERMANAGER PLAYERS TOTAL
-    public int totalPlayers = 1;
-
-    [SerializeField] private int playersNear = 0;
+    [SerializeField] int playersNear = 0;
 
 
     public void Interact()

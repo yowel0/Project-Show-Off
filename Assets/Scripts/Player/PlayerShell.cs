@@ -36,12 +36,6 @@ public class PlayerShell : MonoBehaviour
         SwitchControlScheme(controlScheme);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void SwitchControlScheme(ControlScheme newControlScheme){
         controlScheme = newControlScheme;
         if (playerInput == null){
