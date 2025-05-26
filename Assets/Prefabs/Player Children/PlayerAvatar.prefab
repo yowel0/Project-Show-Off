@@ -289,9 +289,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f488edcedf5b4b40bddd412a4c0dadf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  jumpSound: {fileID: 11400000, guid: e3b0d0dfeb11fee4d85ef7f2015ef2d6, type: 2}
   canHoldJump: 0
   debugRayLength: 0.2
-  moveSpeed: 10000
+  moveForce: 6000
   injectedJumpVelocity: 11
   shortJumpMult: 0.65
   gravityMult: 2.2

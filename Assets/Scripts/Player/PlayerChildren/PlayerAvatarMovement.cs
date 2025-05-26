@@ -6,6 +6,8 @@ using UnityEngine.InputSystem;
 
 public class PlayerAvatarMovement : MonoBehaviour
 {
+    [Tooltip("Jumping sound")]
+    [SerializeField] SoundObject jumpSound;
 
     [Tooltip("Is the player able to hold the jump button to jump as soon as they hit the ground?")]
     [SerializeField] bool canHoldJump;
@@ -14,7 +16,7 @@ public class PlayerAvatarMovement : MonoBehaviour
     [Tooltip("How far away from the ground can the player jump?")]
     [SerializeField] float debugRayLength;
 
-    [SerializeField] float moveForce = 10;
+    [SerializeField] float moveForce = 6000;
 
     [Range(0f, 20f)]
     [Tooltip("Starting y velocity when jumping")]
@@ -91,13 +93,19 @@ public class PlayerAvatarMovement : MonoBehaviour
         if (maxHorVel.magnitude > maxSpeed) maxHorVel = maxHorVel.normalized * maxSpeed;
 
         // Jumping
-        maxHorVel.y = isJumping && grounded ? injectedJumpVelocity : rb.velocity.y;
+        maxHorVel.y = isJumping && grounded ? Jump() : rb.velocity.y;
         if (jump.WasReleasedThisFrame() && rb.velocity.y > 0)
         {
             maxHorVel.y = rb.velocity.y * shortJumpMult;
         }
 
         return maxHorVel;
+    }
+
+    private float Jump()
+    {
+        MusicManager.Instance.PlaySound(jumpSound);
+        return injectedJumpVelocity;
     }
 
     private void CheckGrounded()
