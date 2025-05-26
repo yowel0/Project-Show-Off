@@ -1,18 +1,26 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Security.Cryptography;
+using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 
-public class Leaderboard : MonoBehaviour
+[Serializable]
+public class Leaderboard
 {
-    // Start is called before the first frame update
-    void Start()
+    public string name = "leaderboard";
+
+    public List<LeaderboardEntry> entries = new List<LeaderboardEntry>();
+
+    public Leaderboard(string name)
     {
-        
+        this.name = name;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void SortEntries()
     {
-        
+        entries.Sort();
+        Debug.Log("sorting leaderboard: " + name);
     }
 }
