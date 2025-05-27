@@ -17,7 +17,7 @@ Material:
   m_LightmapFlags: 2
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
+  m_CustomRenderQueue: 3010
   stringTagMap: {}
   disabledShaderPasses: []
   m_LockedProperties: 
@@ -42,17 +42,17 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _FresnelPower: 1
+    - _FresnelPower: 1.25
     - _Metallic: 0
     - _Normal: 0
     - _QueueControl: 0
-    - _QueueOffset: 0
-    - _RefractionAmount: 0
+    - _QueueOffset: 10
+    - _RefractionAmount: -0.14
     - _Smoothness: 0
     m_Colors:
-    - _Colour: {r: 0.6396227, g: 0.83270335, b: 1, a: 1}
+    - _Colour: {r: 0.51529366, g: 0.66416407, b: 0.79622644, a: 1}
     - _FrenselColor: {r: 0.2104306, g: 0.68854284, b: 0.96981126, a: 0}
-    - _IceTiling: {r: 1, g: 1, b: 0, a: 0}
+    - _IceTiling: {r: 1.88, g: 2.35, b: 0, a: 0}
   m_BuildTextureStacks: []
 --- !u!114 &7654295025753576575
 MonoBehaviour:
