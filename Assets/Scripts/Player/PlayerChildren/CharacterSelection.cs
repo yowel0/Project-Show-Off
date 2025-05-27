@@ -338,12 +338,15 @@ public class CharacterSelection : MonoBehaviour
         if (playerShell.userName.Length > 0)
             playerShell.userName = playerShell.userName.Remove(playerShell.userName.Length - 1);
     }
-    
-    void ShowCharacter(int index){
+
+    void ShowCharacter(int index)
+    {
         avatar.SetCharacter(characters[index]);
+        playerShell.characterPrefab = characters[index];
     }
 
-    void ShowHat(int index){
+    void ShowHat(int index) {
         avatar.SetHat(hats[index]);
+        playerShell.hatPrefab = hats[index];
     }
 }
