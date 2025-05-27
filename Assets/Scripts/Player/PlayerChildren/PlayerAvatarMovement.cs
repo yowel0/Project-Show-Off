@@ -34,6 +34,9 @@ public class PlayerAvatarMovement : MonoBehaviour
     [Tooltip("How much g to add to the current gravity (0 = normal, -1 = no gravity, 1 = double gravity")]
     [SerializeField] float gravityMult;
 
+    [Tooltip("How fast the pillow launches the player upon contact")]
+    [SerializeField] float pillowBounce;
+
 
     [Header("Jump QOL")]
     [Tooltip("Jumping sound")]
@@ -166,10 +169,18 @@ public class PlayerAvatarMovement : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        Debug.Log(collision.gameObject.tag);
+        //Debug.Log(collision.gameObject.tag);
         if (collision.gameObject.CompareTag("Player"))
         {
             timeSinceBounce = 0;
+        }
+        if (collision.gameObject.CompareTag("Pillow"))
+        {
+            timeSinceBounce = 0;
+            Vector3 pillowUp = collision.transform.up * pillowBounce;
+            Debug.Log(pillowUp);
+            rb.velocity += pillowUp;
+            //rb.velocity = new Vector3(rb.velocity.x, pillowBounce, rb.velocity.z);
         }
     }
 }

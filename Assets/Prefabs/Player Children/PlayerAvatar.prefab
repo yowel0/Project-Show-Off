@@ -328,6 +328,7 @@ MonoBehaviour:
   injectedJumpVelocity: 52
   shortJumpMult: 0.45
   gravityMult: 10.9
+  pillowBounce: 90
   jumpSound: {fileID: 11400000, guid: e3b0d0dfeb11fee4d85ef7f2015ef2d6, type: 2}
   canHoldJump: 0
   debugRayLength: 0.2
