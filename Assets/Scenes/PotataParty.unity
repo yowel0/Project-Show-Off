@@ -152,8 +152,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   totalTime: 30
-  timer: 0
-  isTimerActive: 0
+  extendedTime: 2
   isTimeBased: 1
   startImmediately: 1
   OnSetup:
@@ -222,7 +221,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  OnStop:
+  OnPrepareStop:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 2291967155490813055}
@@ -249,6 +248,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  OnStop:
+    m_PersistentCalls:
+      m_Calls:
       - m_Target: {fileID: 534017893}
         m_TargetAssemblyTypeName: DebugBadDelayedBackToHub, Assembly-CSharp
         m_MethodName: SwitchInSeconds
@@ -275,6 +277,8 @@ MonoBehaviour:
         m_CallState: 2
   timeText: {fileID: 243003544}
   countdownText: {fileID: 879320562}
+  timer: 0
+  isTimerActive: 0
 --- !u!4 &49552154
 Transform:
   m_ObjectHideFlags: 0
@@ -659,6 +663,15 @@ MonoBehaviour:
   orangeTime: 2
   greenTimeMin: 5
   greenTimeMax: 10
+  OnRed:
+    m_PersistentCalls:
+      m_Calls: []
+  OnOrange:
+    m_PersistentCalls:
+      m_Calls: []
+  OnGreen:
+    m_PersistentCalls:
+      m_Calls: []
   redLight: {fileID: 1130639928}
   orangeLight: {fileID: 2089296079}
   greenLight: {fileID: 1128019526}

@@ -2114,8 +2114,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   totalTime: 60
-  timer: 0
-  isTimerActive: 0
+  extendedTime: 6
   isTimeBased: 1
   startImmediately: 1
   OnSetup:
@@ -2172,7 +2171,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  OnStop:
+  OnPrepareStop:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 2067648998}
@@ -2187,6 +2186,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  OnStop:
+    m_PersistentCalls:
+      m_Calls:
       - m_Target: {fileID: 1671992094}
         m_TargetAssemblyTypeName: DebugBadDelayedBackToHub, Assembly-CSharp
         m_MethodName: SwitchInSeconds
@@ -2213,6 +2215,8 @@ MonoBehaviour:
         m_CallState: 2
   timeText: {fileID: 713742214}
   countdownText: {fileID: 332383634}
+  timer: 0
+  isTimerActive: 0
 --- !u!4 &1891324720
 Transform:
   m_ObjectHideFlags: 0

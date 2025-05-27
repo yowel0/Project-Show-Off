@@ -17,5 +17,5 @@ MonoBehaviour:
     loudness: 1
   soundType: 1
   bgmSceneName:
-  - ScaryMouseMayhem
+  - SampleScene
   currentSound: 0
