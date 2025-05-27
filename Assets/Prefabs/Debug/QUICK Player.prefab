@@ -103,6 +103,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -1637989085330755854, guid: 17c2c12a739a6b5499ac0ce949b611b1,
         type: 3}
+      propertyPath: moveForce
+      value: 6000
+      objectReference: {fileID: 0}
+    - target: {fileID: -1637989085330755854, guid: 17c2c12a739a6b5499ac0ce949b611b1,
+        type: 3}
       propertyPath: useInjectedJumpVel
       value: 1
       objectReference: {fileID: 0}

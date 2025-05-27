@@ -8,21 +8,35 @@ public class MinigameManager : MonoBehaviour
 {
     public static MinigameManager Instance;
 
+    [Header("Pre game settings")]
+    [Tooltip("Duration of the minigame (seconds)")]
     [SerializeField] float totalTime;
-    [SerializeField] float timer;
-    [SerializeField] bool isTimerActive;
+
+    [Tooltip("When the (time based) minigame ends, delay finalizing scores by this many seconds to make all points count")]
+    [SerializeField] float extendedTime;
 
     [Tooltip("Does the minigame end when the time is up? (false -> time is used for when max intensity is reached")]
     [SerializeField] bool isTimeBased;
     [Tooltip("Makes the minigame start immediately when loaded in")]
     [SerializeField] bool startImmediately;
 
+    [Header("Events")]
+    [Tooltip("Things that should happen before the game starts")]
     public UnityEvent OnSetup;
+    [Tooltip("Things that should happen to start the game")]
     public UnityEvent OnStart;
+    [Tooltip("Disable everything that generates new points (Used for time based minigames)")]
+    public UnityEvent OnPrepareStop;
+    [Tooltip("Stopping all logic")]
     public UnityEvent OnStop;
 
+    [Header("UI references")]
     [SerializeField] TextMeshProUGUI timeText;
     [SerializeField] TextMeshProUGUI countdownText;
+
+    [Header("Debug")]
+    [SerializeField] float timer;
+    [SerializeField] bool isTimerActive;
 
     private void FixedUpdate()
     {
@@ -32,7 +46,7 @@ public class MinigameManager : MonoBehaviour
             UpdateTimer();
             if (timer < 0)
             {
-                if (isTimeBased) DoStop();
+                if (isTimeBased) DoPrepareStop();
                 timer = 0;
                 isTimerActive = false;
             }
@@ -79,6 +93,12 @@ public class MinigameManager : MonoBehaviour
     public void DoStart()
     {
         OnStart?.Invoke();
+    }
+
+    public void DoPrepareStop()
+    {
+        OnPrepareStop?.Invoke();
+        Invoke(nameof(DoStop), extendedTime);
     }
 
     public void DoStop()

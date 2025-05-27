@@ -338,7 +338,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: d7299f48ed8eb0b42891493491a880a1, type: 2}
+      objectReference: {fileID: 2100000, guid: cdb2273257292eb4b8b279b2b1147544, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -481,7 +481,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 6d0eeb764a262164bb0b29876bdaf019, type: 2}
+      objectReference: {fileID: 2100000, guid: 517921f2940ad73439f7c39f7d09b4fb, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1622,6 +1622,52 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 759028634}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &768812280
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 768812282}
+  - component: {fileID: 768812281}
+  m_Layer: 0
+  m_Name: alivemanager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &768812281
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 768812280}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61a389754a2dd9f4f9a3d4226699d2e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  noSurvivors: 0
+  playerAlive: 00000000
+--- !u!4 &768812282
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 768812280}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -24.908321, y: -13.693258, z: 37.01384}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &843868751
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1996,7 +2042,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 2803ae455b1079b4cb324d26d0b022da, type: 2}
+      objectReference: {fileID: 2100000, guid: 36c5e6faa955fe143adc9a737fc42b6b, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2959,7 +3005,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db7cbd70f3faef34ea992a165a21b820, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerAlive: 00000000
 --- !u!65 &1445203133
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3501,7 +3546,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: c66e23ebb3d8a3348ae2c3f4765e3b94, type: 2}
+      objectReference: {fileID: 2100000, guid: ca7a94c138119f1449b80b69f72f2a45, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3630,12 +3675,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeDecreaseRounds: {fileID: 11400000, guid: ce38876dcb607714f84bb7fd695d565a, type: 2}
   fallCount: {fileID: 11400000, guid: 1aa641420ce9c034d87bd60e86a7a192, type: 2}
+  platformDisappearTime: 1
+  restTime: 1
+  blinkStateChangeAmount: 9
   OnNewRound:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1445203132}
-        m_TargetAssemblyTypeName: CCAliveLogic, Assembly-CSharp
-        m_MethodName: NewRound
+      - m_Target: {fileID: 768812281}
+        m_TargetAssemblyTypeName: AliveManager, Assembly-CSharp
+        m_MethodName: GiveEveryonePoint
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3645,7 +3693,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  round: 0
+      - m_Target: {fileID: 768812281}
+        m_TargetAssemblyTypeName: AliveManager, Assembly-CSharp
+        m_MethodName: CheckAlive
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   platforms:
   - {fileID: 6141687296093892945}
   - {fileID: 1591279658}
@@ -3653,10 +3712,9 @@ MonoBehaviour:
   - {fileID: 440119136}
   - {fileID: 952361766}
   - {fileID: 2081711263}
-  platformDisappearTime: 1
-  restTime: 1
   WhiteSection: {fileID: 8406391666765580334, guid: d19307290b8e58542b59f7acfbf51ce8,
     type: 3}
+  round: 0
 --- !u!4 &1719109875
 Transform:
   m_ObjectHideFlags: 0
@@ -4560,7 +4618,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: c985aab742475d34e849a21044e4e1ab, type: 2}
+      objectReference: {fileID: 2100000, guid: 7405cb93647b31646bae38ca75d5a10f, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4733,7 +4791,7 @@ PrefabInstance:
     - target: {fileID: 6787987406123081660, guid: 4b545bc8bb8e664429bbeffcfdee1857,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.21
+      value: -0.55
       objectReference: {fileID: 0}
     - target: {fileID: 6787987406123081660, guid: 4b545bc8bb8e664429bbeffcfdee1857,
         type: 3}
@@ -4775,6 +4833,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7210468395397869258, guid: 4b545bc8bb8e664429bbeffcfdee1857,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: eff6c7cb1b69363428978eb1f0aaac8a, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4788,14 +4851,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 0}
-      propertyPath: m_Radius
-      value: 0.028429778
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_Offset.y
-      value: -0.011496638
-      objectReference: {fileID: 0}
     - target: {fileID: 6009947842516855023, guid: bf27fd813a74d734a8553fc41f2f9b7d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4939,7 +4994,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 8f389acf80826eb4fad7fbdccb04d7db, type: 2}
+      objectReference: {fileID: 2100000, guid: aa439edddce28e545bb27faaf8c8ef49, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5062,3 +5117,4 @@ SceneRoots:
   - {fileID: 1382211263}
   - {fileID: 6066067454693948751}
   - {fileID: 2668392884897159668}
+  - {fileID: 768812282}
