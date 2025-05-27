@@ -6,6 +6,36 @@ using UnityEngine.InputSystem;
 
 public class PlayerAvatarMovement : MonoBehaviour
 {
+
+    [Header("Moving")]
+    [SerializeField] float moveForce = 6000;
+
+    [Range(0f, 100f)]
+    [Tooltip("What is the horizontal speed limit for the player?")]
+    [SerializeField] float maxSpeed;
+
+    [Tooltip("This graph represents how much drag and move force the player has after bouncing")]
+    [SerializeField] AnimationCurve dragAfterBounce;
+
+    [Tooltip("How long does the drag loss after a bounce take? \n Directly involved with curve above")]
+    [SerializeField] float dragLossDuration;
+
+
+    [Header("Jump values")]
+    [Range(0f, 75f)]
+    [Tooltip("Starting y velocity when jumping")]
+    [SerializeField] float injectedJumpVelocity;
+
+    [Range(0f, 1f)]
+    [Tooltip("How much the players velocity is reduced once you let go of the jump button")]
+    [SerializeField] float shortJumpMult;
+
+    [Range(-1f, 20f)]
+    [Tooltip("How much g to add to the current gravity (0 = normal, -1 = no gravity, 1 = double gravity")]
+    [SerializeField] float gravityMult;
+
+
+    [Header("Jump QOL")]
     [Tooltip("Jumping sound")]
     [SerializeField] SoundObject jumpSound;
 
@@ -16,25 +46,11 @@ public class PlayerAvatarMovement : MonoBehaviour
     [Tooltip("How far away from the ground can the player jump?")]
     [SerializeField] float debugRayLength;
 
-    [SerializeField] float moveForce = 6000;
-
-    [Range(0f, 20f)]
-    [Tooltip("Starting y velocity when jumping")]
-    [SerializeField] float injectedJumpVelocity;
-
-    [Range(0f, 1f)]
-    [Tooltip("How much the players velocity is reduced once you let go of the jump button")]
-    [SerializeField] float shortJumpMult;
-
-    [Range(-1f, 3f)]
-    [Tooltip("How much g to add to the current gravity (0 = normal, -1 = no gravity, 1 = double gravity")]
-    [SerializeField] float gravityMult;
-
-    [Range(0f, 100f)]
-    [Tooltip("What is the horizontal speed limit for the player?")]
-    [SerializeField] float maxSpeed;
 
     private float extraRaycastLength = 0.121f;
+    private float originalDrag;
+    private float originalMoveForce;
+    private float timeSinceBounce;
     private PlayerInput playerInput;
     private Rigidbody rb;
     private bool grounded;
@@ -43,6 +59,10 @@ public class PlayerAvatarMovement : MonoBehaviour
     {
         playerInput = GetComponentInParent<PlayerInput>();
         rb = GetComponent<Rigidbody>();
+        originalDrag = rb.drag;
+        originalMoveForce = moveForce;
+        timeSinceBounce = dragLossDuration;
+
         int playerID = PlayerManager.Instance.GetPlayerID(GetComponentInParent<PlayerShell>());
         Image image = GetComponentInChildren<Image>();
         switch (playerID)
@@ -79,6 +99,12 @@ public class PlayerAvatarMovement : MonoBehaviour
         // Add additional gravity
         Vector3 gravity = Physics.gravity * rb.mass;
         rb.AddForce(gravity * gravityMult);
+        if (!grounded)
+        {
+            Debug.Log(rb.velocity.y);
+        }
+
+        CheckBouncePhysics();
     }
 
     private Vector3 LimitVelocityAndJump()
@@ -100,6 +126,18 @@ public class PlayerAvatarMovement : MonoBehaviour
         }
 
         return maxHorVel;
+    }
+
+    private void CheckBouncePhysics()
+    {
+
+        if (timeSinceBounce < dragLossDuration)
+        {
+            timeSinceBounce += Time.fixedDeltaTime;
+            float percent = Mathf.Min(timeSinceBounce / dragLossDuration, 1);
+            rb.drag = dragAfterBounce.Evaluate(percent) * originalDrag;
+            moveForce = dragAfterBounce.Evaluate(percent) * originalMoveForce;
+        }
     }
 
     private float Jump()
@@ -124,5 +162,14 @@ public class PlayerAvatarMovement : MonoBehaviour
     public bool IsGrounded()
     {
         return grounded;
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        Debug.Log(collision.gameObject.tag);
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            timeSinceBounce = 0;
+        }
     }
 }
