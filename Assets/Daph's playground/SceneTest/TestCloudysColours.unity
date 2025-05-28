@@ -3677,7 +3677,7 @@ MonoBehaviour:
   fallCount: {fileID: 11400000, guid: 1aa641420ce9c034d87bd60e86a7a192, type: 2}
   platformDisappearTime: 1
   restTime: 1
-  blinkStateChangeAmount: 9
+  blinkStateChangeAmount: 1
   OnNewRound:
     m_PersistentCalls:
       m_Calls:
@@ -4171,8 +4171,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   totalTime: 150
-  timer: 0
-  isTimerActive: 0
+  extendedTime: 0
   isTimeBased: 0
   startImmediately: 1
   OnSetup:
@@ -4229,6 +4228,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  OnPrepareStop:
+    m_PersistentCalls:
+      m_Calls: []
   OnStop:
     m_PersistentCalls:
       m_Calls:
@@ -4282,6 +4284,8 @@ MonoBehaviour:
         m_CallState: 2
   timeText: {fileID: 713742214}
   countdownText: {fileID: 332383634}
+  timer: 0
+  isTimerActive: 0
 --- !u!4 &1891324720
 Transform:
   m_ObjectHideFlags: 0

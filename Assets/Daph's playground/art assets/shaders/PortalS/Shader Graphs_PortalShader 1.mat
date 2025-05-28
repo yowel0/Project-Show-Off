@@ -42,12 +42,12 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _DissovleAmount: 4.51
+    - _DissovleAmount: 4.5
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _SwirlStrength: 15
-    - _scale: 2.5
-    - _speed: 0.5
+    - _SwirlStrength: -5
+    - _scale: 5.7
+    - _speed: 0.25
     m_Colors:
     - _Color: {r: 0, g: 809.13385, b: 973.8662, a: 0}
   m_BuildTextureStacks: []

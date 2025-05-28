@@ -46,7 +46,7 @@ Material:
     - _dissolveTime: 1.04
     - _glowWidth: 0
     m_Colors:
-    - _colour: {r: 0.7490197, g: 0, b: 0, a: 0}
+    - _colour: {r: 1, g: 1, b: 1, a: 1}
     - _dissolveGlowColor: {r: 1, g: 0.03285011, b: 0, a: 0}
   m_BuildTextureStacks: []
 --- !u!114 &3809136007217901060
