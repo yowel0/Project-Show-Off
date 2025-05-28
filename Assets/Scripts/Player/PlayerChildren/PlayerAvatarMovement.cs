@@ -107,10 +107,6 @@ public class PlayerAvatarMovement : MonoBehaviour
         // Add additional gravity
         Vector3 gravity = Physics.gravity * rb.mass;
         rb.AddForce(gravity * gravityMult);
-        if (!grounded)
-        {
-            Debug.Log(rb.velocity.y);
-        }
 
         CheckBouncePhysics();
     }
@@ -143,7 +139,16 @@ public class PlayerAvatarMovement : MonoBehaviour
         {
             timeSinceBounce += Time.fixedDeltaTime;
             float percent = Mathf.Min(timeSinceBounce / dragLossDuration, 1);
-            rb.drag = dragAfterBounce.Evaluate(percent) * originalDrag;
+
+            if (grounded)
+            {
+                rb.drag = dragAfterBounce.Evaluate(percent) * originalDrag;
+            }
+            else
+            {
+                rb.drag = originalDrag;
+            }
+
             moveForce = dragAfterBounce.Evaluate(percent) * originalMoveForce;
         }
     }
