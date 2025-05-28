@@ -151,9 +151,10 @@ public class PlayerAvatarMovement : MonoBehaviour
     private float Jump()
     {
         OnJump?.Invoke();
-        print("jump");
         if (MusicManager.Instance)
+        {
             MusicManager.Instance.PlaySound(jumpSound);
+        }
         return injectedJumpVelocity;
     }
 
