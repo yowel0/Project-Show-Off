@@ -6,6 +6,7 @@ public class Food : MonoBehaviour
 {
     [Tooltip("Food model, change to array later")]
     [SerializeField] GameObject model;
+    [SerializeField] GameObject[] foodModels;
 
     [Tooltip("How fast the food is spinning")]
     [SerializeField] float rotationIntensity;
@@ -26,7 +27,9 @@ public class Food : MonoBehaviour
         startPos = transform.position;
         endPos = new Vector3(0, 4, 10);
         rb = GetComponent<Rigidbody>();
-        randomTorque = new Vector3(Random.value, Random.value, Random.value).normalized;
+        randomTorque = new Vector3(Random.value-.5f, Random.value-.5f, Random.value-.5f).normalized;
+
+        model = Instantiate(foodModels[Random.Range(0, foodModels.Length)], transform);
     }
 
     private void Update()

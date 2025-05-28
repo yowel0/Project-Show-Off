@@ -18,7 +18,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5117146704722932516
 Transform:
   m_ObjectHideFlags: 0
@@ -151,10 +151,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18adacf5e0f51e84799df0d0155c7999, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationIntensity: 2
+  model: {fileID: 0}
+  foodModels:
+  - {fileID: 3699704522125740964, guid: e9fef0d89a60dde428cdf237dc2bd814, type: 3}
+  - {fileID: 3699704522125740964, guid: f544d22c09d719b418331d5b0827af92, type: 3}
+  - {fileID: 3699704522125740964, guid: 3dd8d9166b3192440a1cf67e508e5aad, type: 3}
+  rotationIntensity: 10
   throwTime: 1.5
   playerId: 0
-  model: {fileID: 5168795203194020530}
 --- !u!54 &5585353491580871238
 Rigidbody:
   m_ObjectHideFlags: 0
