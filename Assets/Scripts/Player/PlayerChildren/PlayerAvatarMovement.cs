@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.InputSystem;
+using System;
+using UnityEngine.Events;
 
 public class PlayerAvatarMovement : MonoBehaviour
 {
@@ -56,7 +58,10 @@ public class PlayerAvatarMovement : MonoBehaviour
     private float timeSinceBounce;
     private PlayerInput playerInput;
     private Rigidbody rb;
-    private bool grounded;
+    //public for animation
+    public bool grounded;
+    //On Jump event for animation
+    public UnityEvent OnJump = new UnityEvent();
     // Start is called before the first frame update
     void Start()
     {
@@ -145,7 +150,10 @@ public class PlayerAvatarMovement : MonoBehaviour
 
     private float Jump()
     {
-        MusicManager.Instance.PlaySound(jumpSound);
+        OnJump?.Invoke();
+        print("jump");
+        if (MusicManager.Instance)
+            MusicManager.Instance.PlaySound(jumpSound);
         return injectedJumpVelocity;
     }
 
