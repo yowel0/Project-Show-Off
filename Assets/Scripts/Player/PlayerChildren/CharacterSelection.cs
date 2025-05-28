@@ -44,10 +44,14 @@ public class CharacterSelection : MonoBehaviour
     private Button firstSelected;
     private Button currentSelected;
 
-    private const string kNamingHelpTextFormat = "Press {Accept} to Add a Letter\n Press {Cancel} to Remove a Letter\n Press {Confirm} to Confirm Your Name";
-    private const string kHatHelpTextFormat = "Press {Confirm} to Confirm Hat\n Press {Cancel} to Go Back";
+    [Header("TextFormats")]
+    [SerializeField]
+    private string kNamingHelpTextFormat = "Press {Accept} to Add a Letter\n Press {Cancel} to Remove a Letter\n Press {Confirm} to Confirm Your Name";
+    [SerializeField]
+    private string kHatHelpTextFormat = "Press {Confirm} to Confirm Hat\n Press {Cancel} to Go Back";
     //private const string kCharacterHelpTextFormat = "Press {Confirm} to Ready Up\n Press {Cancel} to Go Back";
-    private const string kReadyHelpTextFormat = "Press {Cancel} to Unready";
+    [SerializeField]
+    private string kReadyHelpTextFormat = "Press {Cancel} to Unready";
 
     // Start is called before the first frame update
     void Start()
@@ -187,7 +191,7 @@ public class CharacterSelection : MonoBehaviour
             ShowHat(selectedHat);
         }
 
-        if (playerInput.actions["Confirm"].triggered){
+        if (playerInput.actions["Accept"].triggered){
             playerShell.hatPrefab = hats[selectedHat];
             SetEditingComponent(Component.Ready);
         }
@@ -280,7 +284,7 @@ public class CharacterSelection : MonoBehaviour
             //     break;
             case Component.Ready:
                 stateText.text = "Ready";
-                controlText.text = ReplaceControlText(kHatHelpTextFormat);
+                controlText.text = ReplaceControlText(kReadyHelpTextFormat);
                 for (int i = 0; i < StateUI.Count(); i++)
                 {
                     StateUI[i].SetActive(false);
