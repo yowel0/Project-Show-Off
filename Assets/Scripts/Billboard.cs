@@ -16,6 +16,7 @@ public class Billboard : MonoBehaviour
     {
         if (cam == null)
             cam = Camera.main;
-        transform.forward = cam.transform.forward;
+        if (cam != null)
+            transform.forward = cam.transform.forward;
     }
 }
