@@ -23,7 +23,7 @@ public class PodiumPlace : MonoBehaviour
             rb.MovePosition(transform.position + Vector3.up * speed);
             amountRaised += speed;
 
-            if (amountRaised >= (5-placement) * .5f)
+            if (amountRaised >= (4-placement) * .5f)
             {
                 isRaising = false;
             }
@@ -31,7 +31,11 @@ public class PodiumPlace : MonoBehaviour
     }
 
 
-
+    public void SetPosition(Transform newPos)
+    {
+        if (rb == null) rb = GetComponent<Rigidbody>();
+        rb.MovePosition(newPos.position);
+    }
 
     public void Raise()
     {

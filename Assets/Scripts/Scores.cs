@@ -78,11 +78,18 @@ public class Scores : MonoBehaviour
         return winner;
     }
 
+
+    public int[] GetScores()
+    {
+        return scores;
+    }
+
+
     // Singleton
     void Start()
     {
         if (Instance == null) Instance = this;
-        else Destroy(this);
+        else Destroy(gameObject);
 
     }
 
