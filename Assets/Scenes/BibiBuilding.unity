@@ -1115,7 +1115,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 134349f79447dc746b84bea1af4f4239, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hubName: SampleScene
+  hubName: Podium
 --- !u!4 &518558516
 Transform:
   m_ObjectHideFlags: 0
@@ -2348,6 +2348,91 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1317891868}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1001 &1323095073
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2040567963986147370, guid: 5a6b376ac99039843878632dc11e5ce8,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2040567963986147370, guid: 5a6b376ac99039843878632dc11e5ce8,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2040567963986147370, guid: 5a6b376ac99039843878632dc11e5ce8,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2040567963986147370, guid: 5a6b376ac99039843878632dc11e5ce8,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2040567963986147370, guid: 5a6b376ac99039843878632dc11e5ce8,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2040567963986147370, guid: 5a6b376ac99039843878632dc11e5ce8,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2040567963986147370, guid: 5a6b376ac99039843878632dc11e5ce8,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2040567963986147370, guid: 5a6b376ac99039843878632dc11e5ce8,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2040567963986147370, guid: 5a6b376ac99039843878632dc11e5ce8,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2040567963986147370, guid: 5a6b376ac99039843878632dc11e5ce8,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2437488545002569802, guid: 5a6b376ac99039843878632dc11e5ce8,
+        type: 3}
+      propertyPath: minigameName
+      value: Bibi
+      objectReference: {fileID: 0}
+    - target: {fileID: 4390025629008250556, guid: 5a6b376ac99039843878632dc11e5ce8,
+        type: 3}
+      propertyPath: m_Name
+      value: ScoreTransfer
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 5a6b376ac99039843878632dc11e5ce8, type: 3}
+--- !u!114 &1323095074 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2437488545002569802, guid: 5a6b376ac99039843878632dc11e5ce8,
+    type: 3}
+  m_PrefabInstance: {fileID: 1323095073}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: adbc7c5bf5c001c48838cde00a5283e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1452345856 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6922263339566573480, guid: 0233dd3d67709fe44b167293b58bdd65,
@@ -3086,8 +3171,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   totalTime: 150
-  timer: 0
-  isTimerActive: 0
+  extendedTime: 0
   isTimeBased: 0
   startImmediately: 1
   OnSetup:
@@ -3156,6 +3240,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  OnPrepareStop:
+    m_PersistentCalls:
+      m_Calls: []
   OnStop:
     m_PersistentCalls:
       m_Calls:
@@ -3195,8 +3282,22 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1323095074}
+        m_TargetAssemblyTypeName: ScoreTransfer, Assembly-CSharp
+        m_MethodName: StoreValues
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 5
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   timeText: {fileID: 713742214}
   countdownText: {fileID: 332383634}
+  timer: 0
+  isTimerActive: 0
 --- !u!4 &1891324720
 Transform:
   m_ObjectHideFlags: 0
@@ -3310,3 +3411,4 @@ SceneRoots:
   - {fileID: 518558516}
   - {fileID: 249751700}
   - {fileID: 1677963002}
+  - {fileID: 1323095073}

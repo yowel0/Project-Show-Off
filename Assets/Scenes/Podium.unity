@@ -128,6 +128,51 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1734562975}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &169071544
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 169071546}
+  - component: {fileID: 169071545}
+  m_Layer: 0
+  m_Name: DebugBadBackToHub
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &169071545
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 169071544}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 134349f79447dc746b84bea1af4f4239, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hubName: SampleScene
+--- !u!4 &169071546
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 169071544}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &297609672
 GameObject:
   m_ObjectHideFlags: 0
@@ -613,6 +658,10 @@ MonoBehaviour:
   - {fileID: 1853688220}
   - {fileID: 1928726526}
   - {fileID: 1902917382}
+  minigameName: 
+  placeholder: 03000000010000000300000032000000
+  playerCount: 0
+  overridePlayerCount: 4
 --- !u!1 &902233033
 GameObject:
   m_ObjectHideFlags: 0
@@ -781,6 +830,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 169071545}
+        m_TargetAssemblyTypeName: DebugBadDelayedBackToHub, Assembly-CSharp
+        m_MethodName: SwitchInSeconds
+        m_Mode: 4
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 10
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!4 &1001189958
 Transform:
   m_ObjectHideFlags: 0
@@ -912,53 +973,6 @@ MonoBehaviour:
   - {fileID: 1739769547}
   - {fileID: 1444145606}
   - {fileID: 378094908}
---- !u!1 &1363581411
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1363581413}
-  - component: {fileID: 1363581412}
-  m_Layer: 0
-  m_Name: Scores
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!114 &1363581412
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1363581411}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7f67cd31fb6b65d4791004e5f8677938, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  winnerText: {fileID: 0}
-  scoreElements: []
-  scores: 
---- !u!4 &1363581413
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1363581411}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1444145606 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4924364631952609952, guid: d1dee6d32d4f1ca41b8bff360694174f,
@@ -1037,7 +1051,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: d7299f48ed8eb0b42891493491a880a1, type: 2}
+      objectReference: {fileID: 2100000, guid: c66e23ebb3d8a3348ae2c3f4765e3b94, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1234,6 +1248,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.y
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2465943306014819001, guid: d1dee6d32d4f1ca41b8bff360694174f,
+        type: 3}
+      propertyPath: controlScheme
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4924364631952609952, guid: d1dee6d32d4f1ca41b8bff360694174f,
         type: 3}
@@ -1434,7 +1453,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: c66e23ebb3d8a3348ae2c3f4765e3b94, type: 2}
+      objectReference: {fileID: 2100000, guid: d7299f48ed8eb0b42891493491a880a1, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1494,7 +1513,7 @@ MonoBehaviour:
   OnSetup:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1363581412}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: Scores, Assembly-CSharp
         m_MethodName: ResetScores
         m_Mode: 1
@@ -1666,7 +1685,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 8f389acf80826eb4fad7fbdccb04d7db, type: 2}
+      objectReference: {fileID: 2100000, guid: 6d0eeb764a262164bb0b29876bdaf019, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1783,10 +1802,10 @@ SceneRoots:
   - {fileID: 297609674}
   - {fileID: 725384898}
   - {fileID: 902233034}
-  - {fileID: 1363581413}
   - {fileID: 755787025}
   - {fileID: 1001189958}
   - {fileID: 1199864848}
   - {fileID: 1891324720}
   - {fileID: 1734562975}
   - {fileID: 815483046}
+  - {fileID: 169071546}
