@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class SplitscreenManager : MonoBehaviour
 {
@@ -18,6 +19,16 @@ public class SplitscreenManager : MonoBehaviour
             Destroy(this);
         }
         Enable();
+        if (PlayerManager.Instance != null)
+        {
+            PlayerInputManager playerInputManager = PlayerManager.Instance.GetComponent<PlayerInputManager>();
+            playerInputManager.onPlayerJoined += PlayerJoins;
+            print("playerjoins event added");
+        }
+        else
+        {
+            print("PLAYER MANAGER NOT FOUND");
+        }
     }
 
     // Update is called once per frame
@@ -30,10 +41,28 @@ public class SplitscreenManager : MonoBehaviour
     {
         if (!PlayerManager.Instance)
             return;
-        List<PlayerShell> players = PlayerManager.Instance.players;
         //disable main camera
         Camera.main.enabled = false;
         //enable player cameras
+        SetCamViewAllPlayers();
+    }
+
+    void Disable()
+    {
+        //enable main camera
+        Camera.main.enabled = true;
+        //disable player cameras
+        DisableCamAllPlayers();
+    }
+
+    void PlayerJoins(PlayerInput playerInput)
+    {
+        print("playerjoins");
+        SetCamViewAllPlayers();
+    }
+
+    void SetCamViewAllPlayers() {
+        List<PlayerShell> players = PlayerManager.Instance.players;
         for (int i = 0; i < players.Count; i++) {
             PlayerShell player = players[i];
             Camera playerCam = player.GetComponentInChildren<Camera>();
@@ -42,9 +71,14 @@ public class SplitscreenManager : MonoBehaviour
         }
     }
 
-    void Disable()
+    void DisableCamAllPlayers()
     {
-
+        List<PlayerShell> players = PlayerManager.Instance.players;
+        foreach (PlayerShell player in players)
+        {
+            Camera playerCam = player.GetComponentInChildren<Camera>();
+            playerCam.enabled = false;
+        }
     }
 
     void SetCamViewpointRect(Camera camera, int playerIndex, int playerCount)
@@ -62,10 +96,14 @@ public class SplitscreenManager : MonoBehaviour
             if (playerCount > 2)
             { //3-4
                 rect.height = .5f;
+                if (playerCount == 3 && playerIndex == 2) {
+                    rect.width = 1.0f;
+                }
             }
         }
         rect.x = playerIndex % 2 * 0.5f;
-        rect.y = (int)(playerIndex / 2.0f) / 2.0f + 0.5f - (int)(playerIndex / 2.0f);
+        if(playerCount > 2)
+            rect.y = (int)(playerIndex / 2.0f) / 2.0f + 0.5f - (int)(playerIndex / 2.0f);
         camera.rect = rect;
     }
 }

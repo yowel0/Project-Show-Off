@@ -30,35 +30,31 @@ public class VectorInput
         oldInput = input;
         input = vInput;
         //north
-        if (input.y > 0){
-            if (input.y > pressedBorder){
+        //if (input.y > 0){
+            north.pressed = false;
+            if (input.y > pressedBorder) {
                 north.down = true;
-                if (oldInput.y < pressedBorder){
+                if (oldInput.y < pressedBorder) {
                     north.pressed = true;
-                }
-                else{
-                    north.pressed = false;
                 }
             }
             else {
                 north.down = false;
-                if (oldInput.y > pressedBorder){
+                if (oldInput.y > pressedBorder) {
                     north.released = true;
                 }
-                else{
+                else {
                     north.released = false;
                 }
             }
-        }
+        //}
         //south
-        else if (input.y < 0){
+        //if (input.y < 0){
+            south.pressed = false;
             if (-input.y > pressedBorder){
                 south.down = true;
                 if (-oldInput.y < pressedBorder){
                     south.pressed = true;
-                }
-                else{
-                    south.pressed = false;
                 }
             }
             else {
@@ -70,16 +66,14 @@ public class VectorInput
                     south.released = false;
                 }
             }
-        }
+        //}
         //east
-        if (input.x > 0){
+        //if (input.x > 0){
+            east.pressed = false;
             if (input.x > pressedBorder){
                 east.down = true;
                 if (oldInput.x < pressedBorder){
                     east.pressed = true;
-                }
-                else{
-                    east.pressed = false;
                 }
             }
             else {
@@ -91,16 +85,14 @@ public class VectorInput
                     east.released = false;
                 }
             }
-        }
+        //}
         //west
-        else if (input.x < 0){
+        //if (input.x < 0){
+            west.pressed = false;
             if (-input.x > pressedBorder){
                 west.down = true;
                 if (-oldInput.x < pressedBorder){
                     west.pressed = true;
-                }
-                else{
-                    west.pressed = false;
                 }
             }
             else {
@@ -112,7 +104,7 @@ public class VectorInput
                     west.released = false;
                 }
             }
-        }
+        //}
     }
 }
 
