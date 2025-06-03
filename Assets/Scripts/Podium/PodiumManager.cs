@@ -2,9 +2,24 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class PodiumManager : MonoBehaviour
 {
+    [Header("Magic numbers")]
+    [Tooltip("Enable to raise places after time has passed, disable to require manual input")]
+    [SerializeField] bool isTimeBased;
+    [Tooltip("Once this scene is loaded in, how many seconds until the platforms start rising?")]
+    [Range(0f, 10f)] [SerializeField] float timeBeforeRaising;
+    [Tooltip("How long will it take for the platforms to rise?")]
+    [Range(0f, 10f)] [SerializeField] float riseDuration;
+    [Tooltip("How high will the platforms rise? \n n = value \n 1st -> 1 x n \n 2nd -> .75 x n \n 3rd -> .5 x n \n 4th -> .25 x n")]
+    [SerializeField] float riseHeight;
+
+
+    [Header("Ignorable")]
+
+    public UnityEvent OnAllPlatformsRaised;
 
     [SerializeField] PodiumPlace[] places;
 
@@ -28,16 +43,33 @@ public class PodiumManager : MonoBehaviour
 
         PreparePlaces();
         
+        if (isTimeBased)
+        {
+            StartCoroutine(RaisePlatformsIn(timeBeforeRaising));
+        }
     }
 
 
+    IEnumerator RaisePlatformsIn(float seconds)
+    {
+        yield return new WaitForSeconds(seconds);
+        RaiseAll();
+    }
+
+    IEnumerator PlatformsAreRaised()
+    {
+        yield return new WaitForSeconds(riseDuration);
+        OnAllPlatformsRaised?.Invoke();
+    }
+
     public void RaiseAll()
     {
-
         foreach (PodiumPlace place in places)
         {
-            place.Raise();
+            place.Raise(riseHeight, riseDuration);
         }
+
+        StartCoroutine(PlatformsAreRaised());
     }
 
 
@@ -77,29 +109,30 @@ public class PodiumManager : MonoBehaviour
     private void PreparePlacements()
     {
         // Set height for positions
-        int[] placementsPerPlayer;
+        int[] playerScores;
         try
         {
-            placementsPerPlayer = ScoreTransfer.Instance.GetScores();
+            playerScores = ScoreTransfer.Instance.GetScores();
         }
         catch
         {
-            placementsPerPlayer = (int[])PlaceholderPlacements().Clone();
+            playerScores = (int[])PlaceholderPlacements().Clone();
         }
 
         // Index = player, value = rank
-        int[] playerRanking = GetPlayerRankings(placementsPerPlayer);
+        int[] playerRanking = GetPlayerRankings(playerScores);
 
 
         // Telling places how high they rank
         for (int i = 0; i < playerCount; i++)
         {
-            places[i].placement = playerRanking[i];
+            //places[i].placement = playerRanking[i];
+            places[i].SetScore(playerRanking[i], playerScores[i]);
         }
     }
 
 
-    int[] GetPlayerRankings(int[] placementsPerPlayer)
+    int[] GetPlayerRankings(int[] playerScores)
     {
         // Index = player, value = rank
         int[] playerRanking = new int[playerCount];
@@ -111,12 +144,12 @@ public class PodiumManager : MonoBehaviour
         {
             int currentPlacement = iteration;
             
-            int checkScore = GetHighestScoreBelow(placementsPerPlayer, storedScore);
+            int checkScore = GetHighestScoreBelow(playerScores, storedScore);
 
             // For all scores, if equal to checkScore, set playerRanking at same index to iteration
             for (int i = 0; i < playerCount; i++)
             {
-                if (placementsPerPlayer[i] == checkScore)
+                if (playerScores[i] == checkScore)
                 {
                     playerRanking[i] = currentPlacement;
                     iteration++;
@@ -129,12 +162,12 @@ public class PodiumManager : MonoBehaviour
         return playerRanking;
     }
 
-    int GetHighestScoreBelow(int[] placementsPerPlayer, int scoreLimit)
+    int GetHighestScoreBelow(int[] playerScores, int scoreLimit)
     {
         // Gets the highest score lower than the previous highest score
         int checkScore = 0;
 
-        foreach (int score in placementsPerPlayer)
+        foreach (int score in playerScores)
         {
             if (score > checkScore && score < scoreLimit)
             {
