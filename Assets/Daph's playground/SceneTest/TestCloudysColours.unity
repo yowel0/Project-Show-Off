@@ -2871,12 +2871,12 @@ PrefabInstance:
     - target: {fileID: 2113104448017045310, guid: af690559265b3fc42b54d0a7f389d7a0,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -13.5
+      value: -9.5
       objectReference: {fileID: 0}
     - target: {fileID: 2113104448017045310, guid: af690559265b3fc42b54d0a7f389d7a0,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 71.1
+      value: 41.8
       objectReference: {fileID: 0}
     - target: {fileID: 2113104448017045310, guid: af690559265b3fc42b54d0a7f389d7a0,
         type: 3}
@@ -3677,7 +3677,7 @@ MonoBehaviour:
   fallCount: {fileID: 11400000, guid: 1aa641420ce9c034d87bd60e86a7a192, type: 2}
   platformDisappearTime: 1
   restTime: 1
-  blinkStateChangeAmount: 1
+  blinkStateChangeAmount: 7
   OnNewRound:
     m_PersistentCalls:
       m_Calls:
