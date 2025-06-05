@@ -558,7 +558,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ca293319e3e38d45bd0c3815ae94c5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextSceneName: Splitscreen Test
+  nextSceneName: SampleScene
 --- !u!4 &1218651179
 Transform:
   m_ObjectHideFlags: 0
