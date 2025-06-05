@@ -460,10 +460,17 @@ MonoBehaviour:
   gravityMult: 10.9
   pillowBounce: 90
   jumpSound: {fileID: 11400000, guid: e3b0d0dfeb11fee4d85ef7f2015ef2d6, type: 2}
+  pillowBounceParticle: {fileID: 9100127728277435419, guid: 6cb064aab12b03749a45082e38409235,
+    type: 3}
   canHoldJump: 0
   debugRayLength: 0.2
-  grounded: 0
   OnJump:
+    m_PersistentCalls:
+      m_Calls: []
+  OnLand:
+    m_PersistentCalls:
+      m_Calls: []
+  OnBump:
     m_PersistentCalls:
       m_Calls: []
 --- !u!114 &-5087776615821340549

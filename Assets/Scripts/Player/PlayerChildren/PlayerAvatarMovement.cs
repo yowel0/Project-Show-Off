@@ -44,6 +44,9 @@ public class PlayerAvatarMovement : MonoBehaviour
     [Tooltip("Jumping sound")]
     [SerializeField] SoundObject jumpSound;
 
+    [Tooltip("Particle effect that plays when launched by pillow")]
+    [SerializeField] GameObject pillowBounceParticle;
+
     [Tooltip("Is the player able to hold the jump button to jump as soon as they hit the ground?")]
     [SerializeField] bool canHoldJump;
 
@@ -205,6 +208,8 @@ public class PlayerAvatarMovement : MonoBehaviour
             Vector3 pillowUp = collision.transform.up * pillowBounce;
             Debug.Log(pillowUp);
             rb.velocity += pillowUp;
+
+            Instantiate(pillowBounceParticle, transform.position, pillowBounceParticle.transform.rotation);
             //rb.velocity = new Vector3(rb.velocity.x, pillowBounce, rb.velocity.z);
         }
     }

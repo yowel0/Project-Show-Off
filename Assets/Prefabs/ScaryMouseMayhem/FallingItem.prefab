@@ -154,6 +154,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerID: 0
   fallSpeeds: {fileID: 11400000, guid: 6ccb211483116b44bb16eb33cef77b80, type: 2}
+  succesCatchParticles: {fileID: 9100127728277435419, guid: 111df8cdc34faa5488631b29d0446439,
+    type: 3}
+  wrongCatchParticles: {fileID: 9100127728277435419, guid: d399448659b1bfe4293e96509ebece0f,
+    type: 3}
+  fellOnGroundParticles: {fileID: 9100127728277435419, guid: d399448659b1bfe4293e96509ebece0f,
+    type: 3}
   fallTime: 0
   timer: 0
   startHeight: 0

@@ -1,12 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEditor.Experimental.GraphView.GraphView;
+using static UnityEditor.Progress;
 
 public class FallingItem : MonoBehaviour
 {
     [Header("Setup")]
     [SerializeField] int playerID;
     [SerializeField] SMFallSpeed fallSpeeds;
+
+    [Header("Particles")]
+    [Tooltip("Player catches right item")]
+    [SerializeField] GameObject succesCatchParticles;
+    [Tooltip("Player catches wrong item")]
+    [SerializeField] GameObject wrongCatchParticles;
+    [Tooltip("The particle effect that plays when this item falls on the ground")]
+    [SerializeField] GameObject fellOnGroundParticles;
 
     [Header("Ignore")]
     [SerializeField] float fallTime;
@@ -35,6 +45,7 @@ public class FallingItem : MonoBehaviour
         if (percent > 1)
         {
             SMItemScoreLogic.Instance.ItemOnGround(playerID);
+            Instantiate(fellOnGroundParticles, transform.position, fellOnGroundParticles.transform.rotation);
             Destroy(gameObject);
         }
 
@@ -46,6 +57,21 @@ public class FallingItem : MonoBehaviour
     {
         if (SMItemScoreLogic.Instance.ItemCaught(playerID, other.gameObject))
         {
+            // UGLY compares if catch was good or not SHOULD MOVE SOMEWHERE ELSE 
+            PlayerShell ps = other.GetComponentInParent<PlayerShell>();
+
+            int pPlayerID = PlayerManager.Instance.GetPlayerID(ps);
+
+            if (playerID == pPlayerID)
+            {
+                Instantiate(succesCatchParticles, transform.position, succesCatchParticles.transform.rotation);
+            }
+            else
+            {
+                Instantiate(wrongCatchParticles, transform.position, wrongCatchParticles.transform.rotation);
+            }
+
+
             Destroy(gameObject);
         }
     }
