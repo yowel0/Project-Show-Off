@@ -28,6 +28,9 @@ public class TrafficLight : MonoBehaviour
     [SerializeField] bool gameIsActive;
     [SerializeField] bool mouthIsOpen;
 
+    [SerializeField] TestingParticle goodParticle;
+    [SerializeField] TestingParticle badParticle;
+
     public static TrafficLight Instance;
 
     public void StartGame()
@@ -51,6 +54,15 @@ public class TrafficLight : MonoBehaviour
     public void AddScore(int pPlayer, int pPoints)
     {
         if (!mouthIsOpen) pPoints *= -1;
+
+        if (pPoints > 0)
+        {
+            goodParticle.IncreaseIntensity();
+        }
+        else
+        {
+            badParticle.IncreaseIntensity();
+        }
 
         Scores.Instance.AddScore(pPlayer, pPoints);
     }

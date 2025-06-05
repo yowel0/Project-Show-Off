@@ -58,10 +58,14 @@ public class PlayerAvatarMovement : MonoBehaviour
     private float timeSinceBounce;
     private PlayerInput playerInput;
     private Rigidbody rb;
-    //public for animation
-    public bool grounded;
-    //On Jump event for animation
-    public UnityEvent OnJump = new UnityEvent();
+    private bool grounded;
+    private bool wasGrounded = false;
+
+    [Header("Events for VFX")]
+    public UnityEvent OnJump;
+    public UnityEvent OnLand;
+    public UnityEvent OnBump;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -168,10 +172,16 @@ public class PlayerAvatarMovement : MonoBehaviour
         if (Physics.Raycast(transform.position + Vector3.up * extraRaycastLength, -transform.up, out var hit, debugRayLength + extraRaycastLength) && !hit.collider.isTrigger)
         {
             grounded = true;
+            if (!wasGrounded)
+            {
+                OnLand?.Invoke();
+                wasGrounded = true;
+            }
         }
         else
         {
             grounded = false;
+            wasGrounded = false;
         }
 
         Debug.DrawRay(transform.position + Vector3.up * extraRaycastLength, -transform.up * (debugRayLength + extraRaycastLength), Color.red,.1f);
@@ -187,6 +197,7 @@ public class PlayerAvatarMovement : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             timeSinceBounce = 0;
+            OnBump?.Invoke();
         }
         if (collision.gameObject.CompareTag("Pillow"))
         {

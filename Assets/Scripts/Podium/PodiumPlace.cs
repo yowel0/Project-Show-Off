@@ -3,9 +3,13 @@ using System.Collections.Generic;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class PodiumPlace : MonoBehaviour
 {
+    [Tooltip("If this place is first and reaches the top, trigger event")]
+    public UnityEvent OnPeakReached;
+
     [Header("Debug")]
     [Tooltip("Is this platform supposed to go up?")]
     [SerializeField] bool isRaising;
@@ -46,6 +50,12 @@ public class PodiumPlace : MonoBehaviour
             if (timeRising / riseDuration >= 1 - .25f * placement)
             {
                 isRaising = false;
+
+                // If this place ends first, trigger event
+                if (placement == 0)
+                {
+                    OnPeakReached?.Invoke();
+                }
                 
                 if (scoreText != null)
                 {

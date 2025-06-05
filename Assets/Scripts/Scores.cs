@@ -9,6 +9,8 @@ public class Scores : MonoBehaviour
 
     public static Scores Instance;
 
+    [SerializeField] int scoreMult;
+
     [SerializeField] TextMeshProUGUI winnerText;
 
     [SerializeField] GameObject[] scoreElements;
@@ -100,7 +102,7 @@ public class Scores : MonoBehaviour
 
     public void AddScore(int pPlayer, int pScoreAddition)
     {
-        scores[pPlayer] += pScoreAddition;
+        scores[pPlayer] += pScoreAddition * scoreMult;
         
         UpdateText();
     }

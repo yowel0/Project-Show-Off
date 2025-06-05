@@ -1,18 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 
 public class Portal : MonoBehaviour
 {
-    [SerializeField] SoundObject enterMinigameSFX;
-
     [Tooltip("Name of the scene for the minigame this portal leads to")]
     [SerializeField] string sceneName;
 
     [Tooltip("This is the popup that shows where the portal leads to")]
     [SerializeField] GameObject gameInfoPopup;
 
+    [Header("Effects")]
+    [SerializeField] SoundObject enterMinigameSFX;
+
+    [Tooltip("This event triggers when a player enters the radius of the portal")]
+    public UnityEvent OnPlayerApproach;
+
+    [Header("Debug")]
     [SerializeField] int playersNear = 0;
 
 
@@ -29,6 +35,7 @@ public class Portal : MonoBehaviour
     {
         if (other.tag == "Player")
         {
+            OnPlayerApproach?.Invoke();
             playersNear++;
             CheckPopup();
         }
