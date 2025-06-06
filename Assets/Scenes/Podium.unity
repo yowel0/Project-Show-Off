@@ -678,7 +678,7 @@ MonoBehaviour:
   - {fileID: 1928726526}
   - {fileID: 1902917382}
   minigameName: 
-  placeholder: 03000000010000000300000032000000
+  placeholder: 2c01000088130000881300002c010000
   playerCount: 0
   overridePlayerCount: 4
 --- !u!1 &902233033
