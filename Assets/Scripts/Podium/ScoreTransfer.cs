@@ -14,6 +14,11 @@ public class ScoreTransfer : MonoBehaviour
     public void StoreValues()
     {
         scores = Scores.Instance.GetScores();
+
+        for (int i = 0; i < PlayerManager.Instance.GetPlayerCount(); i++)
+        {
+            LeaderboardManager.Submit(minigameName, PlayerManager.Instance.players[i].userName, scores[i]);
+        }
     }
 
     public string GetMinigameName()

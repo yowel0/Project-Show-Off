@@ -52,6 +52,7 @@ public class LeaderboardManager : MonoBehaviour
 
     public static Leaderboard GetLeaderboard(string leaderboardName)
     {
+        leaderboards = FileHandler.ReadFromJSON<Leaderboard>(fileName);
         leaderboardName = leaderboardName.ToLower();
         foreach (var leaderboard in leaderboards)
         {
