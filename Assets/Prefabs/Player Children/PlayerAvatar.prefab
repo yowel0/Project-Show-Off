@@ -485,14 +485,13 @@ MonoBehaviour:
   OnLand:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6030288712813426323, guid: 2ceae4490fc8f764dba8178292f2a916,
-          type: 3}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 0
+      - m_Target: {fileID: 8158587317313490612}
+        m_TargetAssemblyTypeName: UnityEngine.ParticleSystem, UnityEngine
+        m_MethodName: Play
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -501,14 +500,13 @@ MonoBehaviour:
   OnBump:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6940077878581948033, guid: d5592632786e06544885b2b778271d51,
-          type: 3}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 0
+      - m_Target: {fileID: 8813653566725880471}
+        m_TargetAssemblyTypeName: UnityEngine.ParticleSystem, UnityEngine
+        m_MethodName: Play
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -697,6 +695,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player land impact
       objectReference: {fileID: 0}
+    - target: {fileID: 7158799463406823160, guid: 2ceae4490fc8f764dba8178292f2a916,
+        type: 3}
+      propertyPath: looping
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7158799463406823160, guid: 2ceae4490fc8f764dba8178292f2a916,
+        type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8605305939840955015, guid: 2ceae4490fc8f764dba8178292f2a916,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -758,6 +766,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1324117521265371212}
   m_PrefabAsset: {fileID: 0}
+--- !u!198 &8158587317313490612 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 7158799463406823160, guid: 2ceae4490fc8f764dba8178292f2a916,
+    type: 3}
+  m_PrefabInstance: {fileID: 1324117521265371212}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3362099738688450097
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -816,6 +830,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6122908533139281062, guid: d5592632786e06544885b2b778271d51,
+        type: 3}
+      propertyPath: looping
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6122908533139281062, guid: d5592632786e06544885b2b778271d51,
+        type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6940077878581948033, guid: d5592632786e06544885b2b778271d51,
         type: 3}
       propertyPath: m_Name
@@ -829,6 +853,12 @@ PrefabInstance:
 --- !u!4 &98450187866692609 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3455756295979151920, guid: d5592632786e06544885b2b778271d51,
+    type: 3}
+  m_PrefabInstance: {fileID: 3362099738688450097}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &8813653566725880471 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 6122908533139281062, guid: d5592632786e06544885b2b778271d51,
     type: 3}
   m_PrefabInstance: {fileID: 3362099738688450097}
   m_PrefabAsset: {fileID: 0}
