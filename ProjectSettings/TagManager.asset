@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Pillow
+  - Held Box
   layers:
   - Default
   - TransparentFX

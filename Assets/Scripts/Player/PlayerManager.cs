@@ -11,8 +11,8 @@ public class PlayerManager : MonoBehaviour
     private PlayerInputManager playerInputManager;
     public List<PlayerShell> players = new List<PlayerShell>();
     public List<Transform> playerPositions = new List<Transform>();
-    // Start is called before the first frame update
-    void Start()
+    // Awake so it happens before start
+    void Awake()
     {
         if (Instance == null) Instance = this;
         else

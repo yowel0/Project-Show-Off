@@ -1054,6 +1054,8 @@ MonoBehaviour:
   playerPositions:
   - {fileID: 408678457}
   - {fileID: 1598689216}
+  - {fileID: 2047323322}
+  - {fileID: 1170363865}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
