@@ -25,7 +25,7 @@ public class AvatarAnimationController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        animator.SetBool("Grounded", playerAvatarMovement.grounded);
+        animator.SetBool("Grounded", playerAvatarMovement.IsGrounded());
         Vector3 vel = rb.velocity;
         Vector2 velV2 = new Vector2(vel.x, vel.z);
         animator.SetFloat("Speed", velV2.magnitude);

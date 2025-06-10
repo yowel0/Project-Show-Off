@@ -122,12 +122,15 @@ public class PodiumManager : MonoBehaviour
         // Index = player, value = rank
         int[] playerRanking = GetPlayerRankings(playerScores);
 
+        int[] sortedScores = (int[])playerScores.Clone();
+
+        Array.Sort(sortedScores);
+
 
         // Telling places how high they rank
         for (int i = 0; i < playerCount; i++)
         {
-            //places[i].placement = playerRanking[i];
-            places[i].SetScore(playerRanking[i], playerScores[i]);
+            places[i].SetScore(playerRanking[i], playerScores[i], sortedScores);
         }
     }
 

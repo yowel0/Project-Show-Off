@@ -156,7 +156,7 @@ MonoBehaviour:
   - {fileID: 3699704522125740964, guid: e9fef0d89a60dde428cdf237dc2bd814, type: 3}
   - {fileID: 3699704522125740964, guid: f544d22c09d719b418331d5b0827af92, type: 3}
   - {fileID: 3699704522125740964, guid: 3dd8d9166b3192440a1cf67e508e5aad, type: 3}
-  rotationIntensity: 10
+  rotationIntensity: 2
   throwTime: 1.5
   playerId: 0
 --- !u!54 &5585353491580871238

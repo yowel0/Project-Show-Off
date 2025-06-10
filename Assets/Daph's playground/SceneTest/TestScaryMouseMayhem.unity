@@ -5785,7 +5785,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &902233034
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6438,11 +6438,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f67cd31fb6b65d4791004e5f8677938, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  p1ScoreText: {fileID: 181904}
-  p2ScoreText: {fileID: 1166490241}
   winnerText: {fileID: 1686205190}
-  p1Name: 
-  p2Name: 
+  scoreElements: []
+  scores: 
 --- !u!4 &1363581413
 Transform:
   m_ObjectHideFlags: 0
@@ -7387,8 +7385,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   totalTime: 60
-  timer: 0
-  isTimerActive: 0
+  extendedTime: 0
   isTimeBased: 1
   startImmediately: 1
   OnSetup:
@@ -7445,6 +7442,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  OnPrepareStop:
+    m_PersistentCalls:
+      m_Calls: []
   OnStop:
     m_PersistentCalls:
       m_Calls:
@@ -7486,6 +7486,8 @@ MonoBehaviour:
         m_CallState: 2
   timeText: {fileID: 713742214}
   countdownText: {fileID: 332383634}
+  timer: 0
+  isTimerActive: 0
 --- !u!4 &1891324720
 Transform:
   m_ObjectHideFlags: 0

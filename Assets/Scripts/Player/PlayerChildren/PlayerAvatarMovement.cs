@@ -44,6 +44,9 @@ public class PlayerAvatarMovement : MonoBehaviour
     [Tooltip("Jumping sound")]
     [SerializeField] SoundObject jumpSound;
 
+    [Tooltip("Particle effect that plays when launched by pillow")]
+    [SerializeField] GameObject pillowBounceParticle;
+
     [Tooltip("Is the player able to hold the jump button to jump as soon as they hit the ground?")]
     [SerializeField] bool canHoldJump;
 
@@ -58,10 +61,14 @@ public class PlayerAvatarMovement : MonoBehaviour
     private float timeSinceBounce;
     private PlayerInput playerInput;
     private Rigidbody rb;
-    //public for animation
-    public bool grounded;
-    //On Jump event for animation
-    public UnityEvent OnJump = new UnityEvent();
+    private bool grounded;
+    private bool wasGrounded = false;
+
+    [Header("Events for VFX")]
+    public UnityEvent OnJump;
+    public UnityEvent OnLand;
+    public UnityEvent OnBump;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -168,10 +175,16 @@ public class PlayerAvatarMovement : MonoBehaviour
         if (Physics.Raycast(transform.position + Vector3.up * extraRaycastLength, -transform.up, out var hit, debugRayLength + extraRaycastLength) && !hit.collider.isTrigger)
         {
             grounded = true;
+            if (!wasGrounded)
+            {
+                OnLand?.Invoke();
+                wasGrounded = true;
+            }
         }
         else
         {
             grounded = false;
+            wasGrounded = false;
         }
 
         Debug.DrawRay(transform.position + Vector3.up * extraRaycastLength, -transform.up * (debugRayLength + extraRaycastLength), Color.red,.1f);
@@ -187,6 +200,7 @@ public class PlayerAvatarMovement : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             timeSinceBounce = 0;
+            OnBump?.Invoke();
         }
         if (collision.gameObject.CompareTag("Pillow"))
         {
@@ -194,6 +208,8 @@ public class PlayerAvatarMovement : MonoBehaviour
             Vector3 pillowUp = collision.transform.up * pillowBounce;
             Debug.Log(pillowUp);
             rb.velocity += pillowUp;
+
+            Instantiate(pillowBounceParticle, transform.position, pillowBounceParticle.transform.rotation);
             //rb.velocity = new Vector3(rb.velocity.x, pillowBounce, rb.velocity.z);
         }
     }
