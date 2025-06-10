@@ -8,13 +8,19 @@ using UnityEngine.Events;
 
 public class PlayerAvatarMovement : MonoBehaviour
 {
-
     [Header("Moving")]
     [SerializeField] float moveForce = 6000;
 
     [Range(0f, 100f)]
     [Tooltip("What is the horizontal speed limit for the player?")]
     [SerializeField] float maxSpeed;
+
+
+    [Header("Bump")]
+    [Tooltip("In the formula y = ax + b, where: \ny is total force added after a bump, \nthis is b")]
+    [SerializeField] float constantForceBump;
+    [Tooltip("In the formula y = ax + b, where: \ny is total force added after a bump, \nthis is a")]
+    [SerializeField] float multForceBump;
 
     [Tooltip("This graph represents how much drag and move force the player has after bouncing")]
     [SerializeField] AnimationCurve dragAfterBounce;
@@ -201,8 +207,16 @@ public class PlayerAvatarMovement : MonoBehaviour
         {
             timeSinceBounce = 0;
             OnBump?.Invoke();
+
+            ContactPoint cPoint = collision.GetContact(0);
+
+            Vector3 relVel = collision.relativeVelocity + rb.velocity;
+            float outForce = multForceBump * relVel.magnitude + constantForceBump;
+
+            rb.AddForce(cPoint.normal * outForce);
+
         }
-        if (collision.gameObject.CompareTag("Pillow"))
+        else if (collision.gameObject.CompareTag("Pillow"))
         {
             timeSinceBounce = 0;
             Vector3 pillowUp = collision.transform.up * pillowBounce;

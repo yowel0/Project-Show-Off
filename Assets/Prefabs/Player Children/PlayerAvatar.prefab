@@ -424,6 +424,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveForce: 8
   maxSpeed: 7
+  useOtherCollider: 0
+  constantForceBump: 0.1
+  multForceBump: 0.2
   dragAfterBounce:
     serializedVersion: 2
     m_Curve:
@@ -457,7 +460,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  dragLossDuration: 3
+  dragLossDuration: 1
   injectedJumpVelocity: 52
   shortJumpMult: 0.45
   gravityMult: 10.9
