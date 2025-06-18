@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class FoodThrowLocation : MonoBehaviour
 {
+    [Tooltip("Sound that plays when food is thrown (ugh sound)")]
+    [SerializeField] SoundObject throwSound;
     [Tooltip("What player this location belongs to (player 1, player 2, etc.)")]
     [SerializeField] int playerNr;
     [Tooltip("Place where the food is thrown to")]
@@ -15,6 +17,7 @@ public class FoodThrowLocation : MonoBehaviour
     public void Throw()
     {
         if (!canThrow) return;
+        MusicManager.Instance.PlaySound(throwSound);
         GameObject food = Instantiate(foodPrefab, transform.position, transform.rotation);
         food.GetComponent<Food>().SetValues(foodDestination, playerNr);
     }

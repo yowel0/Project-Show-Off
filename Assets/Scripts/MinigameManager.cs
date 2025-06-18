@@ -30,6 +30,20 @@ public class MinigameManager : MonoBehaviour
     [Tooltip("Stopping all logic")]
     public UnityEvent OnStop;
 
+    [Header("Sounds")]
+    [Tooltip("Plays when countdown is over and players can do inputs")]
+    [SerializeField] SoundObject startSound;
+    [Tooltip("Plays when the scores are finalized")]
+    [SerializeField] SoundObject endSound;
+    [Tooltip("Plays while the countdown is counting down")]
+    [SerializeField] SoundObject countdownBgSound;
+    [Tooltip("A voice that says 3")]
+    [SerializeField] SoundObject countdown3Sound;
+    [Tooltip("A voice that says 2")]
+    [SerializeField] SoundObject countdown2Sound;
+    [Tooltip("A voice that says 1")]
+    [SerializeField] SoundObject countdown1Sound;
+
     [Header("UI references")]
     [SerializeField] TextMeshProUGUI timeText;
     [SerializeField] TextMeshProUGUI countdownText;
@@ -63,9 +77,14 @@ public class MinigameManager : MonoBehaviour
     {
         int s = Mathf.RoundToInt(pSeconds);
         countdownText.gameObject.SetActive(true);
+        MusicManager.Instance.PlaySound(countdownBgSound);
+
         for (int i = s; i > 0; i--)
         {
             countdownText.text = i.ToString();
+            if (i == 3) MusicManager.Instance.PlaySound(countdown3Sound);
+            else if (i == 2) MusicManager.Instance.PlaySound(countdown2Sound);
+            else if (i == 1) MusicManager.Instance.PlaySound(countdown1Sound);
             yield return new WaitForSeconds(1);
         }
         countdownText.gameObject.SetActive(false);
@@ -93,6 +112,7 @@ public class MinigameManager : MonoBehaviour
     public void DoStart()
     {
         OnStart?.Invoke();
+        MusicManager.Instance.PlaySound(startSound);
     }
 
     public void DoPrepareStop()
@@ -104,6 +124,7 @@ public class MinigameManager : MonoBehaviour
     public void DoStop()
     {
         OnStop?.Invoke();
+        MusicManager.Instance.PlaySound(endSound);
     }
 
 

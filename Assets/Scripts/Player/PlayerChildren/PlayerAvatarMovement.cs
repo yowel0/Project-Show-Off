@@ -6,6 +6,7 @@ using UnityEngine.InputSystem;
 using System;
 using UnityEngine.Events;
 
+[RequireComponent(typeof(PlayerSoundManager))]
 public class PlayerAvatarMovement : MonoBehaviour
 {
     [Header("Moving")]
@@ -61,11 +62,12 @@ public class PlayerAvatarMovement : MonoBehaviour
     [SerializeField] float debugRayLength;
 
 
-    private float extraRaycastLength = 0.121f;
+    private float extraRaycastLength = 0.2f;  // 0.121f
     private float originalDrag;
     private float originalMoveForce;
     private float timeSinceBounce;
     private PlayerInput playerInput;
+    private PlayerSoundManager soundManager;
     private Rigidbody rb;
     private bool grounded;
     private bool wasGrounded = false;
@@ -79,28 +81,11 @@ public class PlayerAvatarMovement : MonoBehaviour
     void Start()
     {
         playerInput = GetComponentInParent<PlayerInput>();
+        soundManager = GetComponent<PlayerSoundManager>();
         rb = GetComponent<Rigidbody>();
         originalDrag = rb.drag;
         originalMoveForce = moveForce;
         timeSinceBounce = dragLossDuration;
-
-        int playerID = PlayerManager.Instance.GetPlayerID(GetComponentInParent<PlayerShell>());
-        Image image = GetComponentInChildren<Image>();
-        switch (playerID)
-        {
-            case 0:
-                image.color = Color.red;
-                break;
-            case 1:
-                image.color = Color.blue;
-                break;
-            case 2:
-                image.color = Color.green;
-                break;
-            case 3:
-                image.color = Color.yellow;
-                break;
-        }
 
     }
 
@@ -169,10 +154,7 @@ public class PlayerAvatarMovement : MonoBehaviour
     private float Jump()
     {
         OnJump?.Invoke();
-        if (MusicManager.Instance)
-        {
-            MusicManager.Instance.PlaySound(jumpSound);
-        }
+        soundManager.PlayJump();
         return injectedJumpVelocity;
     }
 
@@ -184,6 +166,7 @@ public class PlayerAvatarMovement : MonoBehaviour
             if (!wasGrounded)
             {
                 OnLand?.Invoke();
+                soundManager.PlayLand();
                 wasGrounded = true;
             }
         }
@@ -207,6 +190,7 @@ public class PlayerAvatarMovement : MonoBehaviour
         {
             timeSinceBounce = 0;
             OnBump?.Invoke();
+            soundManager.PlayBump();
 
             ContactPoint cPoint = collision.GetContact(0);
 
@@ -218,6 +202,7 @@ public class PlayerAvatarMovement : MonoBehaviour
         }
         else if (collision.gameObject.CompareTag("Pillow"))
         {
+            soundManager.PlayPillowBounce();
             timeSinceBounce = 0;
             Vector3 pillowUp = collision.transform.up * pillowBounce;
             Debug.Log(pillowUp);

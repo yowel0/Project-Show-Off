@@ -18,6 +18,16 @@ public class FallingItem : MonoBehaviour
     [Tooltip("The particle effect that plays when this item falls on the ground")]
     [SerializeField] GameObject fellOnGroundParticles;
 
+    [Header("Sounds")]
+    [Tooltip("Plays when an item is collected by anyone")]
+    [SerializeField] SoundObject itemCollected;
+    [Tooltip("Plays when an item is collected by the right player")]
+    [SerializeField] SoundObject itemGoodCollect;
+    [Tooltip("Plays when an item is collected by the  wrong player")]
+    [SerializeField] SoundObject itemWrongCollect;
+    [Tooltip("Plays when an item hits the ground")]
+    [SerializeField] SoundObject itemNotCollected;
+
     [Header("Ignore")]
     [SerializeField] float fallTime;
     [SerializeField] float timer;
@@ -46,6 +56,7 @@ public class FallingItem : MonoBehaviour
         {
             SMItemScoreLogic.Instance.ItemOnGround(playerID);
             Instantiate(fellOnGroundParticles, transform.position, fellOnGroundParticles.transform.rotation);
+            MusicManager.Instance.PlaySound(itemNotCollected);
             Destroy(gameObject);
         }
 
@@ -61,14 +72,17 @@ public class FallingItem : MonoBehaviour
             PlayerShell ps = other.GetComponentInParent<PlayerShell>();
 
             int pPlayerID = PlayerManager.Instance.GetPlayerID(ps);
+            MusicManager.Instance.PlaySound(itemCollected);
 
             if (playerID == pPlayerID)
             {
                 Instantiate(succesCatchParticles, transform.position, succesCatchParticles.transform.rotation);
+                MusicManager.Instance.PlaySound(itemGoodCollect);
             }
             else
             {
                 Instantiate(wrongCatchParticles, transform.position, wrongCatchParticles.transform.rotation);
+                MusicManager.Instance.PlaySound(itemWrongCollect);
             }
 
 
