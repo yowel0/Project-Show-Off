@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -8,6 +9,7 @@ public class CharacterSelectionManager : MonoBehaviour
     private PlayerManager playerManager;
     [SerializeField]
     private string nextSceneName;
+    private bool transitioned = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,8 +25,13 @@ public class CharacterSelectionManager : MonoBehaviour
                 readyPlayers++;
             }
         }
-        if (readyPlayers == playerManager.players.Count && readyPlayers > 0){
-            SceneManager.LoadScene(nextSceneName);
+        if (readyPlayers == playerManager.players.Count && readyPlayers > 0)
+        {
+            if (!transitioned)
+            {
+                SceneTransition.Instance.ChangeScene(nextSceneName);
+                transitioned = true;
+            }
         }
     }
 }

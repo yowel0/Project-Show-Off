@@ -1,0 +1,14 @@
+.Overlay{
+    width: 100%;
+    height: 100%;   
+    background-color: black;
+    opacity: 0;
+    transition-property: opacity;
+    transition-duration: 500ms;
+}
+
+.Overlay.Overlay--Active{
+    opacity: 1;
+    transition-property: opacity;
+    transition-duration: 500ms;
+}

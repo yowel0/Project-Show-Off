@@ -6,6 +6,8 @@ using UnityEngine.InputSystem;
 public class SplitscreenManager : MonoBehaviour
 {
     private SplitscreenManager Instance;
+    [SerializeField]
+    private bool enableOnStart = false;
 
     // Start is called before the first frame update
     void Start()
@@ -18,7 +20,8 @@ public class SplitscreenManager : MonoBehaviour
         {
             Destroy(this);
         }
-        Enable();
+        if(enableOnStart)
+            Enable();
         if (PlayerManager.Instance != null)
         {
             PlayerInputManager playerInputManager = PlayerManager.Instance.GetComponent<PlayerInputManager>();

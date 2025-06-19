@@ -17,7 +17,8 @@ public enum ControlScheme
 public class PlayerShell : MonoBehaviour
 {
     [Header("Player Children")]
-    public GameObject PlayerAvatar;
+    public GameObject PlayerAvatarPrefab;
+    public GameObject CharacterSelectionPrefab;
 
     [Header("Input")]
     public ControlScheme controlScheme = ControlScheme.Menu;
@@ -62,24 +63,48 @@ public class PlayerShell : MonoBehaviour
         ;
     }
 
-    public void SpawnAvatar(Vector3 position){
+    public void SpawnAvatar(Vector3 position, PlayerChild playerChild){
         Rigidbody rb = GetComponentInChildren<Rigidbody>();
         if (rb)
             rb.velocity = Vector3.zero;
-        if (GetComponentInChildren<CharacterSelection>() != null)
+        switch (playerChild)
         {
-            DestroyChildren();
+            case PlayerChild.PlayerAvatar:
+                if (GetComponentInChildren<CharacterSelection>())
+                {
+                    DestroyChildren();
 
-            GameObject _PlayerAvatar = Instantiate(PlayerAvatar, position, quaternion.identity, transform);
-            Avatar avatar = _PlayerAvatar.GetComponentInChildren<Avatar>();
-            avatar.SetCharacter(characterPrefab);
-            avatar.SetHat(hatPrefab);
-            //Instantiate(hat, _PlayerAvatar.transform);
+                    GameObject playerAvatar = Instantiate(PlayerAvatarPrefab, position, quaternion.identity, transform);
+                    Avatar avatar = playerAvatar.GetComponentInChildren<Avatar>();
+                    avatar.SetCharacter(characterPrefab);
+                    avatar.SetHat(hatPrefab);
+                    //Instantiate(hat, _PlayerAvatar.transform);
+                }
+                else
+                {
+                    TeleportAvatar(position);
+                }
+                break;
+            case PlayerChild.CharacterSelection:
+                if (GetComponentInChildren<Avatar>())
+                {
+                    DestroyChildren();
+
+                    GameObject characterSelection = Instantiate(CharacterSelectionPrefab, position, quaternion.identity, transform);
+                    Avatar avatar = characterSelection.GetComponentInChildren<Avatar>();
+                    if(characterPrefab)
+                        avatar.SetCharacter(characterPrefab);
+                    if(hatPrefab)
+                        avatar.SetHat(hatPrefab);
+                }
+                else
+                {
+                    CharacterSelection characterSelection = GetComponentInChildren<CharacterSelection>();
+                    characterSelection.transform.position = position;
+                }
+                break;
         }
-        else
-        {
-            TeleportAvatar(position);
-        }
+        
     }
 
     public void TeleportAvatar(Vector3 position){

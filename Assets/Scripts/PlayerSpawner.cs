@@ -4,11 +4,19 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+public enum PlayerChild
+{
+    PlayerAvatar,
+    CharacterSelection
+}
+
 public class PlayerSpawner : MonoBehaviour
 {
     [Tooltip("Movement abilities for this scene")]
     public ControlScheme controlScheme = ControlScheme.Movement;
 
+    [SerializeField]
+    private PlayerChild playerChild = PlayerChild.PlayerAvatar;
     [SerializeField]
     Transform[] spawnPositions;
     // Start is called before the first frame update
@@ -20,35 +28,39 @@ public class PlayerSpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
-    void SpawnAvatars(){
+    void SpawnAvatars()
+    {
         //after spawning Avatars, no more new players allowed
         //PlayerManager playerManager = FindAnyObjectByType<PlayerManager>();
         //PlayerManager.Instance
         //playerManager.GetComponent<PlayerInputManager>().joinBehavior = PlayerJoinBehavior.JoinPlayersManually;
-        if (PlayerManager.Instance != null){
-            for (int i = 0; i < PlayerManager.Instance.GetPlayerCount(); i++){
+        if (PlayerManager.Instance != null)
+        {
+            for (int i = 0; i < PlayerManager.Instance.GetPlayerCount(); i++)
+            {
                 PlayerShell player = PlayerManager.Instance.players[i];
                 player.SwitchControlScheme(controlScheme);
                 if (spawnPositions.Length >= 4 && PlayerManager.Instance.GetPlayerCount() <= 2)
                 {
-                    Vector3 spawnPosition = spawnPositions[i+1].position;
-                    player.SpawnAvatar(spawnPosition);
+                    Vector3 spawnPosition = spawnPositions[i + 1].position;
+                    player.SpawnAvatar(spawnPosition, playerChild);
                 }
                 else if (spawnPositions[i] != null)
                 {
                     Vector3 spawnPosition = spawnPositions[i].position;
-                    player.SpawnAvatar(spawnPosition);
+                    player.SpawnAvatar(spawnPosition, playerChild);
                 }
                 else
                 {
-                    player.SpawnAvatar(Vector3.zero);
+                    player.SpawnAvatar(Vector3.zero, playerChild);
                 }
             }
         }
-        else{
+        else
+        {
             print("No player managaer found :(");
         }
     }
