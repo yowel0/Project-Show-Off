@@ -48,6 +48,14 @@ public class MusicManager : MonoBehaviour
 
     public void PlaySound(SoundObject pSound)
     {
+        if (pSound == null || pSound.GetSound() == null)
+        {
+            Debug.LogWarning(
+                (new System.Diagnostics.StackTrace()).GetFrame(1).GetMethod().Name + 
+                " Tried to play a sound, but no SoundObject was defined");
+            return;
+        }
+
         float soundTypeMult = 1;
         switch (pSound.soundType)
         {

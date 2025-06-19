@@ -15,6 +15,20 @@ public class TrafficLight : MonoBehaviour
     [Tooltip("Maximum time Potata will keep their mouth open")]
     [SerializeField] float greenTimeMax;
 
+    [Header("Sounds")]
+    [Tooltip("Plays during red light")]
+    [SerializeField] SoundObject eatingSound;
+    [Tooltip("Plays when switches to orange light (voice)")]
+    [SerializeField] SoundObject stopIndicatorSound;
+    [Tooltip("Plays when switches to green light (voice)")]
+    [SerializeField] SoundObject continueIndicatorSound;
+    [Tooltip("Plays when food hits while green or orange light")]
+    [SerializeField] SoundObject happySound;
+    [Tooltip("Plays when food hits while red light")]
+    [SerializeField] SoundObject angrySound;
+    [Tooltip("Plays when green light but didn't receive food for a moment")]
+    [SerializeField] SoundObject anticipatingSound;
+
     [Header("Events for the animation")]
     public UnityEvent OnRed;
     public UnityEvent OnOrange;
@@ -58,10 +72,12 @@ public class TrafficLight : MonoBehaviour
         if (pPoints > 0)
         {
             goodParticle.IncreaseIntensity();
+            MusicManager.Instance.PlaySound(happySound);
         }
         else
         {
             badParticle.IncreaseIntensity();
+            MusicManager.Instance.PlaySound(angrySound);
         }
 
         Scores.Instance.AddScore(pPlayer, pPoints);
@@ -77,12 +93,16 @@ public class TrafficLight : MonoBehaviour
 
         // Continue with orange
         SetLight(1);
+        MusicManager.Instance.PlaySound(stopIndicatorSound);
         yield return new WaitForSeconds(orangeTime);
 
         // End with red
         SetLight(0);
+        MusicManager.Instance.PlaySound(eatingSound);
         mouthIsOpen = false;
         yield return new WaitForSeconds(redTime);
+
+        MusicManager.Instance.PlaySound(continueIndicatorSound);
 
         // Repeat
         NewRound();

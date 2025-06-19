@@ -24,6 +24,14 @@ public class PlatformLogic : MonoBehaviour
 
 
     [Header("Misc")]
+    [Tooltip("Plays every time platforms start flickering (dialogue 1)")]
+    [SerializeField] SoundObject cloudyDontFall;
+    [Tooltip("Plays every time a platform goes poof")]
+    [SerializeField] SoundObject platformFallSound;
+    [Tooltip("Plays every time a platform reappears")]
+    [SerializeField] SoundObject platformBackSound;
+    [Tooltip("Plays every time the flicker appears")]
+    [SerializeField] SoundObject platformFlickerSound;
 
     [Tooltip("Triggers when a round has been completed")]
     public UnityEvent OnNewRound;
@@ -52,6 +60,8 @@ public class PlatformLogic : MonoBehaviour
     public void StartRound()
     {
         if (!isPlaying) return;
+        // Might want to add logic if this gets annoying
+        MusicManager.Instance.PlaySound(cloudyDontFall);
         StartCoroutine(BlinkPlatformFor(timeDecreaseRounds.GetTime(round)));
         round++;
     }
@@ -72,9 +82,14 @@ public class PlatformLogic : MonoBehaviour
 
         // Platform gone
         MakePlatformsDisappear(selectedPlatforms, blinkingPlatforms);
+        
 
         // Time until next platform starts blinking
-        yield return new WaitForSeconds(platformDisappearTime + restTime);
+        yield return new WaitForSeconds(platformDisappearTime);
+        MusicManager.Instance.PlaySound(platformBackSound);
+
+        // Cooldown time between platforms returning and next round
+        yield return new WaitForSeconds(restTime);
         OnNewRound?.Invoke();
         StartRound();
 
@@ -87,6 +102,7 @@ public class PlatformLogic : MonoBehaviour
         for (int i = 0; i < pSelectedPlatforms.Length; i++)
         {
             platforms[pSelectedPlatforms[i]].Disappear(platformDisappearTime);
+            MusicManager.Instance.PlaySound(platformFallSound);
         }
     }
 
@@ -95,6 +111,7 @@ public class PlatformLogic : MonoBehaviour
         foreach (GameObject g in pBlinkPlatforms)
         {
             g.SetActive(!g.activeSelf);
+            if (g.activeSelf) MusicManager.Instance.PlaySound(platformFlickerSound);
         }
     }
 
