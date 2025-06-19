@@ -19,6 +19,7 @@ public class SMItemDropper : MonoBehaviour
     [SerializeField] float minDistanceToLast;
 
     [Header("Setup")]
+    [SerializeField] SoundObject itemDropSound;
     [SerializeField] Transform minLocationTransform;
     [SerializeField] Transform maxLocationTransform;
     [SerializeField] float hoverHeight;
@@ -135,9 +136,10 @@ public class SMItemDropper : MonoBehaviour
     {
         int itemID = GetRandomItem();
 
+        // TODO: Add object to array to check when game ends?
         GameObject itemToDrop = Instantiate(items[itemID], transform.position, Quaternion.identity);
 
-
+        MusicManager.Instance.PlaySound(itemDropSound);
     }
 
     int GetRandomItem()

@@ -10,6 +10,16 @@ public class PodiumPlace : MonoBehaviour
     [Tooltip("If this place is first and reaches the top, trigger event")]
     public UnityEvent OnPeakReached;
 
+    [Header("Sounds")]
+    [Tooltip("Player sound when podium reaches first place (yippee)")]
+    [SerializeField] SoundObject playerWinSound;
+    [Tooltip("Player sound when podium reaches peak but not first place (aww)")]
+    [SerializeField] SoundObject playerLoseSound;
+    [Tooltip("Confetti-like sound when podium reaches first place")]
+    [SerializeField] SoundObject podiumFirstSound;
+    [Tooltip("poof(?)-like sound when podium reaches first place")]
+    [SerializeField] SoundObject podiumLoseSound;
+
     [Header("Debug")]
     [Tooltip("Is this platform supposed to go up?")]
     [SerializeField] bool isRaising;
@@ -64,6 +74,13 @@ public class PodiumPlace : MonoBehaviour
                 if (placement == 0)
                 {
                     OnPeakReached?.Invoke();
+                    MusicManager.Instance.PlaySound(playerWinSound);
+                    MusicManager.Instance.PlaySound(podiumFirstSound);
+                }
+                else
+                {
+                    MusicManager.Instance.PlaySound(playerLoseSound);
+                    MusicManager.Instance.PlaySound(podiumLoseSound);
                 }
 
             }

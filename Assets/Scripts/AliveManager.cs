@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class AliveManager : MonoBehaviour
 {
+    [Tooltip("Plays when a player dies")]
+    [SerializeField] SoundObject playerDeathSound;
+
     [Tooltip("True = Minigame ends when everyone died \n False = Minigame ends when only one player remains")]
     [SerializeField] bool noSurvivors;
 
@@ -18,6 +21,7 @@ public class AliveManager : MonoBehaviour
         {
             nrAlive--;
             playerAlive[pPlayer] = false;
+            MusicManager.Instance.PlaySound(playerDeathSound);
             if (pCheckAlive) CheckAlive();
         }
     }

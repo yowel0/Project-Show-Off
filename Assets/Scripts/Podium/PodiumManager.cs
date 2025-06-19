@@ -15,7 +15,8 @@ public class PodiumManager : MonoBehaviour
     [Range(0f, 10f)] [SerializeField] float riseDuration;
     [Tooltip("How high will the platforms rise? \n n = value \n 1st -> 1 x n \n 2nd -> .75 x n \n 3rd -> .5 x n \n 4th -> .25 x n")]
     [SerializeField] float riseHeight;
-
+    [Tooltip("Podium going up sound")]
+    [SerializeField] SoundObject podiumRiseSound;
 
     [Header("Ignorable")]
 
@@ -68,6 +69,8 @@ public class PodiumManager : MonoBehaviour
         {
             place.Raise(riseHeight, riseDuration);
         }
+
+        MusicManager.Instance.PlaySound(podiumRiseSound);
 
         StartCoroutine(PlatformsAreRaised());
     }
