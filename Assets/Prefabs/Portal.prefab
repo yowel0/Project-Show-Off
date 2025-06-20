@@ -607,7 +607,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc8575272af15684996ec42b8b6ef61d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enterMinigameSFX: {fileID: 11400000, guid: 41aee48bc1a166942be7676f3800d4e8, type: 2}
   sceneName: 
   gameInfoPopup: {fileID: 845977292354902346}
+  enterMinigameSFX: {fileID: 11400000, guid: 41aee48bc1a166942be7676f3800d4e8, type: 2}
+  OnPlayerApproach:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4511105815066974691, guid: 2748799d1e21bfc4badaf8c8ed25a1b2,
+          type: 3}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   playersNear: 0
