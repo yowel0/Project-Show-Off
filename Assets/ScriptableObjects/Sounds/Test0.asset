@@ -20,4 +20,6 @@ MonoBehaviour:
   soundType: 1
   bgmSceneName:
   - SampleScene
+  isCharacterDialogue: 0
+  hasPriority: 0
   currentSound: 0

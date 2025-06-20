@@ -19,6 +19,12 @@ public class SoundObject : ScriptableObject
     [Tooltip("If this is BGM, the sound will automatically play in the scene(s) named in this array")]
     [SerializeField] string[] bgmSceneName;
 
+    [Tooltip("If true, uses seperate AudioSource where only one sound can play at a time. If another sound is already playing, box below decides what happens.")]
+    [SerializeField] bool isCharacterDialogue;
+
+    [Tooltip("If checked, interrupts the sound that was already playing. Otherwise, it will not play at all. \n Only applies if above is true")]
+    [SerializeField] bool hasPriority;
+
     [Header("Debug")]
     [Tooltip("Shows the last (or currently played) sound. Main use is for the correct loudness to be associated with a sound clip")]
     [SerializeField] int currentSound;
@@ -48,6 +54,15 @@ public class SoundObject : ScriptableObject
         return false;
     }
 
+    public bool IsCharacterDialogue()
+    {
+        return isCharacterDialogue;
+    }
+
+    public bool HasPriority()
+    {
+        return hasPriority;
+    }
 
 
 }

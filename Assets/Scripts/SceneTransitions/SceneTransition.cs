@@ -16,6 +16,10 @@ public class SceneTransition : MonoBehaviour
     private VisualElement rootEl;
     private VisualElement wrapperEl;
 
+    [Header("Transition sounds")]
+    [Tooltip("Sounds that play when you switch scene. Put the name of the scene you switch to in Bgm Scene Name")]
+    [SerializeField] SoundObject[] transitionSounds;
+
     void Awake()
     {
         if (Instance == null)
@@ -37,7 +41,19 @@ public class SceneTransition : MonoBehaviour
 
     public void ChangeScene(string sceneName)
     {
+        PlayTransitionSound(sceneName);
         ChangeSceneAsync(sceneName);
+    }
+
+    void PlayTransitionSound(string sceneName)
+    {
+        foreach (SoundObject soundObject in transitionSounds)
+        {
+            if (soundObject.PlaysInScene(sceneName))
+            {
+                MusicManager.Instance.PlaySound(soundObject);
+            }
+        }
     }
 
     public async UniTask ChangeSceneAsync(string sceneName)

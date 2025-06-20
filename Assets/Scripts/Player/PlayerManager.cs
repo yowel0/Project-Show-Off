@@ -8,6 +8,9 @@ public class PlayerManager : MonoBehaviour
     public static PlayerManager Instance;
     public static ControlScheme ControlScheme;
 
+    [Tooltip("Plays when a player joins")]
+    [SerializeField] SoundObject joinSound;
+
     private PlayerInputManager playerInputManager;
     public List<PlayerShell> players = new List<PlayerShell>();
     public List<Transform> playerPositions = new List<Transform>();
@@ -49,6 +52,7 @@ public class PlayerManager : MonoBehaviour
 
     void AddPlayer(PlayerInput playerInput){
         print("Player joined");
+        MusicManager.Instance.PlaySound(joinSound);
         DontDestroyOnLoad(playerInput.gameObject);
         PlayerShell player = playerInput.GetComponent<PlayerShell>();
         players.Add(player);

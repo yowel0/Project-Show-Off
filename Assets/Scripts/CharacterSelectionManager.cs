@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class CharacterSelectionManager : MonoBehaviour
 {
     private PlayerManager playerManager;
+    [SerializeField] SoundObject namesConfirmedSound;
     [SerializeField]
     private string nextSceneName;
     private bool transitioned = false;
@@ -29,6 +30,7 @@ public class CharacterSelectionManager : MonoBehaviour
         {
             if (!transitioned)
             {
+                MusicManager.Instance.PlaySound(namesConfirmedSound);
                 SceneTransition.Instance.ChangeScene(nextSceneName);
                 transitioned = true;
             }

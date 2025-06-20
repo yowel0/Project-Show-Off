@@ -16,6 +16,7 @@ public class MusicManager : MonoBehaviour
     [SerializeField] SoundObject[] bgmSoundObjects;
     [SerializeField] AudioSource bgmAudioSource;
     [SerializeField] AudioSource sfxAudioSource;
+    [SerializeField] AudioSource dialogueAudioSource;
 
     public static MusicManager Instance;
     private void Start()
@@ -52,19 +53,50 @@ public class MusicManager : MonoBehaviour
         {
             Debug.LogWarning(
                 (new System.Diagnostics.StackTrace()).GetFrame(1).GetMethod().Name + 
-                " Tried to play a sound, but no SoundObject was defined");
+                " Tried to play a sound, but no Sound(Object) was defined");
             return;
         }
 
-        float soundTypeMult = 1;
+        float soundVolume = pSound.GetLoudness() * GetSoundTypeMult(pSound) * masterVolume;
+
+        if (pSound.IsCharacterDialogue())
+        {
+            PlayDialogue(pSound, soundVolume);
+        }
+        else
+        {
+            sfxAudioSource.PlayOneShot(pSound.GetSound(), soundVolume);
+        }
+    }
+
+    float GetSoundTypeMult(SoundObject pSound)
+    {
         switch (pSound.soundType)
         {
-            case SoundObject.SoundType.SFX: soundTypeMult = sfxVolume; break;
-            case SoundObject.SoundType.BGM: soundTypeMult = bgmVolume; break;
-            case SoundObject.SoundType.VoiceOver: soundTypeMult = voiceVolume; break;
+            case SoundObject.SoundType.SFX: return sfxVolume; 
+            case SoundObject.SoundType.BGM: return bgmVolume; 
+            case SoundObject.SoundType.VoiceOver: return voiceVolume;
+        }
+        return 1;
+    }
+
+    void PlayDialogue(SoundObject pSound, float pSoundTypeMult)
+    {
+        // If not playing, audio can play. If it has priority, audio always plays.
+        if (!dialogueAudioSource.isPlaying || pSound.HasPriority())
+        {
+            dialogueAudioSource.clip = pSound.GetSound();
+            dialogueAudioSource.volume = pSound.GetLoudness() * pSoundTypeMult * masterVolume;
+            dialogueAudioSource.Play();
+        }
+        else
+        {
+            Debug.Log(
+                (new System.Diagnostics.StackTrace()).GetFrame(1).GetMethod().Name +
+                " Tried to play a sound, but a dialogue was already playing");
         }
 
-        sfxAudioSource.PlayOneShot(pSound.GetSound(), pSound.GetLoudness() * soundTypeMult * masterVolume);
+
     }
 
 }
