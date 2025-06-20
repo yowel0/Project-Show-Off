@@ -37,7 +37,7 @@ public class SplitscreenManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        
     }
 
     void Enable()
