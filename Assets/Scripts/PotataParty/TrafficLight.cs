@@ -42,8 +42,8 @@ public class TrafficLight : MonoBehaviour
     [SerializeField] bool gameIsActive;
     [SerializeField] bool mouthIsOpen;
 
-    [SerializeField] TestingParticle goodParticle;
-    [SerializeField] TestingParticle badParticle;
+    [SerializeField] TestingParticle[] goodParticles;
+    [SerializeField] TestingParticle[] badParticles;
 
     public static TrafficLight Instance;
 
@@ -71,12 +71,14 @@ public class TrafficLight : MonoBehaviour
 
         if (pPoints > 0)
         {
-            goodParticle.IncreaseIntensity();
+            foreach (var p in goodParticles) p.IncreaseIntensity();
+            //goodParticles.IncreaseIntensity();
             MusicManager.Instance.PlaySound(happySound);
         }
         else
         {
-            badParticle.IncreaseIntensity();
+            foreach (var p in badParticles) p.IncreaseIntensity();
+            //badParticles.IncreaseIntensity();
             MusicManager.Instance.PlaySound(angrySound);
         }
 
