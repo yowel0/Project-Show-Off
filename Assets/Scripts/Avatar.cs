@@ -6,7 +6,7 @@ using UnityEngine;
 public class Avatar : MonoBehaviour
 {
     [SerializeField]
-    GameObject character;
+    public GameObject character;
     [SerializeField]
     GameObject hat;
     // Start is called before the first frame update
