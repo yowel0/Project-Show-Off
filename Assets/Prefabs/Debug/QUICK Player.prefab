@@ -77,8 +77,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce26b21a2f0c595488184b05facc689c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayerAvatar: {fileID: 8023365455395243295, guid: 17c2c12a739a6b5499ac0ce949b611b1,
-    type: 3}
+  PlayerAvatarPrefab: {fileID: 0}
+  CharacterSelectionPrefab: {fileID: 0}
   controlScheme: 1
   userName: 
   hatPrefab: {fileID: 0}
@@ -193,6 +193,21 @@ PrefabInstance:
       objectReference: {fileID: 3808779095724922786}
     - target: {fileID: 4354272133948173056, guid: 17c2c12a739a6b5499ac0ce949b611b1,
         type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4354272133948173056, guid: 17c2c12a739a6b5499ac0ce949b611b1,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4354272133948173056, guid: 17c2c12a739a6b5499ac0ce949b611b1,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4354272133948173056, guid: 17c2c12a739a6b5499ac0ce949b611b1,
+        type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -240,6 +255,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4354272133948173056, guid: 17c2c12a739a6b5499ac0ce949b611b1,
+        type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8023365455395243295, guid: 17c2c12a739a6b5499ac0ce949b611b1,
         type: 3}
