@@ -9,6 +9,8 @@ public class SplitscreenManager : MonoBehaviour
     [SerializeField]
     private bool enableOnStart = false;
 
+    Camera playercamtest = null;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -20,8 +22,6 @@ public class SplitscreenManager : MonoBehaviour
         {
             Destroy(this);
         }
-        if(enableOnStart)
-            Enable();
         if (PlayerManager.Instance != null)
         {
             PlayerInputManager playerInputManager = PlayerManager.Instance.GetComponent<PlayerInputManager>();
@@ -32,6 +32,8 @@ public class SplitscreenManager : MonoBehaviour
         {
             print("PLAYER MANAGER NOT FOUND");
         }
+        if(enableOnStart)
+            Enable();
     }
 
     // Update is called once per frame
@@ -66,11 +68,16 @@ public class SplitscreenManager : MonoBehaviour
 
     void SetCamViewAllPlayers() {
         List<PlayerShell> players = PlayerManager.Instance.players;
-        for (int i = 0; i < players.Count; i++) {
+        for (int i = 0; i < players.Count; i++)
+        {
             PlayerShell player = players[i];
             Camera playerCam = player.GetComponentInChildren<Camera>();
+            playercamtest = playerCam;
+            print(playerCam);
             playerCam.enabled = true;
-            SetCamViewpointRect(playerCam,i,players.Count);
+            playerCam.gameObject.SetActive(true);
+            print(playerCam.name + ": " + playerCam.enabled);
+            SetCamViewpointRect(playerCam, i, players.Count);
         }
     }
 

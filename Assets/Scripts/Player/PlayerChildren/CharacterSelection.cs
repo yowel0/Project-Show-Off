@@ -202,7 +202,7 @@ public class CharacterSelection : MonoBehaviour
         }
     }
 
-    void SetEditingComponent(Component component)
+    public void SetEditingComponent(Component component)
     {
         editingComponent = component;
         hatUI.SetActive(false);

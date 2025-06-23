@@ -86,7 +86,7 @@ public class PlayerShell : MonoBehaviour
                 }
                 break;
             case PlayerChild.CharacterSelection:
-                if (GetComponentInChildren<Avatar>())
+                if (GetComponentInChildren<PlayerAvatarMovement>())
                 {
                     DestroyChildren();
 
