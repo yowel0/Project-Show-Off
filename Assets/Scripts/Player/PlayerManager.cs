@@ -52,7 +52,7 @@ public class PlayerManager : MonoBehaviour
 
     void AddPlayer(PlayerInput playerInput){
         print("Player joined");
-        MusicManager.Instance.PlaySound(joinSound);
+        MusicManager.Instance?.PlaySound(joinSound);
         DontDestroyOnLoad(playerInput.gameObject);
         PlayerShell player = playerInput.GetComponent<PlayerShell>();
         players.Add(player);

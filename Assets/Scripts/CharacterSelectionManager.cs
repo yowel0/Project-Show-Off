@@ -30,7 +30,7 @@ public class CharacterSelectionManager : MonoBehaviour
         {
             if (!transitioned)
             {
-                MusicManager.Instance.PlaySound(namesConfirmedSound);
+                MusicManager.Instance?.PlaySound(namesConfirmedSound);
                 SceneTransition.Instance.ChangeScene(nextSceneName);
                 transitioned = true;
             }
