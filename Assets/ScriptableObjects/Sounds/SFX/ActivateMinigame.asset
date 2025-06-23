@@ -16,5 +16,11 @@ MonoBehaviour:
   - sound: {fileID: 8300000, guid: c9775a6248b900a4d93be7db493e3c4c, type: 3}
     loudness: 1
   soundType: 0
-  bgmSceneName: []
+  bgmSceneName:
+  - PotataParty
+  - CloudysColours
+  - ScaryMouseMayhem
+  - BibiBuilding
+  isCharacterDialogue: 0
+  hasPriority: 0
   currentSound: 0

@@ -6,6 +6,9 @@ using UnityEngine.SceneManagement;
 
 public class Portal : MonoBehaviour
 {
+    // THIS SCRIPT WILL GO UNUSED, IT HAS BEEN REPLACED COMPLETELY
+
+
     [Tooltip("Name of the scene for the minigame this portal leads to")]
     [SerializeField] string sceneName;
 
@@ -37,7 +40,7 @@ public class Portal : MonoBehaviour
         {
             OnPlayerApproach?.Invoke();
             playersNear++;
-            CheckPopup();
+            //CheckPopup();
         }
     }
 
@@ -46,7 +49,7 @@ public class Portal : MonoBehaviour
         if (other.tag == "Player")
         {
             playersNear--;
-            CheckPopup();
+            //CheckPopup();
         }
     }
 
