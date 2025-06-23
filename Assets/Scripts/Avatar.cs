@@ -52,6 +52,7 @@ public class Avatar : MonoBehaviour
         else if (headTop == null && hat != null)
         {
             hat.transform.SetParent(transform, false);
+            hat.transform.position += Vector3.up * 1.45f;
             print("headtop not found");
         }
     }
