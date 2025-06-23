@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 581571860759149160}
   - component: {fileID: 5470910465923595866}
   - component: {fileID: 4474594711935579071}
+  - component: {fileID: 1678157361127540767}
+  - component: {fileID: 9205189247550922560}
   m_Layer: 0
   m_Name: Butterfly
   m_TagString: Untagged
@@ -119,5 +121,44 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 8
+  caughtSound: {fileID: 0}
+  moveSound: {fileID: 0}
+  finalCatchSound: {fileID: 0}
   isActive: 0
   nextLocation: {fileID: 0}
+--- !u!114 &1678157361127540767
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3840596281930017344}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dab9985a6f8d84b4dad60a6f2f6509ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundToPlay: {fileID: 0}
+  minInterval: 10
+  maxInterval: 20
+  isActive: 0
+  timer: 0
+--- !u!114 &9205189247550922560
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3840596281930017344}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59b7820b7d40063498705a02dc7b7430, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  loopedSound: {fileID: 0}
+  playOnStart: 0
+  soundTime: 0
+  timer: 0
+  isActive: 0
+  useOverrideTime: 1
+  overrideTime: 4

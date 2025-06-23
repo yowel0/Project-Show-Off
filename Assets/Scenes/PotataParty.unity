@@ -2105,6 +2105,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: approvalPArt
       objectReference: {fileID: 0}
+    - target: {fileID: 2535955924672899761, guid: 96b6b6b9100f075449b7152f99d5d1a3,
+        type: 3}
+      propertyPath: lengthInSec
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2535955924672899761, guid: 96b6b6b9100f075449b7152f99d5d1a3,
+        type: 3}
+      propertyPath: playOnAwake
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2535955924672899761, guid: 96b6b6b9100f075449b7152f99d5d1a3,
+        type: 3}
+      propertyPath: EmissionModule.m_Bursts.Array.data[0].countCurve.scalar
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 2851634576273689202, guid: 96b6b6b9100f075449b7152f99d5d1a3,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -2169,6 +2184,36 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2876369893799329588, guid: 96b6b6b9100f075449b7152f99d5d1a3,
+        type: 3}
+      propertyPath: lengthInSec
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2876369893799329588, guid: 96b6b6b9100f075449b7152f99d5d1a3,
+        type: 3}
+      propertyPath: playOnAwake
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2876369893799329588, guid: 96b6b6b9100f075449b7152f99d5d1a3,
+        type: 3}
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6195948060749475772, guid: 96b6b6b9100f075449b7152f99d5d1a3,
+        type: 3}
+      propertyPath: lengthInSec
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6195948060749475772, guid: 96b6b6b9100f075449b7152f99d5d1a3,
+        type: 3}
+      propertyPath: playOnAwake
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6195948060749475772, guid: 96b6b6b9100f075449b7152f99d5d1a3,
+        type: 3}
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 0.2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2242,14 +2287,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pSystem: {fileID: 1620196041}
-  emissionCap: 0
-  emissionAmount: 0
+  emissionCap: 1
+  emissionAmount: 1
   emissionIncreasePerInput: 0
   emissionDecreasePerFrame: 0
-  lifetimeCap: 0
+  lifetimeCap: 0.2
   lifetime: 0
-  lifetimeIncreasePerInput: 0
-  lifetimeDecreasePerFrame: 0
+  lifetimeIncreasePerInput: 0.2
+  lifetimeDecreasePerFrame: 0.02
   mmCurve:
     m_Mode: 0
     m_CurveMultiplier: 0
@@ -2280,14 +2325,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pSystem: {fileID: 1620196043}
-  emissionCap: 0
-  emissionAmount: 0
+  emissionCap: 1
+  emissionAmount: 1
   emissionIncreasePerInput: 0
   emissionDecreasePerFrame: 0
-  lifetimeCap: 0
+  lifetimeCap: 0.2
   lifetime: 0
-  lifetimeIncreasePerInput: 0
-  lifetimeDecreasePerFrame: 0
+  lifetimeIncreasePerInput: 0.2
+  lifetimeDecreasePerFrame: 0.02
   mmCurve:
     m_Mode: 0
     m_CurveMultiplier: 0
@@ -2318,14 +2363,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pSystem: {fileID: 1620196045}
-  emissionCap: 1
-  emissionAmount: 1
-  emissionIncreasePerInput: 0
-  emissionDecreasePerFrame: 0
+  emissionCap: 30
+  emissionAmount: 0
+  emissionIncreasePerInput: 10
+  emissionDecreasePerFrame: 1
   lifetimeCap: 0.5
-  lifetime: 0.5
-  lifetimeIncreasePerInput: 0
-  lifetimeDecreasePerFrame: 0
+  lifetime: 0
+  lifetimeIncreasePerInput: 0.4
+  lifetimeDecreasePerFrame: 0.0167
   mmCurve:
     m_Mode: 0
     m_CurveMultiplier: 0
@@ -2391,6 +2436,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: dissaproval
       objectReference: {fileID: 0}
+    - target: {fileID: 1333172255239012420, guid: fb9a17d8f7d1a0641bc59c77309bc64e,
+        type: 3}
+      propertyPath: lengthInSec
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 1333172255239012420, guid: fb9a17d8f7d1a0641bc59c77309bc64e,
+        type: 3}
+      propertyPath: playOnAwake
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2837990172088565579, guid: fb9a17d8f7d1a0641bc59c77309bc64e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2440,6 +2495,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8898570179614178094, guid: fb9a17d8f7d1a0641bc59c77309bc64e,
+        type: 3}
+      propertyPath: lengthInSec
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 8898570179614178094, guid: fb9a17d8f7d1a0641bc59c77309bc64e,
+        type: 3}
+      propertyPath: playOnAwake
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2497,14 +2562,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pSystem: {fileID: 1627617886}
-  emissionCap: 0
+  emissionCap: 5
   emissionAmount: 0
-  emissionIncreasePerInput: 0
-  emissionDecreasePerFrame: 0
-  lifetimeCap: 0
-  lifetime: 0
-  lifetimeIncreasePerInput: 0
-  lifetimeDecreasePerFrame: 0
+  emissionIncreasePerInput: 3
+  emissionDecreasePerFrame: 1
+  lifetimeCap: 0.25
+  lifetime: 0.25
+  lifetimeIncreasePerInput: 0.2
+  lifetimeDecreasePerFrame: 0.0167
   mmCurve:
     m_Mode: 0
     m_CurveMultiplier: 0
@@ -2535,14 +2600,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pSystem: {fileID: 1627617888}
-  emissionCap: 0
+  emissionCap: 30
   emissionAmount: 0
-  emissionIncreasePerInput: 0
-  emissionDecreasePerFrame: 0
-  lifetimeCap: 0
+  emissionIncreasePerInput: 10
+  emissionDecreasePerFrame: 1
+  lifetimeCap: 0.5
   lifetime: 0
-  lifetimeIncreasePerInput: 0
-  lifetimeDecreasePerFrame: 0
+  lifetimeIncreasePerInput: 0.4
+  lifetimeDecreasePerFrame: 0.0167
   mmCurve:
     m_Mode: 0
     m_CurveMultiplier: 0
@@ -3450,22 +3515,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5787992695681044893, guid: 2df77f5f9fa4d28418c3e4e67dbe1110,
         type: 3}
-      propertyPath: redLight
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 5787992695681044893, guid: 2df77f5f9fa4d28418c3e4e67dbe1110,
-        type: 3}
-      propertyPath: greenLight
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 5787992695681044893, guid: 2df77f5f9fa4d28418c3e4e67dbe1110,
-        type: 3}
       propertyPath: badParticle
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 5787992695681044893, guid: 2df77f5f9fa4d28418c3e4e67dbe1110,
-        type: 3}
-      propertyPath: orangeLight
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 5787992695681044893, guid: 2df77f5f9fa4d28418c3e4e67dbe1110,

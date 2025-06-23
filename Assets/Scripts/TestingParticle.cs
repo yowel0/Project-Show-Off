@@ -52,7 +52,8 @@ public class TestingParticle : MonoBehaviour
 
         emission.SetBurst(0, burst);
 
-        mmCurve.constantMax = lifetime;
+        //mmCurve.constantMax = lifetime;
+        mmCurve.constant = lifetime;
         main.startLifetime = mmCurve;
 
 

@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6093503691435569188}
   - component: {fileID: 2356403658301542297}
   - component: {fileID: 3419132814120479671}
+  - component: {fileID: 9142430399760208521}
   m_Layer: 0
   m_Name: BibiPlatform
   m_TagString: Untagged
@@ -118,5 +119,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b254a4bbc465814fa150dff795163b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  riseSpeed: 0.5
   playerNr: 0
   pam: {fileID: 0}
+  hasJumpedOverFire: 0
+  playerDead: 0
+--- !u!54 &9142430399760208521
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6531432915455385685}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 122
+  m_CollisionDetection: 0

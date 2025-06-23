@@ -6,6 +6,14 @@ public class Butterfly : MonoBehaviour
 {
     [SerializeField] float moveSpeed;
 
+    [Tooltip("Player collides with butterfly")]
+    [SerializeField] SoundObject caughtSound;
+    [Tooltip("DISCUSS WHEN TO PLAY THIS SOUND!!! ALWAYS OR ONLY WHEN MOVING, AND LOOPING?")]
+    [SerializeField] SoundObject moveSound;
+    [Tooltip("When the wings appear")]
+    [SerializeField] SoundObject finalCatchSound;
+
+    [Header("Debug")]
     [SerializeField] bool isActive;
 
     [SerializeField] Transform nextLocation;
@@ -40,6 +48,7 @@ public class Butterfly : MonoBehaviour
 
     void SetNextLocation()
     {
+        MusicManager.Instance.PlaySound(caughtSound);
         if (path.Count > 0)
         {
             nextLocation = path.Dequeue();
@@ -48,6 +57,7 @@ public class Butterfly : MonoBehaviour
         else
         {
             // DO THE REWARD
+            MusicManager.Instance.PlaySound(finalCatchSound);
             Destroy(gameObject);
         }
     }

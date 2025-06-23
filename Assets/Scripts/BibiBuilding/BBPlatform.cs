@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class BBPlatform : MonoBehaviour
 {
+    [SerializeField] float riseSpeed;
+
     [Header("Set by code")]
     [Tooltip("What player this platform belongs to (0 = player 1, 1 = player 2, etc.)")]
     [SerializeField] int playerNr;
@@ -12,12 +14,15 @@ public class BBPlatform : MonoBehaviour
 
     [SerializeField] bool hasJumpedOverFire;
 
+    [SerializeField] bool playerDead;
+
 
     private void DoAliveCheck()
     {
         if (pam != null && pam.IsGrounded())
         {
             AliveManager.Instance.KillPlayer(playerNr);
+            playerDead = true;
         }
     }
 
@@ -40,6 +45,17 @@ public class BBPlatform : MonoBehaviour
                 // Give point, disable point gain for jumping over fire
                 AliveManager.Instance.GivePoint(playerNr);
                 hasJumpedOverFire = false;
+            }
+        }
+        if (playerDead)
+        {
+            if (GetComponent<Rigidbody>() != null)
+            {
+                GetComponent<Rigidbody>().MovePosition(transform.position + Vector3.up * riseSpeed);
+            }
+            else
+            {
+                transform.Translate(Vector3.up * riseSpeed);
             }
         }
     }
