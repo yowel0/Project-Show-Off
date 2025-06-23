@@ -2318,12 +2318,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pSystem: {fileID: 1620196045}
-  emissionCap: 0
-  emissionAmount: 0
+  emissionCap: 1
+  emissionAmount: 1
   emissionIncreasePerInput: 0
   emissionDecreasePerFrame: 0
-  lifetimeCap: 0
-  lifetime: 0
+  lifetimeCap: 0.5
+  lifetime: 0.5
   lifetimeIncreasePerInput: 0
   lifetimeDecreasePerFrame: 0
   mmCurve:
@@ -3452,12 +3452,12 @@ PrefabInstance:
         type: 3}
       propertyPath: redLight
       value: 
-      objectReference: {fileID: 1627617887}
+      objectReference: {fileID: 0}
     - target: {fileID: 5787992695681044893, guid: 2df77f5f9fa4d28418c3e4e67dbe1110,
         type: 3}
       propertyPath: greenLight
       value: 
-      objectReference: {fileID: 1620196044}
+      objectReference: {fileID: 0}
     - target: {fileID: 5787992695681044893, guid: 2df77f5f9fa4d28418c3e4e67dbe1110,
         type: 3}
       propertyPath: badParticle
@@ -3467,7 +3467,7 @@ PrefabInstance:
         type: 3}
       propertyPath: orangeLight
       value: 
-      objectReference: {fileID: 1620196044}
+      objectReference: {fileID: 0}
     - target: {fileID: 5787992695681044893, guid: 2df77f5f9fa4d28418c3e4e67dbe1110,
         type: 3}
       propertyPath: goodParticle
@@ -3482,6 +3482,76 @@ PrefabInstance:
         type: 3}
       propertyPath: goodParticles.Array.size
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5787992695681044893, guid: 2df77f5f9fa4d28418c3e4e67dbe1110,
+        type: 3}
+      propertyPath: badParticles.Array.data[0]
+      value: 
+      objectReference: {fileID: 1627617890}
+    - target: {fileID: 5787992695681044893, guid: 2df77f5f9fa4d28418c3e4e67dbe1110,
+        type: 3}
+      propertyPath: badParticles.Array.data[1]
+      value: 
+      objectReference: {fileID: 1627617889}
+    - target: {fileID: 5787992695681044893, guid: 2df77f5f9fa4d28418c3e4e67dbe1110,
+        type: 3}
+      propertyPath: goodParticles.Array.data[0]
+      value: 
+      objectReference: {fileID: 1620196048}
+    - target: {fileID: 5787992695681044893, guid: 2df77f5f9fa4d28418c3e4e67dbe1110,
+        type: 3}
+      propertyPath: goodParticles.Array.data[1]
+      value: 
+      objectReference: {fileID: 1620196047}
+    - target: {fileID: 5787992695681044893, guid: 2df77f5f9fa4d28418c3e4e67dbe1110,
+        type: 3}
+      propertyPath: goodParticles.Array.data[2]
+      value: 
+      objectReference: {fileID: 1620196046}
+    - target: {fileID: 5787992695681044893, guid: 2df77f5f9fa4d28418c3e4e67dbe1110,
+        type: 3}
+      propertyPath: OnRed.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5787992695681044893, guid: 2df77f5f9fa4d28418c3e4e67dbe1110,
+        type: 3}
+      propertyPath: OnGreen.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5787992695681044893, guid: 2df77f5f9fa4d28418c3e4e67dbe1110,
+        type: 3}
+      propertyPath: OnOrange.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5787992695681044893, guid: 2df77f5f9fa4d28418c3e4e67dbe1110,
+        type: 3}
+      propertyPath: OnRed.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1620196042}
+    - target: {fileID: 5787992695681044893, guid: 2df77f5f9fa4d28418c3e4e67dbe1110,
+        type: 3}
+      propertyPath: OnGreen.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1627617887}
+    - target: {fileID: 5787992695681044893, guid: 2df77f5f9fa4d28418c3e4e67dbe1110,
+        type: 3}
+      propertyPath: OnOrange.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1620196044}
+    - target: {fileID: 5787992695681044893, guid: 2df77f5f9fa4d28418c3e4e67dbe1110,
+        type: 3}
+      propertyPath: OnRed.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5787992695681044893, guid: 2df77f5f9fa4d28418c3e4e67dbe1110,
+        type: 3}
+      propertyPath: OnGreen.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5787992695681044893, guid: 2df77f5f9fa4d28418c3e4e67dbe1110,
+        type: 3}
+      propertyPath: OnOrange.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
