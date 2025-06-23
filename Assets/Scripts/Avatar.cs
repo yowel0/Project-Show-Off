@@ -43,7 +43,7 @@ public class Avatar : MonoBehaviour
 
     void SetHatParent()
     {
-        Transform headTop = character.transform.Find("mixamorig:Hips/mixamorig:Spine/mixamorig:Spine1/mixamorig:Spine2/mixamorig:Neck/mixamorig:Head/mixamorig:HeadTop_End");
+        Transform headTop = character.transform.Find("jnt_spine_1/jnt_spine_2/jnt_spine_3/jnt_spine_4/jnt_head_1/jnt_head_2");
         if (headTop != null && hat != null)
         {
             hat.transform.SetParent(headTop);

@@ -17,6 +17,7 @@ public class CharacterSelection : MonoBehaviour
         Ready
     }
     public Component editingComponent;
+    private Component previousEditingComponent;
     private PlayerShell playerShell;
     private Avatar avatar;
     private PlayerInput playerInput;
@@ -152,14 +153,11 @@ public class CharacterSelection : MonoBehaviour
             playerShell.hatPrefab = hats[selectedHat];
             SetEditingComponent(Component.Ready);
         }
-        if (playerInput.actions["Cancel"].triggered){
-            SetEditingComponent(Component.Name);
-        }
     }
 
     void ReadyUpdate(){
         if (playerInput.actions["Cancel"].triggered){
-            SetEditingComponent(Component.Hat);
+            SetEditingComponent(previousEditingComponent);
         }
         //spawn after you're ready
         // if (playerInput.actions["Confirm"].triggered){
@@ -204,6 +202,7 @@ public class CharacterSelection : MonoBehaviour
 
     public void SetEditingComponent(Component component)
     {
+        previousEditingComponent = editingComponent;
         editingComponent = component;
         hatUI.SetActive(false);
         nameUI.SetActive(false);

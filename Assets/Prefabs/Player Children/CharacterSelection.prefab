@@ -3616,7 +3616,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: hat
+          m_StringArgument: ready
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!1 &5571988602118790990
@@ -6614,7 +6614,7 @@ MonoBehaviour:
   - {fileID: 581653206421340858, guid: 6e231fcae8d734a4d8e14e55940aacc6, type: 3}
   selectedHat: 0
   characters:
-  - {fileID: 2564699749496021369, guid: 3249bf336d61d8f4fa87cd08e5272ff2, type: 3}
+  - {fileID: 503201629981874455, guid: a742c64c1a8c7754a9802de9ab5ed5af, type: 3}
   - {fileID: 1741133593735974309, guid: 38978e5509eb49e409cbe274056f5910, type: 3}
   - {fileID: 5439353275125534123, guid: e89bd24e7aeccdb43934a1986c55dd9a, type: 3}
   - {fileID: 4032973381738341013, guid: 8db3fe2612e2e7542ab4eb49b9b79440, type: 3}
