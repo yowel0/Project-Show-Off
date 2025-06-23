@@ -6,6 +6,9 @@ public class Butterfly : MonoBehaviour
 {
     [SerializeField] float moveSpeed;
 
+    [Tooltip("Attach particle system with PlayOnAwake and StopAction=Destroy")]
+    [SerializeField] GameObject celebrateParticle;
+
     [Tooltip("Player collides with butterfly")]
     [SerializeField] SoundObject caughtSound;
     [Tooltip("DISCUSS WHEN TO PLAY THIS SOUND!!! ALWAYS OR ONLY WHEN MOVING, AND LOOPING?")]
@@ -57,6 +60,10 @@ public class Butterfly : MonoBehaviour
         else
         {
             // DO THE REWARD
+            if (celebrateParticle != null)
+            {
+                Instantiate(celebrateParticle, transform.position, celebrateParticle.transform.rotation);
+            }
             MusicManager.Instance.PlaySound(finalCatchSound);
             Destroy(gameObject);
         }
