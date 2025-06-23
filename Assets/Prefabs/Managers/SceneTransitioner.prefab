@@ -63,3 +63,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   uiDoc: {fileID: 160886944436454003}
+  transitionSounds:
+  - {fileID: 11400000, guid: 41aee48bc1a166942be7676f3800d4e8, type: 2}
