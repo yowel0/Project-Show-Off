@@ -62,6 +62,7 @@ Material:
     m_Floats:
     - _AlphaClip: 1
     - _AlphaToMask: 0
+    - _Alpha_Clip_Threshold: 0
     - _Blend: 0
     - _CastShadows: 0
     - _Cull: 0
@@ -78,6 +79,6 @@ Material:
     m_Colors:
     - _DissolveSpeed: {r: -0.5, g: 0, b: 0, a: 0}
     - _SpeedMainTexture: {r: -0.5, g: 0, b: 0, a: 0}
-    - _colour1: {r: 1, g: 0.37115335, b: 0, a: 0}
+    - _colour1: {r: 2.4622889, g: 0.7161293, b: 0, a: 0}
     - _colour2: {r: 12.1257305, g: 0, b: 4.8709526, a: 0}
   m_BuildTextureStacks: []

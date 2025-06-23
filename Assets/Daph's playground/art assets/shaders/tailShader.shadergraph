@@ -1345,10 +1345,10 @@
     "m_Guid": {
         "m_GuidSerialized": "2c882f2e-e662-4281-b32b-775640638e3e"
     },
-    "m_Name": "Float",
+    "m_Name": "Alpha Clip Threshold",
     "m_DefaultRefNameVersion": 1,
-    "m_RefNameGeneratedByDisplayName": "Float",
-    "m_DefaultReferenceName": "_Float",
+    "m_RefNameGeneratedByDisplayName": "Alpha Clip Threshold",
+    "m_DefaultReferenceName": "_Alpha_Clip_Threshold",
     "m_OverrideReferenceName": "",
     "m_GeneratePropertyBlock": true,
     "m_UseCustomSlotLabel": false,
@@ -2331,7 +2331,7 @@
     "m_Type": "UnityEditor.ShaderGraph.Vector1MaterialSlot",
     "m_ObjectId": "6e92e590e9c745178c1e8e499ebdcb42",
     "m_Id": 0,
-    "m_DisplayName": "Float",
+    "m_DisplayName": "Alpha Clip Threshold",
     "m_SlotType": 1,
     "m_Hidden": false,
     "m_ShaderOutputName": "Out",
