@@ -21,7 +21,7 @@ public class AliveManager : MonoBehaviour
         {
             nrAlive--;
             playerAlive[pPlayer] = false;
-            MusicManager.Instance.PlaySound(playerDeathSound);
+            MusicManager.Instance?.PlaySound(playerDeathSound);
             if (pCheckAlive) CheckAlive();
         }
     }

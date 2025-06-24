@@ -6610,8 +6610,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   editingComponent: 0
   hats:
-  - {fileID: 3693891127875631555, guid: 7e2b275932e6e514eb72cdc4d71177d9, type: 3}
-  - {fileID: 581653206421340858, guid: 6e231fcae8d734a4d8e14e55940aacc6, type: 3}
+  - {fileID: 5162844031722881248, guid: 66156513efe505d45ae26798d9919ee7, type: 3}
+  - {fileID: 1179343396464144480, guid: 92db4b6139a4a79458ea29fd33a9f03c, type: 3}
+  - {fileID: 3903440933231622594, guid: 8ea0129555d87dd46932efa794c59e17, type: 3}
+  - {fileID: 2315887403875124615, guid: 8b7a0e5cb0ac1ad4796cec48190766d4, type: 3}
   selectedHat: 0
   characters:
   - {fileID: 503201629981874455, guid: a742c64c1a8c7754a9802de9ab5ed5af, type: 3}

@@ -40,7 +40,7 @@ public class LoopingSound : MonoBehaviour
     void PlaySound()
     {
         timer = soundTime;
-        MusicManager.Instance.PlaySound(loopedSound);
+        MusicManager.Instance?.PlaySound(loopedSound);
     }
 
     private void FixedUpdate()

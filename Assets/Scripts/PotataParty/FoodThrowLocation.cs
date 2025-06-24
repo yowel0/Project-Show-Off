@@ -17,7 +17,7 @@ public class FoodThrowLocation : MonoBehaviour
     public void Throw()
     {
         if (!canThrow) return;
-        MusicManager.Instance.PlaySound(throwSound);
+        MusicManager.Instance?.PlaySound(throwSound);
         GameObject food = Instantiate(foodPrefab, transform.position, transform.rotation);
         food.GetComponent<Food>().SetValues(foodDestination, playerNr);
     }

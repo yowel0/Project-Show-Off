@@ -8,6 +8,6 @@ public class SingleSoundPlayer : MonoBehaviour
 
     public void PlaySound()
     {
-        MusicManager.Instance.PlaySound(soundObject);
+        MusicManager.Instance?.PlaySound(soundObject);
     }
 }

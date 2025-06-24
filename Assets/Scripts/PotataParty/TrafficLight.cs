@@ -73,13 +73,13 @@ public class TrafficLight : MonoBehaviour
         {
             foreach (var p in goodParticles) p.IncreaseIntensity();
             //goodParticles.IncreaseIntensity();
-            MusicManager.Instance.PlaySound(happySound);
+            MusicManager.Instance?.PlaySound(happySound);
         }
         else
         {
             foreach (var p in badParticles) p.IncreaseIntensity();
             //badParticles.IncreaseIntensity();
-            MusicManager.Instance.PlaySound(angrySound);
+            MusicManager.Instance?.PlaySound(angrySound);
         }
 
         Scores.Instance.AddScore(pPlayer, pPoints);
@@ -95,16 +95,16 @@ public class TrafficLight : MonoBehaviour
 
         // Continue with orange
         SetLight(1);
-        MusicManager.Instance.PlaySound(stopIndicatorSound);
+        MusicManager.Instance?.PlaySound(stopIndicatorSound);
         yield return new WaitForSeconds(orangeTime);
 
         // End with red
         SetLight(0);
-        MusicManager.Instance.PlaySound(eatingSound);
+        MusicManager.Instance?.PlaySound(eatingSound);
         mouthIsOpen = false;
         yield return new WaitForSeconds(redTime);
 
-        MusicManager.Instance.PlaySound(continueIndicatorSound);
+        MusicManager.Instance?.PlaySound(continueIndicatorSound);
 
         // Repeat
         NewRound();

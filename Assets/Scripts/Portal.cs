@@ -29,7 +29,7 @@ public class Portal : MonoBehaviour
     {
         if (gameInfoPopup.activeSelf)
         {
-            MusicManager.Instance.PlaySound(enterMinigameSFX);
+            MusicManager.Instance?.PlaySound(enterMinigameSFX);
             SceneManager.LoadScene(sceneName);
         }
     }

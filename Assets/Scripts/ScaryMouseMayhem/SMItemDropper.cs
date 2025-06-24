@@ -139,7 +139,7 @@ public class SMItemDropper : MonoBehaviour
         // TODO: Add object to array to check when game ends?
         GameObject itemToDrop = Instantiate(items[itemID], transform.position, Quaternion.identity);
 
-        MusicManager.Instance.PlaySound(itemDropSound);
+        MusicManager.Instance?.PlaySound(itemDropSound);
     }
 
     int GetRandomItem()

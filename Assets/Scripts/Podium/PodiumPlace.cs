@@ -74,13 +74,13 @@ public class PodiumPlace : MonoBehaviour
                 if (placement == 0)
                 {
                     OnPeakReached?.Invoke();
-                    MusicManager.Instance.PlaySound(playerWinSound);
-                    MusicManager.Instance.PlaySound(podiumFirstSound);
+                    MusicManager.Instance?.PlaySound(playerWinSound);
+                    MusicManager.Instance?.PlaySound(podiumFirstSound);
                 }
                 else
                 {
-                    MusicManager.Instance.PlaySound(playerLoseSound);
-                    MusicManager.Instance.PlaySound(podiumLoseSound);
+                    MusicManager.Instance?.PlaySound(playerLoseSound);
+                    MusicManager.Instance?.PlaySound(podiumLoseSound);
                 }
 
             }

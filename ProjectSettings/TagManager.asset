@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Pillow
   - Held Box
+  - Ice
   layers:
   - Default
   - TransparentFX

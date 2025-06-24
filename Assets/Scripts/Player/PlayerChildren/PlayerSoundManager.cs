@@ -36,34 +36,34 @@ public class PlayerSoundManager : MonoBehaviour
     public void PlayBump()
     {
         if (!MusicManager.Instance) return;
-        MusicManager.Instance.PlaySound(bumpSound);
+        MusicManager.Instance?.PlaySound(bumpSound);
     }
 
     public void PlayJump()
     {
         if (!MusicManager.Instance) return;
-        MusicManager.Instance.PlaySound(jumpSound);
+        MusicManager.Instance?.PlaySound(jumpSound);
     }
 
     public void PlayLand(string tag = "")
     {
         if (!MusicManager.Instance) return;
         // Add logic for what the player landed on
-        if (tag == "Book") MusicManager.Instance.PlaySound(landBookSound);
-        MusicManager.Instance.PlaySound(landSound);
+        if (tag == "Book") MusicManager.Instance?.PlaySound(landBookSound);
+        MusicManager.Instance?.PlaySound(landSound);
     }
 
     public void PlayPillowBounce()
     {
         if (!MusicManager.Instance) return;
-        MusicManager.Instance.PlaySound(pillowBounceSound);
+        MusicManager.Instance?.PlaySound(pillowBounceSound);
     }
 
     public void PlayFootstep()
     {
         if (!MusicManager.Instance) return;
         // Add logic for ground type (normal, carpet, grass)
-        MusicManager.Instance.PlaySound(footstepSound);
+        MusicManager.Instance?.PlaySound(footstepSound);
     }
 
 

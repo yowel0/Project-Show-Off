@@ -35,7 +35,7 @@ public class RandomSoundPlayer : MonoBehaviour
         timer -= Time.fixedDeltaTime;
         if (timer <= 0)
         {
-            MusicManager.Instance.PlaySound(soundToPlay);
+            MusicManager.Instance?.PlaySound(soundToPlay);
             timer += Mathf.Lerp(minInterval, maxInterval, Random.value);
         }
     }
