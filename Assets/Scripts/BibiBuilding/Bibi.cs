@@ -15,7 +15,9 @@ public class Bibi : MonoBehaviour
     [Tooltip("Time in seconds it takes Bibi to fully turn around at full speed")]
     [SerializeField] float fullReverseTime;
 
-
+    [Header("Other balancing")]
+    [SerializeField] GameObject firePivot;
+    [SerializeField] AnimationCurve fireRetractCurve;
 
     [Header("Debug: Values set by curve")]
     [SerializeField] float currentTurnsPerSecond;
@@ -65,6 +67,8 @@ public class Bibi : MonoBehaviour
         }
         else forwardRotationMult = Mathf.Clamp(forwardRotationMult - reverseStrengthPerFrame, -1f, 1f);
         
+        firePivot.transform.localScale = new Vector3(1, 1, fireRetractCurve.Evaluate(Mathf.Abs(forwardRotationMult)));
+
         DoRotation();
     }
 

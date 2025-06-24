@@ -148,7 +148,7 @@ public class PodiumManager : MonoBehaviour
         // Index = player, value = rank
         int[] playerRanking = new int[playerCount];
 
-        int storedScore = 10000;
+        int storedScore = int.MaxValue;
         int iteration = 0;
 
         while (iteration < playerCount)

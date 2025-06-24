@@ -363,7 +363,7 @@ PrefabInstance:
     - target: {fileID: 7766748731174668478, guid: b45ec884a7eb2e949bf345e90a4f0a77,
         type: 3}
       propertyPath: nextSceneName
-      value: SampleScene Yoel Test
+      value: SampleScene
       objectReference: {fileID: 0}
     - target: {fileID: 8943526244225880886, guid: b45ec884a7eb2e949bf345e90a4f0a77,
         type: 3}
