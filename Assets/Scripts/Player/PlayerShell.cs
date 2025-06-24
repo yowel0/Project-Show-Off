@@ -19,6 +19,7 @@ public class PlayerShell : MonoBehaviour
     [Header("Player Children")]
     public GameObject PlayerAvatarPrefab;
     public GameObject CharacterSelectionPrefab;
+    public Camera SplitscreenCamera;
 
     [Header("Input")]
     public ControlScheme controlScheme = ControlScheme.Menu;
@@ -35,11 +36,14 @@ public class PlayerShell : MonoBehaviour
         if (playerInput == null)
             playerInput = GetComponent<PlayerInput>();
         SwitchControlScheme(controlScheme);
+        SplitscreenCamera = gameObject.GetComponentInChildren<Camera>();
     }
 
-    public void SwitchControlScheme(ControlScheme newControlScheme){
+    public void SwitchControlScheme(ControlScheme newControlScheme)
+    {
         controlScheme = newControlScheme;
-        if (playerInput == null){
+        if (playerInput == null)
+        {
             playerInput = GetComponent<PlayerInput>();
         }
         switch (controlScheme)
@@ -60,13 +64,14 @@ public class PlayerShell : MonoBehaviour
                 playerInput.SwitchCurrentActionMap("OnlyInteract");
                 break;
         }
-        ;
     }
 
-    public void SpawnAvatar(Vector3 position, PlayerChild playerChild){
+    public void SpawnAvatar(Vector3 position, PlayerChild playerChild)
+    {
         Rigidbody rb = GetComponentInChildren<Rigidbody>();
         if (rb)
             rb.velocity = Vector3.zero;
+        GameObject playerChildObj = null;
         switch (playerChild)
         {
             case PlayerChild.PlayerAvatar:
@@ -74,11 +79,9 @@ public class PlayerShell : MonoBehaviour
                 {
                     DestroyChildren();
 
-                    GameObject playerAvatar = Instantiate(PlayerAvatarPrefab, position, quaternion.identity, transform);
-                    Avatar avatar = playerAvatar.GetComponentInChildren<Avatar>();
-                    avatar.SetCharacter(characterPrefab);
-                    avatar.SetHat(hatPrefab);
-                    //Instantiate(hat, _PlayerAvatar.transform);
+                    playerChildObj = Instantiate(PlayerAvatarPrefab, position, quaternion.identity, transform);
+                    SetAvatarValues(playerChildObj);
+                SplitscreenCamera = playerChildObj.transform.GetComponentInChildren<Camera>();
                 }
                 else
                 {
@@ -90,12 +93,9 @@ public class PlayerShell : MonoBehaviour
                 {
                     DestroyChildren();
 
-                    GameObject characterSelection = Instantiate(CharacterSelectionPrefab, position, quaternion.identity, transform);
-                    Avatar avatar = characterSelection.GetComponentInChildren<Avatar>();
-                    if(characterPrefab)
-                        avatar.SetCharacter(characterPrefab);
-                    if(hatPrefab)
-                        avatar.SetHat(hatPrefab);
+                    playerChildObj = Instantiate(CharacterSelectionPrefab, position, quaternion.identity, transform);
+                    SetAvatarValues(playerChildObj);
+                    SplitscreenCamera = playerChildObj.transform.GetComponentInChildren<Camera>();
                 }
                 else
                 {
@@ -104,19 +104,37 @@ public class PlayerShell : MonoBehaviour
                 }
                 break;
         }
-        
+        if (playerChildObj != null)
+        {
+            SplitscreenCamera = playerChildObj.transform.GetComponentInChildren<Camera>();
+            print("new splitsccreencam");
+        }
     }
 
-    public void TeleportAvatar(Vector3 position){
+    public void TeleportAvatar(Vector3 position)
+    {
         PlayerAvatarMovement playerAvatarMovement = GetComponentInChildren<PlayerAvatarMovement>();
-        if(playerAvatarMovement != null){
+        if (playerAvatarMovement != null)
+        {
             playerAvatarMovement.transform.position = position;
         }
     }
-    
-    void DestroyChildren(){
-        for (int i = transform.childCount - 1; i >= 0; i--){
+
+    void DestroyChildren()
+    {
+        for (int i = transform.childCount - 1; i >= 0; i--)
+        {
             Destroy(transform.GetChild(i).gameObject);
         }
+    }
+
+    void SetAvatarValues(GameObject playerChildObj)
+    {
+        Avatar avatar = playerChildObj.GetComponentInChildren<Avatar>();
+        if (characterPrefab)
+            avatar.SetCharacter(characterPrefab);
+        if (hatPrefab)
+            avatar.SetHat(hatPrefab);
+        avatar.character.transform.eulerAngles = new Vector3(0, 180, 0);
     }
 }

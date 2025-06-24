@@ -15,7 +15,6 @@ public class CharacterSelectionState : MonoBehaviour
             print(players[i]);
             CharacterSelection characterSelection = players[i].GetComponentInChildren<CharacterSelection>();
             characterSelection.SetEditingComponent(editingComponent);
-            print("test");
         }
     }
 

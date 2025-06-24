@@ -54,6 +54,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Yoel/Splitscreen Test.unity
     guid: c98e0832664af264cb7786c3f1e4fb36
   - enabled: 1
+    path: Assets/Scenes/Yoel/SampleScene Yoel Test.unity
+    guid: 7ce56f583e5e57a439475a63a9fd68ef
+  - enabled: 1
     path: Assets/Scenes/Podium.unity
     guid: b3438f9cdd150c0409a61968353de0e5
   m_configObjects: {}
