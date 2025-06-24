@@ -47,7 +47,7 @@ public class SMItemDropper : MonoBehaviour
     private void Start()
     {
         currentState = State.idle;
-        if (hoverHeight <= 0) hoverHeight = transform.position.y;
+        if (transform.position.y > 0) hoverHeight = transform.position.y;
         minLocation = new Vector3(minLocationTransform.position.x, hoverHeight, minLocationTransform.position.z);
         maxLocation = new Vector3(maxLocationTransform.position.x, hoverHeight, maxLocationTransform.position.z);
     }

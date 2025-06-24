@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -23,6 +24,8 @@ public class PodiumManager : MonoBehaviour
     public UnityEvent OnAllPlatformsRaised;
 
     [SerializeField] PodiumPlace[] places;
+
+    [SerializeField] TextMeshProUGUI winnerText;
 
     [SerializeField] string minigameName;
 
@@ -122,6 +125,8 @@ public class PodiumManager : MonoBehaviour
             playerScores = (int[])PlaceholderPlacements().Clone();
         }
 
+        NameWinner(playerScores);
+
         // Index = player, value = rank
         int[] playerRanking = GetPlayerRankings(playerScores);
 
@@ -191,4 +196,45 @@ public class PodiumManager : MonoBehaviour
         return placeholder;
     }
 
+
+    public void ShowWinner()
+    {
+        winnerText.gameObject.SetActive(true);
+    }
+    public void NameWinner(int[] pPlayerScores)
+    {
+        string winText = "";
+
+        int winner = GetWinner(pPlayerScores);
+
+        if (winner < 0) winText = "It's a tie!";
+        else
+        {
+            winText = PlayerManager.Instance.players[winner].userName;
+            // Element 0 is player 1
+            if (winText == string.Empty) winText = "Player " + (winner + 1);
+            winText += " won!";
+        }
+
+
+        winnerText.text = winText;
+    }
+
+    private int GetWinner(int[] pPlayerScores)
+    {
+        // Returns -1 if it's a tie
+        int winner = 0;
+        int highestScore = 0;
+        for (int i = 0; i < pPlayerScores.Length; i++)
+        {
+            if (pPlayerScores[i] > highestScore)
+            {
+                winner = i;
+                highestScore = pPlayerScores[i];
+            }
+            else if (pPlayerScores[i] == highestScore) winner = -1;
+        }
+
+        return winner;
+    }
 }

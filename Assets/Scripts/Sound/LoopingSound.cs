@@ -20,7 +20,8 @@ public class LoopingSound : MonoBehaviour
 
     private void Start()
     {
-        soundTime = useOverrideTime ? overrideTime : loopedSound.GetSound().length;
+        if (overrideTime == 0) overrideTime = 10;
+        soundTime = (useOverrideTime || loopedSound == null) ? overrideTime : loopedSound.GetSound().length;
         if (playOnStart)
         {
             EnableSound();
