@@ -802,7 +802,7 @@ GameObject:
   - component: {fileID: 199008541}
   m_Layer: 0
   m_Name: Sphere
-  m_TagString: Untagged
+  m_TagString: Ice
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -908,7 +908,7 @@ GameObject:
   - component: {fileID: 211997429}
   m_Layer: 0
   m_Name: Sphere (1)
-  m_TagString: Untagged
+  m_TagString: Ice
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1440,7 +1440,7 @@ GameObject:
   - component: {fileID: 387585211}
   m_Layer: 0
   m_Name: Sphere (2)
-  m_TagString: Untagged
+  m_TagString: Ice
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1785,51 +1785,6 @@ VisualEffect:
       m_Array: []
     m_Bool:
       m_Array: []
---- !u!1 &517620419 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 9025048171280803575, guid: 651c40528ec4a1f489c45661967401b8,
-    type: 3}
-  m_PrefabInstance: {fileID: 5524988495018928051}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &517620420 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2741055536672835362, guid: 651c40528ec4a1f489c45661967401b8,
-    type: 3}
-  m_PrefabInstance: {fileID: 5524988495018928051}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 517620419}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bc8575272af15684996ec42b8b6ef61d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &517620423
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 517620419}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2ff0e5494df187f4fa8934fcad86f232, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  OnInteract:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 517620420}
-        m_TargetAssemblyTypeName: Portal, Assembly-CSharp
-        m_MethodName: Interact
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!1 &520244270
 GameObject:
   m_ObjectHideFlags: 0
@@ -1912,7 +1867,7 @@ GameObject:
   - component: {fileID: 572963106}
   m_Layer: 0
   m_Name: Sphere (3)
-  m_TagString: Untagged
+  m_TagString: Ice
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6611,9 +6566,7 @@ SceneRoots:
   - {fileID: 1894655384}
   - {fileID: 762557342}
   - {fileID: 192612559}
-  - {fileID: 1272815381}
   - {fileID: 8151964265236815198}
   - {fileID: 1442568148}
-  - {fileID: 9150141269865878196}
   - {fileID: 1665284634}
   - {fileID: 520244271}

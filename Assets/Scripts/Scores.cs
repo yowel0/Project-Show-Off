@@ -103,6 +103,8 @@ public class Scores : MonoBehaviour
     public void AddScore(int pPlayer, int pScoreAddition)
     {
         scores[pPlayer] += pScoreAddition * scoreMult;
+
+        if (scores[pPlayer] < 0) scores[pPlayer] = 0;
         
         UpdateText();
     }

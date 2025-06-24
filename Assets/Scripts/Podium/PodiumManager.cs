@@ -70,7 +70,7 @@ public class PodiumManager : MonoBehaviour
             place.Raise(riseHeight, riseDuration);
         }
 
-        MusicManager.Instance.PlaySound(podiumRiseSound);
+        MusicManager.Instance?.PlaySound(podiumRiseSound);
 
         StartCoroutine(PlatformsAreRaised());
     }

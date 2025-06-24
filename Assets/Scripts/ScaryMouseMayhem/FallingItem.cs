@@ -56,7 +56,7 @@ public class FallingItem : MonoBehaviour
         {
             SMItemScoreLogic.Instance.ItemOnGround(playerID);
             Instantiate(fellOnGroundParticles, transform.position, fellOnGroundParticles.transform.rotation);
-            MusicManager.Instance.PlaySound(itemNotCollected);
+            MusicManager.Instance?.PlaySound(itemNotCollected);
             Destroy(gameObject);
         }
 
@@ -72,17 +72,17 @@ public class FallingItem : MonoBehaviour
             PlayerShell ps = other.GetComponentInParent<PlayerShell>();
 
             int pPlayerID = PlayerManager.Instance.GetPlayerID(ps);
-            MusicManager.Instance.PlaySound(itemCollected);
+            MusicManager.Instance?.PlaySound(itemCollected);
 
             if (playerID == pPlayerID)
             {
                 Instantiate(succesCatchParticles, transform.position, succesCatchParticles.transform.rotation);
-                MusicManager.Instance.PlaySound(itemGoodCollect);
+                MusicManager.Instance?.PlaySound(itemGoodCollect);
             }
             else
             {
                 Instantiate(wrongCatchParticles, transform.position, wrongCatchParticles.transform.rotation);
-                MusicManager.Instance.PlaySound(itemWrongCollect);
+                MusicManager.Instance?.PlaySound(itemWrongCollect);
             }
 
 

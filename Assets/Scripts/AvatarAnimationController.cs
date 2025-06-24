@@ -42,7 +42,7 @@ public class AvatarAnimationController : MonoBehaviour
         AnimatorClipInfo[] currentClips = animator.GetCurrentAnimatorClipInfo(0);
         foreach (AnimatorClipInfo clip in currentClips)
         {
-            print(clip.clip.name);
+            //print(clip.clip.name);
             if (clip.clip.name == "Walk" && magnitude < 0.1f)
             {
                 animator.SetFloat("Speed", .05f);

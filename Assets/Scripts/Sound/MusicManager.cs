@@ -52,7 +52,8 @@ public class MusicManager : MonoBehaviour
         if (pSound == null || pSound.GetSound() == null)
         {
             Debug.LogWarning(
-                (new System.Diagnostics.StackTrace()).GetFrame(1).GetMethod().Name + 
+                (new System.Diagnostics.StackTrace()).GetFrame(1).GetMethod().Name + " in " +
+                (new System.Diagnostics.StackTrace()).GetFrame(1).GetMethod().DeclaringType.Name +
                 " Tried to play a sound, but no Sound(Object) was defined");
             return;
         }

@@ -51,7 +51,7 @@ public class Butterfly : MonoBehaviour
 
     void SetNextLocation()
     {
-        MusicManager.Instance.PlaySound(caughtSound);
+        MusicManager.Instance?.PlaySound(caughtSound);
         if (path.Count > 0)
         {
             nextLocation = path.Dequeue();
@@ -64,7 +64,7 @@ public class Butterfly : MonoBehaviour
             {
                 Instantiate(celebrateParticle, transform.position, celebrateParticle.transform.rotation);
             }
-            MusicManager.Instance.PlaySound(finalCatchSound);
+            MusicManager.Instance?.PlaySound(finalCatchSound);
             Destroy(gameObject);
         }
     }

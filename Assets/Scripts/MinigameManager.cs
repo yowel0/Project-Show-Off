@@ -77,14 +77,14 @@ public class MinigameManager : MonoBehaviour
     {
         int s = Mathf.RoundToInt(pSeconds);
         countdownText.gameObject.SetActive(true);
-        MusicManager.Instance.PlaySound(countdownBgSound);
+        MusicManager.Instance?.PlaySound(countdownBgSound);
 
         for (int i = s; i > 0; i--)
         {
             countdownText.text = i.ToString();
-            if (i == 3) MusicManager.Instance.PlaySound(countdown3Sound);
-            else if (i == 2) MusicManager.Instance.PlaySound(countdown2Sound);
-            else if (i == 1) MusicManager.Instance.PlaySound(countdown1Sound);
+            if (i == 3) MusicManager.Instance?.PlaySound(countdown3Sound);
+            else if (i == 2) MusicManager.Instance?.PlaySound(countdown2Sound);
+            else if (i == 1) MusicManager.Instance?.PlaySound(countdown1Sound);
             yield return new WaitForSeconds(1);
         }
         countdownText.gameObject.SetActive(false);
@@ -112,7 +112,7 @@ public class MinigameManager : MonoBehaviour
     public void DoStart()
     {
         OnStart?.Invoke();
-        MusicManager.Instance.PlaySound(startSound);
+        MusicManager.Instance?.PlaySound(startSound);
     }
 
     public void DoPrepareStop()
@@ -124,7 +124,7 @@ public class MinigameManager : MonoBehaviour
     public void DoStop()
     {
         OnStop?.Invoke();
-        MusicManager.Instance.PlaySound(endSound);
+        MusicManager.Instance?.PlaySound(endSound);
     }
 
 

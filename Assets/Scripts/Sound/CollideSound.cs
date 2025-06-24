@@ -25,7 +25,7 @@ public class CollideSound : MonoBehaviour
         if (cooldownTimer <= 0)
         {
             cooldownTimer = totalCooldown;
-            MusicManager.Instance.PlaySound(collideSound);
+            MusicManager.Instance?.PlaySound(collideSound);
         }
     }
 

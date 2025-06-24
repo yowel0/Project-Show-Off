@@ -51,7 +51,7 @@ public class SceneTransition : MonoBehaviour
         {
             if (soundObject.PlaysInScene(sceneName))
             {
-                MusicManager.Instance.PlaySound(soundObject);
+                MusicManager.Instance?.PlaySound(soundObject);
             }
         }
     }

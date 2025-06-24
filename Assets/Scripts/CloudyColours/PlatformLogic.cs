@@ -61,7 +61,7 @@ public class PlatformLogic : MonoBehaviour
     {
         if (!isPlaying) return;
         // Might want to add logic if this gets annoying
-        MusicManager.Instance.PlaySound(cloudyDontFall);
+        MusicManager.Instance?.PlaySound(cloudyDontFall);
         StartCoroutine(BlinkPlatformFor(timeDecreaseRounds.GetTime(round)));
         round++;
     }
@@ -86,7 +86,7 @@ public class PlatformLogic : MonoBehaviour
 
         // Time until next platform starts blinking
         yield return new WaitForSeconds(platformDisappearTime);
-        MusicManager.Instance.PlaySound(platformBackSound);
+        MusicManager.Instance?.PlaySound(platformBackSound);
 
         // Cooldown time between platforms returning and next round
         yield return new WaitForSeconds(restTime);
@@ -102,7 +102,7 @@ public class PlatformLogic : MonoBehaviour
         for (int i = 0; i < pSelectedPlatforms.Length; i++)
         {
             platforms[pSelectedPlatforms[i]].Disappear(platformDisappearTime);
-            MusicManager.Instance.PlaySound(platformFallSound);
+            MusicManager.Instance?.PlaySound(platformFallSound);
         }
     }
 
@@ -111,7 +111,7 @@ public class PlatformLogic : MonoBehaviour
         foreach (GameObject g in pBlinkPlatforms)
         {
             g.SetActive(!g.activeSelf);
-            if (g.activeSelf) MusicManager.Instance.PlaySound(platformFlickerSound);
+            if (g.activeSelf) MusicManager.Instance?.PlaySound(platformFlickerSound);
         }
     }
 

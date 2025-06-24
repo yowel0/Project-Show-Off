@@ -17,7 +17,10 @@ public class ScoreTransfer : MonoBehaviour
 
         for (int i = 0; i < PlayerManager.Instance.GetPlayerCount(); i++)
         {
-            LeaderboardManager.Submit(minigameName, PlayerManager.Instance.players[i].userName, scores[i]);
+            if (scores[i] >= 0)
+            {
+                LeaderboardManager.Submit(minigameName, PlayerManager.Instance.players[i].userName, scores[i]);
+            }
         }
     }
 

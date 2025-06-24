@@ -212,4 +212,9 @@ public class PlayerAvatarMovement : MonoBehaviour
             //rb.velocity = new Vector3(rb.velocity.x, pillowBounce, rb.velocity.z);
         }
     }
+
+    private void OnCollisionStay(Collision collision)
+    {
+        if (collision.transform.CompareTag("Ice")) timeSinceBounce = 0;
+    }
 }
