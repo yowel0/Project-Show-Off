@@ -12,16 +12,16 @@ public class SplitscreenManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        
         if (PlayerManager.Instance != null)
         {
             PlayerInputManager playerInputManager = PlayerManager.Instance.GetComponent<PlayerInputManager>();
             playerInputManager.onPlayerJoined += PlayerJoins;
             SceneManager.sceneUnloaded += SceneUnloaded;
-            print("playerjoins event added");
         }
         else
         {
-            print("PLAYER MANAGER NOT FOUND");
+            Debug.LogError("PLAYER MANAGER NOT FOUND");
         }
         if (enableOnStart)
         {
@@ -35,8 +35,9 @@ public class SplitscreenManager : MonoBehaviour
 
     void OnDisable()
     {
-        PlayerInputManager playerInputManager = PlayerManager.Instance.GetComponent<PlayerInputManager>();
-        playerInputManager.onPlayerJoined -= PlayerJoins;
+        PlayerInputManager playerInputManager = PlayerManager.Instance?.GetComponent<PlayerInputManager>();
+        if (playerInputManager != null) playerInputManager.onPlayerJoined -= PlayerJoins;
+        Disable();
     }
 
     // Update is called once per frame
@@ -47,18 +48,19 @@ public class SplitscreenManager : MonoBehaviour
 
     void Enable()
     {
-        print("enable splitscreen");
+        //print("enable splitscreen");
         if (!PlayerManager.Instance)
             return;
         //disable main camera
         Camera.main.enabled = false;
         //enable player cameras
         SetCamViewAllPlayers();
+
     }
 
     void SceneUnloaded(Scene scene)
     {
-        Disable();
+        //Disable();
         SceneManager.sceneUnloaded -= SceneUnloaded;
     }
 
@@ -73,11 +75,11 @@ public class SplitscreenManager : MonoBehaviour
 
     void PlayerJoins(PlayerInput playerInput)
     {
-        print("playerjoins");
         SetCamViewAllPlayers();
     }
 
-    void SetCamViewAllPlayers() {
+    void SetCamViewAllPlayers() 
+    {
         List<PlayerShell> players = PlayerManager.Instance.players;
         for (int i = 0; i < players.Count; i++)
         {
@@ -86,19 +88,18 @@ public class SplitscreenManager : MonoBehaviour
             // playerCam.enabled = true;
             
             player.SplitscreenCamera.enabled = true;
-            print(player.SplitscreenCamera.enabled);
             SetCamViewpointRect(player.SplitscreenCamera, i, players.Count);
         }
     }
 
     void DisableCamAllPlayers()
     {
-        List<PlayerShell> players = PlayerManager.Instance.players;
+        List<PlayerShell> players = PlayerManager.Instance?.players;
         foreach (PlayerShell player in players)
         {
             // Camera playerCam = player.GetComponentInChildren<Camera>();
             // playerCam.enabled = false;
-            player.SplitscreenCamera.enabled = false;
+            if (player != null) player.SplitscreenCamera.enabled = false;
         }
     }
 

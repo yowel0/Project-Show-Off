@@ -46,9 +46,6 @@ public class PlayerSpawner : MonoBehaviour
                 if (spawnPositions.Length >= 4 && PlayerManager.Instance.GetPlayerCount() <= 2)
                 {
                     Vector3 spawnPosition = spawnPositions[i + 1].position;
-                    print(player);
-                    print(spawnPosition);
-                    print(playerChild);
                     player.SpawnAvatar(spawnPosition, playerChild);
                 }
                 else if (spawnPositions[i] != null)
@@ -64,7 +61,7 @@ public class PlayerSpawner : MonoBehaviour
         }
         else
         {
-            print("No player managaer found :(");
+            Debug.LogError("No player managaer found :(");
         }
     }
 }
