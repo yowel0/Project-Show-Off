@@ -1743,7 +1743,7 @@ PrefabInstance:
     - target: {fileID: 5061017531731540232, guid: d0dda9621fff70b479450c399b26ebe1,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 9.37
+      value: 9.5
       objectReference: {fileID: 0}
     - target: {fileID: 5061017531731540232, guid: d0dda9621fff70b479450c399b26ebe1,
         type: 3}
@@ -2106,17 +2106,17 @@ PrefabInstance:
     - target: {fileID: 2851634576273689202, guid: 96b6b6b9100f075449b7152f99d5d1a3,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.36
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2851634576273689202, guid: 96b6b6b9100f075449b7152f99d5d1a3,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.24
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2851634576273689202, guid: 96b6b6b9100f075449b7152f99d5d1a3,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2.12
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2851634576273689202, guid: 96b6b6b9100f075449b7152f99d5d1a3,
         type: 3}
@@ -2422,12 +2422,12 @@ PrefabInstance:
     - target: {fileID: 2837990172088565579, guid: fb9a17d8f7d1a0641bc59c77309bc64e,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.64
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2837990172088565579, guid: fb9a17d8f7d1a0641bc59c77309bc64e,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.92
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2837990172088565579, guid: fb9a17d8f7d1a0641bc59c77309bc64e,
         type: 3}
@@ -2442,12 +2442,12 @@ PrefabInstance:
     - target: {fileID: 2837990172088565579, guid: fb9a17d8f7d1a0641bc59c77309bc64e,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 2837990172088565579, guid: fb9a17d8f7d1a0641bc59c77309bc64e,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 2837990172088565579, guid: fb9a17d8f7d1a0641bc59c77309bc64e,
         type: 3}
@@ -2946,7 +2946,7 @@ PrefabInstance:
     - target: {fileID: 9063811765594293021, guid: 86e5d448c295b52478eefd2c81f57e66,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.008
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9063811765594293021, guid: 86e5d448c295b52478eefd2c81f57e66,
         type: 3}
@@ -3121,7 +3121,7 @@ PrefabInstance:
     - target: {fileID: 5061017531731540232, guid: d0dda9621fff70b479450c399b26ebe1,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -10.1
+      value: -9.5
       objectReference: {fileID: 0}
     - target: {fileID: 5061017531731540232, guid: d0dda9621fff70b479450c399b26ebe1,
         type: 3}
@@ -3318,7 +3318,7 @@ PrefabInstance:
     - target: {fileID: 2466055533024966604, guid: 418ebc2242ff3ff48a54b881b4c0f354,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.76
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2466055533024966604, guid: 418ebc2242ff3ff48a54b881b4c0f354,
         type: 3}
@@ -3369,6 +3369,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: FoodThrowLocationManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 3324907700136875555, guid: 418ebc2242ff3ff48a54b881b4c0f354,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 6.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3324907700136875555, guid: 418ebc2242ff3ff48a54b881b4c0f354,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 13.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5247207179862592964, guid: 418ebc2242ff3ff48a54b881b4c0f354,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 12.25
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

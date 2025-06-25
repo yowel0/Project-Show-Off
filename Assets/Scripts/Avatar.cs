@@ -48,6 +48,8 @@ public class Avatar : MonoBehaviour
         {
             hat.transform.SetParent(headTop);
             hat.transform.localPosition = Vector3.zero;
+            // THIS IS THE SCALE USED IN ALL HAT PREFABS. EXPAND CODE IF SCALES AREN'T CONSISTENT
+            hat.transform.localScale = Vector3.one * 1.25f; 
         }
         else if (headTop == null && hat != null)
         {

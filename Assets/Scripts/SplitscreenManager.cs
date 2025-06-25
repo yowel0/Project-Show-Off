@@ -95,6 +95,7 @@ public class SplitscreenManager : MonoBehaviour
     void DisableCamAllPlayers()
     {
         List<PlayerShell> players = PlayerManager.Instance?.players;
+        if (players == null) return;
         foreach (PlayerShell player in players)
         {
             // Camera playerCam = player.GetComponentInChildren<Camera>();
