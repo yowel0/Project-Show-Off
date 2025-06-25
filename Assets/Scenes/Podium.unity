@@ -830,7 +830,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1199864847
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1388,6 +1388,11 @@ PrefabInstance:
       propertyPath: winnerText
       value: 
       objectReference: {fileID: 1621268776}
+    - target: {fileID: 2351702462376009966, guid: 7edf9d4e81e235841b114ef9f8861952,
+        type: 3}
+      propertyPath: placeholder.Array.data[3]
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2351702462376009966, guid: 7edf9d4e81e235841b114ef9f8861952,
         type: 3}
       propertyPath: OnAllPlatformsRaised.m_PersistentCalls.m_Calls.Array.size

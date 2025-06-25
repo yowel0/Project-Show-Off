@@ -141,6 +141,12 @@ public class PodiumPlace : MonoBehaviour
         int playerCount = breakpoints.Length;
         if (PlayerManager.Instance != null) playerCount = PlayerManager.Instance.GetPlayerCount();
 
+        foreach (int breakpoint in breakpoints)
+        {
+            if (breakpoint == 0) playerCount--;
+        }
+        playerCount = Mathf.Max(playerCount, 1);
+
         if (playerCount < breakpoints.Length)
         {
             int nrToFix = 4 - playerCount;
