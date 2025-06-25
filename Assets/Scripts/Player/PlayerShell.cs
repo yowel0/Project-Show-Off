@@ -104,6 +104,9 @@ public class PlayerShell : MonoBehaviour
                 }
                 break;
         }
+        
+        Avatar avatar = GetComponentInChildren<Avatar>();
+        avatar.character.transform.eulerAngles = new Vector3(0, 180, 0);
         if (playerChildObj != null)
         {
             SplitscreenCamera = playerChildObj.transform.GetComponentInChildren<Camera>();
@@ -135,6 +138,5 @@ public class PlayerShell : MonoBehaviour
             avatar.SetCharacter(characterPrefab);
         if (hatPrefab)
             avatar.SetHat(hatPrefab);
-        avatar.character.transform.eulerAngles = new Vector3(0, 180, 0);
     }
 }

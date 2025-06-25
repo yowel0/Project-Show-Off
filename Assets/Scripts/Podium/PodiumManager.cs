@@ -163,6 +163,9 @@ public class PodiumManager : MonoBehaviour
                 if (playerScores[i] == checkScore)
                 {
                     playerRanking[i] = currentPlacement;
+                    // IF A PLAYER HAS 0 POINTS, THE PODIUM DOES NOT RAISE AT ALL
+                    if (checkScore == 0) playerRanking[i] = 4;
+
                     iteration++;
                 }
             }
@@ -210,9 +213,9 @@ public class PodiumManager : MonoBehaviour
         if (winner < 0) winText = "It's a tie!";
         else
         {
-            winText = PlayerManager.Instance.players[winner].userName;
+            winText = PlayerManager.Instance?.players[winner].userName;
             // Element 0 is player 1
-            if (winText == string.Empty) winText = "Player " + (winner + 1);
+            if (winText == string.Empty || winText == null) winText = "Player " + (winner + 1);
             winText += " won!";
         }
 
