@@ -2116,8 +2116,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 915ca9db47b2b384a8b12a8ca604b486, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  boxPrefab: {fileID: 5140654242536099232, guid: 20f281bc5c3b24a4ba240e8b5c9ab56a,
-    type: 3}
+  basketPrefabs:
+  - {fileID: 1038611712581164922, guid: 6dde819afb267724b8b07d0f05d57a62, type: 3}
+  - {fileID: 3690517303570012767, guid: 682df62c5c5993542b6755c5171986fb, type: 3}
+  - {fileID: 3789820249482809476, guid: f2fa261c013934a4f849f4ef4144cae7, type: 3}
+  - {fileID: 4627607500579292522, guid: 799f7af1d34834f409b75455d9ba05c6, type: 3}
 --- !u!4 &1627862965
 Transform:
   m_ObjectHideFlags: 0

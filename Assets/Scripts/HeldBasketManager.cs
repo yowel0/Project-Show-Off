@@ -2,18 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HeldBoxManager : MonoBehaviour
+public class HeldBasketManager : MonoBehaviour
 {
     [SerializeField]
-    GameObject boxPrefab;
+    GameObject[] basketPrefabs;
 
     public void SpawnBoxes()
     {
         print("spawnboxes");
         List<PlayerShell> players = PlayerManager.Instance.players;
-        foreach (PlayerShell p in players)
+        for (int i = 0; i < players.Count; i++)
         {
-            Instantiate(boxPrefab, p.GetComponentInChildren<PlayerAvatarMovement>().transform);
+            PlayerShell player = players[i];
+            Instantiate(basketPrefabs[i], player.GetComponentInChildren<Avatar>().character.transform);
         }
     }
 
@@ -22,7 +23,7 @@ public class HeldBoxManager : MonoBehaviour
         List<PlayerShell> players = PlayerManager.Instance.players;
         foreach (PlayerShell p in players)
         {
-            Transform t = p.GetComponentInChildren<PlayerAvatarMovement>().transform;
+            Transform t = p.GetComponentInChildren<Avatar>().character.transform;
             foreach (Transform child in t)
             {
                 if (child.CompareTag("Held Box"))
