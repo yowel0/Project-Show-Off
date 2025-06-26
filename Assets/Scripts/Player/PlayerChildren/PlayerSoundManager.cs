@@ -23,8 +23,8 @@ public class PlayerSoundManager : MonoBehaviour
     [Tooltip("Plays when player is walking")]
     [SerializeField] SoundObject footstepSound;
 
-    [Tooltip("Plays when player is walking on grass")]
-    [SerializeField] SoundObject footstepGrassSound;
+    [Tooltip("Plays when player is walking/skating on ice")]
+    [SerializeField] SoundObject footstepIceSound;
 
     [Tooltip("Plays when player is walking on carpet")]
     [SerializeField] SoundObject footstepCarpetSound;
@@ -49,8 +49,8 @@ public class PlayerSoundManager : MonoBehaviour
     {
         if (!MusicManager.Instance) return;
         // Add logic for what the player landed on
-        if (tag == "Book") MusicManager.Instance?.PlaySound(landBookSound);
-        MusicManager.Instance?.PlaySound(landSound);
+        if (tag.ToLower() == "book") MusicManager.Instance?.PlaySound(landBookSound);
+        else MusicManager.Instance?.PlaySound(landSound);
     }
 
     public void PlayPillowBounce()
@@ -59,11 +59,13 @@ public class PlayerSoundManager : MonoBehaviour
         MusicManager.Instance?.PlaySound(pillowBounceSound);
     }
 
-    public void PlayFootstep()
+    public void PlayFootstep(string tag = "")
     {
         if (!MusicManager.Instance) return;
         // Add logic for ground type (normal, carpet, grass)
-        MusicManager.Instance?.PlaySound(footstepSound);
+        if (tag.ToLower() == "ice") MusicManager.Instance?.PlaySound(footstepIceSound);
+        else if (tag.ToLower() == "carpet") MusicManager.Instance?.PlaySound(footstepCarpetSound);
+        else MusicManager.Instance?.PlaySound(footstepSound);
     }
 
 

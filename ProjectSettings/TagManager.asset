@@ -7,6 +7,8 @@ TagManager:
   - Pillow
   - Held Box
   - Ice
+  - Carpet
+  - Book
   layers:
   - Default
   - TransparentFX

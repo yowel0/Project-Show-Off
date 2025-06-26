@@ -72,6 +72,8 @@ public class PlayerAvatarMovement : MonoBehaviour
     private bool grounded;
     private bool wasGrounded = false;
 
+    [SerializeField] string groundTag;
+
     [Header("Events for VFX")]
     public UnityEvent OnJump;
     public UnityEvent OnLand;
@@ -162,11 +164,12 @@ public class PlayerAvatarMovement : MonoBehaviour
     {
         if (Physics.Raycast(transform.position + Vector3.up * extraRaycastLength, -transform.up, out var hit, debugRayLength + extraRaycastLength) && !hit.collider.isTrigger)
         {
+            groundTag = hit.transform.tag;
             grounded = true;
             if (!wasGrounded)
             {
                 OnLand?.Invoke();
-                soundManager.PlayLand();
+                soundManager.PlayLand(hit.transform.tag);
                 wasGrounded = true;
             }
         }
@@ -182,6 +185,13 @@ public class PlayerAvatarMovement : MonoBehaviour
     {
         return grounded;
     }
+
+
+    public void DoFootstep()
+    {
+        soundManager.PlayFootstep(groundTag);
+    }
+
 
     private void OnCollisionEnter(Collision collision)
     {
