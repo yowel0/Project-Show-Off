@@ -4036,7 +4036,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: UnityEngine.AnimationCurve, UnityEngine.CoreModule, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
-      m_SerializableObject: '{"frames":[{"time":0.0,"value":1.0,"inTangent":-0.009907315485179425,"outTangent":-0.009907315485179425,"tangentMode":0,"leftTangentMode":1,"rightTangentMode":1,"broken":false},{"time":0.6283827424049377,"value":0.9937744140625,"inTangent":-0.04774150252342224,"outTangent":-0.04774150252342224,"tangentMode":0,"leftTangentMode":1,"rightTangentMode":1,"broken":false},{"time":1.002471923828125,"value":0.961761474609375,"inTangent":-0.11837504059076309,"outTangent":-0.11837504059076309,"tangentMode":0,"leftTangentMode":0,"rightTangentMode":0,"broken":false}],"preWrapMode":8,"postWrapMode":8,"version":1}'
+      m_SerializableObject: '{"frames":[{"time":0.0,"value":1.0,"inTangent":-0.004388905595988035,"outTangent":-0.004388905595988035,"tangentMode":0,"leftTangentMode":1,"rightTangentMode":1,"broken":false},{"time":1.00128173828125,"value":0.99560546875,"inTangent":-0.004388905595988035,"outTangent":-0.004388905595988035,"tangentMode":0,"leftTangentMode":1,"rightTangentMode":1,"broken":false}],"preWrapMode":8,"postWrapMode":8,"version":1}'
     m_Space: 2147483647
   m_Property:
     name: Velocity
@@ -4070,7 +4070,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
           PublicKeyToken=b77a5c561934e089
-      m_SerializableObject: True
+      m_SerializableObject: False
     m_Space: 2147483647
   m_Property:
     name: _vfx_enabled
