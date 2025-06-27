@@ -23,6 +23,10 @@ public class InteractionScript : MonoBehaviour
                 interactable.OnInteract?.Invoke();
             }
         }
+        if (playerInput.actions["Pause"].triggered)
+        {
+            PauseManager.Instance?.PauseGame();
+        }
     }
 
     private void OnTriggerEnter(Collider other)
