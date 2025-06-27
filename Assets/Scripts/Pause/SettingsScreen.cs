@@ -5,6 +5,14 @@ using UnityEngine.UI;
 
 public class SettingsScreen : MonoBehaviour
 {
+    [Header("Adjust volume sounds")]
+    [Tooltip("Also plays when adjusting master volume")]
+    [SerializeField] SoundObject sfxTestSound;
+    [SerializeField] SoundObject bgmTestSound;
+    [SerializeField] SoundObject voiceTestSound;
+
+
+    [Header("Ignore")]
     [SerializeField] Slider masterSlider;
     [SerializeField] Slider sfxSlider;
     [SerializeField] Slider bgmSlider;
@@ -23,21 +31,25 @@ public class SettingsScreen : MonoBehaviour
     public void SetMasterVolume(float pVolume)
     {
         MusicManager.Instance?.SetMasterVolume(pVolume);
+        MusicManager.Instance?.PlaySound(sfxTestSound);
     }
 
     public void SetSFXVolume(float pVolume)
     {
         MusicManager.Instance?.SetSFXVolume(pVolume);
+        MusicManager.Instance?.PlaySound(sfxTestSound);
     }
 
     public void SetMusicVolume(float pVolume)
     {
         MusicManager.Instance?.SetMusicVolume(pVolume);
+        MusicManager.Instance?.PlaySound(bgmTestSound);
     }
 
     public void SetVoiceVolume(float pVolume)
     {
         MusicManager.Instance?.SetVoiceVolume(pVolume);
+        MusicManager.Instance?.PlaySound(voiceTestSound);
     }
 
 

@@ -10,6 +10,9 @@ using UnityEngine.UI;
 
 public class CharacterSelection : MonoBehaviour
 {
+    [Tooltip("Plays when you move selection in the keyboard. DOES NOT INCLUDE (PAUSE) MENU NAVIGATION, THAT'S SEPERATE")]
+    [SerializeField] SoundObject moveSelection;
+
     public enum Component{
         Hat,
         Name,
@@ -74,6 +77,7 @@ public class CharacterSelection : MonoBehaviour
         //visually deselect
         if (currentSelected)
         {
+            MusicManager.Instance?.PlaySound(moveSelection);
             ColorBlock _colorblock = currentSelected.colors;
             _colorblock.normalColor = Color.white;
             currentSelected.colors = _colorblock;

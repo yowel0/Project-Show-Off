@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class PauseScreen : MonoBehaviour
 {
+    [Tooltip("Plays when you pause the game")]
+    [SerializeField] SoundObject pauseSound;
     [SerializeField] string mainMenuName;
     [SerializeField] string hubName;
 
@@ -21,6 +23,7 @@ public class PauseScreen : MonoBehaviour
             if (gameObject.activeSelf) Continue();
             return;
         }
+        MusicManager.Instance?.PlaySound(pauseSound);
         gameObject.SetActive(true);
         isPaused = true;
         savedControlScheme = (ControlScheme)(PlayerManager.Instance?.players[0].controlScheme);
