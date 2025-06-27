@@ -1454,6 +1454,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: c20b024193c40d645a98527624c780e9,
         type: 2}
+    - target: {fileID: 2908546109077465171, guid: 7edf9d4e81e235841b114ef9f8861952,
+        type: 3}
+      propertyPath: podiumFirstSound
+      value: 
+      objectReference: {fileID: 11400000, guid: bfde99e6b47e4464ba4997d7ab5b9297,
+        type: 2}
     - target: {fileID: 4449160494247554441, guid: 7edf9d4e81e235841b114ef9f8861952,
         type: 3}
       propertyPath: m_LocalPosition.x
