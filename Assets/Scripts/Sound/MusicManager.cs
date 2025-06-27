@@ -122,5 +122,9 @@ public class MusicManager : MonoBehaviour
         voiceVolume = pVolume;
     }
 
+    public float GetMasterVolume()  { return masterVolume; }
+    public float GetSFXVolume()     { return sfxVolume; }
+    public float GetBGMVolume()     { return bgmVolume; }
+    public float GetVoiceVolume()   { return voiceVolume; }
 
 }

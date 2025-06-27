@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class PauseManager : MonoBehaviour
 {
@@ -24,6 +25,8 @@ public class PauseManager : MonoBehaviour
             Instance = null;
         }
     }
+
+
 
     public void PauseGame()
     {
