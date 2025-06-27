@@ -59,4 +59,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Podium.unity
     guid: b3438f9cdd150c0409a61968353de0e5
+  - enabled: 1
+    path: Assets/Scenes/Bram/TestPause.unity
+    guid: 7c4d31f7373b78b48a4761c30b6bd8bc
   m_configObjects: {}

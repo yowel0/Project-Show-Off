@@ -100,4 +100,27 @@ public class MusicManager : MonoBehaviour
 
     }
 
+
+
+    public void SetMasterVolume(float pVolume)
+    {
+        masterVolume = pVolume;
+    }
+
+    public void SetSFXVolume(float pVolume)
+    {
+        sfxVolume = pVolume;
+    }
+
+    public void SetMusicVolume(float pVolume)
+    {
+        bgmVolume = pVolume;
+    }
+
+    public void SetVoiceVolume(float pVolume)
+    {
+        voiceVolume = pVolume;
+    }
+
+
 }

@@ -42,6 +42,7 @@ public class SceneTransition : MonoBehaviour
     public void ChangeScene(string sceneName)
     {
         PlayTransitionSound(sceneName);
+        PlayerManager.Instance?.SetControlScheme(ControlScheme.OnlyInteract);
         ChangeSceneAsync(sceneName);
     }
 

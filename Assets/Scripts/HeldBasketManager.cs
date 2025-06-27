@@ -7,6 +7,12 @@ public class HeldBasketManager : MonoBehaviour
     [SerializeField]
     GameObject[] basketPrefabs;
 
+
+    private void OnDestroy()
+    {
+        DestroyBoxes();
+    }
+
     public void SpawnBoxes()
     {
         print("spawnboxes");
