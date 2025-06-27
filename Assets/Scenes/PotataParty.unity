@@ -275,8 +275,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  startSound: {fileID: 0}
-  endSound: {fileID: 0}
+  startSound: {fileID: 11400000, guid: 0a9228a3fd073894e974fd1912e43ad2, type: 2}
+  endSound: {fileID: 11400000, guid: a7ba7f2134dc43f409bab5a68b839b09, type: 2}
   countdownBgSound: {fileID: 11400000, guid: bcc012858a26a8a4aae3f4f1dd0a2075, type: 2}
   countdown3Sound: {fileID: 11400000, guid: f4ba0daf3576fd94c9fb4f9c7d46d802, type: 2}
   countdown2Sound: {fileID: 11400000, guid: f58f41008fc474a44a38ee15a7cbb125, type: 2}
@@ -3692,14 +3692,38 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5787992695681044893, guid: 2df77f5f9fa4d28418c3e4e67dbe1110,
         type: 3}
+      propertyPath: angrySound
+      value: 
+      objectReference: {fileID: 11400000, guid: e38735eed6285c845940479fb8db6138,
+        type: 2}
+    - target: {fileID: 5787992695681044893, guid: 2df77f5f9fa4d28418c3e4e67dbe1110,
+        type: 3}
+      propertyPath: happySound
+      value: 
+      objectReference: {fileID: 11400000, guid: 1e7e53a68511fd140898c77e9c044aed,
+        type: 2}
+    - target: {fileID: 5787992695681044893, guid: 2df77f5f9fa4d28418c3e4e67dbe1110,
+        type: 3}
       propertyPath: badParticle
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 5787992695681044893, guid: 2df77f5f9fa4d28418c3e4e67dbe1110,
         type: 3}
+      propertyPath: eatingSound
+      value: 
+      objectReference: {fileID: 11400000, guid: 88e3966e65368744fae6868e86f5652d,
+        type: 2}
+    - target: {fileID: 5787992695681044893, guid: 2df77f5f9fa4d28418c3e4e67dbe1110,
+        type: 3}
       propertyPath: goodParticle
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 5787992695681044893, guid: 2df77f5f9fa4d28418c3e4e67dbe1110,
+        type: 3}
+      propertyPath: anticipatingSound
+      value: 
+      objectReference: {fileID: 11400000, guid: ad19eb3fa0c0f2747ac6ec20e311bd23,
+        type: 2}
     - target: {fileID: 5787992695681044893, guid: 2df77f5f9fa4d28418c3e4e67dbe1110,
         type: 3}
       propertyPath: stopIndicatorSound

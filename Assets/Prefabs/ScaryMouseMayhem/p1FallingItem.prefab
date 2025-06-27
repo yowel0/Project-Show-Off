@@ -83,6 +83,30 @@ PrefabInstance:
       propertyPath: playerID
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8606667020873811014, guid: 17d37b16fa3d62d458013df09cb3a6c4,
+        type: 3}
+      propertyPath: itemCollected
+      value: 
+      objectReference: {fileID: 11400000, guid: 42206ba74219dee45942b9191231ff8f,
+        type: 2}
+    - target: {fileID: 8606667020873811014, guid: 17d37b16fa3d62d458013df09cb3a6c4,
+        type: 3}
+      propertyPath: itemGoodCollect
+      value: 
+      objectReference: {fileID: 11400000, guid: 29339f85ecc931c4e8e6d241e23136d9,
+        type: 2}
+    - target: {fileID: 8606667020873811014, guid: 17d37b16fa3d62d458013df09cb3a6c4,
+        type: 3}
+      propertyPath: itemNotCollected
+      value: 
+      objectReference: {fileID: 11400000, guid: 9259734b56c4efb4d9324374c45801ca,
+        type: 2}
+    - target: {fileID: 8606667020873811014, guid: 17d37b16fa3d62d458013df09cb3a6c4,
+        type: 3}
+      propertyPath: itemWrongCollect
+      value: 
+      objectReference: {fileID: 11400000, guid: 197ba75e5132cb74a9333c047a4c6065,
+        type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

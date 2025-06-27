@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 279a528763af8a14cba3979da7c05ebf, type: 3}
+  m_Name: Potato_Mad
+  m_EditorClassIdentifier: 
+  soundList:
+  - sound: {fileID: 8300000, guid: 1a4e78b4ecf4fd9429667de71d84c7a6, type: 3}
+    loudness: 1
+  - sound: {fileID: 8300000, guid: 138cf77811747bf4c9212dffef637cb7, type: 3}
+    loudness: 1
+  - sound: {fileID: 8300000, guid: e2d41368ecc123546ad315f224fec7c3, type: 3}
+    loudness: 1
+  - sound: {fileID: 8300000, guid: 90d5f5b2d2059964fad4213d35c28e6e, type: 3}
+    loudness: 1
+  - sound: {fileID: 8300000, guid: 1ef6b98118e4cc3489e577abc6dac1cb, type: 3}
+    loudness: 1
+  soundType: 0
+  bgmSceneName: []
+  isCharacterDialogue: 0
+  hasPriority: 0
+  currentSound: 0

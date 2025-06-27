@@ -1,0 +1,46 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 279a528763af8a14cba3979da7c05ebf, type: 3}
+  m_Name: MSMRandom
+  m_EditorClassIdentifier: 
+  soundList:
+  - sound: {fileID: 8300000, guid: 3b73387a503e9e8459294543184c1d54, type: 3}
+    loudness: 1
+  - sound: {fileID: 8300000, guid: d06f872403893b44b91684452419c929, type: 3}
+    loudness: 1
+  - sound: {fileID: 8300000, guid: 6af6a90993490744b987e23dea887df0, type: 3}
+    loudness: 1
+  - sound: {fileID: 8300000, guid: d1ff94f7a24c9a345b3307644d4eb4e5, type: 3}
+    loudness: 1
+  - sound: {fileID: 8300000, guid: f75aacde833bce547936f316998cdbb8, type: 3}
+    loudness: 1
+  - sound: {fileID: 8300000, guid: be52ed023452e1c4093449f9df32b51a, type: 3}
+    loudness: 1
+  - sound: {fileID: 8300000, guid: e82aed4db1fa23e419df6d89527f4b8d, type: 3}
+    loudness: 1
+  - sound: {fileID: 8300000, guid: 150b14bc369ec2c4e947942fd0367f55, type: 3}
+    loudness: 1
+  - sound: {fileID: 8300000, guid: af9601fc1bbd385469481700a95c71d5, type: 3}
+    loudness: 1
+  - sound: {fileID: 8300000, guid: 96946896bc9cb3c4b8194e55342fb8e7, type: 3}
+    loudness: 1
+  - sound: {fileID: 8300000, guid: 6c4605401f8592b4abab61c51cc2722e, type: 3}
+    loudness: 0
+  - sound: {fileID: 8300000, guid: bb8a6ab6b5b80e1479cd683b3530ad4e, type: 3}
+    loudness: 0
+  - sound: {fileID: 8300000, guid: 6cc3d6f4aaa13c24d9573e4298166a17, type: 3}
+    loudness: 0
+  soundType: 0
+  bgmSceneName: []
+  isCharacterDialogue: 0
+  hasPriority: 0
+  currentSound: 0

@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 279a528763af8a14cba3979da7c05ebf, type: 3}
+  m_Name: BibiRandom
+  m_EditorClassIdentifier: 
+  soundList:
+  - sound: {fileID: 8300000, guid: 797e7f42d4d0d00409fffedb24ae67ec, type: 3}
+    loudness: 1
+  - sound: {fileID: 8300000, guid: f5d41069e7b64e244bc94e7bca4b580a, type: 3}
+    loudness: 1
+  - sound: {fileID: 8300000, guid: c6fd5da135eaaa946bb744664df63637, type: 3}
+    loudness: 1
+  - sound: {fileID: 8300000, guid: ff56d97a7896d7c4a9798a8f72ef22b4, type: 3}
+    loudness: 1
+  - sound: {fileID: 8300000, guid: 21d1e88d8453d824595afa382757b575, type: 3}
+    loudness: 1
+  - sound: {fileID: 8300000, guid: 4adec83810f458e41abc9ccad8e74d1d, type: 3}
+    loudness: 1
+  - sound: {fileID: 8300000, guid: b068d23271ff39c489eac69f5711f2ea, type: 3}
+    loudness: 1
+  - sound: {fileID: 8300000, guid: 9e981d808032ea5499aba402f1f1a525, type: 3}
+    loudness: 1
+  - sound: {fileID: 8300000, guid: eca744e30b14b6846b7876873441d005, type: 3}
+    loudness: 0
+  soundType: 0
+  bgmSceneName: []
+  isCharacterDialogue: 0
+  hasPriority: 0
+  currentSound: 0

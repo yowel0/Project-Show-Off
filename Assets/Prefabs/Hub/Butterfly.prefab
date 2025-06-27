@@ -124,9 +124,9 @@ MonoBehaviour:
   moveSpeed: 8
   celebrateParticle: {fileID: 7837232553780391023, guid: 5db1a949b6187244db6950444f1e3aba,
     type: 3}
-  caughtSound: {fileID: 0}
-  moveSound: {fileID: 0}
-  finalCatchSound: {fileID: 0}
+  caughtSound: {fileID: 11400000, guid: 81ae3469697cda349ad3ef167944a6f2, type: 2}
+  moveSound: {fileID: 11400000, guid: f134de6e7638f3f44b796452b48a7f01, type: 2}
+  finalCatchSound: {fileID: 11400000, guid: 6fb7aed70934fa8479395ae73a7e7d57, type: 2}
   isActive: 0
   nextLocation: {fileID: 0}
 --- !u!114 &1678157361127540767
@@ -158,7 +158,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59b7820b7d40063498705a02dc7b7430, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  loopedSound: {fileID: 0}
+  loopedSound: {fileID: 11400000, guid: f134de6e7638f3f44b796452b48a7f01, type: 2}
   playOnStart: 0
   soundTime: 0
   timer: 0

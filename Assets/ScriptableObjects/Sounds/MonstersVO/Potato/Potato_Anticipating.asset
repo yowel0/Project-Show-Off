@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 279a528763af8a14cba3979da7c05ebf, type: 3}
+  m_Name: Potato_Anticipating
+  m_EditorClassIdentifier: 
+  soundList:
+  - sound: {fileID: 8300000, guid: c834318b1df3a1645a1450e24b784cc7, type: 3}
+    loudness: 1
+  - sound: {fileID: 8300000, guid: db677c37f28b9174382e2c03f367a075, type: 3}
+    loudness: 1
+  - sound: {fileID: 8300000, guid: 2527e7823e0783741a619296934089fa, type: 3}
+    loudness: 1
+  - sound: {fileID: 8300000, guid: dc2a4cd6b89f2014488e39aa1dc27aa0, type: 3}
+    loudness: 1
+  - sound: {fileID: 8300000, guid: ee930861300afd04caac886b3a903ca7, type: 3}
+    loudness: 1
+  soundType: 0
+  bgmSceneName: []
+  isCharacterDialogue: 0
+  hasPriority: 0
+  currentSound: 0

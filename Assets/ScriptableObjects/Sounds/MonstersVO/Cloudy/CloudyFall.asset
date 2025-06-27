@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 279a528763af8a14cba3979da7c05ebf, type: 3}
+  m_Name: CloudyFall
+  m_EditorClassIdentifier: 
+  soundList:
+  - sound: {fileID: 8300000, guid: f4803d99cf0cc47449f6dc09c79a8518, type: 3}
+    loudness: 1
+  - sound: {fileID: 8300000, guid: dcc30877d3f71694ebdef155415c1f28, type: 3}
+    loudness: 1
+  - sound: {fileID: 8300000, guid: 3d748fc28a661354ebd139c1e8e52430, type: 3}
+    loudness: 1
+  - sound: {fileID: 8300000, guid: c447cac955d7ef545a74064e19f3b7f3, type: 3}
+    loudness: 1
+  - sound: {fileID: 8300000, guid: aed317e041b16aa4ab59c9f263d7323d, type: 3}
+    loudness: 1
+  - sound: {fileID: 8300000, guid: 7a2570cf871a0974aa7cb2cabc8b13ac, type: 3}
+    loudness: 1
+  soundType: 0
+  bgmSceneName: []
+  isCharacterDialogue: 0
+  hasPriority: 0
+  currentSound: 0
