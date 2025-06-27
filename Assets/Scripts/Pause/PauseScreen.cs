@@ -14,7 +14,13 @@ public class PauseScreen : MonoBehaviour
 
     public void Pause()
     {
-        if (isPaused) return;
+        Debug.Log("Pause");
+        if (isPaused)
+        {
+            Debug.Log("Already paused though");
+            if (gameObject.activeSelf) Continue();
+            return;
+        }
         gameObject.SetActive(true);
         isPaused = true;
         savedControlScheme = (ControlScheme)(PlayerManager.Instance?.players[0].controlScheme);
@@ -25,6 +31,7 @@ public class PauseScreen : MonoBehaviour
 
     public void Continue()
     {
+        Debug.Log("Doing continue");
         PlayerManager.Instance?.SetControlScheme(savedControlScheme);
         gameObject.SetActive(false);
         isPaused = false;
