@@ -44,6 +44,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61a389754a2dd9f4f9a3d4226699d2e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerDeathSound: {fileID: 0}
+  playerDeathSound: {fileID: 11400000, guid: d5edeee43bde9b9498f58168cfd45208, type: 2}
   noSurvivors: 0
   playerAlive: 00000000

@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 279a528763af8a14cba3979da7c05ebf, type: 3}
+  m_Name: Walking
+  m_EditorClassIdentifier: 
+  soundList:
+  - sound: {fileID: 8300000, guid: c29e4d5b34e79414180b3928689a5c2e, type: 3}
+    loudness: 1
+  - sound: {fileID: 8300000, guid: 1249ea4b3a06c82428365819022abe43, type: 3}
+    loudness: 1
+  - sound: {fileID: 8300000, guid: 1249ea4b3a06c82428365819022abe43, type: 3}
+    loudness: 1
+  - sound: {fileID: 8300000, guid: f5473c8c18d86e54fa6ca645381c9050, type: 3}
+    loudness: 1
+  - sound: {fileID: 8300000, guid: 92792ae71c834a14a95d0a684e60cd54, type: 3}
+    loudness: 1
+  soundType: 0
+  bgmSceneName: []
+  isCharacterDialogue: 0
+  hasPriority: 0
+  currentSound: 0

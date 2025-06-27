@@ -13,9 +13,11 @@ MonoBehaviour:
   m_Name: Hub
   m_EditorClassIdentifier: 
   soundList:
-  - sound: {fileID: 8300000, guid: 3b9c5e2268298a44a833bc8abb11821b, type: 3}
+  - sound: {fileID: 8300000, guid: 5e9345246fd8bac4282cb9ea146f6acc, type: 3}
     loudness: 1
   soundType: 1
   bgmSceneName:
   - SampleScene
+  isCharacterDialogue: 0
+  hasPriority: 0
   currentSound: 0

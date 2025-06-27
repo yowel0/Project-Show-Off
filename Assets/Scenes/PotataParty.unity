@@ -3315,6 +3315,12 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1231248070607367488, guid: 418ebc2242ff3ff48a54b881b4c0f354,
+        type: 3}
+      propertyPath: throwSound
+      value: 
+      objectReference: {fileID: 11400000, guid: bf90eda51b2c6f0479dd4379f6228d88,
+        type: 2}
     - target: {fileID: 2466055533024966604, guid: 418ebc2242ff3ff48a54b881b4c0f354,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3569,6 +3575,18 @@ PrefabInstance:
       propertyPath: goodParticle
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 5787992695681044893, guid: 2df77f5f9fa4d28418c3e4e67dbe1110,
+        type: 3}
+      propertyPath: stopIndicatorSound
+      value: 
+      objectReference: {fileID: 11400000, guid: e1cb685dd990ab649930fe9b4a87321d,
+        type: 2}
+    - target: {fileID: 5787992695681044893, guid: 2df77f5f9fa4d28418c3e4e67dbe1110,
+        type: 3}
+      propertyPath: continueIndicatorSound
+      value: 
+      objectReference: {fileID: 11400000, guid: 9558ae072f4ed544fbe8c020efa9e76b,
+        type: 2}
     - target: {fileID: 5787992695681044893, guid: 2df77f5f9fa4d28418c3e4e67dbe1110,
         type: 3}
       propertyPath: badParticles.Array.size
