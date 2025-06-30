@@ -107,7 +107,7 @@ MonoBehaviour:
     m_Bits: 1
   m_VolumeTrigger: {fileID: 0}
   m_VolumeFrameworkUpdateModeOption: 2
-  m_RenderPostProcessing: 0
+  m_RenderPostProcessing: 1
   m_Antialiasing: 0
   m_AntialiasingQuality: 2
   m_StopNaN: 0
@@ -343,7 +343,7 @@ MonoBehaviour:
   landBookSound: {fileID: 11400000, guid: b0e159270bac6f346badc431e238b0b7, type: 2}
   pillowBounceSound: {fileID: 0}
   footstepSound: {fileID: 11400000, guid: 93c31e571f1b3e1498ae63e096c30e68, type: 2}
-  footstepIceSound: {fileID: 0}
+  footstepIceSound: {fileID: 11400000, guid: 7bc6efceca8934f449c586c950175550, type: 2}
   footstepCarpetSound: {fileID: 0}
 --- !u!114 &-5087776615821340549
 MonoBehaviour:

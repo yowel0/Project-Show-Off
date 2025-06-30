@@ -52,8 +52,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98222a8ef98431f4cbf75e4018ba7e8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  openSettingsSound: {fileID: 0}
-  clickSound: {fileID: 0}
+  openSettingsSound: {fileID: 11400000, guid: 2f98489676ba0204aad0176cd70463e8, type: 2}
+  clickSound: {fileID: 11400000, guid: 7995b38a7699084419cf06b64f577e71, type: 2}
   sfxTestSound: {fileID: 0}
   bgmTestSound: {fileID: 0}
   voiceTestSound: {fileID: 0}

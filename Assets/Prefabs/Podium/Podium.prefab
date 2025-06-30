@@ -52,7 +52,7 @@ MonoBehaviour:
   timeBeforeRaising: 2
   riseDuration: 5
   riseHeight: 2
-  podiumRiseSound: {fileID: 0}
+  podiumRiseSound: {fileID: 11400000, guid: 6fd9ec3912f654344a1567d81ede7402, type: 2}
   OnAllPlatformsRaised:
     m_PersistentCalls:
       m_Calls:
@@ -73,6 +73,7 @@ MonoBehaviour:
   - {fileID: 8789612727334417539}
   - {fileID: 4915836069651807461}
   - {fileID: 6655094764814193428}
+  winnerText: {fileID: 0}
   minigameName: 
   placeholder: 2c01000088130000881300002c010000
   playerCount: 0
