@@ -805,6 +805,23 @@ PrefabInstance:
       propertyPath: m_Name
       value: SettingsScreen
       objectReference: {fileID: 0}
+    - target: {fileID: 647895686135014275, guid: 13b3a6b151031824cbf8b11ee5361105,
+        type: 3}
+      propertyPath: bgmTestSound
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 647895686135014275, guid: 13b3a6b151031824cbf8b11ee5361105,
+        type: 3}
+      propertyPath: sfxTestSound
+      value: 
+      objectReference: {fileID: 11400000, guid: 3ebe0c1dffca89143850cd44e738f602,
+        type: 2}
+    - target: {fileID: 647895686135014275, guid: 13b3a6b151031824cbf8b11ee5361105,
+        type: 3}
+      propertyPath: voiceTestSound
+      value: 
+      objectReference: {fileID: 11400000, guid: 4b0509ff9b049354dacdc47667381e57,
+        type: 2}
     - target: {fileID: 921296873762617567, guid: 13b3a6b151031824cbf8b11ee5361105,
         type: 3}
       propertyPath: m_Pivot.x
@@ -1178,7 +1195,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16e624199a896194c96867b359c17a08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  soundObject: {fileID: 0}
+  soundObject: {fileID: 11400000, guid: 2c4a3bc7958fac14c90fd1f11d745007, type: 2}
 --- !u!4 &1498230473
 Transform:
   m_ObjectHideFlags: 0

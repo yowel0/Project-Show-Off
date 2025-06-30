@@ -4906,7 +4906,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d58b5ab7ad253a41af69e25c99c0c99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  joinSound: {fileID: 0}
+  joinSound: {fileID: 11400000, guid: 04e8698a3f09ad5489dfcb2c91b08347, type: 2}
   players: []
   playerPositions:
   - {fileID: 1729139819}
