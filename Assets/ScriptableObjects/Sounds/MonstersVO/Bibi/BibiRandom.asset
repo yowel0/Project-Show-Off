@@ -30,7 +30,7 @@ MonoBehaviour:
   - sound: {fileID: 8300000, guid: 9e981d808032ea5499aba402f1f1a525, type: 3}
     loudness: 1
   - sound: {fileID: 8300000, guid: eca744e30b14b6846b7876873441d005, type: 3}
-    loudness: 0
+    loudness: 1
   soundType: 0
   bgmSceneName: []
   isCharacterDialogue: 0

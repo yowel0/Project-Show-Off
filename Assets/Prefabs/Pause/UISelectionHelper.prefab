@@ -44,4 +44,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3df7bfe5fa306e64092aedd53aaafe27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  moveSelection: {fileID: 11400000, guid: 1a9821cafdc845946af1ea5d3e190e63, type: 2}
   currentSelected: {fileID: 0}

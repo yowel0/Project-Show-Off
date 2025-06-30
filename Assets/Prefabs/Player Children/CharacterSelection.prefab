@@ -6608,6 +6608,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0431f48da4a6a4a4eac8a512dfbd16e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  moveSelection: {fileID: 11400000, guid: 1a9821cafdc845946af1ea5d3e190e63, type: 2}
+  clickButtonSound: {fileID: 11400000, guid: 7995b38a7699084419cf06b64f577e71, type: 2}
   editingComponent: 0
   hats:
   - {fileID: 5162844031722881248, guid: 66156513efe505d45ae26798d9919ee7, type: 3}

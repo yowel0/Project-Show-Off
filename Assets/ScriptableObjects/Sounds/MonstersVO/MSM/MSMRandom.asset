@@ -34,11 +34,11 @@ MonoBehaviour:
   - sound: {fileID: 8300000, guid: 96946896bc9cb3c4b8194e55342fb8e7, type: 3}
     loudness: 1
   - sound: {fileID: 8300000, guid: 6c4605401f8592b4abab61c51cc2722e, type: 3}
-    loudness: 0
+    loudness: 1
   - sound: {fileID: 8300000, guid: bb8a6ab6b5b80e1479cd683b3530ad4e, type: 3}
-    loudness: 0
+    loudness: 1
   - sound: {fileID: 8300000, guid: 6cc3d6f4aaa13c24d9573e4298166a17, type: 3}
-    loudness: 0
+    loudness: 1
   soundType: 0
   bgmSceneName: []
   isCharacterDialogue: 0

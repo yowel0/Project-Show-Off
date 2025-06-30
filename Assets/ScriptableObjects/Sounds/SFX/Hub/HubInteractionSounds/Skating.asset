@@ -16,13 +16,13 @@ MonoBehaviour:
   - sound: {fileID: 8300000, guid: b7694162c3f91f141bffe485feb394fe, type: 3}
     loudness: 1
   - sound: {fileID: 8300000, guid: 802a49004d1dbd04ba0e1ce8deebb0de, type: 3}
-    loudness: 0
+    loudness: 1
   - sound: {fileID: 8300000, guid: 8799fd304454a6e449e843fae4255aec, type: 3}
-    loudness: 0
+    loudness: 1
   - sound: {fileID: 8300000, guid: 08a1adb2b3823454fa48fd9e4335f353, type: 3}
-    loudness: 0
+    loudness: 1
   - sound: {fileID: 8300000, guid: 2c05397302fef2146aea2da9416c56e3, type: 3}
-    loudness: 0
+    loudness: 1
   soundType: 0
   bgmSceneName: []
   isCharacterDialogue: 0

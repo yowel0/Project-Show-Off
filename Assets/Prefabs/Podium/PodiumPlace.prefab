@@ -137,10 +137,10 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  playerWinSound: {fileID: 0}
+  playerWinSound: {fileID: 11400000, guid: c20b024193c40d645a98527624c780e9, type: 2}
   playerLoseSound: {fileID: 0}
-  podiumFirstSound: {fileID: 0}
-  podiumLoseSound: {fileID: 0}
+  podiumFirstSound: {fileID: 11400000, guid: bfde99e6b47e4464ba4997d7ab5b9297, type: 2}
+  podiumLoseSound: {fileID: 11400000, guid: edaf6c8580bd7b142953a85d7938560d, type: 2}
   isRaising: 0
   raiseHeight: 0
   riseDuration: 0

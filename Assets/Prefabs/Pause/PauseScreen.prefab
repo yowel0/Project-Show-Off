@@ -2068,8 +2068,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 846947d7cdd29734a98bd0d7b527b95b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pauseSound: {fileID: 0}
-  clickSound: {fileID: 0}
+  pauseSound: {fileID: 11400000, guid: 2f98489676ba0204aad0176cd70463e8, type: 2}
+  clickSound: {fileID: 11400000, guid: 7995b38a7699084419cf06b64f577e71, type: 2}
   mainMenuName: Main Menu
   hubName: SampleScene
   isPaused: 0
