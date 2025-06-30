@@ -52,6 +52,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98222a8ef98431f4cbf75e4018ba7e8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  openSettingsSound: {fileID: 0}
+  clickSound: {fileID: 0}
+  sfxTestSound: {fileID: 0}
+  bgmTestSound: {fileID: 0}
+  voiceTestSound: {fileID: 0}
   masterSlider: {fileID: 3977657387023356402}
   sfxSlider: {fileID: 281523063052238929}
   bgmSlider: {fileID: 2809359249321646310}
@@ -616,6 +621,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 647895686135014275}
+        m_TargetAssemblyTypeName: SettingsScreen, Assembly-CSharp
+        m_MethodName: PlayClickSound
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!1 &5726198416350629985
 GameObject:
   m_ObjectHideFlags: 0
@@ -1140,12 +1157,12 @@ PrefabInstance:
     - target: {fileID: 706062084790001980, guid: f21113a653047eb4eb010ce068fa924e,
         type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 706062084790001980, guid: f21113a653047eb4eb010ce068fa924e,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2164275924495459968, guid: f21113a653047eb4eb010ce068fa924e,
         type: 3}
@@ -1252,20 +1269,55 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5882427428363490472, guid: f21113a653047eb4eb010ce068fa924e,
+        type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5882427428363490472, guid: f21113a653047eb4eb010ce068fa924e,
+        type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5882427428363490472, guid: f21113a653047eb4eb010ce068fa924e,
+        type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 647895686135014275}
+    - target: {fileID: 5882427428363490472, guid: f21113a653047eb4eb010ce068fa924e,
+        type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5882427428363490472, guid: f21113a653047eb4eb010ce068fa924e,
+        type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: PlayClickSound
+      objectReference: {fileID: 0}
+    - target: {fileID: 5882427428363490472, guid: f21113a653047eb4eb010ce068fa924e,
+        type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
+      value: SettingsScreen, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5882427428363490472, guid: f21113a653047eb4eb010ce068fa924e,
+        type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 7843912294096664421, guid: f21113a653047eb4eb010ce068fa924e,
         type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7843912294096664421, guid: f21113a653047eb4eb010ce068fa924e,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7843912294096664421, guid: f21113a653047eb4eb010ce068fa924e,
         type: 3}
       propertyPath: m_AnchorMin.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9147388526549758163, guid: f21113a653047eb4eb010ce068fa924e,
         type: 3}
@@ -1331,12 +1383,12 @@ PrefabInstance:
     - target: {fileID: 706062084790001980, guid: f21113a653047eb4eb010ce068fa924e,
         type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 706062084790001980, guid: f21113a653047eb4eb010ce068fa924e,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3505865752577288608, guid: f21113a653047eb4eb010ce068fa924e,
         type: 3}
@@ -1438,20 +1490,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5882427428363490472, guid: f21113a653047eb4eb010ce068fa924e,
+        type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 647895686135014275}
     - target: {fileID: 7843912294096664421, guid: f21113a653047eb4eb010ce068fa924e,
         type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7843912294096664421, guid: f21113a653047eb4eb010ce068fa924e,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7843912294096664421, guid: f21113a653047eb4eb010ce068fa924e,
         type: 3}
       propertyPath: m_AnchorMin.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9147388526549758163, guid: f21113a653047eb4eb010ce068fa924e,
         type: 3}
@@ -1512,12 +1569,12 @@ PrefabInstance:
     - target: {fileID: 706062084790001980, guid: f21113a653047eb4eb010ce068fa924e,
         type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 706062084790001980, guid: f21113a653047eb4eb010ce068fa924e,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2164275924495459968, guid: f21113a653047eb4eb010ce068fa924e,
         type: 3}
@@ -1624,20 +1681,55 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5882427428363490472, guid: f21113a653047eb4eb010ce068fa924e,
+        type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5882427428363490472, guid: f21113a653047eb4eb010ce068fa924e,
+        type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5882427428363490472, guid: f21113a653047eb4eb010ce068fa924e,
+        type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 647895686135014275}
+    - target: {fileID: 5882427428363490472, guid: f21113a653047eb4eb010ce068fa924e,
+        type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5882427428363490472, guid: f21113a653047eb4eb010ce068fa924e,
+        type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: PlayClickSound
+      objectReference: {fileID: 0}
+    - target: {fileID: 5882427428363490472, guid: f21113a653047eb4eb010ce068fa924e,
+        type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
+      value: SettingsScreen, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5882427428363490472, guid: f21113a653047eb4eb010ce068fa924e,
+        type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 7843912294096664421, guid: f21113a653047eb4eb010ce068fa924e,
         type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7843912294096664421, guid: f21113a653047eb4eb010ce068fa924e,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7843912294096664421, guid: f21113a653047eb4eb010ce068fa924e,
         type: 3}
       propertyPath: m_AnchorMin.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9147388526549758163, guid: f21113a653047eb4eb010ce068fa924e,
         type: 3}
@@ -1703,12 +1795,12 @@ PrefabInstance:
     - target: {fileID: 706062084790001980, guid: f21113a653047eb4eb010ce068fa924e,
         type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 706062084790001980, guid: f21113a653047eb4eb010ce068fa924e,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2164275924495459968, guid: f21113a653047eb4eb010ce068fa924e,
         type: 3}
@@ -1815,20 +1907,55 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5882427428363490472, guid: f21113a653047eb4eb010ce068fa924e,
+        type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5882427428363490472, guid: f21113a653047eb4eb010ce068fa924e,
+        type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5882427428363490472, guid: f21113a653047eb4eb010ce068fa924e,
+        type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 647895686135014275}
+    - target: {fileID: 5882427428363490472, guid: f21113a653047eb4eb010ce068fa924e,
+        type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5882427428363490472, guid: f21113a653047eb4eb010ce068fa924e,
+        type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: PlayClickSound
+      objectReference: {fileID: 0}
+    - target: {fileID: 5882427428363490472, guid: f21113a653047eb4eb010ce068fa924e,
+        type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
+      value: SettingsScreen, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5882427428363490472, guid: f21113a653047eb4eb010ce068fa924e,
+        type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 7843912294096664421, guid: f21113a653047eb4eb010ce068fa924e,
         type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7843912294096664421, guid: f21113a653047eb4eb010ce068fa924e,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7843912294096664421, guid: f21113a653047eb4eb010ce068fa924e,
         type: 3}
       propertyPath: m_AnchorMin.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9147388526549758163, guid: f21113a653047eb4eb010ce068fa924e,
         type: 3}

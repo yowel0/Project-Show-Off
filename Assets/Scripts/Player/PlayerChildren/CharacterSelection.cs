@@ -12,6 +12,8 @@ public class CharacterSelection : MonoBehaviour
 {
     [Tooltip("Plays when you move selection in the keyboard. DOES NOT INCLUDE (PAUSE) MENU NAVIGATION, THAT'S SEPERATE")]
     [SerializeField] SoundObject moveSelection;
+    [Tooltip("Plays when you click a button")]
+    [SerializeField] SoundObject clickButtonSound;
 
     public enum Component{
         Hat,
@@ -133,6 +135,7 @@ public class CharacterSelection : MonoBehaviour
         }
         if (playerInput.actions["Accept"].triggered)
         {
+            MusicManager.Instance?.PlaySound(clickButtonSound);
             currentSelected.onClick.Invoke();
         }
     }

@@ -5,6 +5,11 @@ using UnityEngine.UI;
 
 public class SettingsScreen : MonoBehaviour
 {
+    [Tooltip("Plays when the settings screen opens")]
+    [SerializeField] SoundObject openSettingsSound;
+    [Tooltip("Plays when you click on a button")]
+    [SerializeField] SoundObject clickSound;
+
     [Header("Adjust volume sounds")]
     [Tooltip("Also plays when adjusting master volume")]
     [SerializeField] SoundObject sfxTestSound;
@@ -21,12 +26,19 @@ public class SettingsScreen : MonoBehaviour
 
     private void OnEnable()
     {
+        MusicManager.Instance?.PlaySound(openSettingsSound);
+
         masterSlider.value = (float)MusicManager.Instance?.GetMasterVolume();
         sfxSlider.value = (float)MusicManager.Instance?.GetSFXVolume();
         bgmSlider.value = (float)MusicManager.Instance?.GetBGMVolume();
         voiceSlider.value = (float)MusicManager.Instance?.GetVoiceVolume();
     }
 
+
+    public void PlayClickSound(bool playSound)
+    {
+        if (playSound) MusicManager.Instance?.PlaySound(clickSound);
+    }
 
     public void SetMasterVolume(float pVolume)
     {

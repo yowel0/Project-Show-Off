@@ -5,8 +5,13 @@ using UnityEngine.SceneManagement;
 
 public class PauseScreen : MonoBehaviour
 {
+    [Header("Sounds")]
     [Tooltip("Plays when you pause the game")]
     [SerializeField] SoundObject pauseSound;
+    [Tooltip("Plays when you click on a button")]
+    [SerializeField] SoundObject clickSound;
+
+    [Header("Scene names")]
     [SerializeField] string mainMenuName;
     [SerializeField] string hubName;
 
@@ -68,4 +73,9 @@ public class PauseScreen : MonoBehaviour
         SceneManager.LoadScene(mainMenuName);
     }
 
+
+    public void PlayClickSound()
+    {
+        MusicManager.Instance?.PlaySound(clickSound);
+    }
 }
