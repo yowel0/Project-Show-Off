@@ -96,6 +96,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4802414d852bed3439e1a5a165318e46, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  throwSound: {fileID: 11400000, guid: 6306d10fcf3c7df4fb3c47cdfa789203, type: 2}
   playerNr: 0
   foodDestination: {fileID: 0}
   foodPrefab: {fileID: 5997170971262843375, guid: 4db8b75bdd22bd7459d6caaa5ae9fae8,
