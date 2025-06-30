@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using static UnityEngine.ParticleSystem;
 
 public class Bibi : MonoBehaviour
@@ -18,6 +19,10 @@ public class Bibi : MonoBehaviour
     [Header("Other balancing")]
     [SerializeField] GameObject firePivot;
     [SerializeField] AnimationCurve fireRetractCurve;
+
+    [Header("TurnAround Event")]
+    [SerializeField]
+    UnityEvent OnTurnAround;
 
     [Header("Debug: Values set by curve")]
     [SerializeField] float currentTurnsPerSecond;
@@ -55,6 +60,7 @@ public class Bibi : MonoBehaviour
         currentTurnFrequency = reverseTurnFrequency.Evaluate(MinigameManager.Instance.GetTimePercent(), Random.value);
         rotatesClockwise = !rotatesClockwise;
         totalDegreesTurned = 0;
+        OnTurnAround?.Invoke();
     }
 
     private void FixedUpdate()
