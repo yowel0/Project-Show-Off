@@ -7,6 +7,7 @@ public class PopUp : MonoBehaviour
 {
     [SerializeField] string sceneName;
     [SerializeField] TextMeshProUGUI countdownText;
+    [SerializeField] TextMeshProUGUI minigameNameText;
 
     [Tooltip("Reference to inner hitbox")]
     [SerializeField] PlayerProximity playerProximity;
@@ -33,22 +34,22 @@ public class PopUp : MonoBehaviour
         isCountingDown = true;
         countdownTimer = countdownTime;
         countdownText.gameObject.SetActive(true);
+        minigameNameText.gameObject.SetActive(false);
     }
 
     public void StopCountdown()
     {
         isCountingDown = false;
         countdownText.gameObject.SetActive(false);
+        minigameNameText.gameObject.SetActive(true);
     }
 
 
     public void CheckReady()
     {
-        //int pCount = (int)PlayerManager.Instance?.GetPlayerCount();
         for (int i = 0; i < readyIcons.Length; i++)
         {
             readyIcons[i].gameObject.SetActive(playerProximity.NearbyPlayers[i]);
-            //readyIconOutlines[i].SetActive(i < pCount);
         }
     }
 
