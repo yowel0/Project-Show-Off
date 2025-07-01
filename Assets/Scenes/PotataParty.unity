@@ -1126,6 +1126,30 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 582088835}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &582088838 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5058301761492812140, guid: d1dee6d32d4f1ca41b8bff360694174f,
+    type: 3}
+  m_PrefabInstance: {fileID: 582088835}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &582088839 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5960604826934397533, guid: d1dee6d32d4f1ca41b8bff360694174f,
+    type: 3}
+  m_PrefabInstance: {fileID: 582088835}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &582088840 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2888362157387388156, guid: d1dee6d32d4f1ca41b8bff360694174f,
+    type: 3}
+  m_PrefabInstance: {fileID: 582088835}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &582088841 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5295909003324757075, guid: d1dee6d32d4f1ca41b8bff360694174f,
+    type: 3}
+  m_PrefabInstance: {fileID: 582088835}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &621663128
 GameObject:
   m_ObjectHideFlags: 0
@@ -1722,9 +1746,9 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1118534746}
+  - {fileID: 1267463684}
   - {fileID: 879320561}
   - {fileID: 755092534}
-  - {fileID: 1267463684}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -3617,12 +3641,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1075276662412111416, guid: 418ebc2242ff3ff48a54b881b4c0f354,
+        type: 3}
+      propertyPath: foodStartLocation
+      value: 
+      objectReference: {fileID: 582088839}
     - target: {fileID: 1231248070607367488, guid: 418ebc2242ff3ff48a54b881b4c0f354,
         type: 3}
       propertyPath: throwSound
       value: 
       objectReference: {fileID: 11400000, guid: bf90eda51b2c6f0479dd4379f6228d88,
         type: 2}
+    - target: {fileID: 1231248070607367488, guid: 418ebc2242ff3ff48a54b881b4c0f354,
+        type: 3}
+      propertyPath: foodStartLocation
+      value: 
+      objectReference: {fileID: 582088841}
     - target: {fileID: 2466055533024966604, guid: 418ebc2242ff3ff48a54b881b4c0f354,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3688,11 +3722,21 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 13.5
       objectReference: {fileID: 0}
+    - target: {fileID: 3573807935567606497, guid: 418ebc2242ff3ff48a54b881b4c0f354,
+        type: 3}
+      propertyPath: foodStartLocation
+      value: 
+      objectReference: {fileID: 582088838}
     - target: {fileID: 5247207179862592964, guid: 418ebc2242ff3ff48a54b881b4c0f354,
         type: 3}
       propertyPath: m_LocalPosition.x
       value: 12.25
       objectReference: {fileID: 0}
+    - target: {fileID: 8928593750193163715, guid: 418ebc2242ff3ff48a54b881b4c0f354,
+        type: 3}
+      propertyPath: foodStartLocation
+      value: 
+      objectReference: {fileID: 582088840}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
