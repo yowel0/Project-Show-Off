@@ -15,7 +15,7 @@ public class PlayerManager : MonoBehaviour
     public List<PlayerShell> players = new List<PlayerShell>();
     public List<Transform> playerPositions = new List<Transform>();
     // Awake so it happens before start
-    void Awake()
+    void OnEnable()
     {
         if (Instance == null) Instance = this;
         else

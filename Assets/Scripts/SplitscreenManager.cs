@@ -46,7 +46,7 @@ public class SplitscreenManager : MonoBehaviour
         
     }
 
-    void Enable()
+    public void Enable()
     {
         //print("enable splitscreen");
         if (!PlayerManager.Instance)
@@ -64,7 +64,7 @@ public class SplitscreenManager : MonoBehaviour
         SceneManager.sceneUnloaded -= SceneUnloaded;
     }
 
-    void Disable()
+    public void Disable()
     {
         //enable main camera
         if (Camera.main)

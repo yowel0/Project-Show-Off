@@ -12,6 +12,9 @@ public enum PlayerChild
 
 public class PlayerSpawner : MonoBehaviour
 {
+    [SerializeField]
+    bool spawnOnAwake = true;
+ 
     [Tooltip("Movement abilities for this scene")]
     public ControlScheme controlScheme = ControlScheme.Movement;
 
@@ -19,10 +22,12 @@ public class PlayerSpawner : MonoBehaviour
     private PlayerChild playerChild = PlayerChild.PlayerAvatar;
     [SerializeField]
     Transform[] spawnPositions;
+
     // Start is called before the first frame update
     void Awake()
     {
-        SpawnAvatars();
+        if (spawnOnAwake)
+            SpawnAvatars();
     }
 
     // Update is called once per frame
@@ -31,7 +36,7 @@ public class PlayerSpawner : MonoBehaviour
 
     }
 
-    void SpawnAvatars()
+    public void SpawnAvatars()
     {
         //after spawning Avatars, no more new players allowed
         //PlayerManager playerManager = FindAnyObjectByType<PlayerManager>();
