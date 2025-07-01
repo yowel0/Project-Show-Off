@@ -101,7 +101,7 @@ public class MinigameManager : MonoBehaviour
 
     private void UpdateTimer()
     {
-        timeText.text = "Time left: " + Mathf.Max(timer, 0);
+        timeText.text = Mathf.CeilToInt(Mathf.Max(timer, 0)).ToString();
     }
 
     public void DoSetup()
