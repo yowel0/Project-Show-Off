@@ -73,10 +73,6 @@ public class CharacterSelection : MonoBehaviour
         ShowHat(selectedHat);
         SelectButton(firstSelected);
         SetEditingComponent(editingComponent);
-
-        //set name tag color
-        Animator animator = transform.Find("Name Tag").GetComponent<Animator>();
-        animator.SetInteger("playerID",PlayerManager.Instance.GetPlayerID(playerShell));
     }
 
     void SelectButton(Button button) {
