@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92861a63a2b92834ca2d98da0ccf7ba1, type: 3}
   m_Name: FallCount
   m_EditorClassIdentifier: 
-  fallCount: 00000000050000000a0000000f000000
+  fallCount: 0000000001000000060000000b000000
