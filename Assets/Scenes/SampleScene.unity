@@ -6840,6 +6840,21 @@ PrefabInstance:
       propertyPath: sceneName
       value: BibiBuilding
       objectReference: {fileID: 0}
+    - target: {fileID: 3209673017139027654, guid: 651c40528ec4a1f489c45661967401b8,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3209673017139027654, guid: 651c40528ec4a1f489c45661967401b8,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3209673017139027654, guid: 651c40528ec4a1f489c45661967401b8,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 1.32
+      objectReference: {fileID: 0}
     - target: {fileID: 3481296168819844098, guid: 651c40528ec4a1f489c45661967401b8,
         type: 3}
       propertyPath: m_AnchoredPosition.y
