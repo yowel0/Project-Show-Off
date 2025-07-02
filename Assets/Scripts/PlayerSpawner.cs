@@ -39,9 +39,9 @@ public class PlayerSpawner : MonoBehaviour
     public void SpawnAvatars()
     {
         //after spawning Avatars, no more new players allowed
-        //PlayerManager playerManager = FindAnyObjectByType<PlayerManager>();
+        PlayerManager playerManager = FindAnyObjectByType<PlayerManager>();
         //PlayerManager.Instance
-        //playerManager.GetComponent<PlayerInputManager>().joinBehavior = PlayerJoinBehavior.JoinPlayersManually;
+        playerManager.GetComponent<PlayerInputManager>().joinBehavior = PlayerJoinBehavior.JoinPlayersManually;
         if (PlayerManager.Instance != null)
         {
             for (int i = 0; i < PlayerManager.Instance.GetPlayerCount(); i++)
