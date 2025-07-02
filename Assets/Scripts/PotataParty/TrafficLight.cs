@@ -47,6 +47,10 @@ public class TrafficLight : MonoBehaviour
 
     public static TrafficLight Instance;
 
+    public UnityEvent annoyedChew;
+
+    bool firstTimeGreen = true;
+
     public void StartGame()
     {
         mouthIsOpen = true;
@@ -80,6 +84,7 @@ public class TrafficLight : MonoBehaviour
             foreach (var p in badParticles) p.IncreaseIntensity();
             //badParticles.IncreaseIntensity();
             MusicManager.Instance?.PlaySound(angrySound);
+            annoyedChew?.Invoke();
         }
 
         Scores.Instance.AddScore(pPlayer, pPoints);
@@ -121,12 +126,17 @@ public class TrafficLight : MonoBehaviour
         {
             case 0: redLight.SetActive(true);
                 OnRed?.Invoke();
+                print("onred");
                 break;
             case 1: orangeLight.SetActive(true); 
                 OnOrange?.Invoke();
                 break;
             default: greenLight.SetActive(true); 
-                OnGreen?.Invoke();
+                if (!firstTimeGreen)
+                {
+                    OnGreen?.Invoke();
+                }
+                firstTimeGreen = false;
                 break;
         }
     }
