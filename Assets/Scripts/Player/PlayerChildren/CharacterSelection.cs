@@ -143,6 +143,7 @@ public class CharacterSelection : MonoBehaviour
     void EditHat(){
         if (vectorInput.east.pressed){
             selectedHat++;
+            MusicManager.Instance?.PlaySound(moveSelection);
             if (selectedHat >= hats.Count){
                 selectedHat = 0;
             }
@@ -150,6 +151,7 @@ public class CharacterSelection : MonoBehaviour
         }
         if (vectorInput.west.pressed){
             selectedHat--;
+            MusicManager.Instance?.PlaySound(moveSelection);
             if (selectedHat < 0){
                 selectedHat = hats.Count - 1;
             }

@@ -54,9 +54,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   openSettingsSound: {fileID: 11400000, guid: 2f98489676ba0204aad0176cd70463e8, type: 2}
   clickSound: {fileID: 11400000, guid: 7995b38a7699084419cf06b64f577e71, type: 2}
-  sfxTestSound: {fileID: 0}
+  sfxTestSound: {fileID: 11400000, guid: 25ded60bb933e254092098321a912945, type: 2}
   bgmTestSound: {fileID: 0}
-  voiceTestSound: {fileID: 0}
+  voiceTestSound: {fileID: 11400000, guid: c6a9113c10938a54e875365f2230a183, type: 2}
   masterSlider: {fileID: 3977657387023356402}
   sfxSlider: {fileID: 281523063052238929}
   bgmSlider: {fileID: 2809359249321646310}
