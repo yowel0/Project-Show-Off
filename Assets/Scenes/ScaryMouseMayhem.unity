@@ -3601,6 +3601,16 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 2.837
       objectReference: {fileID: 0}
+    - target: {fileID: 5750908501199072704, guid: 80980ac1c8afe2942946d98e16c78654,
+        type: 3}
+      propertyPath: LightsModule.enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5750908501199072704, guid: 80980ac1c8afe2942946d98e16c78654,
+        type: 3}
+      propertyPath: LightsModule.intensityCurve.scalar
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 6222628481303629904, guid: 80980ac1c8afe2942946d98e16c78654,
         type: 3}
       propertyPath: maxLocationTransform
@@ -3715,6 +3725,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7983070258974017257, guid: 80980ac1c8afe2942946d98e16c78654,
+        type: 3}
+      propertyPath: LightsModule.intensityCurve.scalar
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 8443407223326273800, guid: 80980ac1c8afe2942946d98e16c78654,
         type: 3}
