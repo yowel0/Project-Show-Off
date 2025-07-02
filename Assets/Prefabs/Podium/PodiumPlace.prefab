@@ -145,7 +145,7 @@ MonoBehaviour:
   raiseHeight: 0
   riseDuration: 0
   timeRising: 0
-  placement: 0
+  placement: 1
   score: 0
   scoreText: {fileID: 2198958553012927055}
 --- !u!54 &5822438963567584797
@@ -215,7 +215,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2752608764928648921}
-  m_Mesh: {fileID: 8683813998275708169, guid: bf7e9d4d68471b047848e75bba8baf2e, type: 3}
+  m_Mesh: {fileID: 8683813998275708169, guid: 4dcc336b8bd2c294898530355dfd369f, type: 3}
 --- !u!23 &1761949186228813887
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -236,7 +236,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -7791486788655378091, guid: bf7e9d4d68471b047848e75bba8baf2e, type: 3}
+  - {fileID: 2100000, guid: 2a07f2629f95a854e8e96f370b4a7af1, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -298,7 +298,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2945529590566837128}
-  m_Mesh: {fileID: 8683813998275708169, guid: bf7e9d4d68471b047848e75bba8baf2e, type: 3}
+  m_Mesh: {fileID: 8683813998275708169, guid: 4dcc336b8bd2c294898530355dfd369f, type: 3}
 --- !u!23 &5897879078923765850
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -319,7 +319,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -7791486788655378091, guid: bf7e9d4d68471b047848e75bba8baf2e, type: 3}
+  - {fileID: 2100000, guid: 2e32877cb1c62424f8b61aa3d1ad6f18, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -416,8 +416,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -434,7 +434,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 0.3
+  m_fontSize: 0.5
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -516,7 +516,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3946420572941012475}
-  m_Mesh: {fileID: 8683813998275708169, guid: bf7e9d4d68471b047848e75bba8baf2e, type: 3}
+  m_Mesh: {fileID: 8683813998275708169, guid: 4dcc336b8bd2c294898530355dfd369f, type: 3}
 --- !u!23 &4393771220350050398
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -537,7 +537,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -7791486788655378091, guid: bf7e9d4d68471b047848e75bba8baf2e, type: 3}
+  - {fileID: 2100000, guid: 2a07f2629f95a854e8e96f370b4a7af1, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -746,7 +746,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6451906062734665018}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0.51}
+  m_LocalPosition: {x: 0, y: 0, z: -1.05}
   m_LocalScale: {x: 1, y: 0.1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -946,6 +946,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5012216656589859541}
     m_Modifications:
+    - target: {fileID: -8934204517799359849, guid: bf7e9d4d68471b047848e75bba8baf2e,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2a07f2629f95a854e8e96f370b4a7af1, type: 2}
     - target: {fileID: -8679921383154817045, guid: bf7e9d4d68471b047848e75bba8baf2e,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -1016,6 +1021,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: score platform
       objectReference: {fileID: 0}
+    - target: {fileID: 924204556162435858, guid: bf7e9d4d68471b047848e75bba8baf2e,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 8683813998275708169, guid: 4dcc336b8bd2c294898530355dfd369f,
+        type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 623420616769059698, guid: bf7e9d4d68471b047848e75bba8baf2e, type: 3}

@@ -68,6 +68,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 2351702462376009966}
+        m_TargetAssemblyTypeName: PodiumManager, Assembly-CSharp
+        m_MethodName: ShowWinner
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 5
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   places:
   - {fileID: 2908546109077465171}
   - {fileID: 8789612727334417539}
@@ -75,7 +87,7 @@ MonoBehaviour:
   - {fileID: 6655094764814193428}
   winnerText: {fileID: 0}
   minigameName: 
-  placeholder: 2c01000088130000881300002c010000
+  placeholder: 2c010000881300008813000000000000
   playerCount: 0
   overridePlayerCount: 4
 --- !u!1001 &2997056395933326220
@@ -86,11 +98,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 9041184517090961600}
     m_Modifications:
-    - target: {fileID: 129080118571381727, guid: 61e9b2146831c4a42981450fd8077d31,
-        type: 3}
-      propertyPath: placement
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 2586344132974818880, guid: 61e9b2146831c4a42981450fd8077d31,
         type: 3}
       propertyPath: m_Name
@@ -99,7 +106,7 @@ PrefabInstance:
     - target: {fileID: 5012216656589859541, guid: 61e9b2146831c4a42981450fd8077d31,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3
+      value: -4.5
       objectReference: {fileID: 0}
     - target: {fileID: 5012216656589859541, guid: 61e9b2146831c4a42981450fd8077d31,
         type: 3}
@@ -182,15 +189,31 @@ PrefabInstance:
       propertyPath: placement
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 1761949186228813887, guid: 61e9b2146831c4a42981450fd8077d31,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2a07f2629f95a854e8e96f370b4a7af1, type: 2}
     - target: {fileID: 2586344132974818880, guid: 61e9b2146831c4a42981450fd8077d31,
         type: 3}
       propertyPath: m_Name
       value: PodiumPlace (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 4393771220350050398, guid: 61e9b2146831c4a42981450fd8077d31,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2a07f2629f95a854e8e96f370b4a7af1, type: 2}
+    - target: {fileID: 4875270624690775801, guid: 61e9b2146831c4a42981450fd8077d31,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 8683813998275708169, guid: 4dcc336b8bd2c294898530355dfd369f,
+        type: 3}
     - target: {fileID: 5012216656589859541, guid: 61e9b2146831c4a42981450fd8077d31,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 5012216656589859541, guid: 61e9b2146831c4a42981450fd8077d31,
         type: 3}
@@ -242,6 +265,34 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: c66e23ebb3d8a3348ae2c3f4765e3b94, type: 2}
+    - target: {fileID: 5438179819544782716, guid: 61e9b2146831c4a42981450fd8077d31,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2a07f2629f95a854e8e96f370b4a7af1, type: 2}
+    - target: {fileID: 5747396374347790310, guid: 61e9b2146831c4a42981450fd8077d31,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 8683813998275708169, guid: 4dcc336b8bd2c294898530355dfd369f,
+        type: 3}
+    - target: {fileID: 5897879078923765850, guid: 61e9b2146831c4a42981450fd8077d31,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2a07f2629f95a854e8e96f370b4a7af1, type: 2}
+    - target: {fileID: 8390330173953996086, guid: 61e9b2146831c4a42981450fd8077d31,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 8683813998275708169, guid: 4dcc336b8bd2c294898530355dfd369f,
+        type: 3}
+    - target: {fileID: 8902564673525151457, guid: 61e9b2146831c4a42981450fd8077d31,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 8683813998275708169, guid: 4dcc336b8bd2c294898530355dfd369f,
+        type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -278,15 +329,31 @@ PrefabInstance:
       propertyPath: placement
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 1761949186228813887, guid: 61e9b2146831c4a42981450fd8077d31,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2a07f2629f95a854e8e96f370b4a7af1, type: 2}
     - target: {fileID: 2586344132974818880, guid: 61e9b2146831c4a42981450fd8077d31,
         type: 3}
       propertyPath: m_Name
       value: PodiumPlace (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 4393771220350050398, guid: 61e9b2146831c4a42981450fd8077d31,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2a07f2629f95a854e8e96f370b4a7af1, type: 2}
+    - target: {fileID: 4875270624690775801, guid: 61e9b2146831c4a42981450fd8077d31,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 8683813998275708169, guid: 4dcc336b8bd2c294898530355dfd369f,
+        type: 3}
     - target: {fileID: 5012216656589859541, guid: 61e9b2146831c4a42981450fd8077d31,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3
+      value: 4.5
       objectReference: {fileID: 0}
     - target: {fileID: 5012216656589859541, guid: 61e9b2146831c4a42981450fd8077d31,
         type: 3}
@@ -338,6 +405,34 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 8f389acf80826eb4fad7fbdccb04d7db, type: 2}
+    - target: {fileID: 5438179819544782716, guid: 61e9b2146831c4a42981450fd8077d31,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2a07f2629f95a854e8e96f370b4a7af1, type: 2}
+    - target: {fileID: 5747396374347790310, guid: 61e9b2146831c4a42981450fd8077d31,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 8683813998275708169, guid: 4dcc336b8bd2c294898530355dfd369f,
+        type: 3}
+    - target: {fileID: 5897879078923765850, guid: 61e9b2146831c4a42981450fd8077d31,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2a07f2629f95a854e8e96f370b4a7af1, type: 2}
+    - target: {fileID: 8390330173953996086, guid: 61e9b2146831c4a42981450fd8077d31,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 8683813998275708169, guid: 4dcc336b8bd2c294898530355dfd369f,
+        type: 3}
+    - target: {fileID: 8902564673525151457, guid: 61e9b2146831c4a42981450fd8077d31,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 8683813998275708169, guid: 4dcc336b8bd2c294898530355dfd369f,
+        type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -374,15 +469,31 @@ PrefabInstance:
       propertyPath: placement
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 1761949186228813887, guid: 61e9b2146831c4a42981450fd8077d31,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2a07f2629f95a854e8e96f370b4a7af1, type: 2}
     - target: {fileID: 2586344132974818880, guid: 61e9b2146831c4a42981450fd8077d31,
         type: 3}
       propertyPath: m_Name
       value: PodiumPlace (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 4393771220350050398, guid: 61e9b2146831c4a42981450fd8077d31,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2a07f2629f95a854e8e96f370b4a7af1, type: 2}
+    - target: {fileID: 4875270624690775801, guid: 61e9b2146831c4a42981450fd8077d31,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 8683813998275708169, guid: 4dcc336b8bd2c294898530355dfd369f,
+        type: 3}
     - target: {fileID: 5012216656589859541, guid: 61e9b2146831c4a42981450fd8077d31,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1
+      value: -1.5
       objectReference: {fileID: 0}
     - target: {fileID: 5012216656589859541, guid: 61e9b2146831c4a42981450fd8077d31,
         type: 3}
@@ -434,6 +545,34 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: d7299f48ed8eb0b42891493491a880a1, type: 2}
+    - target: {fileID: 5438179819544782716, guid: 61e9b2146831c4a42981450fd8077d31,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2a07f2629f95a854e8e96f370b4a7af1, type: 2}
+    - target: {fileID: 5747396374347790310, guid: 61e9b2146831c4a42981450fd8077d31,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 8683813998275708169, guid: 4dcc336b8bd2c294898530355dfd369f,
+        type: 3}
+    - target: {fileID: 5897879078923765850, guid: 61e9b2146831c4a42981450fd8077d31,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2a07f2629f95a854e8e96f370b4a7af1, type: 2}
+    - target: {fileID: 8390330173953996086, guid: 61e9b2146831c4a42981450fd8077d31,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 8683813998275708169, guid: 4dcc336b8bd2c294898530355dfd369f,
+        type: 3}
+    - target: {fileID: 8902564673525151457, guid: 61e9b2146831c4a42981450fd8077d31,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 8683813998275708169, guid: 4dcc336b8bd2c294898530355dfd369f,
+        type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
