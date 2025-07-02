@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class SMItemDropper : MonoBehaviour
 {
@@ -24,8 +25,11 @@ public class SMItemDropper : MonoBehaviour
     [SerializeField] Transform maxLocationTransform;
     [SerializeField] float hoverHeight;
     [SerializeField] GameObject[] items;
+    [SerializeField] Transform DropPosition;
 
     Queue<int> itemQueue = new Queue<int>();
+
+    public UnityEvent OnItemDrop;
 
     Vector3 minLocation;
     Vector3 maxLocation;
@@ -137,7 +141,9 @@ public class SMItemDropper : MonoBehaviour
         int itemID = GetRandomItem();
 
         // TODO: Add object to array to check when game ends?
-        GameObject itemToDrop = Instantiate(items[itemID], transform.position, Quaternion.identity);
+        Debug.Log("we sijn er");
+        OnItemDrop?.Invoke();
+        GameObject itemToDrop = Instantiate(items[itemID], DropPosition.position, Quaternion.identity);
 
         MusicManager.Instance?.PlaySound(itemDropSound);
     }
