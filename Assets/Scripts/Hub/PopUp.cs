@@ -2,10 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class PopUp : MonoBehaviour
 {
     [SerializeField] string sceneName;
+    [SerializeField] UnityEvent OnCountDownDone;
     [SerializeField] TextMeshProUGUI countdownText;
     [SerializeField] TextMeshProUGUI minigameNameText;
 
@@ -64,7 +66,8 @@ public class PopUp : MonoBehaviour
         if (countdownTimer <= 0)
         {
             isCountingDown = false;
-            SceneTransition.Instance.ChangeScene(sceneName);
+            //SceneTransition.Instance.ChangeScene(sceneName);
+            OnCountDownDone?.Invoke();
         }
     }
 

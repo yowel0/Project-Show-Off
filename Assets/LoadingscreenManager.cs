@@ -44,7 +44,7 @@ public class LoadingscreenManager : MonoBehaviour
 
     }
 
-    public void LoadScene(int monsterID)
+    public void LoadMonsterScene(int monsterID)
     {
         switch (monsterID)
         {
@@ -68,16 +68,16 @@ public class LoadingscreenManager : MonoBehaviour
         switch (scene)
         {
             case Scene.Potato:
-                StartCoroutine(LoadSceneAsync("", Potato, loadingbarPotato));
+                StartCoroutine(LoadSceneAsync("PotataParty", Potato, loadingbarPotato));
                 break;
             case Scene.Cloudy:
-                StartCoroutine(LoadSceneAsync("", Cloudy, loadingbarCloudy));
+                StartCoroutine(LoadSceneAsync("CloudysColours", Cloudy, loadingbarCloudy));
                 break;
             case Scene.MrScaryMouse:
-                StartCoroutine(LoadSceneAsync("", MrScaryMouse, loadingbarMouse));
+                StartCoroutine(LoadSceneAsync("ScaryMouseMayhem", MrScaryMouse, loadingbarMouse));
                 break;
             case Scene.Bibi:
-                StartCoroutine(LoadSceneAsync("", Bibi, loadingbarBibi));
+                StartCoroutine(LoadSceneAsync("BibiBuilding", Bibi, loadingbarBibi));
                 break;
         }
     }

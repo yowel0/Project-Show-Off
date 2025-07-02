@@ -3847,6 +3847,46 @@ PrefabInstance:
       propertyPath: sceneName
       value: ScaryMouseMayhem
       objectReference: {fileID: 0}
+    - target: {fileID: 2454519658389343821, guid: 651c40528ec4a1f489c45661967401b8,
+        type: 3}
+      propertyPath: OnCountDownDone.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2454519658389343821, guid: 651c40528ec4a1f489c45661967401b8,
+        type: 3}
+      propertyPath: OnCountDownDone.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2454519658389343821, guid: 651c40528ec4a1f489c45661967401b8,
+        type: 3}
+      propertyPath: OnCountDownDone.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 915245215}
+    - target: {fileID: 2454519658389343821, guid: 651c40528ec4a1f489c45661967401b8,
+        type: 3}
+      propertyPath: OnCountDownDone.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2454519658389343821, guid: 651c40528ec4a1f489c45661967401b8,
+        type: 3}
+      propertyPath: OnCountDownDone.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LoadMonsterScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 2454519658389343821, guid: 651c40528ec4a1f489c45661967401b8,
+        type: 3}
+      propertyPath: OnCountDownDone.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: LoadingscreenManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2454519658389343821, guid: 651c40528ec4a1f489c45661967401b8,
+        type: 3}
+      propertyPath: OnCountDownDone.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2454519658389343821, guid: 651c40528ec4a1f489c45661967401b8,
+        type: 3}
+      propertyPath: OnCountDownDone.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 2741055536672835362, guid: 651c40528ec4a1f489c45661967401b8,
         type: 3}
       propertyPath: sceneName
@@ -4960,6 +5000,136 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 872473083}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &915245214
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4960975984832741990, guid: aed1d39fbd6c12e4eb85e4fc6b033794,
+        type: 3}
+      propertyPath: m_Pivot.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4960975984832741990, guid: aed1d39fbd6c12e4eb85e4fc6b033794,
+        type: 3}
+      propertyPath: m_Pivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4960975984832741990, guid: aed1d39fbd6c12e4eb85e4fc6b033794,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4960975984832741990, guid: aed1d39fbd6c12e4eb85e4fc6b033794,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4960975984832741990, guid: aed1d39fbd6c12e4eb85e4fc6b033794,
+        type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4960975984832741990, guid: aed1d39fbd6c12e4eb85e4fc6b033794,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4960975984832741990, guid: aed1d39fbd6c12e4eb85e4fc6b033794,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4960975984832741990, guid: aed1d39fbd6c12e4eb85e4fc6b033794,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4960975984832741990, guid: aed1d39fbd6c12e4eb85e4fc6b033794,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4960975984832741990, guid: aed1d39fbd6c12e4eb85e4fc6b033794,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4960975984832741990, guid: aed1d39fbd6c12e4eb85e4fc6b033794,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4960975984832741990, guid: aed1d39fbd6c12e4eb85e4fc6b033794,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4960975984832741990, guid: aed1d39fbd6c12e4eb85e4fc6b033794,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4960975984832741990, guid: aed1d39fbd6c12e4eb85e4fc6b033794,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4960975984832741990, guid: aed1d39fbd6c12e4eb85e4fc6b033794,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4960975984832741990, guid: aed1d39fbd6c12e4eb85e4fc6b033794,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4960975984832741990, guid: aed1d39fbd6c12e4eb85e4fc6b033794,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4960975984832741990, guid: aed1d39fbd6c12e4eb85e4fc6b033794,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4960975984832741990, guid: aed1d39fbd6c12e4eb85e4fc6b033794,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4960975984832741990, guid: aed1d39fbd6c12e4eb85e4fc6b033794,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8186255936730983567, guid: aed1d39fbd6c12e4eb85e4fc6b033794,
+        type: 3}
+      propertyPath: m_Name
+      value: Loadingscreens Canvas
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: aed1d39fbd6c12e4eb85e4fc6b033794, type: 3}
+--- !u!114 &915245215 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3827799336639991271, guid: aed1d39fbd6c12e4eb85e4fc6b033794,
+    type: 3}
+  m_PrefabInstance: {fileID: 915245214}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e550d4c1348e1964b985cfe4fc01d34b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &946791197
 GameObject:
   m_ObjectHideFlags: 0
@@ -5747,6 +5917,46 @@ PrefabInstance:
         type: 3}
       propertyPath: sceneName
       value: CloudysColours
+      objectReference: {fileID: 0}
+    - target: {fileID: 2454519658389343821, guid: 651c40528ec4a1f489c45661967401b8,
+        type: 3}
+      propertyPath: OnCountDownDone.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2454519658389343821, guid: 651c40528ec4a1f489c45661967401b8,
+        type: 3}
+      propertyPath: OnCountDownDone.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2454519658389343821, guid: 651c40528ec4a1f489c45661967401b8,
+        type: 3}
+      propertyPath: OnCountDownDone.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 915245215}
+    - target: {fileID: 2454519658389343821, guid: 651c40528ec4a1f489c45661967401b8,
+        type: 3}
+      propertyPath: OnCountDownDone.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2454519658389343821, guid: 651c40528ec4a1f489c45661967401b8,
+        type: 3}
+      propertyPath: OnCountDownDone.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LoadMonsterScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 2454519658389343821, guid: 651c40528ec4a1f489c45661967401b8,
+        type: 3}
+      propertyPath: OnCountDownDone.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: LoadingscreenManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2454519658389343821, guid: 651c40528ec4a1f489c45661967401b8,
+        type: 3}
+      propertyPath: OnCountDownDone.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2454519658389343821, guid: 651c40528ec4a1f489c45661967401b8,
+        type: 3}
+      propertyPath: OnCountDownDone.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 2741055536672835362, guid: 651c40528ec4a1f489c45661967401b8,
         type: 3}
@@ -8558,6 +8768,46 @@ PrefabInstance:
       propertyPath: sceneName
       value: BibiBuilding
       objectReference: {fileID: 0}
+    - target: {fileID: 2454519658389343821, guid: 651c40528ec4a1f489c45661967401b8,
+        type: 3}
+      propertyPath: OnCountDownDone.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2454519658389343821, guid: 651c40528ec4a1f489c45661967401b8,
+        type: 3}
+      propertyPath: OnCountDownDone.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2454519658389343821, guid: 651c40528ec4a1f489c45661967401b8,
+        type: 3}
+      propertyPath: OnCountDownDone.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 915245215}
+    - target: {fileID: 2454519658389343821, guid: 651c40528ec4a1f489c45661967401b8,
+        type: 3}
+      propertyPath: OnCountDownDone.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2454519658389343821, guid: 651c40528ec4a1f489c45661967401b8,
+        type: 3}
+      propertyPath: OnCountDownDone.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LoadMonsterScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 2454519658389343821, guid: 651c40528ec4a1f489c45661967401b8,
+        type: 3}
+      propertyPath: OnCountDownDone.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: LoadingscreenManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2454519658389343821, guid: 651c40528ec4a1f489c45661967401b8,
+        type: 3}
+      propertyPath: OnCountDownDone.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2454519658389343821, guid: 651c40528ec4a1f489c45661967401b8,
+        type: 3}
+      propertyPath: OnCountDownDone.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 2741055536672835362, guid: 651c40528ec4a1f489c45661967401b8,
         type: 3}
       propertyPath: sceneName
@@ -10538,6 +10788,41 @@ PrefabInstance:
       propertyPath: sceneName
       value: PotataParty
       objectReference: {fileID: 0}
+    - target: {fileID: 2454519658389343821, guid: 651c40528ec4a1f489c45661967401b8,
+        type: 3}
+      propertyPath: OnCountDownDone.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2454519658389343821, guid: 651c40528ec4a1f489c45661967401b8,
+        type: 3}
+      propertyPath: OnCountDownDone.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2454519658389343821, guid: 651c40528ec4a1f489c45661967401b8,
+        type: 3}
+      propertyPath: OnCountDownDone.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 915245215}
+    - target: {fileID: 2454519658389343821, guid: 651c40528ec4a1f489c45661967401b8,
+        type: 3}
+      propertyPath: OnCountDownDone.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2454519658389343821, guid: 651c40528ec4a1f489c45661967401b8,
+        type: 3}
+      propertyPath: OnCountDownDone.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LoadMonsterScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 2454519658389343821, guid: 651c40528ec4a1f489c45661967401b8,
+        type: 3}
+      propertyPath: OnCountDownDone.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: LoadingscreenManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2454519658389343821, guid: 651c40528ec4a1f489c45661967401b8,
+        type: 3}
+      propertyPath: OnCountDownDone.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 2741055536672835362, guid: 651c40528ec4a1f489c45661967401b8,
         type: 3}
       propertyPath: sceneName
@@ -11541,3 +11826,4 @@ SceneRoots:
   - {fileID: 520244271}
   - {fileID: 1753346869}
   - {fileID: 121197041}
+  - {fileID: 915245214}

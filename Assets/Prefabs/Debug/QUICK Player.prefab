@@ -79,6 +79,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlayerAvatarPrefab: {fileID: 0}
   CharacterSelectionPrefab: {fileID: 0}
+  SplitscreenCamera: {fileID: 0}
   controlScheme: 1
   userName: 
   hatPrefab: {fileID: 0}
@@ -191,6 +192,11 @@ PrefabInstance:
       propertyPath: character
       value: 
       objectReference: {fileID: 3808779095724922786}
+    - target: {fileID: 3395831835360442634, guid: 17c2c12a739a6b5499ac0ce949b611b1,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4354272133948173056, guid: 17c2c12a739a6b5499ac0ce949b611b1,
         type: 3}
       propertyPath: m_LocalScale.x
