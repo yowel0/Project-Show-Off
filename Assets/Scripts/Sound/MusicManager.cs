@@ -114,7 +114,9 @@ public class MusicManager : MonoBehaviour
 
     public void SetMusicVolume(float pVolume)
     {
+        float mult = pVolume / bgmVolume;
         bgmVolume = pVolume;
+        bgmAudioSource.volume *= mult;
     }
 
     public void SetVoiceVolume(float pVolume)

@@ -32,7 +32,7 @@ public class AliveManager : MonoBehaviour
 
     public void CheckAlive()
     {
-        if (noSurvivors)
+        if (noSurvivors || PlayerManager.Instance?.GetPlayerCount() <= 1)
         {
             if (nrAlive <= 0) MinigameManager.Instance.DoStop();
         }
