@@ -84,6 +84,8 @@ public class LoadingscreenManager : MonoBehaviour
 
     IEnumerator LoadSceneAsync(string sceneName, GameObject loadingScreen, Slider slider)
     {
+        PlayerManager.Instance?.SetControlScheme(ControlScheme.OnlyInteract);
+
         AsyncOperation operation = SceneManager.LoadSceneAsync(sceneName);
 
         loadingScreen.SetActive(true);
