@@ -13,9 +13,11 @@ MonoBehaviour:
   m_Name: PotatoParty
   m_EditorClassIdentifier: 
   soundList:
-  - sound: {fileID: 8300000, guid: 2475caf359e9d004abf2ef7e60819757, type: 3}
+  - sound: {fileID: 8300000, guid: 944778cc1ef934d4ca80e8bb5c767627, type: 3}
     loudness: 1
   soundType: 1
   bgmSceneName:
   - PotataParty
+  isCharacterDialogue: 0
+  hasPriority: 0
   currentSound: 0
