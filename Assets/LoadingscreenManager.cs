@@ -29,10 +29,10 @@ public class LoadingscreenManager : MonoBehaviour
     InputActionReference test;
 
     private List<PlayerInput> playerInputs = new List<PlayerInput>();
-    private bool loadingScreenActive;
+    private bool loadingScreenActive = false;
     private string selectedSceneName;
     private Slider selectedSlider;
-
+    private bool transitionStarted = false;
     public enum Scene
     {
         Potato,
@@ -60,6 +60,9 @@ public class LoadingscreenManager : MonoBehaviour
             {
                 if (input.actions["Interact"].triggered)
                 {
+                    if (transitionStarted)
+                        return;
+                    transitionStarted = true;
                     StartCoroutine(LoadSceneAsync());
                 }
             }
@@ -134,6 +137,7 @@ public class LoadingscreenManager : MonoBehaviour
 
     public void LoadScene(Scene scene)
     {
+
         switch (scene)
         {
             case Scene.Potato:

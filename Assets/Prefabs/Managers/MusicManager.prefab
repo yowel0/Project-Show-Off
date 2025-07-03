@@ -57,6 +57,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 4940d26d1a39dc84da6764eebbba4163, type: 2}
   - {fileID: 11400000, guid: 456f07f4b535e9f4f92ccc9d5aa69cf8, type: 2}
   - {fileID: 11400000, guid: e113d38af0b0ffd4d91988f654e9276b, type: 2}
+  - {fileID: 11400000, guid: 50299dbd30a3c5543b2c93f278cec992, type: 2}
   bgmAudioSource: {fileID: 1171740361541537976}
   sfxAudioSource: {fileID: 3953749673382416489}
   dialogueAudioSource: {fileID: 7292854958394798906}

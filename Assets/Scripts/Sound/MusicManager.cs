@@ -29,6 +29,7 @@ public class MusicManager : MonoBehaviour
         }
 
         DontDestroyOnLoad(gameObject);
+        CheckBGM(SceneManager.GetActiveScene(), SceneManager.GetActiveScene());
         SceneManager.activeSceneChanged += CheckBGM;
     }
 
