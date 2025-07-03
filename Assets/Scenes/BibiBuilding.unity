@@ -4159,6 +4159,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: fogg
       objectReference: {fileID: 0}
+    - target: {fileID: 6268858691484404434, guid: 15f68317ab22a5646a09e912e1ad3d15,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8448657148210175385, guid: 15f68317ab22a5646a09e912e1ad3d15,
         type: 3}
       propertyPath: m_LocalPosition.x
