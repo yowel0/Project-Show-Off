@@ -28,7 +28,10 @@ public class LoadingscreenManager : MonoBehaviour
     [SerializeField]
     InputActionReference test;
 
-    private List<PlayerInput> playerInputs;
+    private List<PlayerInput> playerInputs = new List<PlayerInput>();
+    private bool loadingScreenActive;
+    private string selectedSceneName;
+    private Slider selectedSlider;
 
     public enum Scene
     {
@@ -51,13 +54,63 @@ public class LoadingscreenManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // foreach (PlayerInput input in playerInputs)
-        // {
-        //     if (input.actions["Jump"].triggered)
-        //     {
-                
-        //     }
-        // }
+        if (loadingScreenActive)
+        {
+            foreach (PlayerInput input in playerInputs)
+            {
+                if (input.actions["Interact"].triggered)
+                {
+                    StartCoroutine(LoadSceneAsync());
+                }
+            }
+        }
+    }
+
+    public void EnableLoadingScreen(int monsterID)
+    {
+        switch (monsterID)
+        {
+            case 0:
+                EnableLoadingScreen(Scene.Potato);
+                break;
+            case 1:
+                EnableLoadingScreen(Scene.Cloudy);
+                break;
+            case 2:
+                EnableLoadingScreen(Scene.MrScaryMouse);
+                break;
+            case 3:
+                EnableLoadingScreen(Scene.Bibi);
+                break;
+        }
+    }
+
+    void EnableLoadingScreen(Scene scene)
+    {
+        switch (scene)
+        {
+            case Scene.Potato:
+                EnableLoadingScreen("PotataParty", Potato, loadingbarPotato);
+                break;
+            case Scene.Cloudy:
+                EnableLoadingScreen("ScaryMouseMayhem", MrScaryMouse, loadingbarMouse);
+                break;
+            case Scene.MrScaryMouse:
+                EnableLoadingScreen("ScaryMouseMayhem", MrScaryMouse, loadingbarMouse);
+                break;
+            case Scene.Bibi:
+                EnableLoadingScreen("BibiBuilding", Bibi, loadingbarBibi);
+                break;
+        }
+    }
+
+    void EnableLoadingScreen(string sceneName, GameObject loadingScreen, Slider slider)
+    {
+        loadingScreenActive = true  ;
+        PlayerManager.Instance?.SetControlScheme(ControlScheme.OnlyInteract);
+        loadingScreen.SetActive(true);
+        selectedSceneName = sceneName;
+        selectedSlider = slider;
     }
 
     public void LoadMonsterScene(int monsterID)
@@ -98,13 +151,23 @@ public class LoadingscreenManager : MonoBehaviour
         }
     }
 
+    IEnumerator LoadSceneAsync()
+    {
+        AsyncOperation operation = SceneManager.LoadSceneAsync(selectedSceneName);
+
+        while (!operation.isDone)
+        {
+            float progressVaule = Mathf.Clamp01(operation.progress / 0.9f);
+
+            selectedSlider.value = progressVaule;
+
+            yield return null;
+        }
+    }
+
     IEnumerator LoadSceneAsync(string sceneName, GameObject loadingScreen, Slider slider)
     {
-        PlayerManager.Instance?.SetControlScheme(ControlScheme.OnlyInteract);
-
         AsyncOperation operation = SceneManager.LoadSceneAsync(sceneName);
-
-        loadingScreen.SetActive(true);
 
         while (!operation.isDone)
         {
