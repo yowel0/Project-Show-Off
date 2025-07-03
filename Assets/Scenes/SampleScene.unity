@@ -3795,7 +3795,7 @@ PrefabInstance:
     - target: {fileID: 1216157305089065392, guid: 651c40528ec4a1f489c45661967401b8,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.68571466
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1216157305089065392, guid: 651c40528ec4a1f489c45661967401b8,
         type: 3}
@@ -3896,6 +3896,11 @@ PrefabInstance:
         type: 3}
       propertyPath: sceneName
       value: ScaryMouseMayhem
+      objectReference: {fileID: 0}
+    - target: {fileID: 2920923462946106391, guid: 651c40528ec4a1f489c45661967401b8,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 0.6857147
       objectReference: {fileID: 0}
     - target: {fileID: 3481296168819844098, guid: 651c40528ec4a1f489c45661967401b8,
         type: 3}
@@ -4050,6 +4055,11 @@ PrefabInstance:
         type: 3}
       propertyPath: OnPlayerApproach.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 7123623861674049561, guid: 651c40528ec4a1f489c45661967401b8,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 0.6857147
       objectReference: {fileID: 0}
     - target: {fileID: 7903494133898919292, guid: 651c40528ec4a1f489c45661967401b8,
         type: 3}
@@ -5896,7 +5906,7 @@ PrefabInstance:
     - target: {fileID: 1216157305089065392, guid: 651c40528ec4a1f489c45661967401b8,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.8322986
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1216157305089065392, guid: 651c40528ec4a1f489c45661967401b8,
         type: 3}
@@ -5997,6 +6007,11 @@ PrefabInstance:
         type: 3}
       propertyPath: sceneName
       value: CloudysColours
+      objectReference: {fileID: 0}
+    - target: {fileID: 2920923462946106391, guid: 651c40528ec4a1f489c45661967401b8,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 0.8322986
       objectReference: {fileID: 0}
     - target: {fileID: 4458943788130665312, guid: 651c40528ec4a1f489c45661967401b8,
         type: 3}
@@ -6117,6 +6132,11 @@ PrefabInstance:
         type: 3}
       propertyPath: OnPlayerApproach.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 7123623861674049561, guid: 651c40528ec4a1f489c45661967401b8,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 0.8322986
       objectReference: {fileID: 0}
     - target: {fileID: 7903494133898919292, guid: 651c40528ec4a1f489c45661967401b8,
         type: 3}
@@ -10771,7 +10791,7 @@ PrefabInstance:
     - target: {fileID: 1216157305089065392, guid: 651c40528ec4a1f489c45661967401b8,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.85401434
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1216157305089065392, guid: 651c40528ec4a1f489c45661967401b8,
         type: 3}
@@ -10873,6 +10893,11 @@ PrefabInstance:
       propertyPath: OnPlayerApproach.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 595758885}
+    - target: {fileID: 2920923462946106391, guid: 651c40528ec4a1f489c45661967401b8,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 0.8540143
+      objectReference: {fileID: 0}
     - target: {fileID: 3209673017139027654, guid: 651c40528ec4a1f489c45661967401b8,
         type: 3}
       propertyPath: m_LocalPosition.z
@@ -11054,6 +11079,11 @@ PrefabInstance:
         type: 3}
       propertyPath: OnPlayerApproach.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 7123623861674049561, guid: 651c40528ec4a1f489c45661967401b8,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 0.8540143
       objectReference: {fileID: 0}
     - target: {fileID: 7903494133898919292, guid: 651c40528ec4a1f489c45661967401b8,
         type: 3}
