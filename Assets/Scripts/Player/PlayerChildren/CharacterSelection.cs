@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
@@ -53,6 +54,8 @@ public class CharacterSelection : MonoBehaviour
     [SerializeField]
     private Button firstSelected;
     private Button currentSelected;
+    [SerializeField]
+    Color selectedButtonColor;
 
     [Header("TextFormats")]
     [SerializeField]
@@ -83,12 +86,13 @@ public class CharacterSelection : MonoBehaviour
         {
             MusicManager.Instance?.PlaySound(moveSelection);
             ColorBlock _colorblock = currentSelected.colors;
-            _colorblock.normalColor = Color.white;
+            _colorblock.normalColor = Color.white.WithAlpha(0);
             currentSelected.colors = _colorblock;
         }
         //visually select
         ColorBlock colorblock = button.colors;
-        colorblock.normalColor = Color.green;
+        colorblock.normalColor = selectedButtonColor;
+        colorblock.normalColor = selectedButtonColor.WithAlpha(.5f);
         button.colors = colorblock;
         //select
         currentSelected = button;
