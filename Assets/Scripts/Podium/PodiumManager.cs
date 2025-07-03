@@ -202,7 +202,7 @@ public class PodiumManager : MonoBehaviour
 
     public void ShowWinner()
     {
-        winnerText.gameObject.SetActive(true);
+        winnerText.transform.parent.gameObject.SetActive(true);
     }
     public void NameWinner(int[] pPlayerScores)
     {

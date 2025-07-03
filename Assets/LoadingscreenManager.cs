@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -24,6 +25,11 @@ public class LoadingscreenManager : MonoBehaviour
     [SerializeField]
     Slider loadingbarBibi;
 
+    [SerializeField]
+    InputActionReference test;
+
+    private List<PlayerInput> playerInputs;
+
     public enum Scene
     {
         Potato,
@@ -35,13 +41,23 @@ public class LoadingscreenManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        List<PlayerShell> players = PlayerManager.Instance.players;
+        foreach (PlayerShell p in players)
+        {
+            playerInputs.Add(p.GetComponent<PlayerInput>());
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        foreach (PlayerInput input in playerInputs)
+        {
+            if (input.actions["Jump"].triggered)
+            {
+                
+            }
+        }
     }
 
     public void LoadMonsterScene(int monsterID)
