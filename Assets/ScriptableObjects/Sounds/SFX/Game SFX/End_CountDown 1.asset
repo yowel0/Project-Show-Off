@@ -13,7 +13,11 @@ MonoBehaviour:
   m_Name: End_CountDown 1
   m_EditorClassIdentifier: 
   soundList:
-  - sound: {fileID: 8300000, guid: 65797a897158d5f4d824e6eeb62a12ea, type: 3}
+  - sound: {fileID: 8300000, guid: 677ab3d4a3757ed4f8ad2b0dc65b9c6b, type: 3}
+    loudness: 1
+  - sound: {fileID: 8300000, guid: 8f2dead22b13b1e449a7ea421a04e237, type: 3}
+    loudness: 1
+  - sound: {fileID: 8300000, guid: 7fe563ccdedf3014d80631667fc4da66, type: 3}
     loudness: 1
   soundType: 0
   bgmSceneName: []

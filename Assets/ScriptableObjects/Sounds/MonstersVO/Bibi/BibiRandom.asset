@@ -13,12 +13,6 @@ MonoBehaviour:
   m_Name: BibiRandom
   m_EditorClassIdentifier: 
   soundList:
-  - sound: {fileID: 8300000, guid: 797e7f42d4d0d00409fffedb24ae67ec, type: 3}
-    loudness: 1
-  - sound: {fileID: 8300000, guid: f5d41069e7b64e244bc94e7bca4b580a, type: 3}
-    loudness: 1
-  - sound: {fileID: 8300000, guid: c6fd5da135eaaa946bb744664df63637, type: 3}
-    loudness: 1
   - sound: {fileID: 8300000, guid: ff56d97a7896d7c4a9798a8f72ef22b4, type: 3}
     loudness: 1
   - sound: {fileID: 8300000, guid: 21d1e88d8453d824595afa382757b575, type: 3}

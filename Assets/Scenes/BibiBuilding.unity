@@ -4027,12 +4027,12 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  startSound: {fileID: 11400000, guid: 0a9228a3fd073894e974fd1912e43ad2, type: 2}
-  endSound: {fileID: 11400000, guid: a7ba7f2134dc43f409bab5a68b839b09, type: 2}
+  startSound: {fileID: 11400000, guid: 24ba7bc1fc8b962429628ff0d4a10414, type: 2}
+  endSound: {fileID: 11400000, guid: 5c8405b753b946c4895fd4b1b0c587ce, type: 2}
   countdownBgSound: {fileID: 11400000, guid: bcc012858a26a8a4aae3f4f1dd0a2075, type: 2}
-  countdown3Sound: {fileID: 11400000, guid: f4ba0daf3576fd94c9fb4f9c7d46d802, type: 2}
-  countdown2Sound: {fileID: 11400000, guid: f58f41008fc474a44a38ee15a7cbb125, type: 2}
-  countdown1Sound: {fileID: 11400000, guid: 3d81bca5b2efd8146b6b9b74d4643fee, type: 2}
+  countdown3Sound: {fileID: 11400000, guid: d62217d9e76ab144db7d441754c998c5, type: 2}
+  countdown2Sound: {fileID: 11400000, guid: b6a84fd058d71064ab408f88d89a7de5, type: 2}
+  countdown1Sound: {fileID: 11400000, guid: 5baf1193b723d95418ec16b2ff4ee731, type: 2}
   timeText: {fileID: 713742214}
   countdownText: {fileID: 332383634}
   timer: 0

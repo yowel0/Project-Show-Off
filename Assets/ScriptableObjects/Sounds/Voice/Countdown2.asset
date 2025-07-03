@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Countdown2
   m_EditorClassIdentifier: 
   soundList:
-  - sound: {fileID: 8300000, guid: bbd2d63191cf9c342ae86f7567aac978, type: 3}
+  - sound: {fileID: 8300000, guid: abda7ed1a2f829445aca93c9a40fc80b, type: 3}
     loudness: 1
   soundType: 2
   bgmSceneName: []

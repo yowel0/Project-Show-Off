@@ -276,7 +276,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   startSound: {fileID: 11400000, guid: 0a9228a3fd073894e974fd1912e43ad2, type: 2}
-  endSound: {fileID: 11400000, guid: a7ba7f2134dc43f409bab5a68b839b09, type: 2}
+  endSound: {fileID: 11400000, guid: 084783ced6768084186ee56c4104a4d9, type: 2}
   countdownBgSound: {fileID: 11400000, guid: bcc012858a26a8a4aae3f4f1dd0a2075, type: 2}
   countdown3Sound: {fileID: 11400000, guid: f4ba0daf3576fd94c9fb4f9c7d46d802, type: 2}
   countdown2Sound: {fileID: 11400000, guid: f58f41008fc474a44a38ee15a7cbb125, type: 2}
