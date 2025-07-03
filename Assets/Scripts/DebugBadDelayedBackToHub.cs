@@ -17,6 +17,8 @@ public class DebugBadDelayedBackToHub : MonoBehaviour
     {
         yield return new WaitForSeconds(seconds);
 
+        PlayerManager.Instance?.SetControlScheme(ControlScheme.OnlyInteract);
+
         SceneManager.LoadScene(hubName);
     }
 
