@@ -93,7 +93,7 @@ public class LoadingscreenManager : MonoBehaviour
                 EnableLoadingScreen("PotataParty", Potato, loadingbarPotato);
                 break;
             case Scene.Cloudy:
-                EnableLoadingScreen("ScaryMouseMayhem", MrScaryMouse, loadingbarMouse);
+                EnableLoadingScreen("CloudysColours", Cloudy, loadingbarCloudy);
                 break;
             case Scene.MrScaryMouse:
                 EnableLoadingScreen("ScaryMouseMayhem", MrScaryMouse, loadingbarMouse);
