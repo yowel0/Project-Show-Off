@@ -51,13 +51,13 @@ public class LoadingscreenManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        foreach (PlayerInput input in playerInputs)
-        {
-            if (input.actions["Jump"].triggered)
-            {
+        // foreach (PlayerInput input in playerInputs)
+        // {
+        //     if (input.actions["Jump"].triggered)
+        //     {
                 
-            }
-        }
+        //     }
+        // }
     }
 
     public void LoadMonsterScene(int monsterID)

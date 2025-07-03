@@ -39,6 +39,8 @@ public class CharacterSelection : MonoBehaviour
     [SerializeField]
     private TextMeshProUGUI nameText;
     [SerializeField]
+    int maxNameLength = 8;
+    [SerializeField]
     private TextMeshProUGUI controlText;
 
     [Header("State UI")]
@@ -236,7 +238,10 @@ public class CharacterSelection : MonoBehaviour
     }
 
     public void AddNewChar(string _char = "a"){
-        playerShell.userName += _char;
+        if (playerShell.userName.Length < maxNameLength)
+        {
+            playerShell.userName += _char;
+        }
     }
 
     public void RemoveLastChar(){
