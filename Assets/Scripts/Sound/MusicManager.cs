@@ -114,9 +114,10 @@ public class MusicManager : MonoBehaviour
 
     public void SetMusicVolume(float pVolume)
     {
-        float mult = pVolume / bgmVolume;
+        float mult = pVolume / Mathf.Max(bgmVolume, 0.001f);
         bgmVolume = pVolume;
-        bgmAudioSource.volume *= mult;
+        if (bgmAudioSource.volume == 0) bgmAudioSource.volume = bgmVolume;
+        else bgmAudioSource.volume *= mult;
     }
 
     public void SetVoiceVolume(float pVolume)
