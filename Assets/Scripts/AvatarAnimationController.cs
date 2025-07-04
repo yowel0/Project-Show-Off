@@ -9,6 +9,8 @@ public class AvatarAnimationController : MonoBehaviour
     Animator animator;
     PlayerAvatarMovement playerAvatarMovement;
     Rigidbody rb;
+    [SerializeField]
+    bool holdingBox = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -46,6 +48,17 @@ public class AvatarAnimationController : MonoBehaviour
             {
                 animator.SetFloat("Speed", .05f);
             }
+        }
+
+        if (holdingBox)
+        {
+            int layerIndex = animator.GetLayerIndex("Hold Box Layer");
+            animator.SetLayerWeight(layerIndex, 1);
+        }
+        else
+        {
+            int layerIndex = animator.GetLayerIndex("Hold Box Layer");
+            animator.SetLayerWeight(layerIndex, 0);
         }
     }
 
