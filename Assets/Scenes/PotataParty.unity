@@ -4341,12 +4341,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5787992695681044893, guid: 2df77f5f9fa4d28418c3e4e67dbe1110,
         type: 3}
+      propertyPath: OnOrange.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5787992695681044893, guid: 2df77f5f9fa4d28418c3e4e67dbe1110,
+        type: 3}
       propertyPath: OnGreen.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 814675851}
     - target: {fileID: 5787992695681044893, guid: 2df77f5f9fa4d28418c3e4e67dbe1110,
         type: 3}
       propertyPath: OnOrange.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 814675851}
+    - target: {fileID: 5787992695681044893, guid: 2df77f5f9fa4d28418c3e4e67dbe1110,
+        type: 3}
+      propertyPath: OnOrange.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 814675851}
     - target: {fileID: 5787992695681044893, guid: 2df77f5f9fa4d28418c3e4e67dbe1110,
@@ -4381,12 +4391,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5787992695681044893, guid: 2df77f5f9fa4d28418c3e4e67dbe1110,
         type: 3}
+      propertyPath: OnOrange.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5787992695681044893, guid: 2df77f5f9fa4d28418c3e4e67dbe1110,
+        type: 3}
       propertyPath: annoyedChew.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 814675851}
     - target: {fileID: 5787992695681044893, guid: 2df77f5f9fa4d28418c3e4e67dbe1110,
         type: 3}
       propertyPath: OnOrange.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetTrigger
+      objectReference: {fileID: 0}
+    - target: {fileID: 5787992695681044893, guid: 2df77f5f9fa4d28418c3e4e67dbe1110,
+        type: 3}
+      propertyPath: OnOrange.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
       value: SetTrigger
       objectReference: {fileID: 0}
     - target: {fileID: 5787992695681044893, guid: 2df77f5f9fa4d28418c3e4e67dbe1110,
@@ -4421,13 +4441,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5787992695681044893, guid: 2df77f5f9fa4d28418c3e4e67dbe1110,
         type: 3}
+      propertyPath: OnOrange.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: UnityEngine.Animator, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 5787992695681044893, guid: 2df77f5f9fa4d28418c3e4e67dbe1110,
+        type: 3}
       propertyPath: OnRed.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
       value: ClosingMouth
       objectReference: {fileID: 0}
     - target: {fileID: 5787992695681044893, guid: 2df77f5f9fa4d28418c3e4e67dbe1110,
         type: 3}
       propertyPath: OnGreen.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
-      value: OpeningMouth
+      value: OnGreen
       objectReference: {fileID: 0}
     - target: {fileID: 5787992695681044893, guid: 2df77f5f9fa4d28418c3e4e67dbe1110,
         type: 3}
@@ -4437,7 +4462,12 @@ PrefabInstance:
     - target: {fileID: 5787992695681044893, guid: 2df77f5f9fa4d28418c3e4e67dbe1110,
         type: 3}
       propertyPath: OnOrange.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
-      value: ClosingMouth
+      value: OnOrange
+      objectReference: {fileID: 0}
+    - target: {fileID: 5787992695681044893, guid: 2df77f5f9fa4d28418c3e4e67dbe1110,
+        type: 3}
+      propertyPath: OnOrange.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_StringArgument
+      value: OpeningMouth
       objectReference: {fileID: 0}
     - target: {fileID: 5787992695681044893, guid: 2df77f5f9fa4d28418c3e4e67dbe1110,
         type: 3}
@@ -4457,6 +4487,11 @@ PrefabInstance:
     - target: {fileID: 5787992695681044893, guid: 2df77f5f9fa4d28418c3e4e67dbe1110,
         type: 3}
       propertyPath: OnOrange.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 5787992695681044893, guid: 2df77f5f9fa4d28418c3e4e67dbe1110,
+        type: 3}
+      propertyPath: OnOrange.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 5787992695681044893, guid: 2df77f5f9fa4d28418c3e4e67dbe1110,
