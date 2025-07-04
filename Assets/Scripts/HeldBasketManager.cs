@@ -30,7 +30,7 @@ public class HeldBasketManager : MonoBehaviour
         List<PlayerShell> players = PlayerManager.Instance.players;
         foreach (PlayerShell p in players)
         {
-            Transform t = p.GetComponentInChildren<Avatar>().character.transform;
+            Transform t = p.transform.GetComponentInChildren<Avatar>().character.transform.Find("jnt_spine_1/jnt_spine_2/jnt_spine_3/jnt_spine_4/jnt_L_wing_1/jnt_L_wing_2/jnt_L_wing_3");
             foreach (Transform child in t)
             {
                 if (child.CompareTag("Held Box"))
