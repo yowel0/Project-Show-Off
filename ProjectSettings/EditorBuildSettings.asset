@@ -65,4 +65,6 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Bram/TestPause.unity
     guid: 7c4d31f7373b78b48a4761c30b6bd8bc
-  m_configObjects: {}
+  m_configObjects:
+    com.unity.input.settings: {fileID: 11400000, guid: 3efcdcb8d715beb42b031f22b1c1912d,
+      type: 2}
