@@ -66,7 +66,7 @@ public class PlayerShell : MonoBehaviour
         }
     }
 
-    public void SpawnAvatar(Vector3 position, PlayerChild playerChild, float yRotation)
+    public void SpawnAvatar(Vector3 position, PlayerChild playerChild)
     {
         Rigidbody rb = GetComponentInChildren<Rigidbody>();
         if (rb)
@@ -80,8 +80,8 @@ public class PlayerShell : MonoBehaviour
                     DestroyChildren();
 
                     playerChildObj = Instantiate(PlayerAvatarPrefab, position, quaternion.identity, transform);
-                    SetAvatarValues(playerChildObj, yRotation);
-                SplitscreenCamera = playerChildObj.transform.GetComponentInChildren<Camera>();
+                    SetAvatarValues(playerChildObj);
+                    SplitscreenCamera = playerChildObj.transform.GetComponentInChildren<Camera>();
                 }
                 else
                 {
@@ -94,7 +94,7 @@ public class PlayerShell : MonoBehaviour
                     DestroyChildren();
 
                     playerChildObj = Instantiate(CharacterSelectionPrefab, position, quaternion.identity, transform);
-                    SetAvatarValues(playerChildObj, yRotation);
+                    SetAvatarValues(playerChildObj);
                     SplitscreenCamera = playerChildObj.transform.GetComponentInChildren<Camera>();
                 }
                 else
@@ -105,8 +105,11 @@ public class PlayerShell : MonoBehaviour
                 break;
         }
         
-        Avatar avatar = GetComponentInChildren<Avatar>();
-        avatar.character.transform.eulerAngles = new Vector3(0, 180, 0);
+        // Avatar avatar = GetComponentInChildren<Avatar>();
+        // avatar.character.transform.eulerAngles = new Vector3(0, 180, 0);
+        // PlayerAvatarMovement playerAvatarMovement = GetComponentInChildren<PlayerAvatarMovement>();
+        // playerAvatarMovement.transform.eulerAngles = new Vector3(0, 0, 0);
+
         if (playerChildObj != null)
         {
             SplitscreenCamera = playerChildObj.transform.GetComponentInChildren<Camera>();
@@ -131,13 +134,12 @@ public class PlayerShell : MonoBehaviour
         }
     }
 
-    void SetAvatarValues(GameObject playerChildObj, float yRotation)
+    void SetAvatarValues(GameObject playerChildObj)
     {
         Avatar avatar = playerChildObj.GetComponentInChildren<Avatar>();
         if (characterPrefab)
-            avatar.SetCharacter(characterPrefab, yRotation);
+            avatar.SetCharacter(characterPrefab);
         if (hatPrefab)
             avatar.SetHat(hatPrefab);
-        // avatar.character.transform.eulerAngles = new Vector3(0, 0, 0);
     }
 }

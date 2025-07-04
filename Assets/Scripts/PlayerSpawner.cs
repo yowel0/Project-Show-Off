@@ -53,17 +53,20 @@ public class PlayerSpawner : MonoBehaviour
                 if (spawnPositions.Length >= 4 && PlayerManager.Instance.GetPlayerCount() <= 2)
                 {
                     Vector3 spawnPosition = spawnPositions[i + 1].position;
-                    player.SpawnAvatar(spawnPosition, playerChild, yRotation);
+                    player.SpawnAvatar(spawnPosition, playerChild);
                 }
                 else if (spawnPositions[i] != null)
                 {
                     Vector3 spawnPosition = spawnPositions[i].position;
-                    player.SpawnAvatar(spawnPosition, playerChild, yRotation);
+                    player.SpawnAvatar(spawnPosition, playerChild);
                 }
                 else
                 {
-                    player.SpawnAvatar(Vector3.zero, playerChild, yRotation);
+                    player.SpawnAvatar(Vector3.zero, playerChild);
                 }
+                Avatar avatar = player.GetComponentInChildren<Avatar>();
+                avatar.character.transform.eulerAngles = new Vector3(0, yRotation, 0);
+                
             }
         }
         else

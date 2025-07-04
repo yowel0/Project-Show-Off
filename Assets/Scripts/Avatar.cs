@@ -22,7 +22,7 @@ public class Avatar : MonoBehaviour
 
     }
 
-    public void SetCharacter(GameObject characterPrefab, float yRotation)
+    public void SetCharacter(GameObject characterPrefab)
     {
         if (hat != null)
             hat.transform.SetParent(gameObject.transform);
@@ -30,7 +30,6 @@ public class Avatar : MonoBehaviour
             Destroy(character);
         character = Instantiate(characterPrefab, transform);
         SetHatParent();
-        // character.transform.rotation = quaternion.EulerXYZ(0,yRotation,0);
     }
 
     public void SetHat(GameObject hatPrefab)
