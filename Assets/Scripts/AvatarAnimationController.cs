@@ -2,18 +2,21 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class AvatarAnimationController : MonoBehaviour
 {
+    PlayerInput playerInput;
     Avatar avatar;
     Animator animator;
     PlayerAvatarMovement playerAvatarMovement;
     Rigidbody rb;
-    
+
     public bool holdingBox = false;
     // Start is called before the first frame update
     void Start()
     {
+        playerInput = GetComponentInParent<PlayerInput>();
         avatar = GetComponentInChildren<Avatar>();
         animator = GetComponentInChildren<Animator>();
         if (!animator)
@@ -30,6 +33,11 @@ public class AvatarAnimationController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (playerInput.actions["Throw"].triggered)
+        {
+            animator.SetTrigger("Throw");
+        }
+
         animator.SetBool("Grounded", playerAvatarMovement.IsGrounded());
         Vector3 vel = rb.velocity;
         Vector2 velV2 = new Vector2(vel.x, vel.z);
