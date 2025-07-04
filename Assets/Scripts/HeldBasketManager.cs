@@ -20,8 +20,9 @@ public class HeldBasketManager : MonoBehaviour
         for (int i = 0; i < players.Count; i++)
         {
             PlayerShell player = players[i];
-            Instantiate(basketPrefabs[i], player.GetComponentInChildren<Avatar>().character.transform);
+            Instantiate(basketPrefabs[i], player.GetComponentInChildren<Avatar>().character.transform.Find("jnt_spine_1/jnt_spine_2/jnt_spine_3/jnt_spine_4/jnt_L_wing_1/jnt_L_wing_2/jnt_L_wing_3"));
         }
+        PlayerManager.Instance.PlayersHoldBoxAnimation(true);
     }
 
     public void DestroyBoxes()
@@ -39,5 +40,6 @@ public class HeldBasketManager : MonoBehaviour
                 }
             }
         }
+        PlayerManager.Instance.PlayersHoldBoxAnimation(false);
     }
 }

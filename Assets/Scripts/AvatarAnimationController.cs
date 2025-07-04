@@ -9,8 +9,8 @@ public class AvatarAnimationController : MonoBehaviour
     Animator animator;
     PlayerAvatarMovement playerAvatarMovement;
     Rigidbody rb;
-    [SerializeField]
-    bool holdingBox = false;
+    
+    public bool holdingBox = false;
     // Start is called before the first frame update
     void Start()
     {

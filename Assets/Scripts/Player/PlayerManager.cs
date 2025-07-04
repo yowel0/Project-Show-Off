@@ -29,7 +29,8 @@ public class PlayerManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
         //add all already active players (for debug)
         PlayerInput[] activePlayers = FindObjectsOfType<PlayerInput>();
-        foreach (PlayerInput playerInput in activePlayers){
+        foreach (PlayerInput playerInput in activePlayers)
+        {
             AddPlayer(playerInput);
         }
 
@@ -40,7 +41,7 @@ public class PlayerManager : MonoBehaviour
     {
         if (Instance == this) Instance = null;
     }
- 
+
     public int GetPlayerCount()
     {
         return players.Count;
@@ -50,7 +51,8 @@ public class PlayerManager : MonoBehaviour
         return players.IndexOf(pPlayerShell);
     }
 
-    void AddPlayer(PlayerInput playerInput){
+    void AddPlayer(PlayerInput playerInput)
+    {
         print("Player joined");
         MusicManager.Instance?.PlaySound(joinSound);
         DontDestroyOnLoad(playerInput.gameObject);
@@ -66,6 +68,14 @@ public class PlayerManager : MonoBehaviour
         foreach (PlayerShell p in players)
         {
             p.SwitchControlScheme(scheme);
+        }
+    }
+
+    public void PlayersHoldBoxAnimation(bool b)
+    {
+        foreach (PlayerShell p in players)
+        {
+            p.GetComponentInChildren<AvatarAnimationController>().holdingBox = b;
         }
     }
 }
