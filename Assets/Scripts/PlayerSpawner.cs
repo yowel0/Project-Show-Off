@@ -22,6 +22,8 @@ public class PlayerSpawner : MonoBehaviour
     private PlayerChild playerChild = PlayerChild.PlayerAvatar;
     [SerializeField]
     Transform[] spawnPositions;
+    [SerializeField]
+    float yRotation = 180;
 
     // Start is called before the first frame update
     void Awake()
@@ -51,16 +53,16 @@ public class PlayerSpawner : MonoBehaviour
                 if (spawnPositions.Length >= 4 && PlayerManager.Instance.GetPlayerCount() <= 2)
                 {
                     Vector3 spawnPosition = spawnPositions[i + 1].position;
-                    player.SpawnAvatar(spawnPosition, playerChild);
+                    player.SpawnAvatar(spawnPosition, playerChild, yRotation);
                 }
                 else if (spawnPositions[i] != null)
                 {
                     Vector3 spawnPosition = spawnPositions[i].position;
-                    player.SpawnAvatar(spawnPosition, playerChild);
+                    player.SpawnAvatar(spawnPosition, playerChild, yRotation);
                 }
                 else
                 {
-                    player.SpawnAvatar(Vector3.zero, playerChild);
+                    player.SpawnAvatar(Vector3.zero, playerChild, yRotation);
                 }
             }
         }

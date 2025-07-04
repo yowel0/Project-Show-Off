@@ -1021,6 +1021,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2465943306014819001, guid: d1dee6d32d4f1ca41b8bff360694174f,
         type: 3}
+      propertyPath: yRotation
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2465943306014819001, guid: d1dee6d32d4f1ca41b8bff360694174f,
+        type: 3}
       propertyPath: controlScheme
       value: 4
       objectReference: {fileID: 0}
@@ -1480,8 +1485,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: 3
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 5ae932c7fe7656b419f02c817172304c, type: 2}
+  m_sharedMaterial: {fileID: 5448884817753727949, guid: 5ae932c7fe7656b419f02c817172304c,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []

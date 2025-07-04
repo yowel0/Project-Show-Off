@@ -255,7 +255,7 @@ public class CharacterSelection : MonoBehaviour
 
     void ShowCharacter(int index)
     {
-        avatar.SetCharacter(characters[index]);
+        avatar.SetCharacter(characters[index], 0);
         playerShell.characterPrefab = characters[index];
     }
 

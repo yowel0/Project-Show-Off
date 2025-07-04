@@ -89,6 +89,9 @@ AnimatorStateTransition:
   - m_ConditionMode: 1
     m_ConditionEvent: OpeningMouth
     m_EventTreshold: 0
+  - m_ConditionMode: 1
+    m_ConditionEvent: AnnoyedChew
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 3819189083952161701}
   m_Solo: 0
@@ -145,7 +148,7 @@ AnimatorController:
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
-    m_DefaultBool: 1
+    m_DefaultBool: 0
     m_Controller: {fileID: 9100000}
   - m_Name: AnnoyedChew
     m_Type: 9
