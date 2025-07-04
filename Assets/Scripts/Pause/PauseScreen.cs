@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 
 public class PauseScreen : MonoBehaviour
@@ -15,6 +16,9 @@ public class PauseScreen : MonoBehaviour
     [SerializeField] string mainMenuName;
     [SerializeField] string hubName;
 
+    [Header("Other")]
+    [SerializeField] GameObject[] hideOnEnable;
+
     [Header("Debug")]
     [SerializeField] bool isPaused;
     [SerializeField] ControlScheme savedControlScheme;
@@ -26,6 +30,7 @@ public class PauseScreen : MonoBehaviour
         {
             Debug.Log("Already paused though");
             if (gameObject.activeSelf) Continue();
+            else gameObject.SetActive(true);
             return;
         }
         MusicManager.Instance?.PlaySound(pauseSound);
@@ -41,6 +46,7 @@ public class PauseScreen : MonoBehaviour
     {
         Debug.Log("Doing continue");
         PlayerManager.Instance?.SetControlScheme(savedControlScheme);
+        EventSystem.current.SetSelectedGameObject(EventSystem.current.firstSelectedGameObject);
         gameObject.SetActive(false);
         isPaused = false;
 
@@ -73,6 +79,14 @@ public class PauseScreen : MonoBehaviour
         SceneManager.LoadScene(mainMenuName);
     }
 
+
+    private void OnEnable()
+    {
+        foreach (GameObject g in hideOnEnable)
+        {
+            g.SetActive(false);
+        }
+    }
 
     public void PlayClickSound()
     {
