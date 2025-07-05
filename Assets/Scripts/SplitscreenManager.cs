@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
@@ -9,10 +10,13 @@ public class SplitscreenManager : MonoBehaviour
     [SerializeField]
     private bool enableOnStart = false;
 
+    [SerializeField]
+    GameObject canvas;
+    [SerializeField]
+    GameObject twoPlayer, threePlayer, fourPlayer;
     // Start is called before the first frame update
     void Start()
     {
-        
         if (PlayerManager.Instance != null)
         {
             PlayerInputManager playerInputManager = PlayerManager.Instance.GetComponent<PlayerInputManager>();
@@ -43,11 +47,13 @@ public class SplitscreenManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     public void Enable()
     {
+        canvas.SetActive(true);
+        EnableSplitscreenBorders(PlayerManager.Instance.GetPlayerCount());
         //print("enable splitscreen");
         if (!PlayerManager.Instance)
             return;
@@ -66,6 +72,7 @@ public class SplitscreenManager : MonoBehaviour
 
     public void Disable()
     {
+        canvas.SetActive(false);
         //enable main camera
         if (Camera.main)
             Camera.main.enabled = true;
@@ -78,7 +85,7 @@ public class SplitscreenManager : MonoBehaviour
         SetCamViewAllPlayers();
     }
 
-    void SetCamViewAllPlayers() 
+    void SetCamViewAllPlayers()
     {
         List<PlayerShell> players = PlayerManager.Instance.players;
         for (int i = 0; i < players.Count; i++)
@@ -86,7 +93,7 @@ public class SplitscreenManager : MonoBehaviour
             PlayerShell player = players[i];
             // Camera playerCam = player.GetComponentInChildren<Camera>();
             // playerCam.enabled = true;
-            
+
             player.SplitscreenCamera.enabled = true;
             SetCamViewpointRect(player.SplitscreenCamera, i, players.Count);
         }
@@ -119,14 +126,39 @@ public class SplitscreenManager : MonoBehaviour
             if (playerCount > 2)
             { //3-4
                 rect.height = .5f;
-                if (playerCount == 3 && playerIndex == 2) {
+                if (playerCount == 3 && playerIndex == 2)
+                {
                     rect.width = 1.0f;
                 }
             }
         }
         rect.x = playerIndex % 2 * 0.5f;
-        if(playerCount > 2)
+        if (playerCount > 2)
             rect.y = (int)(playerIndex / 2.0f) / 2.0f + 0.5f - (int)(playerIndex / 2.0f);
         camera.rect = rect;
+    }
+
+    void EnableSplitscreenBorders(int playerCount)
+    {
+        twoPlayer.SetActive(false);
+        threePlayer.SetActive(false);
+        fourPlayer.SetActive(false);
+        switch (playerCount)
+        {
+            case 2:
+                twoPlayer.SetActive(true);
+                break;
+            case 3:
+                threePlayer.SetActive(true);
+                break;
+            case 4:
+                fourPlayer.SetActive(true);
+                break;
+        }
+    }
+
+    public static void DisableSplitscreenBorders()
+    {
+        FindAnyObjectByType<SplitscreenManager>().EnableSplitscreenBorders(0);
     }
 }

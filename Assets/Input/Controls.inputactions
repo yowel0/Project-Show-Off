@@ -754,15 +754,6 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Throw",
-                    "type": "Button",
-                    "id": "a55a4d3d-46ee-40a2-a57a-d51c9e9f22ef",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
                     "name": "Pause",
                     "type": "Button",
                     "id": "dd0a36d0-ed26-41c9-b005-e00a4444953b",
@@ -838,10 +829,111 @@
                     "action": "Pause",
                     "isComposite": false,
                     "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "OnlyInteractAndThrow",
+            "id": "c5f8eba6-a9c6-489d-805e-437dd4483184",
+            "actions": [
+                {
+                    "name": "Interact",
+                    "type": "Button",
+                    "id": "c4ef6403-fa8b-423d-83a4-969d423190f3",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Throw",
+                    "type": "Button",
+                    "id": "39eb6178-9981-412f-8b4a-46b2be689ce5",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Pause",
+                    "type": "Button",
+                    "id": "18cd0cd5-6e27-433f-bf27-9236c649f309",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "615d308b-cffa-4c26-9ebc-0668a0063586",
+                    "path": "<Gamepad>/buttonSouth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Interact",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "e7d529ad-f2f0-44dd-8437-a3df8a815a47",
+                    "id": "9cd13df6-1396-4022-98af-09bbeffce691",
+                    "path": "<Keyboard>/e",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Interact",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "7e984b55-6819-4712-b9bc-0398cf15f664",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Interact",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "43a278c5-0e3f-4182-9c95-18accdf2b3bc",
+                    "path": "<Gamepad>/select",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Pause",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "68120934-e796-442b-bde6-9d2139fd570d",
+                    "path": "<Gamepad>/start",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Pause",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "a0e65146-ca2b-4a77-bd48-ecc499e84446",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Pause",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "b8849ac3-a2ab-4223-832e-05ff410101a4",
                     "path": "<Gamepad>/buttonSouth",
                     "interactions": "",
                     "processors": "",
@@ -852,7 +944,7 @@
                 },
                 {
                     "name": "",
-                    "id": "5b3150cb-fc3e-4916-9035-3bc1d44a0dca",
+                    "id": "0de338c7-5a45-4508-95d0-8acc48eeada4",
                     "path": "<Keyboard>/e",
                     "interactions": "",
                     "processors": "",
@@ -863,7 +955,7 @@
                 },
                 {
                     "name": "",
-                    "id": "6b2ef4df-d815-48cd-b18b-0d726a9bd95b",
+                    "id": "6ea670ef-6b2b-470f-a343-224620feeec5",
                     "path": "<Keyboard>/space",
                     "interactions": "",
                     "processors": "",

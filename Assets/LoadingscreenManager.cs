@@ -25,9 +25,6 @@ public class LoadingscreenManager : MonoBehaviour
     [SerializeField]
     Slider loadingbarBibi;
 
-    [SerializeField]
-    InputActionReference test;
-
     private List<PlayerInput> playerInputs = new List<PlayerInput>();
     private bool loadingScreenActive = false;
     private string selectedSceneName;
@@ -109,6 +106,7 @@ public class LoadingscreenManager : MonoBehaviour
 
     void EnableLoadingScreen(string sceneName, GameObject loadingScreen, Slider slider)
     {
+        SplitscreenManager.DisableSplitscreenBorders();
         loadingScreenActive = true  ;
         PlayerManager.Instance?.SetControlScheme(ControlScheme.OnlyInteract);
         loadingScreen.SetActive(true);

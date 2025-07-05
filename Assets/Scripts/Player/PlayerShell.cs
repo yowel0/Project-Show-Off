@@ -11,7 +11,8 @@ public enum ControlScheme
     Movement,
     NoMove,
     NoJump,
-    OnlyInteract
+    OnlyInteract,
+    OnlyInteractAndThrow
 };
 
 public class PlayerShell : MonoBehaviour
@@ -62,6 +63,9 @@ public class PlayerShell : MonoBehaviour
                 break;
             case ControlScheme.OnlyInteract:
                 playerInput.SwitchCurrentActionMap("OnlyInteract");
+                break;
+            case ControlScheme.OnlyInteractAndThrow:
+                playerInput.SwitchCurrentActionMap("OnlyInteractAndThrow");
                 break;
         }
     }
