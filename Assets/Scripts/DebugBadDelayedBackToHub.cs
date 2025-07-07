@@ -15,9 +15,11 @@ public class DebugBadDelayedBackToHub : MonoBehaviour
 
     private IEnumerator SwitchIn(float seconds)
     {
-        yield return new WaitForSeconds(seconds);
+        yield return new WaitForSeconds(seconds-1);
 
         PlayerManager.Instance?.SetControlScheme(ControlScheme.OnlyInteract);
+
+        yield return new WaitForSeconds(1);
 
         SceneManager.LoadScene(hubName);
     }
