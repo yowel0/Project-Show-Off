@@ -52,7 +52,7 @@ Material:
     m_Colors:
     - _Colour: {r: 0.51529366, g: 0.66416407, b: 0.79622644, a: 1}
     - _FrenselColor: {r: 0.2104306, g: 0.68854284, b: 0.96981126, a: 0}
-    - _IceTiling: {r: 1.88, g: 2.35, b: 0, a: 0}
+    - _IceTiling: {r: 0.78, g: 0.89, b: 0, a: 0}
   m_BuildTextureStacks: []
 --- !u!114 &7654295025753576575
 MonoBehaviour:

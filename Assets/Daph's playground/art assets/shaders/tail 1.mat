@@ -79,6 +79,6 @@ Material:
     m_Colors:
     - _DissolveSpeed: {r: -0.5, g: 0, b: 0, a: 0}
     - _SpeedMainTexture: {r: -0.5, g: 0, b: 0, a: 0}
-    - _colour1: {r: 2.4622889, g: 0.7161293, b: 0, a: 0}
-    - _colour2: {r: 12.1257305, g: 0, b: 4.8709526, a: 0}
+    - _colour1: {r: 2.4622886, g: 0, b: 1.5002974, a: 0}
+    - _colour2: {r: 0, g: 0.26717702, b: 8.980205, a: 0}
   m_BuildTextureStacks: []
