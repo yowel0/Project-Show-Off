@@ -14,15 +14,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   soundList:
   - sound: {fileID: 8300000, guid: 6d22fe2253f9f484dbe0dd0a72ba97cc, type: 3}
-    loudness: 1
+    loudness: 3
   - sound: {fileID: 8300000, guid: 5b489076cdc97254ea1e921b49270494, type: 3}
-    loudness: 1
+    loudness: 3
   - sound: {fileID: 8300000, guid: ff55e6bfeb1da0746b59ba3c83898255, type: 3}
-    loudness: 1
+    loudness: 3
   - sound: {fileID: 8300000, guid: 5bfa2f95c0589f24faf4325b53267612, type: 3}
-    loudness: 1
+    loudness: 3
   soundType: 0
   bgmSceneName: []
   isCharacterDialogue: 0
   hasPriority: 0
-  currentSound: 0
+  currentSound: 3

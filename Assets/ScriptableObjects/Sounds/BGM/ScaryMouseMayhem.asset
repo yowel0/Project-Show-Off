@@ -14,8 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   soundList:
   - sound: {fileID: 8300000, guid: ee077a4d09dbc804b87351fac9c05d03, type: 3}
-    loudness: 1
+    loudness: 0.5
   soundType: 1
   bgmSceneName:
   - ScaryMouseMayhem
+  isCharacterDialogue: 0
+  hasPriority: 0
   currentSound: 0

@@ -14,11 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   soundList:
   - sound: {fileID: 8300000, guid: 94ed203ca31195b49a8fa8dfd8b36f99, type: 3}
-    loudness: 1
+    loudness: 2.5
   - sound: {fileID: 8300000, guid: 61d70e53ca2700944896015940c8e2a8, type: 3}
     loudness: 1
   soundType: 0
   bgmSceneName: []
   isCharacterDialogue: 0
   hasPriority: 0
-  currentSound: 0
+  currentSound: 1

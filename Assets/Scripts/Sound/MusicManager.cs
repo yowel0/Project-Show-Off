@@ -41,8 +41,9 @@ public class MusicManager : MonoBehaviour
         {
             if (soundObject.PlaysInScene(pNextScene.name))
             {
-                bgmAudioSource.clip = soundObject.GetSound();
                 bgmAudioSource.volume = soundObject.GetLoudness() * bgmVolume * masterVolume;
+                if (pCurrentScene == pNextScene && bgmAudioSource.isPlaying) return;
+                bgmAudioSource.clip = soundObject.GetSound();
                 bgmAudioSource.Play();
             }
         }
@@ -106,24 +107,27 @@ public class MusicManager : MonoBehaviour
     public void SetMasterVolume(float pVolume)
     {
         masterVolume = pVolume;
+        if (masterVolume < .05f) masterVolume = 0;
+        CheckBGM(SceneManager.GetActiveScene(), SceneManager.GetActiveScene());
     }
 
     public void SetSFXVolume(float pVolume)
     {
         sfxVolume = pVolume;
+        if (sfxVolume < .05f) sfxVolume = 0;
     }
 
     public void SetMusicVolume(float pVolume)
     {
-        float mult = pVolume / Mathf.Max(bgmVolume, 0.001f);
         bgmVolume = pVolume;
-        if (bgmAudioSource.volume == 0) bgmAudioSource.volume = bgmVolume;
-        else bgmAudioSource.volume *= mult;
+        if (bgmVolume < .05f) bgmVolume = 0;
+        CheckBGM(SceneManager.GetActiveScene(), SceneManager.GetActiveScene());
     }
 
     public void SetVoiceVolume(float pVolume)
     {
         voiceVolume = pVolume;
+        if (voiceVolume < .05f) voiceVolume = 0;
     }
 
     public float GetMasterVolume()  { return masterVolume; }

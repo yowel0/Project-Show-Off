@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   soundList:
   - sound: {fileID: 8300000, guid: b8e4c8317b0392343b1186a5e18a6ec3, type: 3}
-    loudness: 1
+    loudness: 0.3
   soundType: 1
   bgmSceneName:
   - Main Menu

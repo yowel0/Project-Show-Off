@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   soundList:
   - sound: {fileID: 8300000, guid: 944778cc1ef934d4ca80e8bb5c767627, type: 3}
-    loudness: 1
+    loudness: 0.3
   soundType: 1
   bgmSceneName:
   - PotataParty

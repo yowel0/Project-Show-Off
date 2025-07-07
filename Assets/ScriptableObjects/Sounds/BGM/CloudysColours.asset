@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   soundList:
   - sound: {fileID: 8300000, guid: 12e53a248b97b964cb6ef3ec3416a7ce, type: 3}
-    loudness: 1
+    loudness: 0.3
   soundType: 1
   bgmSceneName:
   - CloudysColours

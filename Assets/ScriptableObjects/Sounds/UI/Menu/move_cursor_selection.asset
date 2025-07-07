@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   soundList:
   - sound: {fileID: 8300000, guid: e57317e0e822bce469a1985254b3f2e9, type: 3}
-    loudness: 1
+    loudness: 2.5
   soundType: 0
   bgmSceneName: []
   isCharacterDialogue: 0

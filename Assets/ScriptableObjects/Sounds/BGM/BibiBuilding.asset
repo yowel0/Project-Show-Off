@@ -14,8 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   soundList:
   - sound: {fileID: 8300000, guid: 07290e8524f6838429213c4ad71a003e, type: 3}
-    loudness: 1
+    loudness: 0.8
   soundType: 1
   bgmSceneName:
   - BibiBuilding
+  isCharacterDialogue: 0
+  hasPriority: 0
   currentSound: 0

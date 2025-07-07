@@ -14,19 +14,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   soundList:
   - sound: {fileID: 8300000, guid: ff56d97a7896d7c4a9798a8f72ef22b4, type: 3}
-    loudness: 1
+    loudness: 3
   - sound: {fileID: 8300000, guid: 21d1e88d8453d824595afa382757b575, type: 3}
-    loudness: 1
+    loudness: 3
   - sound: {fileID: 8300000, guid: 4adec83810f458e41abc9ccad8e74d1d, type: 3}
-    loudness: 1
+    loudness: 3
   - sound: {fileID: 8300000, guid: b068d23271ff39c489eac69f5711f2ea, type: 3}
     loudness: 1
   - sound: {fileID: 8300000, guid: 9e981d808032ea5499aba402f1f1a525, type: 3}
-    loudness: 1
+    loudness: 3
   - sound: {fileID: 8300000, guid: eca744e30b14b6846b7876873441d005, type: 3}
-    loudness: 1
+    loudness: 2
   soundType: 0
   bgmSceneName: []
   isCharacterDialogue: 0
   hasPriority: 0
-  currentSound: 0
+  currentSound: 3
