@@ -5232,6 +5232,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2465943306014819001, guid: d1dee6d32d4f1ca41b8bff360694174f,
         type: 3}
+      propertyPath: yRotation
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2465943306014819001, guid: d1dee6d32d4f1ca41b8bff360694174f,
+        type: 3}
       propertyPath: playerChild
       value: 1
       objectReference: {fileID: 0}
