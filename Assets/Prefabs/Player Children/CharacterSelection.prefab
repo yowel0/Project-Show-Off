@@ -6824,7 +6824,7 @@ MonoBehaviour:
   hatUI: {fileID: 7934085571459932310}
   nameUI: {fileID: 6713718767114121580}
   firstSelected: {fileID: 6541432405606034555}
-  selectedButtonColor: {r: 0, g: 1, b: 0.015195131, a: 1}
+  selectedButtonColor: {r: 0, g: 1, b: 0.015195131, a: 0.5019608}
   kNamingHelpTextFormat: Press {Accept} to Press selected button
   kHatHelpTextFormat: "Press {Accept} to Confirm Hat\n Press {Cancel} to Go Back"
   kReadyHelpTextFormat: Press {Cancel} to Unready

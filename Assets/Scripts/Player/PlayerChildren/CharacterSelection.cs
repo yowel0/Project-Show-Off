@@ -86,13 +86,12 @@ public class CharacterSelection : MonoBehaviour
         {
             MusicManager.Instance?.PlaySound(moveSelection);
             ColorBlock _colorblock = currentSelected.colors;
-            _colorblock.normalColor = Color.white.WithAlpha(0);
+            _colorblock.normalColor = new Color(0,0,0,0);
             currentSelected.colors = _colorblock;
         }
         //visually select
         ColorBlock colorblock = button.colors;
         colorblock.normalColor = selectedButtonColor;
-        colorblock.normalColor = selectedButtonColor.WithAlpha(.5f);
         button.colors = colorblock;
         //select
         currentSelected = button;
